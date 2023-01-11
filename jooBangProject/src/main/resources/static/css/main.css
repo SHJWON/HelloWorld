@@ -65,11 +65,15 @@ a{
   margin-top: 6px;
   margin-right: 20px;
   font-size: 20px;
+  display: flex;
+}
+
+#loginBtn{
+    margin-top: 14px;
 }
 
 #signUpBtn{
-    margin-right: 100px;
-    margin-top: 10px;
+    margin-top: 14px;
 }
 
 
