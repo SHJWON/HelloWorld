@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+*{
+	font:inherit;
+	margin:0;
+	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+}
+
+wrap{
+	width:100%
+}
+
+.inner{
+	display: flex;
+}
+
+body top{
+	display: flex;
+}
+
+div{
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+}
+
+top{
+	height:82px;
+}
+
+top .logo{
+	display: flex;
+}
+
+top .logo .logo_img{
+	height:40px;
+}
+
+
+top .nav_list{
+	display: flex;
+}
+
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	100%{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+/* ---------------------- section --------------------- */
+
+section{
+	margin: auto;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+section .room__Box.show{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	min-height: calc(100vh - 120px);
+	width: 360px;
+	padding-top:15%;
+	margin : auto;
+	animation: 0.5s ease 0s 1 normal none running fadeIn;
+	
+}
+
+section .room__Box.hidden{
+	display: none;
+	animation: 0s ease 0s 1 normal none running none;
+}
+
+/* intro */
+
+section .intro{
+	padding-top:30%;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	overflow: auto;
+}
+
+section .intro img{
+	width:80px;
+}
+
+section .intro h1{
+	padding : 20px 0;
+	font-size: 50px;
+}
+
+section .intro h2{
+	font-size: 20px;
+}
+
+/* room info */
+
+section .room_info_1 .buttonContainer{
+	display: flex;
+	flex-wrap: wrap;
+    gap: 10px;
+}
+
+section .room_info_1 .buttonWrapper{
+	flex : 0 1 calc(50% - 6px);
+}
+
+section .room_info_1 button{
+	border-radius:8px;
+	border:1px solid rgb(151, 151, 151);
+	background-color: white;
+	cursor:pointer;
+	padding:16px;
+	transition: box-shadow 0.2s ease,transform 0.1s ease;
+}
+
+/* footnav */
+section .footnav_Container{
+	position:fixed;
+	bottom:0px;
+	height:72px;
+	width:100%;
+	
+}
+
+section .footnav_Wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;	
+}
+
+section .footnav_Wrapper button{
+    height: 50px;
+    width : 96px;
+}
+
+section .footnav_Wrapper #prevBtn{
+	margin-right: 10px;
+}
