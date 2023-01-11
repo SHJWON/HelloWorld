@@ -71,5 +71,4 @@
    
     </body>
     <!-- footer -->
-        <c:import url="/WEB-INF/views/footer.jsp"/>
 </html>
