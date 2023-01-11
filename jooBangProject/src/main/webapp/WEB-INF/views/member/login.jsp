@@ -6,12 +6,13 @@
 	<head>
         <meta charset="UTF-8">
         <title>로그인</title>
-        <link rel="stylesheet" type="text/css" href="<c:url value='/css/login1.css'/>">
+        <link rel="stylesheet" type="text/css" href="<c:url value='/css/login.css'/>">
 		 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script src="<c:url value='/js/js.js'/>"></script>
-          
     </head>
     <body>
+        <!-- head --> 	
+        <c:import url="/WEB-INF/views/top.jsp"/> 
     <img id="logo" src="<c:url value='/image/logo.png'/>">
        <div class="container">
   
@@ -70,5 +71,6 @@
 </div>
    
     </body>
-   
+    <!-- footer -->
+        <c:import url="/WEB-INF/views/footer.jsp"/>
 </html>

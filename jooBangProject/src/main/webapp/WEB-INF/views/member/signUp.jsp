@@ -5,9 +5,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>한국 대표팀 우승해조</title>
+		<title>방주세요 회원가입</title>
 		<!-- head -->
-		<c:import url="/WEB-INF/views/layout/head.jsp"/>
+		<c:import url="/WEB-INF/views/head.jsp"/>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/signup.css'/>">
 		<script src="<c:url value='/js/signup.js'/>"></script>
 		<script src="<c:url value='/js/idCheck.js'/>"></script>
