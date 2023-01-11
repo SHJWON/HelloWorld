@@ -1,0 +1,19 @@
+package com.jooBang.project.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MemberController {
+	@RequestMapping("/member/login")
+	public String login() {
+
+		return "member/login";
+	}
+	
+	@RequestMapping("/member/signUp")
+	public String signup() {
+
+		return "member/signUp";
+	}
+}
