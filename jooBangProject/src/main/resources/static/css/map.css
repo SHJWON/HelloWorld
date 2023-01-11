@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+header img{
+	padding:20px 40px;
+}
+.content img{
+	width:400px;
+	height:120px;
+}
+h1{
+	text-align:center;
+	margin-bottom:50px;
+}
+#address #submit{
+	position:absolute;
+	z-index:1
+}
+#address{
+    margin:20px 0px 20px 32px;
+    height:30px;
+    width:300px;
+    border:3px solid gray;
+    padding:3px 10px;
+    border-radius:5px;
+}
+#submit{
+	 height:42px;
+	 width:100px;
+	background-color:#bb2649;
+    color: white;
+    border:0px;
+    border-radius:5px;
+    padding:0px 6px;
+
+}
+.menu{
+	list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  width: 500px;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+}
+
+  hr{
+	border-color:pink;
+	margin-top:2px;
+}
+li a {
+  text-decoration: none;
+  padding: 50px;
+  display: block;
+  color: #000;
+  font-weight: bold;
+}
+.roominfo{
+	height:300px;
+}
+#map{
+	float:right;
+	
+}
+.iw_inner{
+	width:200px;
+	text-align:center;
+	padding:10px;
+}
