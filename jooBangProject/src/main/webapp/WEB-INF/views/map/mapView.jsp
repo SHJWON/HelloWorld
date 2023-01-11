@@ -26,7 +26,7 @@
   <hr>
 <div class=roominfo>
 </div>
- </a>
+
 </div>
 <div id="map" style="width:80%; height:1000px;">
 

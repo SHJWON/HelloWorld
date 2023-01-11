@@ -13,15 +13,15 @@
 
         <div id="subMenuBox">
           <ul class="subMenu">
-            <li class="subMenu" id="subMenuMap">지도</li>
-            <li class="subMenu" id="subMenuWish">찜목록</li>
-            <li class="subMenu" id="subMenuRoom">방올리기</li>
-            <li class="subMenu" id="subMenuCommunity">커뮤니티</li>
-            <li class="subMenu" id="subMenuRental">가구대여</li>
+            <li class="subMenu" id="subMenuMap"><a href="<c:url value='/map/mapView'/>">지도</a></li>
+            <li class="subMenu" id="subMenuWish"><a href="<c:url value='#'/>">찜목록</a></li>
+            <li class="subMenu" id="subMenuRoom"><a href="<c:url value='/registForm'/>">방올리기</a></li>
+            <li class="subMenu" id="subMenuCommunity"><a href="<c:url value='#'/>">커뮤니티</a></li>
+            <li class="subMenu" id="subMenuRental"><a href="<c:url value='#'/>">가구대여</a></li>
           </ul>
         </div>
 
         <div class="signBtnBox">
-          <button class="signBtnBox" id="loginBtn"><span>로그인</span></button>
-          <button class="signBtnBox" id="signUpBtn"><span>회원가입</span></button>
+          <div class="signBtnBox" id="loginBtn"><a href="<c:url value='/member/login'/>">로그인</a></div>
+          <div class="signBtnBox" id="signUpBtn"><a href="<c:url value='/member/signUp'/>">회원가입</a></div>
         </div>
