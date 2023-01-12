@@ -11,17 +11,14 @@
         <script src="<c:url value='/js/js.js'/>"></script>
     </head>
     <body>
-        <!-- head --> 	
-        <c:import url="/WEB-INF/views/top.jsp"/> 
-    <img id="logo" src="<c:url value='/image/logo.png'/>">
-       <div class="container">
-  
-  <div class="box"></div>
-  <div class="container-forms">
-    <div class="container-info">
-      <div class="info-item">
-        <div class="table">
-          <div class="table-cell">
+    <img src="/image/logo.png"/>
+     <div class="container">
+      <div class="box"></div>
+       <div class="container-forms">
+        <div class="container-info">
+         <div class="info-item">
+          <div class="table">
+           <div class="table-cell">
             <p>
               계정이 있으신가요?
             </p>
@@ -69,8 +66,6 @@
     </div>
   </div>
 </div>
-   
+  
     </body>
-    <!-- footer -->
-        <c:import url="/WEB-INF/views/footer.jsp"/>
 </html>
