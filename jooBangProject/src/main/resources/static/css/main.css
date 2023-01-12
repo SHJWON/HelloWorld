@@ -65,11 +65,15 @@ a{
   margin-top: 6px;
   margin-right: 20px;
   font-size: 20px;
+  display: flex;
+}
+
+#loginBtn{
+    margin-top: 14px;
 }
 
 #signUpBtn{
-    margin-right: 100px;
-    margin-top: 10px;
+    margin-top: 14px;
 }
 
 
@@ -229,19 +233,19 @@ a{
 #hotClick{
     position: relative;
     display: flex;
+    justify-content: space-evenly;
 }
 
 #hotClickRoom{
-    width: 65%;
+    width: 1000px;
     display: flex;
     justify-content: space-evenly;
     border: solid 3px blue;
 }
 
 #hotClickMentBox{
-    float: right;
     border: solid 3px red;
-    width: 35%;
+    width: 400px;
     position: relative;
 }
 
@@ -249,58 +253,433 @@ a{
     position: absolute;
     text-align: center;
     top: 10%;
-    left: 25%;
+    left: 12%;
     width: 300px;
     height: 300px;
     border: solid 3px purple;
 }
 
-/********** communityLine **********/
+/********** newRoomLine **********/
 
-#communityBox{
+#newRoomBox{
     display: flex;
+    justify-content: space-evenly;
 }
 
-#communityList{
-    width: 64%;
+#newRoomListBox{
+    width: 65%;
+}
+
+#newRoomList{
     display: flex;
     justify-content: space-evenly;
     border: solid 3px blue;
+    width: 1000px;
 }
 
-#communityText{
+#newRoomText{
     font-size: 25px;
     margin-left: 200px;
     margin-bottom: 15px;
 }
 
-#communityMentBox{
-    float: right;
+#newRoomMentBox{
     border: solid 3px red;
-    width: 34%;
+    width: 400px;
     position: relative;
 }
 
-#communityMent{
+#newRoomMent{
     text-align: center;
     top: 10%;
-    left: 25%;
+    position: absolute;
+    left: 12%;
     width: 300px;
     height: 300px;
     border: solid 3px purple;
 }
 
+/********** Community & Furniture **********/
+
+.main_commumityMenu {
+    position: absolute;
+    height: 38px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 24px;
+    overflow: hidden;
+    width: 300px;
+    margin-right: 20px;
+    top: 35%;
+    right: 0%;
+}
+
+.main_commuityFilter{
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 30px 10px 0px;
+}
+
+.main_commuityFilterList{
+    padding: 10px 15px 10px 15px;
+}
+
+.main_commuityFilterList:hover{
+    border-radius: 20px;
+    background-color: #ffD400;
+    cursor: pointer;
+}
+
+.main_furnitureMenu {
+    position: absolute;
+    height: 38px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 24px;
+    overflow: hidden;
+    width: 300px;
+    margin-right: 20px;
+    top: 35%;
+    right: 0%;
+}
+
+.main_furnitureFilterList{
+    padding: 10px 15px 10px 15px;
+}
+
+.main_furnitureFilterList:hover{
+    border-radius: 20px;
+    background-color: #908550;
+    cursor: pointer;
+}
+
+#main_communityUl{
+    padding-right: 40px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+#main_communityBox{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#main_commmunityList{
+    border: solid 3px blue;
+    width: 650px;
+    position: relative;
+}
+
+.listText{
+    position: absolute;
+    left: 100px;
+    top: 25px;
+    font-size: 18px;
+}
+
+
+#list1{
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#list1:hover{
+    background-color: #bb2649;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: white;
+}
+
+#list2{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#list2:hover{
+    background-color: #bb2649;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: white;
+}
+
+#list3{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#list3:hover{
+    background-color: #bb2649;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: white;
+}
+
+#list4{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#list4:hover{
+    background-color: #bb2649;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: white;
+}
+
+#list5{
+    margin-bottom: 10px;
+    position: relative;
+}
+
+#list5:hover{
+    background-color: #bb2649;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: white;
+}
+
+#furnitureRental{
+    border: solid 3px red;
+    width: 650px;
+    height: 50em;
+    position: relative;
+}
+
+#furnitureRentalist{
+    position: absolute;
+    top: 33%;
+    z-index: -1;
+}
+
+#sofa{
+    width: 11%;
+    position: absolute;
+    left: 30px;
+}
+
+.furnitureGridBox{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-gap: 5px;
+margin-bottom: 20px;
+margin-top: 50px;
+}
+
+#furniturImg1{
+    border: solid 5px yellow;
+    padding: 10px;
+    margin-top: 15%;
+}
+
+#furniturImg2{
+    border: solid 5px yellow;
+    padding: 10px;
+    margin-top: -5%;
+}
+
+#furniturText1{
+    margin-top: 18%;
+}
+#furniturText2{
+    margin-top: 0%;
+}
+
+#jooBangFTitle{
+    font-size: 2em;
+    color: #000000;
+    position: absolute;
+    left: 130px;
+    top: 15px;
+    font-weight: bold;
+}
+
+/******커뮤니티 카드 박스 연습********/
+
+.Cbox {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 0 2px 30px rgba(black, .2);
+    background: lighten(#f0f4c3, 10%);
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .waveC {
+    opacity: .4;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    background: #0af;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+  }
+  
+  .waveC.-threeC {
+    animation: drift 5000ms infinite linear;
+  }
+  
+  .waveC.-twoC {
+    animation: drift 7000ms infinite linear;
+    opacity: .1;
+    background: yellow;
+  }
+  
+  .Cbox:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    line-height: 70px;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: .4em;
+    font-size: 24px;
+    text-shadow: 0 1px 0 rgba(black, .1);
+    text-indent: .3em;
+  }
+
+#subTitle{
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}
+
+  @keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+
+/******가구 카드 박스 연습********/
+
+.Fbox {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 0 2px 30px rgba(black, .2);
+    background: lighten(#f0f4c3, 10%);
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .wave {
+    opacity: .4;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    background: #bc9e78;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+  }
+  
+  .wave.-three {
+    animation: drift 5000ms infinite linear;
+  }
+  
+  .wave.-two {
+    animation: drift 7000ms infinite linear;
+    opacity: .1;
+    background: yellow;
+  }
+  
+  .Fbox:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    line-height: 70px;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: .4em;
+    font-size: 24px;
+    text-shadow: 0 1px 0 rgba(black, .1);
+    text-indent: .3em;
+  }
+
+#subTitle{
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}
+
+  @keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+
+
 /********** reasonLine **********/
+#reasonTotal{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    width: 1500px;
+    margin-left: 7%;
+}
 
 #reasonText{
     font-size: 25px;
     text-align: center;
+    width: 800px;
+    margin-left: 22%;
+    margin-top: 10%;
 }
 
 #introduceSite{
     display: flex;
     justify-content: space-around;
-    margin: 0px 200px 0px 200px;
+    margin: 0px 100px 0px 100px;
+    width: 1200px;
 }
 
 /********** Footer **********/

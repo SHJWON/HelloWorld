@@ -11,14 +11,16 @@
         <script src="<c:url value='/js/js.js'/>"></script>
     </head>
     <body>
-    <img src="/image/logo.png"/>
-     <div class="container">
-      <div class="box"></div>
-       <div class="container-forms">
-        <div class="container-info">
-         <div class="info-item">
-          <div class="table">
-           <div class="table-cell">
+        <!-- head -->   
+    <img id="logo" src="<c:url value='/image/logo.png'/>">
+       <div class="container">
+  
+  <div class="box"></div>
+  <div class="container-forms">
+    <div class="container-info">
+      <div class="info-item">
+        <div class="table">
+          <div class="table-cell">
             <p>
               계정이 있으신가요?
             </p>
@@ -68,4 +70,5 @@
 </div>
   
     </body>
+    <!-- footer -->
 </html>
