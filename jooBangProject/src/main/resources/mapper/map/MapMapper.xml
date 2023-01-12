@@ -14,4 +14,7 @@
 	  	<select id="listAllMap" resultMap="mapResult">
 	  		SELECT * FROM room 
 	  	</select>
+	  	 <select id="roomInfo" parameterType="hashmap" resultMap="mapResult">
+               SELECT*FROM room
+		</select>
 	  	 	 </mapper>

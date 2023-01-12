@@ -6,29 +6,30 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <c:import url="/WEB-INF/views/head.jsp"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>간단한 지도 표시하기</title>
+    <script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
    	<link rel="stylesheet" type="text/css" href="<c:url value='/css/map.css' />"> 
-   	<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
+    <script src="<c:url value='js/map.js'/>"></script>
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=yaysmxugs9&submodules=geocoder"></script>
 	<script src="<c:url value='/js/MarkerClustering.js'/>" ></script>
 	<script src="https://kit.fontawesome.com/bb34e32cb3.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-<header>
-<img src="/image/logo.png">
-</header>
+  <nav id="nav">
+        <c:import url="/WEB-INF/views/top.jsp"/>
+      </nav>
 <div class="menu">
 <hr>
    <input type="text" id="address">
    <button type="submit" id="submit"><i class="fa fa-search"></i></button>
   <hr>
-<div class=roominfo>
+<div id="roominfo">
 </div>
-
 </div>
-<div id="map" style="width:80%; height:1000px;">
+<div id="map" style="width:75%; height:800px;">
 
 </div>
 <div>
@@ -42,12 +43,11 @@ var infoWindowSearch = new naver.maps.InfoWindow({
 
 var map = new naver.maps.Map('map', {
     center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576), //지도 시작 지점
-    zoom: 10
+    zoom: 12
 });
-
 function initMap() { 
 	
-			// 지역을 담은 배열의 길이만큼 for문으로 마커와 정보창을 채워주자 !
+			// 지역을 담은 배열의 길이만큼 for문으로 마커와 정보창을 채워주자 
              <c:forEach var="map" items="${mapList }">
 		    var marker = new naver.maps.Marker({
 		        map: map,
@@ -76,18 +76,17 @@ function initMap() {
 	    
 		 
 	    function getClickHandler(seq) {
-	    	var roominfo=document.getElementsByClassName('roominfo')
 	            return function(e) {  // 마커를 클릭하는 부분
 	            	
 	                var marker = markers[seq], // 클릭한 마커의 시퀀스로 찾는다.
 	                    infoWindow = infoWindows[seq]; // 클릭한 마커의 시퀀스로 찾는다
-	                
+	                 
 	                if (infoWindow.getMap()) {
 	                    infoWindow.close();
 	                } else {
 	                    infoWindow.open(map, marker); // 표출
 	                }
-	             
+	                  
 	    		}
 	    	
 	    	}
@@ -101,27 +100,27 @@ function initMap() {
 $(document).ready(function(){
 	initMap();	
 	var htmlMarker1 = {
-	        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/image/ping.png);background-size:contain;"></div>',
+	        content: '<div class="htmlMarker"style="cursor:pointer;width:60px;height:60px;line-height:62px;font-size:15px;color:white;text-align:center;font-weight:bold;background:url(/image/ping.png);background-size:contain;"></div>',
 	        size: N.Size(40, 40),
 	        anchor: N.Point(20, 20)
 	    },
 	    htmlMarker2 = {
-	        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/image/ping.png);background-size:contain;"></div>',
+	        content: '<div  style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/image/ping.png);background-size:contain;"></div>',
 	        size: N.Size(40, 40),
 	        anchor: N.Point(20, 20)
 	    },
 	    htmlMarker3 = {
 	        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/image/ping.png);background-size:contain;"></div>',
 	        size: N.Size(40, 40),
-	        anchor: N.Point(20, 20)
+	        anchor: N.Point(40, 40)
 	    },
 	    htmlMarker4 = {
-	        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/image/ping.png);background-size:contain;"></div>',
+	        content: '<div  class="htmlMarker" style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/image/ping.png);background-size:contain;"></div>',
 	        size: N.Size(40, 40),
 	        anchor: N.Point(20, 20)
 	    },
 	    htmlMarker5 = {
-	        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/image/ping.png);background-size:contain;"></div>',
+	        content: '<div class="htmlMarker" style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/image/ping.png);background-size:contain;"></div>',
 	        size: N.Size(40, 40),
 	        anchor: N.Point(20, 20)
 	};
@@ -131,7 +130,7 @@ $(document).ready(function(){
          map: map,
          markers: markers,
          disableClickZoom: false,
-         gridSize: 120,
+         gridSize: 100,
          icons: [htmlMarker1, htmlMarker2, htmlMarker3, htmlMarker4, htmlMarker5],
          indexGenerator: [10, 100, 200, 500, 1000],
          stylingFunction: function(clusterMarker, count) {
@@ -308,6 +307,7 @@ $(document).ready(function(){
 		naver.maps.onJSContentLoaded = initGeocoder;
         
         });
+        
  
 </script>
 </div>
