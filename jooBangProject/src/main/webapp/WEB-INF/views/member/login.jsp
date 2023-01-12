@@ -12,7 +12,6 @@
     </head>
     <body>
         <!-- head --> 	
-        <c:import url="/WEB-INF/views/top.jsp"/> 
     <img id="logo" src="<c:url value='/image/logo.png'/>">
        <div class="container">
   
@@ -72,5 +71,4 @@
    
     </body>
     <!-- footer -->
-        <c:import url="/WEB-INF/views/footer.jsp"/>
 </html>

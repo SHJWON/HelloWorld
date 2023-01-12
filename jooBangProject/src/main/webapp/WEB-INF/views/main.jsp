@@ -10,9 +10,9 @@
 	</head>
 	  <body>
     <div id="wrap">
-      <nav id="nav">
+      
         <c:import url="/WEB-INF/views/top.jsp"/>
-      </nav>
+
 
       <section>
         <!-- <div id="copyText">
@@ -179,7 +179,6 @@
             <div id="hotClickMentBox">
               <div id="hotClickMent">멘트</div>
             </div>
-
             <ul id="hotClickRoom">
               <li>
                 <div>
@@ -227,44 +226,161 @@
         <br /><br /><br />
         <br /><br /><br />
         <br /><br /><br />
-        <div id="communityText">최적의 주거공간을 찾아보세요!</div>
-        <div id="communityBox">
-          <div id="communityList">
-            <div>
-              <div>지금의 Hot Click!</div>
-              <ul>
-                <li>1 제목</li>
-                <li>2 제목</li>
-                <li>3 제목</li>
-                <li>4 제목</li>
-                <li>5 제목</li>
-                <li>6 제목</li>
-                <li>7 제목</li>
-                <li>8 제목</li>
-                <li>9 제목</li>
-                <li>10 제목</li>
+
+        <div id="newRoomText">따끈따끈한 방을 확인하세요!</div>
+        <div id="newRoomBox">
+            <div id="newRoomListBox">
+              <ul id="newRoomList"><li>
+                <div>
+                  <a href="#">
+                    <div>
+                      <img src="/image/logo.png" width="250" />
+                    </div>
+                    <p>지역</p>
+                    <h1>방이름</h1>
+                    <p>기본옵션</p>
+                    <h3>방가격/주</h3>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="#">
+                    <div>
+                      <img src="/image/logo.png" width="250" />
+                    </div>
+                    <p>지역</p>
+                    <h1>방이름</h1>
+                    <p>기본옵션</p>
+                    <h3>방가격/주</h3>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="#">
+                    <div>
+                      <img src="/image/logo.png" width="250" />
+                    </div>
+                    <p>지역</p>
+                    <h1>방이름</h1>
+                    <p>기본옵션</p>
+                    <h3>방가격/주</h3>
+                  </a>
+                </div>
+              </li>
+              </ul>
+            </div>
+
+          <div id="newRoomMentBox">
+            <div id="newRoomMent">멘트</div>
+          </div>
+        </div>
+
+        <br /><br /><br />
+        <br /><br /><br />
+        <br /><br /><br />
+
+        
+        <div id="main_communityBox">
+          <div id="main_commmunityList">
+             <!-- 가구 카드 -->
+             <div class='Cbox'>
+              <div class='waveC -oneC'></div>
+              <div class='waveC -twoC'></div>
+              <div class='waveC -threeC'></div>
+              <div class='title'>Community<br><span id="subTitle">커뮤니티</span></div>
+            </div>
+            <!--카드연습 끝-->
+            <div class="main_commumityMenu">
+              <ul class="main_commuityFilter">
+                <li class="main_commuityFilterList")">전체</li>
+                <li class="main_commuityFilterList">조회순</li>
+                <li class="main_commuityFilterList">댓글순</li>
+              </ul>
+            </div>
+
+            <ul id="main_communityUl">
+              <li id="list1"><img src="/image/protest.png"><span class="listText">보라돌이 뚜비 나나 뽀~~ 텔레토비 텔레토비!<hr></span></li>
+              <li id="list2"><img src="/image/protest.png"><span class="listText">보라돌이 뚜비 나나 뽀~~ 텔레토비 텔레토비!<hr></span></li>
+              <li id="list3"><img src="/image/protest.png"><span class="listText">보라돌이 뚜비 나나 뽀~~ 텔레토비 텔레토비!<hr></span></li>
+              <li id="list4"><img src="/image/protest.png"><span class="listText">보라돌이 뚜비 나나 뽀~~ 텔레토비 텔레토비!<hr></span></li>
+              <li id="list5"><img src="/image/protest.png"><span class="listText">보라돌이 뚜비 나나 뽀~~ 텔레토비 텔레토비!<hr></span></li>
+            </ul>
+          </div>
+
+          <div id="furnitureRental">
+            <!-- 가구 카드 -->
+            <div class='Fbox'>
+              <div class='wave -one'></div>
+              <div class='wave -two'></div>
+              <div class='wave -three'></div>
+              <div class='title'>furniture rental<br><span id="subTitle">가구 대여</span></div>
+            </div>
+            <!--카드연습 끝-->
+            <!-- <div id="furnitureRemtalText">
+              <img src="/image/furniture.png" id="sofa">
+              <span id="jooBangFTitle">가구대여<i class="fa-sharp fa-solid fa-ellipsis"></i></span>
+            </div> -->
+            <div id="furnitureRentalBox">
+
+              <div class="main_furnitureMenu">
+                <ul class="main_commuityFilter">
+                  <li class="main_furnitureFilterList")">전체</li>
+                  <li class="main_furnitureFilterList">가구</li>
+                  <li class="main_furnitureFilterList">가전</li>
+                </ul>
+              </div>
+
+              <ul id="furnitureRentalist">
+                <li class="furnitureCompany">
+                <div>
+                  <a href="#" class="furnitureGridBox">
+                    <div>
+                      <img src="/image/logo.png" width="200" id="furniturImg1" />
+                    </div>
+                    <div id="furniturText1">
+                    <p>지역 :</p>
+                    <h1>업체명 :</h1>
+                    <p>문의번호 :</p>
+                    <h3>전문가구 :</h3>
+                  </div>
+                  </a>
+                </div>
+              </li>
+              <li class="furnitureCompany">
+                <div>
+                  <a href="#" class="furnitureGridBox">
+                    <div>
+                      <img src="/image/logo.png" width="200" id="furniturImg2"/>
+                    </div>
+                    <div id="furniturText2">
+                      <p>지역 :</p>
+                      <h1>업체명 :</h1>
+                      <p>문의번호 :</p>
+                      <h3>전문가구 :</h3>
+                    </div>
+                  </a>
+                </div>
+              </li>
               </ul>
             </div>
           </div>
 
-          <div id="communityMentBox">
-            <div id="communityMent">멘트</div>
-          </div>
         </div>
 
-        <br /><br /><br />
-        <br /><br /><br />
-        <br /><br /><br />
-
+        <div id="reasonTotal">
         <div id="reasonText">방주세요를 이용해야하는 이유</div>
-        <br /><br /><br />
         <div id="reasonBox">
           <div id="introduceSite">
-            <span><img src="/image/logo.png" width="400" height="400" /></span>
-            <span><img src="/image/logo.png" width="400" height="400" /></span>
-            <span><img src="/image/logo.png" width="400" height="400" /></span>
+            <span><img src="/image/logo.png" width="300" height="300" /></span>
+            <span><img src="/image/logo.png" width="300" height="300" /></span>
+            <span><img src="/image/logo.png" width="300" height="300" /></span>
           </div>
         </div>
+      </div>
+
+
       </section>
 
       <footer>

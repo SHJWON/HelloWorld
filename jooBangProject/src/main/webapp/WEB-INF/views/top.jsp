@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+       <nav id="nav">
        <div id="logoBox">
           <img
             src="/image/회색 로고.png"
@@ -25,3 +25,4 @@
           <div class="signBtnBox" id="loginBtn"><a href="<c:url value='/member/login'/>">로그인</a></div>
           <div class="signBtnBox" id="signUpBtn"><a href="<c:url value='/member/signUp'/>">회원가입</a></div>
         </div>
+        </nav>
