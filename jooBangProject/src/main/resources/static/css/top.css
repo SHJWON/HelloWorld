@@ -1,0 +1,72 @@
+/******** top.css ********/
+
+.navContainer {
+    text-align: center;
+    height: 100px;
+    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: linear-gradient(50deg, #bb2649, #ff4b75, #fb6666);
+    grid-template-areas: 
+        'logo . sub sub sub sub login';
+}
+
+@keyframes huerotator { /*nav 배경 그라데이션*/
+    0% {
+        -webkit-filter: hue-rotate(0deg);
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        -webkit-filter: hue-rotate(360deg);
+        filter: hue-rotate(360deg);
+    }
+}
+
+.navLogo{
+    grid-area: logo;
+}
+
+#logoImg{
+    margin: 12px;
+}
+
+.navSubMenu{
+    grid-area: sub;
+    margin-left: 150px;
+}
+
+.subMenu{
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 16px 0px 0px 50px;
+}
+
+.navSign{
+    grid-area: login;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 32px;
+    margin-right: 30px;
+}
+
+.signBtnBox{
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+#mainLogin {
+    padding: 3px 5px 1px 5px;
+    margin-left: 20px;
+}
+
+#mainSignUp {
+    padding: 3px 5px 1px 5px;
+    margin-right: 20px;
+}
+
+#mainLS{
+    font-size: 20px;
+    font-weight: bold;
+}
