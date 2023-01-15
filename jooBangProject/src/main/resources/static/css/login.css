@@ -4,7 +4,12 @@
 *{
 	font-family: 'Nanum Gothic', sans-serif;
 }
-
+img {
+  position: absolute;
+	width:100px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
 
 body {
   position: absolute;

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+.table {
+    width:65%; 
+    margin-left:25%; 
+    margin-right:10%;
+}
+
+th{
+font-weight:bold;
+  
+}
+h1{
+	text-align:center;
+}
+#ul {
+ list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  width: 300px;
+  height: 50%;
+  overflow: auto;
+  position: fixed;
+  text-align:center;
+  margin:50px 30px;
+  
+}
+hr{
+	border-color:pink;
+	margin-top:2px;
+}
+.side-menu a {
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  color: #000;
+  font-weight: bold;
+}
+
+.side-menu a:hover {
+  background: #bb2649;
+  color: white;
+  opacity:0.8;
+}
+
+.side-menu a.home {
+  background : #333;
+  color: #fff;
+}

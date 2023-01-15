@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.jooBang.project.dao.IBoardDAO">
+	  <resultMap id="brdResult" type="com.jooBang.project.model.BoardVO">
+	  		<result property="brdNo"  column="brdNo"  />
+	  		<result property="brdTitle"  column="brdTitle"  />
+	  		<result property="brdWriter"  column="brdWriter"  />
+	  		<result property="brdContent"  column="brdContent"  />	
+	  		<result property="brdViewCnt"  column="brdViewCnt"  />
+	  		<result property="brdDate"  column="brdDate"  />
+	  		<result property="ctgNo"  column="ctgNo"  />
+	  		<result property="ctgName"  column="ctgName"  />
+	  </resultMap>	  	
+	  		
+	  <select id="ctgListBoard" parameterType="string" resultMap="brdResult">
+  	SELECT *FROM board WHERE ctgNo=#{ctgNo} ORDER BY brdNo
+  	</select>
+  	 <insert id="insertBoard" parameterType="com.jooBang.project.model.BoardVO">
+  		INSERT INTO board (brdTitle, brdWriter,brdContent)
+  		VALUES (#{brdTitle},#{brdWriter},#{brdContent})
+  </insert>
+	  	</mapper>

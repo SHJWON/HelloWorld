@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 header img{
+	width:250px;
+	height:100px;
 	padding:20px 40px;
 }
 .content img{
@@ -59,10 +61,11 @@ li a {
 }
 #map{
 	float:right;
+	border:1px solid #bb2649;
 	
 }
-.iw_inner{
-	width:200px;
-	text-align:center;
-	padding:10px;
+.htmlMarker:hover{
+	opacity:0.5;
 }
+
+

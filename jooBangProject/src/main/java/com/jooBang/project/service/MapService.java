@@ -1,6 +1,7 @@
 package com.jooBang.project.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,6 +19,10 @@ public class MapService implements IMapService {
 	public ArrayList<MapVO> listAllMap() {
 		return dao.listAllMap();
 		
+	}
+	@Override
+	public ArrayList<MapVO> roomInfo(HashMap<String, Object> map) {	
+		return dao.roomInfo(map);
 	}
 
 }
