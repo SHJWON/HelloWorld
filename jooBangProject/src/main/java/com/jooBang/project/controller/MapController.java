@@ -29,8 +29,9 @@ public class MapController {
 	
 	   @RequestMapping("/roominfo")
 	   public String roominfo(@RequestParam HashMap<String,Object>param,Model model){
-		   ArrayList<MapVO>mapList=service.roomInfo(param);	
-		   model.addAttribute("mapList",mapList);
+		  // ArrayList<MapVO>mapList=service.roomInfo(param);	
+		   model.addAttribute("roomNo",param.get("roomNo"));
+		   model.addAttribute("roomWeekPrice",param.get("roomWeekPirce"));
 		   return "map/roomInfo";
 		   
 	   }

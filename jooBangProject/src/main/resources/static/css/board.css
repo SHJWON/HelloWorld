@@ -1,32 +1,72 @@
 @charset "UTF-8";
+
 .table {
     width:65%; 
     margin-left:25%; 
     margin-right:10%;
+     dispaly:flex;
 }
 
-th{
-font-weight:bold;
-  
+thead{
+    text-align: center;
 }
-h1{
-	text-align:center;
+tbody{
+    text-align: center;
+
 }
+.title{
+    text-align:left;
+    width:60%;
+   
+}
+
+#search{
+	float:right;
+	margin-top:10px;
+    margin-right:10%;
+
+}
+#searchbar{
+	width:40%;
+	margin-left:46%; 
+    margin-right:14%;
+}
+#ctgName{
+	 margin-left:25%; 
+	 font-size:34px;
+	 font-weight:bold;
+}
+#address{
+    width:40%;
+    border:3px solid gray;
+    padding:3px 10px;
+    border-radius:5px;
+
+}
+#submit{
+	width:95px;
+	background-color:#bb2649;
+    color: white;
+    border:0px;
+    border-radius:5px;
+    padding:5px 5px;
+
+}
+
 #ul {
  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 2px;
   width: 300px;
   height: 50%;
-  overflow: auto;
-  position: fixed;
+  position:absolute;
   text-align:center;
-  margin:50px 30px;
+  margin:140px 30px;
   
 }
-hr{
-	border-color:pink;
-	margin-top:2px;
+#ul hr{
+	border-color:#bb2649;
+	margin:10px;
+	
 }
 .side-menu a {
   text-decoration: none;
@@ -39,10 +79,93 @@ hr{
 .side-menu a:hover {
   background: #bb2649;
   color: white;
-  opacity:0.8;
+  opacity:0.7;
 }
 
 .side-menu a.home {
   background : #333;
   color: #fff;
+}
+#listBtn{
+	margin-left:85%;
+	padding:8px 30px;
+	background-color:white;
+    margin-top:20px;
+    margin-bottom:20px;
+    border:2px solid gray;
+    border-radius:5px;
+    font-weight:bold;
+  
+}
+#insertBtn{
+	margin-left:85%;
+	padding:8px 22px;
+    margin-top:20px;
+    margin-bottom:20px;
+    border-radius:5px;
+    font-weight:1000;
+    color:#bb2649;
+    background-color:white;
+    border-color: #bb2649;
+    transition:0.5s;
+}
+
+#insertBtn:hover{
+   background-color:#bb2649;
+   color:white;
+  }
+	 
+#listBtn:hover{
+	border:2px solid black;
+}
+.detailWrap{
+	with:65%;
+	margin-left:25%;
+	margin-right:10%;
+}
+.detailWrap hr{
+	border-color:#e6e6e6;
+	margin:0;
+}
+.detailTitle{
+	
+	background-color:#f9f9f9;
+    padding:30px;
+	height:95px;
+}
+.detailInfo{
+	background-color:white;
+     padding:15px 30px;
+	height:52px;
+	color:#888;
+}
+.detailContent{
+	background-color:white;
+    padding:50px 30px;
+	height:500px;
+	color:#888;
+}	
+.detailfoot{
+	margin:20px 20px;
+	text-align:center;
+	font-weight:bold;
+}					
+.detailBtn{
+	margin:10px 30px;
+	padding:10px 20px;
+	border-radius:5px;
+}
+#title{	
+	font-size:24px;
+	font-weight:bold;
+}
+#Date,#ViewCnt{
+	float:right;
+	margin:0 15px;
+}
+
+
+#boardSearchForm{
+	margin:10px 0px;
+	
 }

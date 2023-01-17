@@ -2,7 +2,6 @@ package com.jooBang.project.model;
 
 import java.util.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 public class BoardVO {
    private int brdNo;
@@ -10,8 +9,7 @@ public class BoardVO {
    private String brdContent;
    private String brdWriter;
    private int  brdViewCnt; 
-   @DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date brdDate;
+   private Date brdDate;
 	private String ctgNo;
 	private String ctgName;
 	public int getBrdNo() {
@@ -62,6 +60,8 @@ public class BoardVO {
 	public void setCtgName(String ctgName) {
 		this.ctgName = ctgName;
 	}
+	
+	
 	
 
 	

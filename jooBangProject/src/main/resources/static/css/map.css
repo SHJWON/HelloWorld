@@ -64,6 +64,9 @@ li a {
 	border:1px solid #bb2649;
 	
 }
+marker:hover{
+	opacity:0.5;
+}
 .htmlMarker:hover{
 	opacity:0.5;
 }
