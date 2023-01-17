@@ -1,11 +1,12 @@
 /* Main.css */
 
 *{
-	font:inherit;
-	font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'NIXGON';
 }
 
 body {
+    padding: 0rem 2rem 0rem 2rem;
+    height: 100vh;
     margin: 0;
 }
 
@@ -18,141 +19,113 @@ a{
     color: #000000;
 }
 
-/********** Nav **********/
-
-#nav{
-    display: flex;
-    justify-content: space-around;
-    height: 85px;
-    padding-top: 15px;
-    background: linear-gradient(50deg, #bb2649, #ff4b75, #fb6666);
-    margin-bottom: 5px;
-}
-
-@keyframes huerotator { /*nav 배경 그라데이션*/
-    0% {
-        -webkit-filter: hue-rotate(0deg);
-        filter: hue-rotate(0deg);
-    }
-
-    100% {
-        -webkit-filter: hue-rotate(360deg);
-        filter: hue-rotate(360deg);
-    }
-}
-
-#logoBox{
-    position: relative;
-}
-
-#logoImg{
-    position: absolute;
-    margin-left: 100px;
-}
-
-.subMenu{
-    float: left;
-    margin-left: 50px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#subMenuMap{
-    margin-left: 500px;
-}
-
-.signBtnBox{
-  margin-top: 6px;
-  margin-right: 20px;
-  font-size: 20px;
-  display: flex;
-}
-
-#loginBtn{
-    margin-top: 14px;
-}
-
-#signUpBtn{
-    margin-top: 14px;
-}
-
-
-
 /********** Copy & SerchBar **********/
 
-#searchText{
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
+.mainContainer{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-row-gap: 20px;
+    grid-template-areas: 
+        'back back back back back back back'
+        '. . search search search . .'
+        'recommend recommend . . . . .'
+        'room room room room room room room'
+        '. . . . . hot hot'
+        'hotMent hotMent . hotroom hotroom hotroom hotroom'
+        'new new . . . . . '
+        'newroom newroom newroom newroom . newMent newMent'
+        'comu comu comu . furni furni .'
+        '. . reason reason reason . .'
+        '. first . second . third .'
+        'ft ft ft ft ft ft ft';
+
 }
 
+.mainItem{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
-
-#copyBox{ /*카피 글 배경 사진 */
-    background-image: url(/image/집2.jpg);
-    background-repeat: space;
-    background-position: top;
-    background-size: 100%;
+.copyBoxMain { /*移댄뵾 湲� 諛곌꼍 �ъ쭊 */
+    grid-area: back;
     height: 550px;
-    line-height: normal;
-    opacity: 0.6;
+    background-size: 100%;
     position: relative;
 }
 
-#copyText {  /*카피 글 */
-  color:rgb(0, 0, 0);
-  text-transform: uppercase;
-  font-size:36px;
-  font-weight:bold;
-  width:100%;
-  display:block;
-  text-align: center;
-  margin-bottom: 10px;
-  position: absolute;
-  top: 300px;
-  margin-left: 18px;
+.copyBoxMain::before{
+    content: "";
+    background-image: url(/image/homeBack.jpg);
+    background-size: cover;
+    opacity: 0.6;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 }
 
-#flip {
-  height:50px;
-  overflow:hidden;
-}
-
-#flip > div > div {
-  color:#fff;
-  padding:4px 12px;
-  height:45px;
-  margin-bottom:45px;
-  display:inline-block;
-}
-
-#flip div:first-child {
-  animation: show 5s linear infinite;
-}
-
-#flip div div {
-  background:#42c58a;
-}
-#flip div:first-child div {
-  background:#4ec7f3;
-}
-#flip div:last-child div {
-  background:#DC143C;
-}
-
-@keyframes show {
-  0% {margin-top:-270px;}
-  5% {margin-top:-180px;}
-  33% {margin-top:-180px;}
-  38% {margin-top:-90px;}
-  66% {margin-top:-90px;}
-  71% {margin-top:0px;}
-  99.99% {margin-top:0px;}
-  100% {margin-top:-270px;}
-}
+#copyText {  /*移댄뵾 湲� */
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: bold;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 150px;
+    margin-left: 20px;
+  }
   
-  .container {  /*검색 창 */
+  #flip {
+    height:50px;
+    overflow:hidden;
+  }
+  
+  #flip > div > div {
+    color:#fff;
+    padding:4px 12px;
+    height:45px;
+    margin-bottom:45px;
+    display:inline-block;
+  }
+  
+  #flip div:first-child {
+    animation: show 5s linear infinite;
+  }
+  
+  #flip div div {
+    background:#42c58a;
+  }
+  #flip div:first-child div {
+    background:#4ec7f3;
+  }
+  #flip div:last-child div {
+    background:#DC143C;
+  }
+  
+  @keyframes show {
+    0% {margin-top:-270px;}
+    5% {margin-top:-180px;}
+    33% {margin-top:-180px;}
+    38% {margin-top:-90px;}
+    66% {margin-top:-90px;}
+    71% {margin-top:0px;}
+    99.99% {margin-top:0px;}
+    100% {margin-top:-270px;}
+  }
+
+  
+.searchBox { /*寃��� 李� */
+    grid-area: search;
+    height: 150px;
+}
+
+.container {  
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -161,18 +134,18 @@ a{
   }
   
   .searchbar {
-      float: right;
-      color: black;
-      padding: 6px 10px;
-      width: 200px;
-      border: none;
-      margin-top: 10px;
-      margin-right: 8px;
-      font-family: "Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
-      font-size: 22px;
-      font-weight: bold;
-      border-bottom: #bb2649 solid 2px;
-      transition: 0.3s;
+    float: right;
+    color: black;
+    padding: 6px 10px;
+    margin-bottom: 80px;
+    width: 250px;
+    border: none;
+    margin-right: 10px;
+    font-family: "Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: #bb2649 solid 2px;
+    transition: 0.3s;
   }
   
   .searchbar::placeholder {
@@ -180,7 +153,6 @@ a{
       font-family: "Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
       font-size: 1em;
       font-weight: bold;
-      /* transition: 0.2s; */
   }
   
   .searchbar:focus {
@@ -189,7 +161,6 @@ a{
       font-size: 22px;
       font-weight: bold;
       transition: 0.3s;
-      /* Stops the input box from inheriting the styling from the inputs on the request form */
       border-bottom: #bb2649 solid 2px;
       outline: none;
   }
@@ -204,48 +175,91 @@ a{
       margin-right: 40px;
   }
 
+.fa-search{
+    margin-bottom: 100px;
+}
+
 /********** recommendLine **********/
 
-#recommendText{
-    font-weight: bold;
-    font-size: 25px;
-    margin-left: 200px;
+
+.recommend {
+    grid-area: recommend;
 }
 
-.recommendRoom{
-    display: grid;
-    margin: 0%;
-    padding: 0% 5%;
-    grid-template-columns: repeat(4 ,1fr);
-    grid-template-rows: repeat(2 ,1fr);
-    grid-gap: 50px;
-    margin-left: 100px;
-}
+.center-outer { /*異붿쿇留ㅻЪ ���댄�*/
+    display: table;
+    width: 100%;
+    height: 100%;
+    }
+    
+    .center-inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    }
+
+    .bubbles {
+    display: inline-block;
+    font-family: arial;
+    position: relative;
+    }
+    
+    .bubbles h1 {
+    position: relative;
+    margin: 1em 0 0;
+    font-family: 'Luckiest Guy', cursive;
+    color: #bb2649;
+    z-index: 2;
+    font-size: 40px;
+    }
+
+    @font-face {
+        font-family: "Luckiest Guy";
+        src: url("/fonts/LuckiestGuy-Regular.woff") format("woff");
+      }
+    
+    .individual-bubble {
+    position: absolute;
+    border-radius: 100%;
+    bottom: 10px;
+    background-color: #ff9b9b;
+    z-index: 1;
+    }
+
+    .recommendRoom { /*異붿쿇 留ㅻЪ 由ъ뒪��*/
+        grid-area: room;
+        height: 750px;
+    }
+
+    #recommendText{
+        font-weight: bold;
+        font-size: 25px;
+        margin-left: 200px;
+    }
+    
+    .recommendRoom{
+        display: grid;
+        margin: 0%;
+        padding: 0% 5%;
+        grid-template-columns: repeat(4 ,1fr);
+        grid-template-rows: repeat(2 ,1fr);
+        grid-gap: 20px;
+        margin-left: 100px;
+    }
 
 
 /********** hotClickLine **********/
-#hotClickText{
-    font-size: 25px;
-    float: right;
-    margin-right: 200px;
+.hotClickText {
+    grid-area: hot;
 }
 
-#hotClick{
-    position: relative;
-    display: flex;
-}
-
-#hotClickRoom{
-    width: 65%;
-    display: flex;
-    justify-content: space-evenly;
-    border: solid 3px blue;
+.hotClickBox {
+    grid-area: hotMent;
 }
 
 #hotClickMentBox{
-    float: right;
     border: solid 3px red;
-    width: 35%;
+    width: 400px;
     position: relative;
 }
 
@@ -253,138 +267,553 @@ a{
     position: absolute;
     text-align: center;
     top: 10%;
-    left: 25%;
+    left: 12%;
     width: 300px;
     height: 300px;
     border: solid 3px purple;
 }
 
-/********** communityLine **********/
+img {
+    max-width: 100%;
+  }
+  
+  
+  .card {
+    position: relative;
+      background: #333;
+      width: 450px;
+      height: 350px;
+      border-radius: 6px;
+      color: #aaa;
+      box-shadow: 0 0.25rem 0.25rem rgb(0 0 0 / 20%), 0 0 1rem rgb(0 0 0 / 20%);
+      overflow: hidden;
+  }
+  .card__image-container {
+    margin: -2rem -2rem 1rem -2rem;
+  }
+  .card__line {
+    opacity: 0;
+    animation: LineFadeIn 0.8s 0.8s forwards ease-in;
+  }
+  .card__image {
+    opacity: 0;
+    animation: ImageFadeIn 0.8s 1.4s forwards;
+    width: 500px;
+  }
+  .card__title {
+    color: #ffffff;
+    margin-top: 0;
+    font-family: 'Binggrae', cursive;
+    font-size: 22px;
+  }
 
-#communityBox{
+  @font-face {
+    font-family: "Binggrae";
+    src: url("/fonts/Binggrae.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Binggrae Melona";
+    src: url("/fonts/BinggraeMelona.woff") format("woff");
+  }
+
+  .card__content {
+    position: absolute;
+    bottom: 1%;
+    left: 5%;
+    margin-top: -1rem;
+    opacity: 0;
+    animation: ContentFadeIn 0.8s 1.6s forwards;
+  }
+  .card__svg {
+    position: absolute;
+    left: 0;
+    top: 80px;
+  }
+  
+  @keyframes LineFadeIn {
+    0% {
+      opacity: 0;
+      d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 ");
+      stroke: #fff;
+    }
+    50% {
+      opacity: 1;
+      d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300");
+      stroke: #888BFF;
+    }
+    100% {
+      opacity: 1;
+      d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400");
+      stroke: #545581;
+    }
+  }
+  @keyframes ContentFadeIn {
+    0% {
+      transform: translateY(-1rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes ImageFadeIn {
+    0% {
+      transform: translate(-0.5rem, -0.5rem) scale(1.05);
+      opacity: 0;
+      filter: blur(2px);
+    }
+    50% {
+      opacity: 1;
+      filter: blur(2px);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+.hotClickRoom {
+    grid-area: hotroom;
+    height: 350px;
     display: flex;
+    justify-content: space-around;
 }
 
-#communityList{
-    width: 64%;
+#hotClick{
+    position: relative;
     display: flex;
     justify-content: space-evenly;
-    border: solid 3px blue;
 }
 
-#communityText{
-    font-size: 25px;
-    margin-left: 200px;
-    margin-bottom: 15px;
+
+/********** newRoomLine **********/
+
+.newRoomText {
+    grid-area: new;
 }
 
-#communityMentBox{
-    float: right;
-    border: solid 3px red;
-    width: 34%;
+.newRoomList {
+    grid-area: newroom;
+    height: 350px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.newRoomMent {
+    grid-area: newMent;
+}
+
+#newRoomImg{
+    position: absolute;
+    right: 0;
+    bottom: 37px;
+}
+
+
+
+/********** Community & Furniture **********/
+
+.main_commmunityList { /*而ㅻ��덊떚 移대뱶 �쒖옉*/
+    grid-area: comu;
+    height: 780px;
     position: relative;
-}
-
-#communityMent{
-    text-align: center;
-    top: 10%;
-    left: 25%;
-    width: 300px;
+    margin-top: 10%;
+    flex-direction: column;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+        'hd hd hd hd hd'
+        '. . ft . .'
+        '. . li . .';
+  }
+  
+  .Cbox {
+    width: 100%;
     height: 300px;
-    border: solid 3px purple;
-}
+    border-radius: 5px;
+    box-shadow: 0 2px 30px rgba(black, .2);
+    background: lighten(#f0f4c3, 10%);
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    grid-area: hd;
+  }
+  
+  .waveC {
+    opacity: .4;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    background: #0af;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+  }
+  
+  .waveC.-threeC {
+    animation: drift 5000ms infinite linear;
+  }
+  
+  .waveC.-twoC {
+    animation: drift 7000ms infinite linear;
+    opacity: .1;
+    background: yellow;
+  }
+  
+  .Cbox:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    line-height: 70px;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: .4em;
+    font-size: 24px;
+    text-shadow: 0 1px 0 rgba(black, .1);
+    text-indent: .3em;
+  }
+  
+  #subTitle{
+    text-align: center;
+    font-size: 15px;
+    color: white;
+  }
+  
+  @keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+  
+  .main_commumityMenu {
+    position: absolute;
+    height: 38px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 24px;
+    overflow: hidden;
+    width: 300px;
+    right: 5%;
+    grid-area: ft;
+    top: 37%;
+  }
+  
+  .main_commuityFilter{
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 30px 10px 0px;
+  }
+  
+  .main_commuityFilterList{
+    padding: 10px 15px 10px 15px;
+  }
+  
+  .main_commuityFilterList:hover{
+    border-radius: 20px;
+    background-color: #ffD400;
+    cursor: pointer;
+  }
+  
+  #main_communityUl{
+    margin-left: 5%;
+    width: 575px;
+    grid-area: li;
+  }
+  
+  .listText{
+    position: absolute;
+    left: 100px;
+    top: 25px;
+    font-size: 18px;
+    width: 575px;
+    font-family: 'NIXGON';
+  }
+  
+  #list1{
+  margin-bottom: 10px;
+  position: relative;
+  }
+  
+  #list1:hover{
+    background-color: #bb2649;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: white;
+  }
+  
+  #list2{
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  #list2:hover{
+    background-color: #bb2649;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: white;
+  }
+  
+  #list3{
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  #list3:hover{
+    background-color: #bb2649;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: white;
+  }
+  
+  #list4{
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  #list4:hover{
+    background-color: #bb2649;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: white;
+  }
+  
+  #list5{
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  #list5:hover{
+    background-color: #bb2649;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+    color: white;
+  }
+  
+  @font-face {
+    font-family: "NIXGON";
+    src: url("/fonts/NIXGONFONTS-M-2.0.woff") format("woff");
+  }
+
+  .furnitureRental { /*媛�援� 移대뱶 �쒖옉*/
+    grid-area: furni;
+    height: 630px;
+    position: relative;
+    margin-top: 10%;
+    display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-auto-rows: minmax(100px, auto);
+      grid-template-areas: 
+          'Fhd Fhd Fhd Fhd Fhd'
+          ' . . Fft . . '
+          ' . . Fli . . '
+          ' . . . . .';
+  }
+  
+  .Fbox {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 0 2px 30px rgba(black, .2);
+    background: lighten(#f0f4c3, 10%);
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    grid-area: Fhd;
+  }
+  
+  .wave {
+    opacity: .4;
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    background: #bc9e78;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+  }
+  
+  .wave.-three {
+    animation: drift 5000ms infinite linear;
+  }
+  
+  .wave.-two {
+    animation: drift 7000ms infinite linear;
+    opacity: .1;
+    background: yellow;
+  }
+  
+  .Fbox:after {
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    line-height: 70px;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: .4em;
+    font-size: 24px;
+    text-shadow: 0 1px 0 rgba(black, .1);
+    text-indent: .3em;
+  }
+  
+  #subTitle{
+    text-align: center;
+    font-size: 15px;
+    color: white;
+  }
+  
+  @keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
+  
+  .main_furnitureMenu {
+    position: absolute;
+    height: 38px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    border-radius: 24px;
+    overflow: hidden;
+    width: 300px;
+    /* margin-right: 20px; */
+    top: 110%;
+    right: 0%;
+    grid-area: Fft;
+  }
+  
+  .main_furnitureFilterList{
+    padding: 10px 15px 10px 15px;
+  }
+  
+  .main_furnitureFilterList:hover{
+    border-radius: 20px;
+    background-color: #908550;
+    cursor: pointer;
+  }
+  
+  
+  #furnitureRentalist{
+    padding: 0px;
+    width: 700px;
+    grid-area: Fli;
+    display: flex;
+    /* position: absolute; */
+    justify-content: space-between;
+  }
+  
+  .furnitureGridBox{
+    text-align: center;
+    }
+  
+  .furnitureCompany{
+    display: inline-block;
+    margin-top: 100px;
+    padding: 0px 8px 0px 8px;
+  }
+
 
 /********** reasonLine **********/
 
-#reasonText{
-    font-size: 25px;
+.reasonText {
+    grid-area: reason;
+    margin-top: 5%;
+}
+
+#reasonMent{
+    font-family: 'Rix';
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Rix";
+    src: url("/fonts/RixYeoljeongdo_Pro\ Regular.otf") format("woff");
+  }
+
+.introduce1 {
+    grid-area: first;
+    height: 300px;
+    width: 300px;
+    margin-top: 20%;
     text-align: center;
 }
 
-#introduceSite{
-    display: flex;
-    justify-content: space-around;
-    margin: 0px 200px 0px 200px;
+.introduce2 {
+    grid-area: second;
+    height: 300px;
+    width: 300px;
+    margin-top: 20%;
+    text-align: center;
 }
+
+
+.introduce3 {
+    grid-area: third;
+    height: 300px;
+    width: 300px;
+    margin-top: 20%;
+    text-align: center;
+}
+
+.introText{
+    font-size: 20px;
+}
+
 
 /********** Footer **********/
 
-#footerText{
-    width: 400px;
-    margin-left: 200px;
-}
-
-.footerLine{
-    
-    margin-top: 150px;
-    padding: 25px 0;
-    position: relative;
-    background: linear-gradient(50deg, #d1d1d1, #7b7b7b, #000000);
-}
-
-.fa-brands{
-    color: rgb(140, 140, 140);
-    margin: 10px;
-}
-
-.fa-facebook{
-    margin-left: 245px;
-}
-
-#company{
-    display: flex;
-    width: 350px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-#news{
-    display: flex;
-    width: 350px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-#support{
-    display: flex;
-    width: 350px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-#add{
-    display: flex;
-    width: 350px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#footerImg{
-    position: absolute;
-    right: 200px;
-    top: 10px;
-}
-
-.socialIcon{
-    margin-bottom: 20px;
-}
-
-#footerLogo{
-    margin-left: 340px;
-}
-
-#helloWorld{
-    margin-left: 311px;
-    color: rgb(186, 186, 186);
-}
-
-#burning{
-    margin-left: 13px;
-    color: rgb(186, 186, 186);
-}
-
-#produce{
-    margin-right: 5px;
-    color: rgb(186, 186, 186);
-}
+.footerLine {
+    grid-area: ft;
+    height: 300px;
+}}

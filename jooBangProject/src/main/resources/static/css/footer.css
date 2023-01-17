@@ -1,0 +1,85 @@
+/******** footer.css ********/
+
+#footerText{
+    margin-left: 100px;
+    position: absolute;
+    top: 25px;
+}
+
+.footerLine{
+    margin-top: 150px;
+    position: relative;
+    background: linear-gradient(50deg, #949494, #7b7b7b, #000000);
+}
+
+.fa-brands{
+    color: rgb(140, 140, 140);
+    margin: 10px;
+}
+
+.fa-facebook{
+    margin-left: 245px;
+}
+
+#company{
+    display: flex;
+    width: 350px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.companyFont{
+    color: snow;
+}
+
+#news{
+    display: flex;
+    width: 350px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#support{
+    display: flex;
+    width: 350px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#add{
+    display: flex;
+    width: 350px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#footerImg{
+    position: absolute;
+    right: 100px;
+    top: 10px;
+}
+
+.socialIcon{
+    margin-bottom: 20px;
+}
+
+#footerLogo{
+    margin-left: 340px;
+}
+
+#helloWorld{
+    margin-left: 311px;
+    color: rgb(186, 186, 186);
+}
+
+#burning{
+    margin-left: 13px;
+    color: rgb(186, 186, 186);
+}
+
+#produce{
+    margin-right: 5px;
+    color: rgb(186, 186, 186);
+}

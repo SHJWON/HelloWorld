@@ -11,8 +11,7 @@
         <script src="<c:url value='/js/js.js'/>"></script>
     </head>
     <body>
-        <!-- head --> 	
-        <c:import url="/WEB-INF/views/top.jsp"/> 
+        <!-- head -->   
     <img id="logo" src="<c:url value='/image/logo.png'/>">
        <div class="container">
   
@@ -69,8 +68,7 @@
     </div>
   </div>
 </div>
-   
+  
     </body>
     <!-- footer -->
-        <c:import url="/WEB-INF/views/footer.jsp"/>
 </html>
