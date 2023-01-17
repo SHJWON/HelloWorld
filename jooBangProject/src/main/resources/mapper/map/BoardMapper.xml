@@ -13,12 +13,35 @@
 	  		<result property="ctgNo"  column="ctgNo"  />
 	  		<result property="ctgName"  column="ctgName"  />
 	  </resultMap>	  	
-	  		
-	  <select id="ctgListBoard" parameterType="string" resultMap="brdResult">
-  	SELECT *FROM board WHERE ctgNo=#{ctgNo} ORDER BY brdNo
+<select id="listAllBoard" parameterType="string" resultMap="brdResult">
+	  SELECT board.*, category.* FROM board JOIN category 
+	  ON (board.ctgNo=category.ctgNo)
+ </select>
+ <select id="bestBoard" parameterType="string" resultMap="brdResult">
+	  SELECT board.*, category.* FROM board JOIN category 
+	  ON (board.ctgNo=category.ctgNo)  where brdViewCnt >20;
+ </select>
+ <select id="ctgListBoard" parameterType="string" resultMap="brdResult">
+  SELECT board.*, category.* FROM board JOIN category 
+ON (board.ctgNo=category.ctgNo)
+WHERE board.ctgNo=#{ctgNo};
   	</select>
   	 <insert id="insertBoard" parameterType="com.jooBang.project.model.BoardVO">
-  		INSERT INTO board (brdTitle, brdWriter,brdContent)
-  		VALUES (#{brdTitle},#{brdWriter},#{brdContent})
+  		INSERT INTO board (brdTitle, brdWriter,brdContent,ctgNo)
+  		VALUES (#{brdTitle},#{brdWriter},#{brdContent},#{ctgNo})
   </insert>
+  <select id="detailViewBoard" parameterType="int" resultType="com.jooBang.project.model.BoardVO">
+ SELECT board.*, category.* FROM board JOIN category ON (board.ctgNo=category.ctgNo) WHERE brdNo=#{brdNo}
+   </select>
+  <update id="updateBoard" parameterType="com.jooBang.project.model.BoardVO">
+  UPDATE board SET brdTitle=#{brdTitle},brdWriter=#{brdWriter},brdContent=#{brdContent}
+  WHERE brdNo=#{brdNo}
+  </update>
+  <update id="viewConut">
+   UPDATE board SET brdViewCnt=brdViewCnt+1 WHERE brdNo=#{brdNo}
+  </update>
+  <select id="boardSearch" parameterType="hashmap" resultMap="brdResult">
+  SELECT * FROM board WHERE brdTitle Like CONCAT('%',#{keyword},'%')
+
+  </select>
 	  	</mapper>

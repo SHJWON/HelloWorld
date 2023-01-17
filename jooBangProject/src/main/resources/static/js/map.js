@@ -2,14 +2,15 @@
  * 
  */
 
- $(document).ready(function(){
-  
- 		event.preventDefault(); 		
+/*$(document).ready(function(){
+  function aaa(roomNo,roomWeekPrice){
+ 		
  			
  		$.ajax({
  			type:"post",
  			url:"/roominfo",
- 			data: String,
+ 			data: {"roomNo":roomNo, "roomWeekPrice":roomWeekPrice},
+ 			datatype:"text",
  			success:function(result){
  			$('#roominfo').html(result);
  			
@@ -19,6 +20,6 @@
  				alert("실패");
  			}
  		}); // ajax 종료 	
-
-});
+}
+}); */
  

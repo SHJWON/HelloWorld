@@ -1,32 +1,59 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<c:import url="/WEB-INF/views/head.jsp"/>
+				    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+		
+		<link rel="stylesheet" href="<c:url value='/css/board.css' />">
+		
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<table border="1" width="800">
-				<tr><td>상품번호 </td><td>${brd.brdNo }</td></tr>
-				<tr><td>상품명  </td><td>${prd.prdName }</td></tr>
-				<tr><td>가격  </td><td>${prd.prdPrice }</td></tr>
-				<tr><td>제조회사 </td><td> ${prd.prdCompany }</td></tr>
-				<tr><td>재고 </td><td>${prd.prdStock }</td></tr>
-				<tr><td>제조일 </td><td><fmt:formatDate value="${prd.prdDate }" pattern="yyyy-MM-dd"/></td>
-			</table><br><br>
-					<a href="<c:url value='/'/>">메인 화면으로 이동</a><br>
+		<nav id="nav">
+        <c:import url="/WEB-INF/views/top.jsp"/>
+      </nav>
 
-         <a href="<c:url value ='/product/updateProductForm/${prd.prdNo}'/>"> 상품 정보 수정</a><br>
-         <a href="javascript:deleteCheck();">상품 정보 삭제 </a><br><br>
+       <ul id="ul">
+ 		 <li class="side-menu"><a href="<c:url value='/board/boardListAll'/>">전체글보기</a></li><hr>
+ 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${2}'/>">공지사항</a></li><hr>
+ 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${3}'/>">자유게시판</a></li><hr>
+ 		  <li class="side-menu"><a href="<c:url value='/board/bestBoard'/>">베스트게시판</a></li><hr>
+ 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${5}'/>">살림나눔장터</a></li><hr>
+ 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${6}'/>">장터</a></li><hr>  	  
+	</ul>
+    
+ <span id="ctgName">${brd.ctgName }</span>	
+ <div id="search">
+           <a href="<c:url value='/board/boardSearchForm/'/>"> <button type="submit" id="submit"> <i class="fa fa-search"></i></button></a></div>     
+			<a href="<c:url value='/board/boardCtgList/${brd.ctgNo }'/>"><button id="listBtn">목록</button></a>
+      <div class="detailWrap">	
+			<hr>
+		<div class="detailTitle"><span id="title">${brd.brdTitle }</span> </div><hr>
+		<div class="detailInfo">${brd.brdWriter } 
+		<span id="Date"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;<fmt:formatDate value="${brd.brdDate }" pattern="yyyy-MM-dd"/></span>
+	    <span id="ViewCnt"><i class="fa fa-eye" aria-hidden="true"></i>${brd.brdViewCnt }</span> 
+      </div>
+	   <hr>
+       <div class="detailContent">${brd.brdContent }</div>									
+		<hr>
+		<div class="detailfoot">
+         <a href="<c:url value ='/board/boardUpdate/${brdNo}'/>"><button class="detailBtn">수정</button></a>
+         <a href="javascript:deleteCheck();"><button class="detailBtn"> 삭제 </button></a><br><br>
+         </div>
 		<script>
 		function deleteCheck(){
 			var answer=confirm("삭제하시겠습니까?");
 			if(answer){
-				location.href="/mybatis/product/deleteProduct/${prd.prdNo}";
+				location.href="/mybatis/product/deleteProduct/${brd.brdNo}";
 			}
 		}
 		</script>
+		</div>
 	</body>
 </html>

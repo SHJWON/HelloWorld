@@ -6,6 +6,8 @@
 	<head>
 		<meta charset="UTF-8">
 		   <c:import url="/WEB-INF/views/head.jsp"/>
+		   		    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+		   
 		<title>Insert title here</title>
 	</head>
 	<body>
@@ -15,17 +17,26 @@
 		<div id="wrap">
 			<h3>글 등록</h3>
 			<hr>
-			<form action="/board/insertBoard">
-				<table>									
-					<tr><td>제목  </td><td><input type="text"name="brdTitle"></td></tr>
-					<tr><td>작성자  </td><td><input type="text"name="brdWriter"></td></tr>
-					<tr><td>내용 </td><td> <input type="text"name="brdContent"></td></tr>
-					<tr><td colspan="2"><input type="submit" value="등록"> 
-													      <input type="reset" value="취소"></td></tr>
-				</table>
+			<form action="/board/insertBoard/${ctgNo}">
+			 <div class="form-group">
+              <label for="exampleFormControlInput1">제목</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="brdTitle" placeholder="제목을 작성해주세요.">
+          </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">작성자</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="brdWriter" placeholder="이름을 적어주세요.">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">내용</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="brdContent" rows="10"></textarea>
+          </div>
+        <button type="submit" class="btn btn-info">등록하기</button>
+        <button type="button" class="btn btn-secondary"><a href="<c:url value='/board/boardCtgList/${ctgNo }'/>">취소</button>
+			
 			</form>
 			<br><br>
-			<a href="<c:url value='/'/>">메인 화면으로 이동</a>
+			
 		</div>
 	</body>
 </html>
+

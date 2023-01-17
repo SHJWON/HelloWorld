@@ -3,15 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		 
-	</head>
+
 	<body>
 		 '<div class="content"style="width:400px;text-align:center;padding:10px;">
-		 <b>'+${map.roomNo}+'<img src="/image/mark.png">'+
-			     '<hr>'+${map.roomWeekPrice}+'</b><br> 
+		 <b>'+${roomNo}+'<img src="/image/mark.png">'+
+			     '<hr>'+${roomWeekPrice}+'</b><br> 
 	  	  </div>'
 	</body>
 </html>

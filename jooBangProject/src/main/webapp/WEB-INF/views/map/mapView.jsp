@@ -32,7 +32,7 @@
 <div id="map" style="width:75%; height:800px;">
 
 </div>
-<div>
+
 <script>
 var areaArr = new Array();  // 지역을 담는 배열 ( 지역명/위도경도 )
 var markers = new Array(); // 마커 정보를 담는 배열
@@ -45,9 +45,11 @@ var map = new naver.maps.Map('map', {
     center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576), //지도 시작 지점
     zoom: 12
 });
+
 function initMap() { 
 	
 			// 지역을 담은 배열의 길이만큼 for문으로 마커와 정보창을 채워주자 
+			
              <c:forEach var="map" items="${mapList }">
 		    var marker = new naver.maps.Marker({
 		        map: map,
@@ -73,27 +75,30 @@ function initMap() {
 			 markers.push(marker); // 생성한 마커를 배열에 담는다.
 			 infoWindows.push(infoWindow); // 생성한 정보창을 배열에 담는다.
 			 </c:forEach>
-	    
+			
 		 
 	    function getClickHandler(seq) {
 	            return function(e) {  // 마커를 클릭하는 부분
 	            	
 	                var marker = markers[seq], // 클릭한 마커의 시퀀스로 찾는다.
-	                    infoWindow = infoWindows[seq]; // 클릭한 마커의 시퀀스로 찾는다
-	                 
+	                    infoWindow = infoWindows[seq];
+	              
+	           
 	                if (infoWindow.getMap()) {
 	                    infoWindow.close();
 	                } else {
 	                    infoWindow.open(map, marker); // 표출
 	                }
-	                  
+	                 
 	    		}
 	    	
 	    	}
 	    for (var i=0, ii=markers.length; i<ii; i++) {
 	    	console.log(markers[i] , getClickHandler(i));
 	        naver.maps.Event.addListener(markers[i], 'click', getClickHandler(i)); // 클릭한 마커 핸들러
+	   
 	    }
+	   
 	}
 				
 		
