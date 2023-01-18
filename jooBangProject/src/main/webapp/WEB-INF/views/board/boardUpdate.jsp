@@ -14,9 +14,10 @@
         <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
 		<div id="wrap">
-			<h3>글 등록</h3>
+			<h2>글 수정</h2>
 			<hr>
 			<form action="/board/updateBoard/${brdNo}">
+		
 			 <div class="form-group">
               <label for="exampleFormControlInput1">제목</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="brdTitle" value="${brd.brdTitle}">
@@ -29,7 +30,7 @@
             <label for="exampleFormControlTextarea1">내용</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="brdContent" rows="10" value="${brd.brdContent}"></textarea>
           </div>
-        <button type="submit" class="btn btn-info">수정하기</button>
+        <button type="submit" class="btn btn-outline-danger">수정하기</button>
         <button type="button" class="btn btn-secondary">목록으로</button>
 			
 			</form>

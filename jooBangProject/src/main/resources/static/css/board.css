@@ -14,12 +14,16 @@ tbody{
     text-align: center;
 
 }
-.title{
+.title1{
     text-align:left;
     width:60%;
    
 }
-
+a{
+    text-decoration: none;
+    color: #000000;
+    font-weight:bold;
+}
 #search{
 	float:right;
 	margin-top:10px;
@@ -43,13 +47,14 @@ tbody{
     border-radius:5px;
 
 }
-#submit{
-	width:95px;
+#boardsubmit{
+	width:90px;
 	background-color:#bb2649;
     color: white;
     border:0px;
     border-radius:5px;
-    padding:5px 5px;
+    padding:5px 4px;
+    height:30px;
 
 }
 
@@ -87,14 +92,17 @@ tbody{
   color: #fff;
 }
 #listBtn{
-	margin-left:85%;
-	padding:8px 30px;
+	margin-left:86%;
+	padding:8px 20px;
 	background-color:white;
     margin-top:20px;
     margin-bottom:20px;
-    border:2px solid gray;
     border-radius:5px;
     font-weight:bold;
+    color:#bb2649;
+    background-color:white;
+    border-color: #bb2649;
+    transition:0.5s;
   
 }
 #insertBtn{
@@ -116,7 +124,8 @@ tbody{
   }
 	 
 #listBtn:hover{
-	border:2px solid black;
+	background-color:#bb2649;
+   color:white;
 }
 .detailWrap{
 	with:65%;
@@ -154,6 +163,15 @@ tbody{
 	margin:10px 30px;
 	padding:10px 20px;
 	border-radius:5px;
+    font-weight:bold;
+    color:#bb2649;
+    background-color:white;
+    border-color: #bb2649;
+    transition:0.5s;
+}
+.detailBtn:hover{
+	background-color:#bb2649;
+   color:white;
 }
 #title{	
 	font-size:24px;

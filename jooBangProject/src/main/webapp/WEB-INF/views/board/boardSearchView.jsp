@@ -19,7 +19,7 @@
 			<thead>
 					<tr>
 						<th>번호</th>
-						<th class="title">제목</th>
+						<th class="title1">제목</th>
 						<th>작성자</th>
 						<th>등록일</th>
 						<th>조회수</th>
@@ -30,7 +30,7 @@
 					<c:forEach var="brd" items="${brdList }">    
 			            <tr>         
 			            <td>${brd.brdNo }</td>
-			               <td class="title" ><a href="<c:url value='/board/boardDetailView/${brd.brdNo}'/>">${brd.brdTitle }</a></td>
+			               <td class="title1" ><a href="<c:url value='/board/boardDetailView/${brd.brdNo}'/>">${brd.brdTitle }</a></td>
 			               <td>${brd.brdWriter }</td>			                    		               
 			               <td><fmt:formatDate value="${brd.brdDate }" pattern="yyyy-MM-dd"/></td>
 			               <td>${brd.brdViewCnt }</td>	          		                    		               	               

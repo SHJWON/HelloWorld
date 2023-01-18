@@ -6,11 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <c:import url="/WEB-INF/views/head.jsp"/>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>간단한 지도 표시하기</title>
     <script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
-   	<link rel="stylesheet" type="text/css" href="<c:url value='/css/map.css' />"> 
+   	    <c:import url="/WEB-INF/views/head.jsp"/>
+   	       	<link rel="stylesheet" type="text/css" href="<c:url value='/css/map.css' />"> 
     <script src="<c:url value='js/map.js'/>"></script>
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=yaysmxugs9&submodules=geocoder"></script>
 	<script src="<c:url value='/js/MarkerClustering.js'/>" ></script>
@@ -24,14 +25,15 @@
 <div class="menu">
 <hr>
    <input type="text" id="address">
-   <button type="submit" id="submit"><i class="fa fa-search"></i></button>
+   <button type="submit" id="mapsubmit"><i class="fa fa-search"></i></button>
   <hr>
 <div id="roominfo">
 </div>
 </div>
-<div id="map" style="width:75%; height:800px;">
+<div id="map" style="width:72%; height:800px;">
 
 </div>
+
 
 <script>
 var areaArr = new Array();  // 지역을 담는 배열 ( 지역명/위도경도 )
@@ -227,7 +229,7 @@ $(document).ready(function(){
 		        }
 		    });
 
-		 $('#submit').on('click', function(e) {
+		 $('#mapsubmit').on('click', function(e) {
 		        e.preventDefault();
 
 		        searchAddressToCoordinate($('#address').val());

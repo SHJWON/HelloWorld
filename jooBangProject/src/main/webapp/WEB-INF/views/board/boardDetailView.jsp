@@ -20,7 +20,7 @@
       </nav>
 
        <ul id="ul">
- 		 <li class="side-menu"><a href="<c:url value='/board/boardListAll'/>">전체글보기</a></li><hr>
+ 		 <li class="side-menu"><a href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
  		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${2}'/>">공지사항</a></li><hr>
  		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${3}'/>">자유게시판</a></li><hr>
  		  <li class="side-menu"><a href="<c:url value='/board/bestBoard'/>">베스트게시판</a></li><hr>
@@ -30,7 +30,7 @@
     
  <span id="ctgName">${brd.ctgName }</span>	
  <div id="search">
-           <a href="<c:url value='/board/boardSearchForm/'/>"> <button type="submit" id="submit"> <i class="fa fa-search"></i></button></a></div>     
+           <a href="<c:url value='/board/boardSearchForm/'/>"> <button type="submit" id="boardsubmit"> <i class="fa fa-search"></i></button></a></div>     
 			<a href="<c:url value='/board/boardCtgList/${brd.ctgNo }'/>"><button id="listBtn">목록</button></a>
       <div class="detailWrap">	
 			<hr>
@@ -42,6 +42,7 @@
 	   <hr>
        <div class="detailContent">${brd.brdContent }</div>									
 		<hr>
+		<div class="comment"></div>
 		<div class="detailfoot">
          <a href="<c:url value ='/board/boardUpdate/${brdNo}'/>"><button class="detailBtn">수정</button></a>
          <a href="javascript:deleteCheck();"><button class="detailBtn"> 삭제 </button></a><br><br>
@@ -50,7 +51,7 @@
 		function deleteCheck(){
 			var answer=confirm("삭제하시겠습니까?");
 			if(answer){
-				location.href="/mybatis/product/deleteProduct/${brd.brdNo}";
+				location.href="/board/deleteBoard/${brdNo}";
 			}
 		}
 		</script>

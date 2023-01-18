@@ -38,9 +38,9 @@ public class BoardController {
 		model.addAttribute("brdList",brdList);
 	return "/board/boardAllView";
 	}
-	@RequestMapping("/board/bestBoard")
-	public String bestBoard(Model model) {
-		ArrayList<BoardVO>brdList=service.bestBoard();
+	@RequestMapping("/board/bestBoard/{ctgNo}")
+	public String bestBoard(@PathVariable String ctgNo,Model model) {
+		ArrayList<BoardVO>brdList=service.bestBoard(ctgNo);
 		model.addAttribute("brdList",brdList);
 		return"/board/boardAllView";
 	}
@@ -76,6 +76,11 @@ public class BoardController {
 		brd.setBrdNo(brdNo);
 		service.updateBoard(brd);
 		return "redirect:/board/boardDetailView/{brdNo}";
+	}
+	@RequestMapping("/board/deleteBoard/{brdNo}")
+	public String deleteBoard(@PathVariable int brdNo,Model model) {
+		service.deleteBoard(brdNo);
+		return"redirect:/board/boardCtgList/{ctgNo}";
 	}
 	@RequestMapping("/board/boardSearchForm")
 	public String boardSearchForm(){
