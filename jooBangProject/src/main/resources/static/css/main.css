@@ -257,6 +257,10 @@ a{
 
 .hotClickBox {
     grid-area: hotMent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
 }
 
 #hotClickMentBox{
@@ -406,6 +410,10 @@ img {
 
 .newRoomMent {
     grid-area: newMent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10%;
 }
 
 #newRoomImg{

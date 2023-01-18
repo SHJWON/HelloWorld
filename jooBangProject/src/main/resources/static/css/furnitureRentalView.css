@@ -61,8 +61,31 @@
 #furnitureFilterView{ 
     grid-area: Ffil;
     height: 130vh;
-    background: red;
 }
+
+.furnitrueSubMenu {
+    text-align: center;
+    padding: 20px 10px 0px 10px;
+}
+
+.side-menu a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .side-menu a:hover {
+    background: #bb2649;
+    color: white;
+    opacity:0.7;
+  }
+  
+  .side-menu a.home {
+    background : #333;
+    color: #fff;
+  }
 
 /********* 추천 업체 **********/
 .FRLine{
