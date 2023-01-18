@@ -27,7 +27,7 @@
 	    <form id="boardSearchForm">
     	<div id="searchbar">       
 			<input type="text" name="keyword" id="address">
-            <button type="submit" id="submit"> <i class="fa fa-search"></i></button></div>    
+            <button type="submit" id="boardsubmit"> <i class="fa fa-search"></i></button></div>    
             <a href="<c:url value='/board/boardCtgList/${brd.ctgNo }'/>"><button id="listBtn">목록</button></a>         	
 </form> 
 <div id="searchResultBox"></div>

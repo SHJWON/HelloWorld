@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-header img{
-	width:250px;
-	height:100px;
-	padding:20px 40px;
-}
 .content img{
 	width:400px;
 	height:120px;
@@ -13,49 +8,46 @@ h1{
 	text-align:center;
 	margin-bottom:50px;
 }
-#address #submit{
-	position:absolute;
-	z-index:1
-}
+
 #address{
-    margin:20px 0px 20px 32px;
+    margin:30px 0px 20px 32px;
     height:30px;
     width:300px;
     border:3px solid gray;
     padding:3px 10px;
     border-radius:5px;
 }
-#submit{
+#mapsubmit{
 	 height:42px;
 	 width:100px;
-	background-color:#bb2649;
-    color: white;
-    border:0px;
     border-radius:5px;
-    padding:0px 6px;
-
+    padding:12px 6px;
+    color:#bb2649;
+    background-color:white;
+    border-color: #bb2649;
+    transition:0.5s;
+    cursor:pointer;
+}
+#mapsubmit:hover{
+   background-color:#bb2649;
+   color:white;
 }
 .menu{
 	list-style-type: none;
   padding: 0px;
-  margin: 0px;
+  margin-right: 40px;
   width: 500px;
   height: 100%;
   overflow: auto;
   position: fixed;
+  
 }
 
   hr{
 	border-color:pink;
 	margin-top:2px;
 }
-li a {
-  text-decoration: none;
-  padding: 50px;
-  display: block;
-  color: #000;
-  font-weight: bold;
-}
+
 .roominfo{
 	height:300px;
 }
@@ -63,9 +55,6 @@ li a {
 	float:right;
 	border:1px solid #bb2649;
 	
-}
-marker:hover{
-	opacity:0.5;
 }
 .htmlMarker:hover{
 	opacity:0.5;
