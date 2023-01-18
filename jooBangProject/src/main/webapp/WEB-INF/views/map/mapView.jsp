@@ -19,7 +19,7 @@
 
 </head>
 <body>
-  <nav id="nav">
+
         <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
 <div class="menu">
