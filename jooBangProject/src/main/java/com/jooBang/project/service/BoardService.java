@@ -26,8 +26,8 @@ public class BoardService implements IBoardService {
 		return dao.ctgListBoard(ctgNo);
 	}
 	@Override
-	public ArrayList<BoardVO> bestBoard() {
-		return dao.bestBoard();
+	public ArrayList<BoardVO> bestBoard(String ctgNo) {
+		return dao.bestBoard(ctgNo);
 	}
 
 
@@ -59,6 +59,11 @@ public class BoardService implements IBoardService {
 	@Override
 	public ArrayList<BoardVO> boardSearch(HashMap<String, Object> map) {
 		return dao.boardSearch(map);
+	}
+	@Override
+	public void deleteBoard(int brdNo) {
+	  dao.deleteBoard(brdNo);
+		
 	}
 	
 

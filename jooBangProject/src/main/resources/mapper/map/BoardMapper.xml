@@ -13,9 +13,9 @@
 	  		<result property="ctgNo"  column="ctgNo"  />
 	  		<result property="ctgName"  column="ctgName"  />
 	  </resultMap>	  	
-<select id="listAllBoard" parameterType="string" resultMap="brdResult">
+<select id="listAllBoard"  resultMap="brdResult">
 	  SELECT board.*, category.* FROM board JOIN category 
-	  ON (board.ctgNo=category.ctgNo)
+ON (board.ctgNo=category.ctgNo)
  </select>
  <select id="bestBoard" parameterType="string" resultMap="brdResult">
 	  SELECT board.*, category.* FROM board JOIN category 
@@ -27,8 +27,8 @@ ON (board.ctgNo=category.ctgNo)
 WHERE board.ctgNo=#{ctgNo};
   	</select>
   	 <insert id="insertBoard" parameterType="com.jooBang.project.model.BoardVO">
-  		INSERT INTO board (brdTitle, brdWriter,brdContent,ctgNo)
-  		VALUES (#{brdTitle},#{brdWriter},#{brdContent},#{ctgNo})
+  		INSERT INTO board (brdTitle, brdWriter,brdContent,ctgNo,upload)
+  		VALUES (#{brdTitle},#{brdWriter},#{brdContent},#{ctgNo},#{upload})
   </insert>
   <select id="detailViewBoard" parameterType="int" resultType="com.jooBang.project.model.BoardVO">
  SELECT board.*, category.* FROM board JOIN category ON (board.ctgNo=category.ctgNo) WHERE brdNo=#{brdNo}
@@ -37,6 +37,11 @@ WHERE board.ctgNo=#{ctgNo};
   UPDATE board SET brdTitle=#{brdTitle},brdWriter=#{brdWriter},brdContent=#{brdContent}
   WHERE brdNo=#{brdNo}
   </update>
+   <delete id="deleteBoard" parameterType="int">
+
+  DELETE FROM board WHERE brdNo=#{brdNo}
+    SELECT board.*, category.* FROM board JOIN category ON 
+  </delete>
   <update id="viewConut">
    UPDATE board SET brdViewCnt=brdViewCnt+1 WHERE brdNo=#{brdNo}
   </update>
