@@ -17,8 +17,8 @@
             <li class="subMenu" id="subMenuMap"><a href="<c:url value='/map/mapView'/>">지도</a></li>
             <li class="subMenu" id="subMenuWish"><a href="<c:url value='#'/>">찜목록</a></li>
             <li class="subMenu" id="subMenuRoom"><a href="<c:url value='/registForm'/>">방올리기</a></li>
-            <li class="subMenu" id="subMenuCommunity"><a href="<c:url value='/board/boardListAll/${1}'/>">커뮤니티</a></li>
-            <li class="subMenu" id="subMenuRental"><a href="<c:url value='/furniture/furnitureRentalView'/>">가구대여</a></li>
+            <li class="subMenu" id="subMenuCommunity"><a href="<c:url value='/board/boardListAll'/>">커뮤니티</a></li>
+            <li class="subMenu" id="subMenuRental"><a href="<c:url value='/furniture/furnitureRentalView/${1}'/>">가구대여</a></li>
           </ul>
         </div>
 
