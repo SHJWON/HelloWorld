@@ -6,6 +6,11 @@ import com.jooBang.project.model.FurnitureVO;
 
 public interface IFurnitureService {
 	public ArrayList<FurnitureVO>listAllFurniture();
-	public String test();
-	public ArrayList<FurnitureVO>ctgListFurniture(String furniturePrdCtg);
+	public ArrayList<FurnitureVO>woodAllFurniture();
+	public ArrayList<FurnitureVO>lifeAllFurniture();
+	public ArrayList<FurnitureVO>kitchenAllFurniture();
+	public ArrayList<FurnitureVO>environmentAllFurniture();
+	public ArrayList<FurnitureVO>healthAllFurniture();
+	public int count();
+	public ArrayList<FurnitureVO>listPage(int displayPost, int postNum);
 }

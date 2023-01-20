@@ -17,9 +17,44 @@
 		<result property="furnitureImg" column="furnitureImg" />
 	</resultMap>
 
-
+	<!-- 전체보기 -->
 	<select id="listAllFurniture"  resultMap="furnitureResult">
-		SELECT * FROM furnitureRental ORDER BY furnitureNo DESC	
+		SELECT * FROM furnitureRental ORDER BY furnitureNo DESC	limit 15;
 	</select> 
+	
+	<!-- 가구 -->
+	<select id="woodAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental where furniturePrdCtg = "가구" ORDER BY furnitureNo DESC limit 15;
+	</select> 
+	
+	<!-- 생활가전 -->
+	<select id="lifeAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental where furniturePrdCtg = "생활" ORDER BY furnitureNo DESC limit 15;	
+	</select>
+	
+	<!-- 주방가전 -->
+	<select id="kitchenAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental where furniturePrdCtg = "주방" ORDER BY furnitureNo DESC limit 15;	
+	</select>
+	
+	<!-- 환경가전 -->
+	<select id="environmentAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental where furniturePrdCtg = "환경" ORDER BY furnitureNo DESC limit 15;	
+	</select>
+	
+	<!-- 헬스/뷰티 -->
+	<select id="healthAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental where furniturePrdCtg = "헬스" ORDER BY furnitureNo DESC limit 15;	
+	</select>
+	
+	  <select id="count" resultType="int">
+	  select count(furnitureNo) from furnitureRental
+	  </select>
+	
+	<!-- 페이징 -->
+	<select id="listPage" parameterType="hashMap" resultType="com.jooBang.project.model.FurnitureVO">
+		select * from furnitureRental order by furnitureNo DESC
+ 		limit #{displayPost}, #{postNum}
+	</select>
 
 	  	</mapper>
