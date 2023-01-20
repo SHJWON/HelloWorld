@@ -12,11 +12,19 @@ import com.jooBang.project.service.FurnitureService;
 
 
 @Controller
-public class mainController {
+public class FurnitureController {
 	@Autowired
 	FurnitureService service;
 	
-	
-	
+	/*가구 전체 페이지*/
+	@RequestMapping("/furniture/furnitureRentalView")
+	 public String FurnitureListAll(Model model) {
+			ArrayList<FurnitureVO>prdList=service.listAllFurniture();
+			model.addAttribute("prdList", prdList);
+			return"furniture/furnitureRentalView";
+		}
+
+	 
+		
 
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.jooBang.project.dao.IFurnitureDAO">
+	<resultMap id="furnitureResult"
+		type="com.jooBang.project.model.FurnitureVO">
+		<result property="furnitureNo" column="furnitureNo" />
+		<result property="furnitureTitle" column="furnitureTitle" />
+		<result property="furniturePrdCtg" column="furniturePrdCtg" />
+		<result property="furnitureTell" column="furnitureTell" />
+		<result property="furnitureCity" column="furnitureCity" />
+		<result property="furniturePrice" column="furniturePrice" />
+		<result property="furnitureCompany" column="furnitureCompany" />
+		<result property="makeCompany" column="makeCompany" />
+		<result property="furnitureMoveURL" column="furnitureMoveURL" />
+		<result property="furnitureImg" column="furnitureImg" />
+	</resultMap>
+
+
+	<select id="listAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental ORDER BY furnitureNo DESC	
+	</select> 
+
+	  	</mapper>

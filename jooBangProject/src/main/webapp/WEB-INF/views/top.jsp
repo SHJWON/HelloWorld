@@ -4,7 +4,7 @@
       <!-- nav 시작 -->
       <nav class="navContainer">
         <div class="mainNavItem navLogo">
-        <a href="<c:url value='/map/mapView'/>"><img
+        <a href="<c:url value='/'/>"><img
             src="/image/회색 로고.png"
             id="logoImg"
             width="100"

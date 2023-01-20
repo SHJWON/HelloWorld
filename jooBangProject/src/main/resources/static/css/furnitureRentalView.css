@@ -7,7 +7,7 @@
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: minmax(100px, auto);
     grid-template-areas: 
-        'Ffil FRprd FRprd FRprd FRprd'
+        'Ffil Fprd Fprd Fprd Fprd'
         'Ffil Fprd Fprd Fprd Fprd'
         'Ffil Fprd Fprd Fprd Fprd'
         'Ffil Fprd Fprd Fprd Fprd'
@@ -64,8 +64,10 @@
 }
 
 .furnitrueSubMenu {
-    text-align: center;
+ 	text-align: center;
     padding: 20px 10px 0px 10px;
+    width: 300px;
+    position: fixed;
 }
 
 .side-menu a {
@@ -92,9 +94,10 @@
     grid-area: FRprd;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-template-rows: 50px 370px;
     grid-template-areas: 
     'RT RT . . .'
+    'RV RV RV RV RV'
     'RV RV RV RV RV'
     'RV RV RV RV RV';
     position: relative;
@@ -120,13 +123,13 @@
     grid-area: Fprd;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: minmax(100px, auto);
+    grid-template-rows: 80px 370px 370px 370px 370px;
     grid-template-areas: 
     'PT PT . . .'
     'PV PV PV PV PV'
     'PV PV PV PV PV'
     'PV PV PV PV PV'
-    'PV PV PV PV PV';
+    '. PG PG PG .';
     position: relative;
 }
 
@@ -134,7 +137,15 @@
     grid-area: PT;
     position: absolute;
     left: 20px;
-    bottom: 15px;
+    bottom: 0px;
+}
+
+#FListBox{
+	border-radius: 15px;
+	margin: 2px 5px 2px 2px;
+	box-shadow: 0px 0px 3px #000;
+	height: 370px;
+	cursor: pointer;
 }
 
 #furniturePrdView{
@@ -146,5 +157,5 @@
     position: relative;
     overflow: hidden;
     padding: 0;
-    height: 610px;
+    height: 800px;
 }
