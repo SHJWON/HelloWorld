@@ -1,21 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <c:import url="/WEB-INF/views/head.jsp"/>
 <title>방 등록하기</title>
 <link rel="stylesheet" href="css/nav.css">
 <script src="<c:url value='/js/jquery-3.6.1.min.js' />"></script>
 <script src="js/registMove.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script type="text/javascript">
+			var qty = [1,1,1,1];
+		
+			// 주문수량 변경 함수
+			function qtyChange(index, num){
+				qty[index] = qty[index] + num;
+				if(qty[index] < 0) qty[index] = 0;
+				// 주문액 계산하는 함수 호출
+				var roomQty = $('.roomQty')[index];
+				roomQty.value = qty[index];
+			}
+		
+		</script>
 </head>
 <body>
 	<div id="wrap">
 		<c:import url="/WEB-INF/views/top.jsp"/>
 		<section>
-			<div class="room__Box hidden">
+			<div class="room__Box show">
 				<div class="intro">
 					<div>
 						<h1>방정보를 등록</h1>
@@ -66,17 +82,17 @@
 					<div class="questionContainer">
 						<div class="Address_SearchBox">
 							<span class="Address_AddressInputWrapper">						
-								<input class="Address_AddressInput" type="text" placeholder="우편 번호" readonly>
+								<input class="Address_AddressInput" id="zipcode" type="text" placeholder="우편 번호" readonly>
 							</span>
 							<button type="button" class="Button_AddressSearchBtn">주소
 								검색</button>
 						</div>
 						<p>(지번, 도로명, 아파트명) <br> 예: 청담동 40-17, 학동로 55길 17, 청담 래미안</p>
 						<span class="Address_AddressInputWrapper">
-							<input class="Address_AddressInput" type="text" placeholder="주소지" readonly>
+							<input class="Address_AddressInput" id="address1" type="text" placeholder="주소지" readonly>
 						</span>
 						<span class="Address_AddressInputWrapper input_available">
-							<input class="Address_AddressInput" type="text" placeholder="상세 주소">
+							<input class="Address_AddressInput" id="address2" type="text" placeholder="상세 주소">
 						</span>
 						<p class="warning_info">상세 주소는 계약 완료 후 공개됩니다.</p>
 					</div>
@@ -93,9 +109,9 @@
 							<div class="count_countBox">
 								<div class="room_title">침실</div>
 								<div class="room_btn"> 
-									<button class="up_btn"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
-									<div class="count_num">1</div>
-									<button class="down_btn"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
+									<button class="up_btn" value="+" onClick="qtyChange(0,1)"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
+									<div class="count_num"><input type="text" class="roomQty" name="roomQty" size="1" value="1" readonly></div>
+									<button class="down_btn" value="-" onClick="qtyChange(0,-1)"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
 								</div>
 							</div>
 						</div>
@@ -103,9 +119,9 @@
 							<div class="count_countBox">
 								<div class="room_title">화장실</div>
 								<div class="room_btn"> 
-									<button class="up_btn"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
-									<div class="count_num">1</div>
-									<button class="down_btn"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
+									<button class="up_btn" value="+" onClick="qtyChange(1,1)"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
+									<div class="count_num"><input type="text" class="roomQty" name="roomQty" size="1" value="1" readonly></div>
+									<button class="down_btn" value="-" onClick="qtyChange(1,-1)"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
 								</div>
 							</div>
 						</div>
@@ -113,9 +129,9 @@
 							<div class="count_countBox">
 								<div class="room_title">거실</div>
 								<div class="room_btn"> 
-									<button class="up_btn"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
-									<div class="count_num">1</div>
-									<button class="down_btn"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
+									<button class="up_btn" value="+" onClick="qtyChange(2,1)"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
+									<div class="count_num"><input type="text" class="roomQty" name="roomQty" size="1" value="1" readonly></div>
+									<button class="down_btn" value="-" onClick="qtyChange(2,-1)"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
 								</div>
 							</div>
 						</div>
@@ -123,9 +139,9 @@
 							<div class="count_countBox">
 								<div class="room_title">부엌</div>
 								<div class="room_btn"> 
-									<button class="up_btn"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
-									<div class="count_num">1</div>
-									<button class="down_btn"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
+									<button class="up_btn" value="+" onClick="qtyChange(3,1)"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
+									<div class="count_num"><input type="text" class="roomQty" name="roomQty" size="1" value="1" readonly></div>
+									<button class="down_btn" value="-" onClick="qtyChange(3,-1)"><img src='<c:url value="image/expand_circle_down.svg"/>'></button>
 								</div>
 							</div>
 						</div>
@@ -276,9 +292,11 @@
 					<h2>방을 표현하는 제목을 붙여봅시다. 짧을수록 효과적입니다!</h2>
 					<div class="questionContainer">
 						<form>
-							<div class="title_box">
-								<input type="text" placeholder="예시)역까지 5분거리, 혼자 살기 좋은 집">
-								<span>글자수</span>
+							<div class="title_boxWrap">
+								<input class="title_box" type="text" placeholder="예시)역까지 5분거리, 혼자 살기 좋은 집">
+								<div>
+									<span class="textCount">0자</span>/30자
+								</div>
 							</div>
 						</form>
 					</div>
@@ -309,8 +327,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="room__Box show">
-				<div class="room_introduce least_pay">
+			<div class="room__Box hidden">
+				<div class="room_pay least_pay">
 					<h1>최소계약기간</h1>
 					<h2>설정하신 기간 미만으로는 계약을 받지 않습니다.</h2>
 					<div class="questionContainer">
@@ -326,9 +344,113 @@
 									<li class="optionItem">6주</li>
 									<li class="optionItem">7주</li>
 									<li class="optionItem">8주</li>
-								</ul>								
+								</ul>			
+								<img class="arrow_dropdown" src="<c:url value='/image/arrow_drop_down.svg'/>">					
 							</div>
 						</form>
+					</div>
+				</div>
+			</div>
+			<div class="room__Box hidden">
+				<div class="room_pay pay_Guidance">
+					<h1>요금 안내</h1>
+					<h2></h2>
+					<div class="questionContainer">
+						<form>
+							<div class="textBoxWrapper">
+								<span class="payTitle">보증금</span>
+								<input type="text"> 원
+							</div>
+							<div class="textBoxWrapper">
+								<span class="payTitle">1주 임대료</span>
+								<input type="text"> 원 / 1주
+							</div>
+							<div class="textBoxWrapper">
+								<span class="payTitle">1주 관리비</span>
+								<input type="text"> 원 / 1주
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="room__Box hidden">
+				<div class="room_pay pay_option">
+					<h1>해당 사항이 포함되나요?</h1>
+					<h2></h2>
+					<div class="questionContainer">
+						<form>
+							<div class="buttonWrapper">
+								<input type="checkbox" id="electric" name="pay_optioncheckBox" value="electric">
+								<label for="electric"> 전기 </label>
+							</div>
+							<div class="buttonWrapper">
+								<input type="checkbox" id="gas" name="pay_optioncheckBox"
+									value="gas"> <label for="gas">
+									가스 </label>
+							</div>
+							<div class="buttonWrapper">
+								<input type="checkbox" id="water" name="pay_optioncheckBox" value="water">
+								<label for="water"> 수도 </label>
+							</div>
+							<div class="buttonWrapper">
+								<input type="checkbox" id="internetFee" name="pay_optioncheckBox"
+									value="internetFee"> <label for="internetFee">
+									인터넷 </label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="room__Box hidden">
+				<div class="room_pay longterm_discount">
+					<h1>장기 예약 할인</h1>
+					<h2></h2>
+					<div class="questionContainer">
+						<form>
+							<span class="discountTitle">할인 기준</span>
+							<div class="select_box">
+								<button type="button" class="label">할인 기준</button>
+								<ul class="optionList">
+									<li class="optionItem">없음</li>
+									<li class="optionItem">2주</li>
+									<li class="optionItem">3주</li>
+									<li class="optionItem">4주</li>
+									<li class="optionItem">5주</li>
+									<li class="optionItem">6주</li>
+									<li class="optionItem">7주</li>
+									<li class="optionItem">8주</li>
+								</ul>			
+								<img class="arrow_dropdown" src="<c:url value='/image/arrow_drop_down.svg'/>">					
+							</div>
+							
+							<span class="discountTitle">할인 금액</span>
+							<div class="select_box">
+								<button type="button" class="label">할인 금액</button>
+								<ul class="optionList">
+									<li class="optionItem">5%</li>
+									<li class="optionItem">6%</li>
+									<li class="optionItem">7%</li>
+									<li class="optionItem">8%</li>
+									<li class="optionItem">9%</li>
+									<li class="optionItem">10%</li>
+									<li class="optionItem">15%</li>
+									<li class="optionItem">20%</li>
+								</ul>			
+								<img class="arrow_dropdown" src="<c:url value='/image/arrow_drop_down.svg'/>">					
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="room__Box hidden">
+				<div class="intro">
+					<div>
+						<h1>작성 완료</h1>
+						<h2>확인 버튼을 눌러 등록합시다!</h2>
+						
+					</div>
+					<div>
+						<img src="image/logo.png">
 					</div>
 				</div>
 			</div>
