@@ -15,6 +15,7 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
+
 		<nav id="nav">
         <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
@@ -27,7 +28,7 @@
  		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${5}'/>">살림나눔장터</a></li><hr>
  		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${6}'/>">장터</a></li><hr>  	  
 	</ul>
-    
+
  <span id="ctgName">${brd.ctgName }</span>	
  <div id="search">
            <a href="<c:url value='/board/boardSearchForm/'/>"> <button type="submit" id="boardsubmit"> <i class="fa fa-search"></i></button></a></div>     
@@ -41,8 +42,24 @@
       </div>
 	   <hr>
        <div class="detailContent">${brd.brdContent }</div>									
-		<hr>
-		<div class="comment"></div>
+       	<hr>
+       		<div class="commnetTitle">
+       		 <h4>댓글</h4>
+       		</div>
+       		 		 <hr>
+       		<div class="comment">
+       		<c:forEach var="com" items="${comList }">
+       				<p>${com.comContent }  /<fmt:formatDate value="${brd.brdDate }" pattern="yyyy-MM-dd"/></p>    	
+       				<hr>			
+       		</c:forEach>
+         </div>
+       	 <form id="boardCommnetForm" action="/board/boardComment/${brdNo }">
+		<div class="insertComment">
+		<textarea class="insertCommnetText" name="comContent"></textarea>
+		<button type="submit" class="commnetBtn">등록</button>
+		<input type="hidden" name="brdNo" value="${brd.brdNo }">
+		</div>
+		</form>
 		<div class="detailfoot">
          <a href="<c:url value ='/board/boardUpdate/${brdNo}'/>"><button class="detailBtn">수정</button></a>
          <a href="javascript:deleteCheck();"><button class="detailBtn"> 삭제 </button></a><br><br>
@@ -55,6 +72,6 @@
 			}
 		}
 		</script>
-		</div>
+</div>
 	</body>
 </html>

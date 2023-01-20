@@ -19,20 +19,32 @@
         <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
     <ul id="ul">
- 		 <li class="side-menu"><a href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
- 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${2}'/>">공지사항</a></li><hr>
- 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${3}'/>">자유게시판</a></li><hr>
- 		  <li class="side-menu"><a href="<c:url value='/board/bestBoard/${4}'/>">베스트게시판</a></li><hr>
- 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${5}'/>">살림나눔장터</a></li><hr>
- 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${6}'/>">장터</a></li><hr>  	  
+ 		 <li class="side-menu1"><a href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
+ 		 <li class="side-menu1"><a href="<c:url value='/board/boardCtgList/${2}'/>">공지사항</a></li><hr>
+ 		  <li class="side-menu1"><a href="<c:url value='/board/boardCtgList/${3}'/>">자유게시판</a></li><hr>
+ 		  <li class="side-menu1"><a href="<c:url value='/board/bestBoard'/>">베스트게시판</a></li><hr>
+ 		  <li class="side-menu1"><a href="<c:url value='/board/boardCtgList/${5}'/>">살림나눔장터</a></li><hr>
+ 		  <li class="side-menu1"><a href="<c:url value='/board/boardCtgList/${6}'/>">장터</a></li><hr>  	  
 	</ul>
 
         <div id="wrap">   	
-        <span id="ctgName">${brdList[0].ctgName } </span>          
+        <c:if test="${brdTitle eq ''}">
+        <span id="ctgName">${brdList[0].ctgName } </span>      
+        </c:if>
+        <c:if test="${brdTitle ne ''}">
+         <span id="ctgName">${brdTitle }</span>
+        </c:if>
+             
     	<div id="search">
            <a href="<c:url value='/board/boardSearchForm/'/>"> <button type="submit" id="boardsubmit"> <i class="fa fa-search"></i></button></a>
-        </div>                  	
+        </div>   
+        <c:if test="${brdTitle eq ''}">               	
 		<a href="<c:url value='/board/boardInsert/${ctgNo}'/>"><button id="insertBtn">글작성</button></a>
+		</c:if>
+		<c:if test="${brdTitle ne ''}">               	
+		<a href="<c:url value='/board/boardInsert/${ctgNo}'/>"><button id="hiddenBtn">글작성</button></a>
+		</c:if>
+		
 			<table class="table table-striped table-hover">
 			<thead>
 					<tr>
@@ -45,7 +57,7 @@
 			</thead>
 			<tbody>
 					<c:forEach var="brd" items="${brdList }">
-			           
+
 			            <tr>         
 			            <td>${brd.brdNo }</td>
 			               <td class="title1" ><a href="<c:url value='/board/boardDetailView/${brd.brdNo}'/>" >${brd.brdTitle }</a></td>
@@ -56,7 +68,14 @@
 			         </c:forEach>
 			           </tbody>
 				</table><br><br>
-				<div id="searchResultBox"></div>
+		
+			<div class="page">
+			 <c:forEach begin="1" end="${pageNum}" var="num">
+    <span>
+     <a href="/board/boardListAll/${num}"><button id="pageBtn">${num }</button></a>
+  </span>
+ </c:forEach>
+			</div>
 			</div>
 	</body>
 </html>

@@ -12,6 +12,7 @@ public class BoardVO {
    private Date brdDate;
 	private String ctgNo;
 	private String ctgName;
+	
 	public int getBrdNo() {
 		return brdNo;
 	}

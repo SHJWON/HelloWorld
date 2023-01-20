@@ -18,16 +18,16 @@ public class BoardService implements IBoardService {
 	private IBoardDAO dao;
 
 	@Override
-	public ArrayList<BoardVO> listAllBoard(String ctgNo) {
-		return dao.listAllBoard(ctgNo);
+	public ArrayList<BoardVO> listAllBoard() {
+		return dao.listAllBoard();
 	}
 	@Override
 	public ArrayList<BoardVO> ctgListBoard(String ctgNo) {
 		return dao.ctgListBoard(ctgNo);
 	}
 	@Override
-	public ArrayList<BoardVO> bestBoard(String ctgNo) {
-		return dao.bestBoard(ctgNo);
+	public ArrayList<BoardVO> bestBoard() {
+		return dao.bestBoard();
 	}
 
 
@@ -64,6 +64,18 @@ public class BoardService implements IBoardService {
 	public void deleteBoard(int brdNo) {
 	  dao.deleteBoard(brdNo);
 		
+	}
+	@Override
+	public int count() {
+		return dao.count();
+	}
+	@Override
+	public ArrayList<BoardVO>listPage(int displayPost, int postNum){
+		  HashMap<String, Integer> data = new HashMap<String, Integer>();
+			
+			data.put("displayPost", displayPost);
+			data.put("postNum", postNum);
+		return dao.listPage(displayPost, postNum);
 	}
 	
 

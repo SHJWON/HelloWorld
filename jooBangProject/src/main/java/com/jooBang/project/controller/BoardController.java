@@ -11,36 +11,45 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jooBang.project.model.BoardVO;
+import com.jooBang.project.model.CommentVO;
 import com.jooBang.project.service.BoardService;
+import com.jooBang.project.service.CommentService;
+
 
 
 @Controller
 public class BoardController {
 	@Autowired
 	private BoardService service;
+	@Autowired
+	private CommentService comService;
+
+
 	@RequestMapping("///")
 	 public String mapView() {	
 		 return "/board/boardAllView";
 
 }
 	
-	@RequestMapping("/board/boardListAll/{ctgNo}")
-	public String boardListAll(@PathVariable String ctgNo,Model model) {
-		ArrayList<BoardVO>brdList=service.listAllBoard(ctgNo);
+	@RequestMapping("/board/boardListAll")
+	public String boardListAll(Model model) {    
+		 ArrayList<BoardVO>brdList=service.listAllBoard(); 
 		model.addAttribute("brdList",brdList);
+		model.addAttribute("brdTitle","전체글보기");
 		return"/board/boardAllView";
 	}
 	
 	@RequestMapping("/board/boardCtgList/{ctgNo}") // /board/boardAllView
 	public String boardCtgList(@PathVariable String ctgNo,Model model) {
 		ArrayList<BoardVO>brdList=service.ctgListBoard(ctgNo);
-		model.addAttribute("ctgNo",ctgNo);
+		model.addAttribute("brdTitle","");
 		model.addAttribute("brdList",brdList);
 	return "/board/boardAllView";
 	}
-	@RequestMapping("/board/bestBoard/{ctgNo}")
-	public String bestBoard(@PathVariable String ctgNo,Model model) {
-		ArrayList<BoardVO>brdList=service.bestBoard(ctgNo);
+	@RequestMapping("/board/bestBoard")
+	public String bestBoard(Model model) {
+		ArrayList<BoardVO> brdList=service.bestBoard();
+		model.addAttribute("brdTitle","베스트게시판");
 		model.addAttribute("brdList",brdList);
 		return"/board/boardAllView";
 	}
@@ -63,6 +72,8 @@ public class BoardController {
 		service.viewConut(brdNo);
 		BoardVO brd=service.detailViewBoard(brdNo);		
 		model.addAttribute("brd",brd);
+		ArrayList<CommentVO>comList=comService.commentList(brdNo);
+		model.addAttribute("comList",comList);
 		return "board/boardDetailView"; 		
 	}
 	@RequestMapping("/board/boardUpdate/{brdNo}")
@@ -92,6 +103,25 @@ public class BoardController {
 		   model.addAttribute("brdList",brdList);
 	      return "board/boardSearchView";
 	   }
-	   
-	   
+	   @RequestMapping("/board/boardListAll/{num}")
+		public String boardListAll(Model model,@PathVariable int num) {
+			 int count = service.count();
+			  
+			 // 한 페이지에 출력할 게시물 갯수
+			 int postNum = 10;
+			  
+			 // 하단 페이징 번호 ([ 게시물 총 갯수 ÷ 한 페이지에 출력할 갯수 ]의 올림)
+			 int pageNum = (int)Math.ceil((double)count/postNum);
+			  
+			 // 출력할 게시물
+			 int displayPost = (num - 1) * postNum;
+			    
+			ArrayList<BoardVO>brdList=null;
+			brdList=service.listPage(displayPost, postNum);
+			model.addAttribute("pageNum", pageNum);
+			model.addAttribute("brdList",brdList);
+			model.addAttribute("brdTitle","전체글보기");
+			return"/board/boardAllView";
+		}
+		
 }
