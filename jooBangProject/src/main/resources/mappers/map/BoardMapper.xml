@@ -10,16 +10,17 @@
 	  		<result property="brdContent"  column="brdContent"  />	
 	  		<result property="brdViewCnt"  column="brdViewCnt"  />
 	  		<result property="brdDate"  column="brdDate"  />
+	  		<result property="brdUpload"  column="brdUpload"  />  		
 	  		<result property="ctgNo"  column="ctgNo"  />
 	  		<result property="ctgName"  column="ctgName"  />
 	  </resultMap>	  	
 <select id="listAllBoard"  resultMap="brdResult">
 	  SELECT board.*, category.* FROM board JOIN category 
-ON (board.ctgNo=category.ctgNo)
+ON (board.ctgNo=category.ctgNo) order by brdNo DESC limit 10;
  </select>
  <select id="bestBoard" parameterType="string" resultMap="brdResult">
 	  SELECT board.*, category.* FROM board JOIN category 
-	  ON (board.ctgNo=category.ctgNo)  where brdViewCnt >20;
+	  ON (board.ctgNo=category.ctgNo)  where board.brdViewCnt >20;
  </select>
  <select id="ctgListBoard" parameterType="string" resultMap="brdResult">
   SELECT board.*, category.* FROM board JOIN category 
@@ -27,8 +28,8 @@ ON (board.ctgNo=category.ctgNo)
 WHERE board.ctgNo=#{ctgNo};
   	</select>
   	 <insert id="insertBoard" parameterType="com.jooBang.project.model.BoardVO">
-  		INSERT INTO board (brdTitle, brdWriter,brdContent,ctgNo,upload)
-  		VALUES (#{brdTitle},#{brdWriter},#{brdContent},#{ctgNo},#{upload})
+  		INSERT INTO board (brdTitle, brdWriter,brdContent,ctgNo,brdUpload)
+  		VALUES (#{brdTitle},#{brdWriter},#{brdContent},#{ctgNo},#{brdUpload})
   </insert>
   <select id="detailViewBoard" parameterType="int" resultType="com.jooBang.project.model.BoardVO">
  SELECT board.*, category.* FROM board JOIN category ON (board.ctgNo=category.ctgNo) WHERE brdNo=#{brdNo}
@@ -47,6 +48,12 @@ WHERE board.ctgNo=#{ctgNo};
   </update>
   <select id="boardSearch" parameterType="hashmap" resultMap="brdResult">
   SELECT * FROM board WHERE brdTitle Like CONCAT('%',#{keyword},'%')
-
   </select>
+  <select id="count" resultType="int">
+ select count(brdNo) from board
+ </select>
+ <select id="listPage" parameterType="hashMap" resultType="com.jooBang.project.model.BoardVO">
+ select * from board order by brdNo DESC
+  limit #{displayPost}, #{postNum}
+</select>
 	  	</mapper>

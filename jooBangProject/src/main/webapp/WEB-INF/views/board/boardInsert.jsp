@@ -33,11 +33,10 @@
           </div>
           <div class="input-group mb-3">
   			 <label class="input-group-text" for="inputGroupFile01">Upload</label>
- 			 <input type="file" class="form-control" id="inputGroupFile01" name="uploadFile">
+ 			 <input type="file" class="form-control" id="inputGroupFile01" name="brdUpload">
 		 </div>			
 	<h3>업로드한 이미지</h3>
 		<div id="imageBox"></div>
-	
 		
         <button type="submit" class="btn btn-outline-danger">등록하기</button>
        <a href="<c:url value='/board/boardCtgList/${ctgNo }'/>"> <button type="button" class="btn btn-outline-danger">취소</button></a>
