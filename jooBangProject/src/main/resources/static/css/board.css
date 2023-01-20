@@ -75,22 +75,23 @@ a{
 	
 }
 
-.side-menu1 a {
+.side-menu a {
   text-decoration: none;
   padding: 10px;
   display: block;
-  color: #000;
+
   font-weight: bold;
 }
 
-.side-menu1 a:hover {
+.side-menu a:hover {
   background: #bb2649;
   color: white;
   opacity:0.7;
 }
-.side-menu1 a.clicked{
- background-color: #bb2649;
-  color: green;
+.on{
+  background: #bb2649;
+  color: white;
+  
 }
 
 

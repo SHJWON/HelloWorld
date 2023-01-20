@@ -8,9 +8,11 @@
 		<meta charset="UTF-8">
 		<title>전체</title>
 		<c:import url="/WEB-INF/views/head.jsp"/>
-				<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
+			<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
+			<script src="<c:url value='/js/board.js'/>"></script>
 		    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 		    <link rel="stylesheet" href="<c:url value='/css/board.css' />">
+
 	
 </head>
 	
@@ -18,13 +20,14 @@
 		<nav id="nav">
         <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
+      <input type="hidden" id="menuNumber" value="${menuNumber }">
     <ul id="ul">
- 		 <li class="side-menu1"><a href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
- 		 <li class="side-menu1"><a href="<c:url value='/board/boardCtgList/${2}'/>">공지사항</a></li><hr>
- 		  <li class="side-menu1"><a href="<c:url value='/board/boardCtgList/${3}'/>">자유게시판</a></li><hr>
- 		  <li class="side-menu1"><a href="<c:url value='/board/bestBoard'/>">베스트게시판</a></li><hr>
- 		  <li class="side-menu1"><a href="<c:url value='/board/boardCtgList/${5}'/>">살림나눔장터</a></li><hr>
- 		  <li class="side-menu1"><a href="<c:url value='/board/boardCtgList/${6}'/>">장터</a></li><hr>  	  
+ 		 <li class="side-menu"><a class="side-menu1" href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
+ 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${2}'/>">공지사항</a></li><hr>
+ 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${3}'/>">자유게시판</a></li><hr>
+ 		  <li class="side-menu"><a href="<c:url value='/board/bestBoard'/>">베스트게시판</a></li><hr>
+ 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${5}'/>">살림나눔장터</a></li><hr>
+ 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${6}'/>">장터</a></li><hr>  	  
 	</ul>
 
         <div id="wrap">   	
