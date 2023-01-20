@@ -11,7 +11,7 @@ $(document).ready(function(){
 	 $('#nextBtn').on('click',function(){
 		
 		if(indexNo>=($(".room__Box").length-1)){
-			
+			$('#nextBtn').prop("type","submit");
 			return 0;
 		}
 		if(((indexNo==1)&&!($('input:radio').is(':checked')))
