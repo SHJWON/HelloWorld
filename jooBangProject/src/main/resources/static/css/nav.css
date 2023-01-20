@@ -65,10 +65,14 @@ section{
 	display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 114rem;
+    min-width: 100%;
+}
+
+form{
+	width:100%;
 }
  
-section .room__Box.show{
+.room__Box.show{
 	display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,7 +87,7 @@ section .room__Box.show{
 	section{
 		min-width: unset;
 	}
-	section .room__Box.show{
+	.room__Box.show{
 		padding-top:15%;
 	}
 }
@@ -140,7 +144,7 @@ section .room__Box.hidden{
 	
 /*room info building */
 	
-	.building form{
+	.building .buttonContainer{
 		display: flex;
    		flex-wrap: wrap;
 	}
@@ -278,7 +282,7 @@ section .room__Box.hidden{
 	}
 
 /* room option */
-	.plus form{
+	.plus .buttonContainer{
 		display: flex;
    		flex-wrap: wrap;
    		gap:10px;
@@ -335,7 +339,7 @@ section .room__Box.hidden{
 		}
 	}
 
-	.option form{
+	.option .buttonContainer{
 		display: flex;
    		flex-wrap: wrap;
    		gap:10px;
@@ -344,7 +348,6 @@ section .room__Box.hidden{
 	.option .buttonWrapper{
 		min-width:113px;
 		max-width:175px;
-		margin-bottom:10px;
 	}
 	
 	.option input{
@@ -510,7 +513,7 @@ section .room__Box.hidden{
 	
 /* 추가 비용 안내 */
 
-	.pay_option form{
+	.pay_option .buttonContainer{
 		display: flex;
    		flex-wrap: wrap;
    		gap:10px;
@@ -554,7 +557,7 @@ section .room__Box.hidden{
 	}
 	
 /* 장기 예약 할인 */
-	.longterm_discount form{
+	.longterm_discount .buttonContainer{
 		display:flex;
 		flex-direction: column;
 	}
