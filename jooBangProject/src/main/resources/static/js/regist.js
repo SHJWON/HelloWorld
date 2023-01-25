@@ -108,17 +108,40 @@ $(document).ready(function(){
 	// 드롭다운 구현
 	
 	/* 화살표 함수 */
-	const label = document.querySelectorAll('.label');
+	const label = $('.label');
+	//const label = document.querySelectorAll('.label');
 	
-	label.forEach(function(lb){
+	label.each(function(){
+    	$(this).click(function(e){
+	        let optionList = $(this).next();
+	        let optionItems = optionList.children('.optionItem');
+	        clickLabel($(this), optionItems);
+	    })
+	}) 
+	
+	/*label.forEach(function(lb){
 	    lb.addEventListener('click', e => {
 	        let optionList = lb.nextElementSibling;
 	        let optionItems = optionList.querySelectorAll('.optionItem');
 	        clickLabel(lb, optionItems);
 	    })
-	});
+	});*/
 	
-	const clickLabel = (lb, optionItems) => {
+	const clickLabel = (lb, optionItems) =>{
+		if(lb.parent().hasClass('active')){
+			lb.parent().removeClass('active');
+			optionItems.each()
+		} else{
+			lb.parent().addClass('active');
+			optionItems.each(function(){
+				$(this).click(function(e){
+			        handleSelect(lb, $(this));
+			    })			
+			})
+		}
+	}
+	
+	/* const clickLabel = (lb, optionItems) => {
     if(lb.parentNode.classList.contains('active')) {
         lb.parentNode.classList.remove('active');
         optionItems.forEach((opt) => {
@@ -134,20 +157,14 @@ $(document).ready(function(){
             })
         })
    		}
-	}
-	const handleSelect = (label, item) => {
-	    label.innerHTML = item.textContent;
-	    label.parentNode.classList.remove('active');
-	}
+	}*/
 	
-	// 라벨을 클릭시 옵션 목록이 열림/닫힘
-	label.addEventListener('click', () => {
-	  if(label.parentNode.classList.contains('active')) {
-	  	label.parentNode.classList.remove('active');
-	  } else {
-	  	label.parentNode.classList.add('active');
-	  }
-	})
+	const handleSelect = (label, item) => {
+		label.children('label').text(item.text());
+		label.children('.label_input').val(item.val());
+	    label.parent().removeClass('active');
+	}
+
 });
  
  

@@ -56,6 +56,10 @@ input:focus{
 	}
 }
 
+.label_input{
+	display: none;
+}
+
 /* ---------------------- section --------------------- */
 
 

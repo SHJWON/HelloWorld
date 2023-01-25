@@ -27,6 +27,7 @@
   		<result property="roomPayOption" column="roomPayOption" />
   		<result property="roomDiscount" column="roomDiscount" />
   		<result property="roomDiscountFee" column="roomDiscountFee" />
+  		<result property="roomImage" column="roomImage" />
   	</resultMap>
   	
   	<!-- 룸 등록 -->
@@ -34,10 +35,10 @@
 		INSERT INTO room (roomNo, roomName, roomDecription, roomZipcode, roomAddress1, roomAddress2,
 						  roomRCount, roomBCount, roomLCount, roomKCount, basicOption, addtionalOption,
 						  roomBuilding, infoElevator, infoParking, roomLeastPay, roomDeposit, roomRent,
-						  roomAdministrationFee, roomPayOption, roomDiscount, roomDiscountFee)
+						  roomAdministrationFee, roomPayOption, roomDiscount, roomDiscountFee, roomImage)
 		VALUES (#{roomNo}, #{roomName}, #{roomDecription}, #{roomZipcode}, #{roomAddress1}, #{roomAddress2},
 						  #{roomRCount}, #{roomBCount}, #{roomLCount}, #{roomKCount}, #{basicOption}, #{addtionalOption},
 						  #{roomBuilding}, #{infoElevator}, #{infoParking}, #{roomLeastPay}, #{roomDeposit}, #{roomRent},
-						  #{roomAdministrationFee}, #{roomPayOption}, #{roomDiscount}, #{roomDiscountFee})
+						  #{roomAdministrationFee}, #{roomPayOption}, #{roomDiscount}, #{roomDiscountFee}, #{roomImage})
 	</insert>
   </mapper>

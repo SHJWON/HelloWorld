@@ -23,6 +23,7 @@ public class roomVO {
 	private String roomPayOption;
 	private int roomDiscount;
 	private int roomDiscountFee;
+	private String roomImage;
 	
 	public String getRoomNo() {
 		return roomNo;
@@ -155,5 +156,11 @@ public class roomVO {
 	}
 	public void setRoomDiscountFee(int roomDiscountFee) {
 		this.roomDiscountFee = roomDiscountFee;
+	}
+	public String getRoomImage() {
+		return roomImage;
+	}
+	public void setRoomImage(String roomImage) {
+		this.roomImage = roomImage;
 	}
 }

@@ -31,7 +31,7 @@
 	<div id="wrap">
 		<c:import url="/WEB-INF/views/top.jsp"/>
 		<section>
-			<form method="post" action="/regist">
+			<form method="post" action="/regist" enctype="multipart/form-data">
 			<div class="room__Box show">
 				<div class="intro">
 					<div>
@@ -317,6 +317,18 @@
 				</div>
 			</div>
 			<div class="room__Box hidden">
+				<div class="room_introduce room_description">
+					<h1>방 이미지</h1>
+					<h2>방 이미지를 올려주세요. 최대 5개까지 업로드 가능합니다.</h2>
+					<div class="questionContainer">
+						<div class="buttonContainer">
+							<input type="file" id="uploadFileMulti" name="uploadFileMulti" multiple="multiple" accept=".png, .jpg, .jpeg">
+　　							<button type="button" id="uploadBtn">업로드</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="room__Box hidden">
 				<div class="intro">
 					<div>
 						<h1>요금안내</h1>
@@ -334,16 +346,19 @@
 					<div class="questionContainer">
 						<div class="buttonContainer">
 							<div class="select_box">
-								<button type="button" class="label" name="roomLeastPay">최소 예약 기간</button>
+								<div class="label">
+									<input class="label_input" id="roomLeastPay" name="roomLeastPay">
+									<label for="roomLeastPay">최소 예약 기간</label>
+								</div>
 								<ul class="optionList">
-									<li class="optionItem">1주</li>
-									<li class="optionItem">2주</li>
-									<li class="optionItem">3주</li>
-									<li class="optionItem">4주</li>
-									<li class="optionItem">5주</li>
-									<li class="optionItem">6주</li>
-									<li class="optionItem">7주</li>
-									<li class="optionItem">8주</li>
+									<li class="optionItem" value="1">1주</li>
+									<li class="optionItem" value="2">2주</li>
+									<li class="optionItem" value="3">3주</li>
+									<li class="optionItem" value="4">4주</li>
+									<li class="optionItem" value="5">5주</li>
+									<li class="optionItem" value="6">6주</li>
+									<li class="optionItem" value="7">7주</li>
+									<li class="optionItem" value="8">8주</li>
 								</ul>			
 								<img class="arrow_dropdown" src="<c:url value='/image/arrow_drop_down.svg'/>">					
 							</div>
@@ -409,16 +424,19 @@
 						<div class="buttonContainer">
 							<span class="discountTitle">할인 기준</span>
 							<div class="select_box">
-								<button type="button" class="label" name="roomDiscount">할인 기준</button>
+								<div class="label">
+									<input class="label_input" id="roomDiscount" name="roomDiscount">
+									<label for="roomDiscount">할인 기준</label>
+								</div>
 								<ul class="optionList">
-									<li class="optionItem">없음</li>
-									<li class="optionItem">2주</li>
-									<li class="optionItem">3주</li>
-									<li class="optionItem">4주</li>
-									<li class="optionItem">5주</li>
-									<li class="optionItem">6주</li>
-									<li class="optionItem">7주</li>
-									<li class="optionItem">8주</li>
+									<li class="optionItem" value="1">1주</li>
+									<li class="optionItem" value="2">2주</li>
+									<li class="optionItem" value="3">3주</li>
+									<li class="optionItem" value="4">4주</li>
+									<li class="optionItem" value="5">5주</li>
+									<li class="optionItem" value="6">6주</li>
+									<li class="optionItem" value="7">7주</li>
+									<li class="optionItem" value="8">8주</li>
 								</ul>
 								<img class="arrow_dropdown"
 									src="<c:url value='/image/arrow_drop_down.svg'/>">
@@ -426,16 +444,19 @@
 
 							<span class="discountTitle">할인 금액</span>
 							<div class="select_box">
-								<button type="button" class="label" name="roomDiscountFee">할인 금액</button>
+								<div class="label">
+									<input class="label_input" id="roomDiscountFee" name="roomDiscountFee">
+									<label for="roomDiscountFee">할인 금액</label>
+								</div>
 								<ul class="optionList">
-									<li class="optionItem">5%</li>
-									<li class="optionItem">6%</li>
-									<li class="optionItem">7%</li>
-									<li class="optionItem">8%</li>
-									<li class="optionItem">9%</li>
-									<li class="optionItem">10%</li>
-									<li class="optionItem">15%</li>
-									<li class="optionItem">20%</li>
+									<li class="optionItem" value="5">5%</li>
+									<li class="optionItem" value="6">6%</li>
+									<li class="optionItem" value="7">7%</li>
+									<li class="optionItem" value="8">8%</li>
+									<li class="optionItem" value="9">9%</li>
+									<li class="optionItem" value="10">10%</li>
+									<li class="optionItem" value="15">15%</li>
+									<li class="optionItem" value="20">20%</li>
 								</ul>
 								<img class="arrow_dropdown"
 									src="<c:url value='/image/arrow_drop_down.svg'/>">
