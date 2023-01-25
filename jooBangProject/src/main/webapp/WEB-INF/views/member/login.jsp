@@ -5,70 +5,47 @@
 <html>
 	<head>
         <meta charset="UTF-8">
+        <c:import url="/WEB-INF/views/head.jsp"/>
         <title>로그인</title>
         <link rel="stylesheet" type="text/css" href="<c:url value='/css/login.css'/>">
 		 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script src="<c:url value='/js/js.js'/>"></script>
+        <script src="<c:url value='/js/login.js'/>"></script>
     </head>
-    <body>
-        <!-- head -->   
-    <img id="logo" src="<c:url value='/image/logo.png'/>">
-       <div class="container">
-  
-  <div class="box"></div>
-  <div class="container-forms">
-    <div class="container-info">
-      <div class="info-item">
-        <div class="table">
-          <div class="table-cell">
-            <p>
-              계정이 있으신가요?
-            </p>
-            <div class="btn">
-              로그인
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="table">
-          <div class="table-cell">
-            <p>
-              계정이 기억나시지 <br>않으신가요?
-            </p>
-            <div class="btn">
-              아이디 찾기
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-form">
-      <div class="form-item log-in">
-        <div class="table">
-          <div class="table-cell">
-            <input name="ID" placeholder="ID" type="text" /><input name="Password" placeholder="Password" type="Password" />
-            <div class="btn">
-              로그인 
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="form-item sign-up">
-        <div class="table">
-          <div class="table-cell">
-            <input name="FullName" placeholder="가입하실때 이름을 입력해주세요" type="text" />
-            <input name="email" placeholder="가입하실때 Email을 기입해주세요" type="text" />
-            <div class="btn">
-              아이디 찾기
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  
-    </body>
-    <!-- footer -->
-</html>
+		<body>
+			<div id="wrap">
+			<c:import url="/WEB-INF/views/top.jsp"/>
+			<div class="loginbox">
+				<div id="login">
+					<form id="loginForm" name="loginForm">
+						<h1>로그인</h1>
+		
+						<h4>아이디</h4>
+						<span class="input_area">
+						<input type="text" maxlength="13" id="id" name="id" value="${memId}" placeholder="아이디를 입력해 주세요." required />
+						</span>
+		
+						<h4>비밀번호</h4>
+						<span class="input_area"><input type="password" maxlength="15" id="pwd" name="pwd" placeholder="비밀번호를 입력해 주세요." required>
+						</span>
+						<ul>
+							<li><a href="<c:url value="/member/findIdForm"/>">아이디 찾기</a></li>
+							<li><a href="<c:url value="/member/findPwdForm"/>">비밀번호 변경</a></li>
+							<li><a href="<c:url value="/member/TOS"/>">회원가입</a></li>
+							</ul>
+						    <div id="sociallogin">
+				            <p id="social"> </p>
+				            <img id="nlogin" src="<c:url value='/image/naver.png'/>">
+				            <img id="klogin" src="<c:url value='/image/kakao.png'/>">
+				            <img id="glogin" src="<c:url value='/image/google.png'/>">
+				            </div>
+							<button type="submit">로그인</button>
+						
+						</form>
+					</div>
+				</div>
+			</div>
+			<footer>
+        <c:import url="/WEB-INF/views/footer.jsp"/>
+      </footer>
+		</body>
+		</html>

@@ -1,232 +1,148 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/* @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-*{
+* {
 	font-family: 'Nanum Gothic', sans-serif;
 }
+ */
+ @font-face {
+     font-family: 'NIXGONM-Vb';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+* {
+	  font-family: 'NIXGONM-Vb';
+}
+* {
+	padding: 0;
+	/* margin: 0; */
+}
+
+
 img {
-  position: absolute;
 	width:100px;
-	margin-left: 10px;
-	margin-top: 10px;
+	margin-left: 18px;
+	margin-top: 18px;
+} 
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+} 
+button {
+	cursor: pointer;
 }
 
 body {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #E5E5E5;
-  overflow: hidden;
+	background-color: #f0f0f0;
 }
 
-.table {
-  display: table;
-  width: 100%;
-  height: 100%;
+#loginForm h4 {
+    text-align: left;
+	color:#ffffff;
+    
 }
 
-.table-cell {
-  display: table-cell;
-  vertical-align: middle;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+.loginbox {
+	width: 780px;
+	height: 550px;
+	margin: 0 auto;
+	margin-top: 117px;
+	margin-bottom: 128px;
 }
 
-.container {
-  position: relative;
-  width: 600px;
-  margin: 30px auto 0;
-  height: 320px;
-  background-color: #bb2649;
-  top: 50%;
-  margin-top: -160px;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.container .box {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+.loginbox h1 {
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	color:#ffffff;
 }
 
+.loginbox form {
+	width: 100%;
+	background: #ff9b9b;
+	padding: 60px;
+	box-sizing: border-box;
+	box-shadow: 2px 2px 5px gray;
+}
 
-.container .container-forms {
-  position: relative;
+.loginbox input {
+	display: block;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 25px;
+	border: none;
+	background-color: #fff;
+	padding: 0 20px;
+	box-sizing: border-box;
 }
-.container .btn {
-  
-  font-size: 10px;
-  cursor: pointer;
-  text-align: center;
-  margin: 0 auto;
-  width: 60px;
-  color: #fff;
-  background-color: #bb2649;
-  opacity: 1;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+
+.loginbox ul {
+	width: 100%;
+	text-align: right;
+	margin-bottom: 60px;
 }
-.container .btn:hover {
-  opacity: 0.7;
+
+.loginbox li {
+	display: inline-block;
+	height: 12px;
+	line-height: 12px;
+	border-left: 1px solid #ffffff;
+	padding-left: 10px;
+	margin-left: 4px;
 }
-.container .btn, .container input {
-  padding: 10px 15px;
+
+.loginbox li:first-child {
+	border-left: 0px;
 }
-.container input {
-  margin: 0 auto 15px;
-  display: block;
-  width: 220px;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+
+.loginbox a {
+	color: #ffffff;
+	font-size: 12px;
+	position: relative;
+	top: -2px;
 }
-.container .container-forms .container-info {
-  text-align: left;
-  font-size: 0;
+
+.loginbox button {
+	margin-top:10px;
+	display: block;
+	width: 220px;
+	height: 50px;
+	margin: 0 auto;
+	border: none;
+	background-color: #bb2649;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
 }
-.container .container-forms .container-info .info-item {
-  text-align: center;
-  font-size: 16px;
-  width: 298px;
-  height: 320px;
-  display: inline-block;
-  vertical-align: top;
-  color: #fff;
-  opacity: 1;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+#sociallogin{
+	margin-top:-66px;
 }
-.container .container-forms .container-info .info-item p {
-  font-size: 20px;
-  margin: 20px;
+
+#social{
+	font-size:10px;
+	margin-left:200px;
 }
-.container .container-forms .container-info .info-item .btn {
-  background-color: transparent;
-  border: 1px solid #fff;
+
+#nlogin{
+	margin-top:20px;
+	margin-left:484px;
+    width:35px; 
 }
-.container .container-forms .container-info .info-item .table-cell {
-  padding-right: 35px;
+#klogin{
+	margin-top:20px;
+	margin-left:30px;
+    width:35px; 
 }
-.container .container-forms .container-info .info-item:nth-child(2) .table-cell {
-  padding-left: 35px;
-  padding-right: 0;
-}
-.container .container-form {
-  overflow: hidden;
-  position: absolute;
-  left: 30px;
-  top: -30px;
-  width: 305px;
-  height: 380px;
-  background-color: #fff;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.container .container-form:before {
-  content: "✔";
-  position: absolute;
-  left: 160px;
-  top: -50px;
-  color: #5356ad;
-  font-size: 130px;
-  opacity: 0;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.container .container-form .btn {
-  position: relative;
-  box-shadow: 0 0 10px 1px #bb2649;
-  margin-top: 30px;
-}
-.container .form-item {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.container .form-item.sign-up {
-  position: absolute;
-  left: -100%;
-  opacity: 0;
-}
-.container.log-in .box:before {
-  position: absolute;
-  left: 180px;
-  top: 62px;
-  height: 265px;
-}
-.container.log-in .box:after {
-  top: 22px;
-  left: 192px;
-  width: 324px;
-  height: 220px;
-}
-.container.log-in .container-form {
-  left: 265px;
-}
-.container.log-in .container-form .form-item.sign-up {
-  left: 0;
-  opacity: 1;
-}
-.container.log-in .container-form .form-item.log-in {
-  left: -100%;
-  opacity: 0;
-}
-.container.active {
-  width: 260px;
-  height: 140px;
-  margin-top: -70px;
-}
-.container.active .container-form {
-  left: 30px;
-  width: 200px;
-  height: 200px;
-}
-.container.active .container-form:before {
-  content: "✔";
-  position: absolute;
-  left: 51px;
-  top: 5px;
-  color: #5356ad;
-  font-size: 130px;
-  opacity: 1;
-}
-.container.active input, .container.active .btn, .container.active .info-item {
-  display: none;
-  opacity: 0;
-  padding: 0px;
-  margin: 0 auto;
-  height: 0;
-}
-.container.active .form-item {
-  height: 100%;
-}
-.container.active .container-forms .container-info .info-item {
-  height: 0%;
-  opacity: 0;
+#glogin{
+	margin-top:20px;
+	margin-left:30px;
+    width:35px; 
+   
+    
 }
