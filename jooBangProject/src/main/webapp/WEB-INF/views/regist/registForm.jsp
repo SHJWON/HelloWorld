@@ -9,9 +9,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <c:import url="/WEB-INF/views/head.jsp"/>
 <title>방 등록하기</title>
-<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/regist.css">
 <script src="<c:url value='/js/jquery-3.6.1.min.js' />"></script>
-<script src="js/registMove.js"></script>
+<script src="js/regist.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript">
 			var qty = [1,1,1,1];
@@ -31,7 +31,7 @@
 	<div id="wrap">
 		<c:import url="/WEB-INF/views/top.jsp"/>
 		<section>
-			<form>
+			<form method="post" action="/regist">
 			<div class="room__Box show">
 				<div class="intro">
 					<div>
@@ -334,7 +334,7 @@
 					<div class="questionContainer">
 						<div class="buttonContainer">
 							<div class="select_box">
-								<button type="button" class="label">최소 예약 기간</button>
+								<button type="button" class="label" name="roomLeastPay">최소 예약 기간</button>
 								<ul class="optionList">
 									<li class="optionItem">1주</li>
 									<li class="optionItem">2주</li>
