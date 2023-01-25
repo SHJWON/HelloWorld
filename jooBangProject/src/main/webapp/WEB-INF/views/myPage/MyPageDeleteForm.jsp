@@ -8,7 +8,7 @@
 		<meta charset="UTF-8">
 		<title>회원 탈퇴</title>
 		<!-- head -->
-		<c:import url="/WEB-INF/views/layout/head.jsp"/>
+		<c:import url="/WEB-INF/views/head.jsp"/>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/mypage.css'/>">
 		<style>
 			#wrap{
@@ -26,7 +26,7 @@
 	<body>
 		<div id="wrap">
 			<!-- top -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
+			<c:import url="/WEB-INF/views/top.jsp"/>
 			<div class="mypagebox">
 				<div id="mypage">
 					<form id="myPageForm" class="myPageForm" method="post" action="<c:url value='/myPage/deleteMyPage'/>">
@@ -53,6 +53,6 @@
 	</body>
 	<footer>
         <!-- bottom -->
-        <c:import url="/WEB-INF/views/layout/bottom.jsp"/>
+        <c:import url="/WEB-INF/views/footer.jsp"/>
     </footer>
 </html>

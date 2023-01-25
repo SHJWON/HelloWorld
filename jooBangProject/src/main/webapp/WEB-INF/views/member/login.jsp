@@ -8,7 +8,6 @@
         <c:import url="/WEB-INF/views/head.jsp"/>
         <title>로그인</title>
         <link rel="stylesheet" type="text/css" href="<c:url value='/css/login.css'/>">
-		 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script src="<c:url value='/js/login.js'/>"></script>
     </head>
 		<body>

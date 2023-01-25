@@ -7,12 +7,11 @@
 		<meta charset="UTF-8">
 		<title>이용약관</title>
 	<link rel="stylesheet" type="text/css" href="<c:url value='/css/TOS.css'/>">
-	 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-      <%--   <script src="<c:url value='/js/TOS.js'/>"></script> --%>
+	<c:import url="/WEB-INF/views/head.jsp"/>
 	</head>
+	
 	<body> 
-    
-   <img id="logo" src="<c:url value='/image/logo.png'/>">
+       <c:import url="/WEB-INF/views/top.jsp"/>
    <form id="TOSForm" name="TOSForm">
     <table width=960px align=center>
      <tr>
@@ -330,5 +329,8 @@
 		 <button type = "submit"  class="btn_cancel1">취 소 하 기</button>
   </div>
   </form>
+   <footer>
+				      <c:import url="/WEB-INF/views/footer.jsp"/>
+				     </footer>
   </body>
 </html>

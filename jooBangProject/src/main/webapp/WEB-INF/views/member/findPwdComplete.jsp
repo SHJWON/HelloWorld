@@ -7,7 +7,7 @@
 		<meta charset="UTF-8">
 		<title>비밀번호 변경</title>
 		<!-- head -->
-		<c:import url="/WEB-INF/views/layout/head.jsp"/>
+		<c:import url="/WEB-INF/views/head.jsp"/>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/findpwdcomplete.css'/>">
 		<script src="<c:url value='/js/changePwd.js'/>"></script>
 		<script src="<c:url value='/js/idCheck.js'/>"></script>
@@ -15,7 +15,7 @@
 	<body>
 		<div id="wrap">
 			<!-- top -->
-			<c:import url="/WEB-INF/views/layout/top.jsp"/>
+			<c:import url="/WEB-INF/views/top.jsp"/>
 			<div class="wrap">
 				<div id="signUp">
 					<form name="changePwd" id="changePwd" method="post"  action="<c:url value='/member/changePwd'/>">
@@ -42,6 +42,6 @@
 	</body>
 	<footer>
         <!-- bottom -->
-        <c:import url="/WEB-INF/views/layout/bottom.jsp"/>
+        <c:import url="/WEB-INF/views/footer.jsp"/>
     </footer>
 </html>

@@ -15,28 +15,18 @@ import com.jooBang.project.service.MyPageService;
 public class MyPageController {
 	@Autowired
 	private MyPageService service;
+	
 
-	
-	//임시
-	@RequestMapping("/member/mypage")
-	public String login() {
-
-		return "myPage/myPage";
-	}
-	
-	
-	
-	
-	
-	
 	/* 마이페이지 이동 */
 	@RequestMapping("/myPage/detailViewMyPage/{memId}")
 	public String detailViewMyPage(@PathVariable String memId, Model model) {
 
 		MemberVO mem = service.detailViewMyPage(memId);
 		model.addAttribute("mem", mem);
+		
+		
 
-		return "myPage/info";
+		return "myPage/myPage";
 	}
 
 	/* 회원정보 수정페이지 이동 */
@@ -57,22 +47,32 @@ public class MyPageController {
 		model.addAttribute("mem", mem);
 		// 수정된 데이터 저장 후 회원 조회 화면으로 포워딩
 
-		return "myPage/info";
+		return "myPage/myPage";
 	}
 
 	/* 회원 탈퇴 페이지 이동 */
-	
+	@RequestMapping("/myPage/deleteMyPageForm/{memId}")
+	public String deleteMyPageForm(@PathVariable String memId, Model model) {
+
+		MemberVO mem = service.detailViewMyPage(memId);
+		model.addAttribute("mem", mem);
+
+		return "myPage/MyPageDeleteForm";
+	}
 
 	// 회원 탈퇴 페이지
 	@RequestMapping("/myPage/deleteMyPage")
 	public String deleteMyPage(MemberVO mem, Model model, HttpSession session) {
-
+		
 		service.deleteMyPage(mem);
-
+		
 		session.invalidate();
 		// 수정된 데이터 저장 후 회원 조회 화면으로 포워딩
 
 		return "redirect:/";
 	}
+	
+	
 
+	
 }

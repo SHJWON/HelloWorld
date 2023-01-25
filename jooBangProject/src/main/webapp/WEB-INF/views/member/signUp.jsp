@@ -20,8 +20,7 @@
 		<c:import url="/WEB-INF/views/top.jsp" />
 		<div class="wrap">
 			<div id="signUp">
-				<form name="signUpForm" id="signUpForm" method="post"
-					action="<c:url value='/member/insert'/>">
+				<form name="signUpForm" id="signUpForm" method="post" action="<c:url value='/member/insert'/>">
 					<h1>회원 가입</h1>
 					<br>
 					<h4>아이디</h4>

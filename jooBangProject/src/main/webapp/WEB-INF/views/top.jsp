@@ -23,15 +23,33 @@
         </div>
 
         <div class="mainNavItem navSign">
-          <div class="signBtnBox" id="loginBtn">
-            <a href="<c:url value='/member/login'/>" id="mainLogin">로그인</a>
-          </div>
-          <div id="mainLS">|</div>
-          <div class="signBtnBox" id="signUpBtn">
-            <a href="<c:url value='/member/signUp'/>" id="mainSignUp"
-              >회원가입</a
-            >
-          </div>
-        </div>
+	
+			<c:if test="${empty sessionScope.sid }">
+				<div class="signBtnBox" id="loginBtn">
+				    <a href="<c:url value='/member/login'/>" id="mainLogin">로그인</a>
+				</div>
+					  <div id="mainLS">|</div>
+			</c:if>
+					
+		    <c:if test="${empty sessionScope.sid }">
+				<div class="signBtnBox" id="signUpBtn">
+					<a href="<c:url value='/member/signUp'/>" id="mainSignUp">회원가입</a>
+				</div>
+		    </c:if>	
+					    
+		    <c:if test="${not empty sessionScope.sid }">
+			    <div class="signBtnBox" id="logoutBtn">
+				    <a href="<c:url value='/member/logout'/>">로그아웃</a>
+				</div>
+					   <div id="mainLS">|</div>
+		    </c:if>
+						
+			<c:if test="${not empty sessionScope.sid }">
+			    <div class="signBtnBox" id="signUpBtn">
+					<a href="<c:url value='/myPage/detailViewMyPage/${sessionScope.sid}'/>">마이 페이지</a>
+				</div>
+		    </c:if>
+				
+		</div>
       </nav>
       <!-- nav 끝 -->
