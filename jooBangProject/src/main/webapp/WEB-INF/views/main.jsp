@@ -347,18 +347,16 @@
           
             <div class="main_commumityMenu">
               <ul class="main_commuityFilter">
-                <li class="main_commuityFilterList")">전체</li>
-                <li class="main_commuityFilterList">조회순</li>
-                <li class="main_commuityFilterList">댓글순</li>
+                <li class="main_commuityFilterList">전체</li>
+                <li class="main_commuityFilterList">공지사항</li>
+                <li class="main_commuityFilterList">베스트</li>
               </ul>
             </div>
       
             <ul id="main_communityUl">
-              <li id="list1"><img src="/image/protest.png"><span class="listText">보라돌이 뚜비 나나 뽀~~ 텔레토비 텔레토비!</span></li>
-              <li id="list2"><img src="/image/protest.png"><span class="listText">보라돌이 뚜비 나나 뽀~~ 텔레토비 텔레토비!</span></li>
-              <li id="list3"><img src="/image/protest.png"><span class="listText">보라돌이 뚜비 나나 뽀~~ 텔레토비 텔레토비!</span></li>
-              <li id="list4"><img src="/image/protest.png"><span class="listText">보라돌이 뚜비 나나 뽀~~ 텔레토비 텔레토비!</span></li>
-              <li id="list5"><img src="/image/protest.png"><span class="listText">보라돌이 뚜비 나나 뽀~~ 텔레토비 텔레토비!</span></li>
+            <c:forEach var="mainCommuniny" items="${bRecentView}">
+              <li id="list1"><img src="/image/protest.png"><span class="listText">${mainCommuniny.brdTitle}</span></li>
+              </c:forEach>
             </ul>
           </div>
 
@@ -369,61 +367,33 @@
                 <div class='wave -one'></div>
                 <div class='wave -two'></div>
                 <div class='wave -three'></div>
-                <div class='title'>furniture rental<br><span id="subTitle">가구 대여</span></div>
+                <div class='title'>furniture rental<br><span id="subTitle">가구대여</span></div>
               </div>
       
               <div class="main_furnitureMenu">
                 <ul class="main_commuityFilter">
-                  <li class="main_furnitureFilterList")" >전체</li>
+                  <li class="main_furnitureFilterList">전체</li>
                   <li class="main_furnitureFilterList">가구</li>
                   <li class="main_furnitureFilterList">가전</li>
                 </ul>
               </div>
       
               <ul id="furnitureRentalist">
-                <li class="furnitureCompany">
+               <c:forEach var="mainFurniture" items="${fRecentView}">
+                <li class="furnitureCompany" >
                 <div>
-                  <a href="#" class="furnitureGridBox">
+                  <a href="${mainFurniture.furnitureMoveURL}" class="furnitureGridBox" >
                     <div>
-                      <img src="/image/logo.png" width="200" id="furniturImg1" />
-                    <p>지역</p>
-                    <h4>업체명</h4>
-                    <p>문의번호</p>
-                    <h4>전문가구</h4>
+                      <img src="/image/furniture/${mainFurniture.furnitureImg}" width="200" height="200" id="furniturImg1" class="mainCardImg" />
+                    <h4>${mainFurniture.furnitureCity}</h4>
+                    <h4>${mainFurniture.furnitureTitle}</h4>
+                    <h5>${mainFurniture.furnitureCompany}</h5>
+                    <h5>${mainFurniture.furnitureTell}</h5>
                   </div>
                   </a>
                 </div>
               </li>
-              <li class="furnitureCompany">
-                <div>
-                  <a href="#" class="furnitureGridBox">
-                    <div>
-                      <img src="/image/logo.png" width="200" id="furniturImg2"/>
-                    <div id="furniturText2">
-                      <p>지역</p>
-                      <h4>업체명</h4>
-                      <p>문의번호</p>
-                      <h4>전문가구</h4>
-                    </div>
-                    </div>
-                  </a>
-                </div>
-              </li>
-              <li class="furnitureCompany">
-                <div>
-                  <a href="#" class="furnitureGridBox">
-                    <div>
-                      <img src="/image/logo.png" width="200" id="furniturImg2"/>
-                    <div id="furniturText2">
-                      <p>지역</p>
-                      <h4>업체명</h4>
-                      <p>문의번호</p>
-                      <h4>전문가구</h4>
-                    </div>
-                    </div>
-                  </a>
-                </div>
-              </li>
+              </c:forEach>
               </ul>
         </div>
 

@@ -19,7 +19,7 @@ public class MapController {
 	@Autowired
 	private MapService service;
 	
-	@RequestMapping("//")
+	@RequestMapping("map/mapView")
 	 public String mapView(Model model) {
 		 ArrayList<MapVO> mapList=service.listAllMap();
 		 model.addAttribute("mapList",mapList);

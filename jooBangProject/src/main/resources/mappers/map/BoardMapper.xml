@@ -56,4 +56,10 @@ WHERE board.ctgNo=#{ctgNo};
  select * from board order by brdNo DESC
   limit #{displayPost}, #{postNum}
 </select>
+
+<!-- 메인 커뮤니티 카드 최신순 5개 -->
+	<select id="bRecentView" resultMap="brdResult">
+	SELECT * FROM board ORDER BY brdNo DESC	limit 5;
+	</select>
+
 	  	</mapper>
