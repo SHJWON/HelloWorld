@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.jooBang.project.dao.IRegistDAO">
+  	<resultMap id="roomResult" type="com.jooBang.project.model.roomVO">
+  		<result property="roomNo" column="roomNo" />
+  		<result property="roomName" column="roomName" />
+  		<result property="roomDecription" column="roomDecription" />
+  		<result property="roomZipcode" column="roomZipcode" />
+  		<result property="roomAddress1" column="roomAddress1" />
+  		<result property="roomAddress2" column="roomAddress2" />
+  		<result property="roomRCount" column="roomRCount" />
+  		<result property="roomBCount" column="roomBCount" />
+  		<result property="roomLCount" column="roomLCount" />
+  		<result property="roomKCount" column="roomKCount" />
+  		<result property="basicOption" column="basicOption" />
+  		<result property="addtionalOption" column="addtionalOption" />
+  		<result property="roomBuilding" column="roomBuilding" />
+  		<result property="infoElevator" column="infoElevator" />
+  		<result property="infoParking" column="infoParking" />
+  		<result property="roomLeastPay" column="roomLeastPay" />
+  		<result property="roomDeposit" column="roomDeposit" />
+  		<result property="roomRent" column="roomRent" />
+  		<result property="roomAdministrationFee" column="roomAdministrationFee" />
+  		<result property="roomPayOption" column="roomPayOption" />
+  		<result property="roomDiscount" column="roomDiscount" />
+  		<result property="roomDiscountFee" column="roomDiscountFee" />
+  	</resultMap>
+  	
+  	<!-- 룸 등록 -->
+	<insert id="insertRoom" parameterType="com.jooBang.project.model.roomVO">
+		INSERT INTO room (roomNo, roomName, roomDecription, roomZipcode, roomAddress1, roomAddress2,
+						  roomRCount, roomBCount, roomLCount, roomKCount, basicOption, addtionalOption,
+						  roomBuilding, infoElevator, infoParking, roomLeastPay, roomDeposit, roomRent,
+						  roomAdministrationFee, roomPayOption, roomDiscount, roomDiscountFee)
+		VALUES (#{roomNo}, #{roomName}, #{roomDecription}, #{roomZipcode}, #{roomAddress1}, #{roomAddress2},
+						  #{roomRCount}, #{roomBCount}, #{roomLCount}, #{roomKCount}, #{basicOption}, #{addtionalOption},
+						  #{roomBuilding}, #{infoElevator}, #{infoParking}, #{roomLeastPay}, #{roomDeposit}, #{roomRent},
+						  #{roomAdministrationFee}, #{roomPayOption}, #{roomDiscount}, #{roomDiscountFee})
+	</insert>
+  </mapper>
