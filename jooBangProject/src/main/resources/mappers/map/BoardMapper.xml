@@ -28,8 +28,8 @@ ON (board.ctgNo=category.ctgNo)
 WHERE board.ctgNo=#{ctgNo};
   	</select>
   	 <insert id="insertBoard" parameterType="com.jooBang.project.model.BoardVO">
-  		INSERT INTO board (brdTitle, brdWriter,brdContent,ctgNo,brdUpload)
-  		VALUES (#{brdTitle},#{brdWriter},#{brdContent},#{ctgNo},#{brdUpload})
+  		INSERT INTO board (brdTitle, brdWriter,brdContent,ctgNo)
+  		VALUES (#{brdTitle},#{brdWriter},#{brdContent},#{ctgNo})
   </insert>
   <select id="detailViewBoard" parameterType="int" resultType="com.jooBang.project.model.BoardVO">
  SELECT board.*, category.* FROM board JOIN category ON (board.ctgNo=category.ctgNo) WHERE brdNo=#{brdNo}

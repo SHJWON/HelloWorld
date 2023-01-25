@@ -19,7 +19,8 @@
 
 </head>
 <body>
-
+<div id="wrap">
+<nav>
         <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
 <div class="menu">
@@ -33,8 +34,7 @@
 <div id="map" style="width:72%; height:800px;">
 
 </div>
-
-
+</div>
 <script>
 var areaArr = new Array();  // 지역을 담는 배열 ( 지역명/위도경도 )
 var markers = new Array(); // 마커 정보를 담는 배열
@@ -317,6 +317,6 @@ $(document).ready(function(){
         
  
 </script>
-</div>
+
 </body>
 </html>

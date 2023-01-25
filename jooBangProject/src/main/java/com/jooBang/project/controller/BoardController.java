@@ -26,8 +26,8 @@ public class BoardController {
 
 
 	@RequestMapping("///")
-	 public String mapView() {	
-		 return "/board/boardAllView";
+	 public String payment() {	
+		 return "/payment/paymentView";
 
 }
 	

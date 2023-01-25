@@ -13,23 +13,23 @@
 $(document).ready(function(){
 	var menu=$('#menuNumber').val();
 	switch(menu){
-		case "2":
-		  $('.side-menu1').eq(1).addClass('on');
+		case "1":
+		  $('.liside-menu a ').eq(1).addClass('on');
 		 break;
+		case "2":
+		  $('.liside-menu a').eq(2).addClass('on');
+		 berak;
 		case "3":
-		  $('.side-menu').eq(2).addClass('on');
+		  $('.liside-menu a').eq(4).addClass('on');
 		 berak;
-		case "5":
-		  $('.side-menu').eq(4).addClass('on');
-		 berak;
-		case "6":
-		  $('.side-menu').eq(5).addClass('on');
+		case "4":
+		  $('.liside-menu a').eq(5).addClass('on');
 		 berak;
 		case "100":
-		  $('.side-menu1 ').eq(0).addClass('on');
+		  $('.liside-menu a ').eq(0).addClass('on');
 		 berak;
 		case "200":
-          $('.side-menu').eq(3).addClass('on');
+          $('.liside-menu a').eq(3).addClass('on');
 		 berak;
 
 	}
