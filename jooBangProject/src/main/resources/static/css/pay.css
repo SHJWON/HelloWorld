@@ -1,0 +1,11 @@
+@charset "UTF-8";
+#wrap{
+	padding:0 2rem 0 2rem;
+}
+.reserveInfo{
+	margin:50px;
+	padding:50px;
+	width:50%;
+	height:500px;
+	border:1px solid black;
+}
