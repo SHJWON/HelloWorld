@@ -7,7 +7,7 @@
  		// 폼이 submit 되지 않도록 기본 기능 중단
  		event.preventDefault();
  		
- 		//var findIdName = "";
+ 		var findIdName = "";
  		var findIdEmail = $('#findIdEmail').val();
  		
  		// 서버에 전송하고 결과 받아서 처리

@@ -5,12 +5,14 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		 <c:import url="/WEB-INF/views/head.jsp"/>
 		<title>아이디 찾기</title>
 		<link rel="stylesheet" type="text/css" href="<c:url value='/css/findidpwd.css'/>">
 		<script src="<c:url value='/js/findIdForm.js'/>"></script>
 	</head>
 	<body>
 	<div id="wrap">
+	<c:import url="/WEB-INF/views/top.jsp"/>
 		<div class="findbox">
 			<div id="findId">
 				<form id="findIdForm" name="findIdForm">
@@ -32,5 +34,6 @@
 	</div>
 	</body>
 	<footer>
+	 <c:import url="/WEB-INF/views/footer.jsp"/>
     </footer>
 </html>
