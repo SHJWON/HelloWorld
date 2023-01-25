@@ -308,7 +308,7 @@
               <img
                 class="card__image"
                 id="newRoomImg"
-                src="/image/lightning-bolt-.png"
+                src="/image/newroom.png"
                 alt=""
               />
             </div>
