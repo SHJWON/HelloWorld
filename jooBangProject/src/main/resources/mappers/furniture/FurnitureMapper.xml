@@ -56,5 +56,9 @@
 		select * from furnitureRental order by furnitureNo DESC
  		limit #{displayPost}, #{postNum}
 	</select>
-
+	
+	<!-- 메인 가구카드 -->
+	<select id="fRecentView" resultMap="furnitureResult">
+		SELECT * FROM furnitureRental ORDER BY furnitureNo DESC	limit 3;
+	</select>
 	  	</mapper>
