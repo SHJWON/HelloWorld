@@ -65,6 +65,11 @@ public class FurnitureService implements IFurnitureService {
 		return dao.listPage(displayPost, postNum);
 	}
 
+	@Override
+	public ArrayList<FurnitureVO> fRecentView() {
+		return dao.fRecentView();
+	}
+
 
 
 	

@@ -78,6 +78,11 @@ public class BoardService implements IBoardService {
 		return dao.listPage(displayPost, postNum);
 	}
 	
+	@Override
+	public ArrayList<BoardVO> bRecentView() {
+		return dao.bRecentView();
+	}
+	
 
 	
 

@@ -15,5 +15,6 @@ public interface IFurnitureDAO {
 	public ArrayList<FurnitureVO>ctgListFurniture(String furniturePrdCtg);
 	public int count();
 	public ArrayList<FurnitureVO>listPage(int displayPost, int postNum);
+	public ArrayList<FurnitureVO> fRecentView();
 
 }
