@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/* @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css'); */
+    
+@font-face {
+     font-family: 'NIXGONM-Vb';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+* {
+	  font-family: 'NIXGONM-Vb';
+}
+
+
+body {
+	display: block;
+	margin: 8px;
+	background-color: #e5e5e5;
+}
+
+img {
+	position: absolute;
+	width: 100px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+#btn{
+	text-align: center;
+}
+
+.btn_order {
+	border: dotted 0px white;
+	background: #cecece;
+	color: #fff;
+	border-radius: 7px 7px 7px 7px;
+	width: 115px;
+	height: 34px;
+	font-size: 15px;
+}
+
+.btn_cancel1 {
+	border: dotted 0px white;
+	background: #cecece;
+	color: #fff;
+	border-radius: 7px 7px 7px 7px;
+	width: 115px;
+	height: 34px;
+	font-size: 15px;
+}
+
+.btn_order:hover, .btn_cancel1:hover{
+	background: #ff9b9b;
+}
+
+
+div.stepLine {
+	display: inline-block;
+	border-bottom: 1px solid #ff2649;
+	height: 0;
+}
+
+div.stepDot {
+	width: 15px;
+	height: 15px;
+	background-color: #fff;
+	border: 1px solid #cecece;
+	border-radius: 50%;
+	float: left;
+	margin: -8px 40px 0px 40px;
+	color: #cecece;
+}
+
+div.stepDot.activeStep {
+	background-color: #ff2649 !important;
+	border-color: #ff2649 !important;
+	color: #ff2649;
+}
+
+div.stepDot.activeStep ~ div.stepDot {
+	background-color: #fff;
+	border: 1px solid #ff2649;
+}
+
+div.stepDot:after {
+	content: attr(title);
+	white-space: nowrap;
+	position: relative;
+	top: 20px;
+	right: 8px;
+	font: 12px arial, sans-serif;
+}
+ *

@@ -26,8 +26,8 @@ public class BoardController {
 
 
 	@RequestMapping("///")
-	 public String mapView() {	
-		 return "/board/boardAllView";
+	 public String payment() {	
+		 return "/payment/paymentView";
 
 }
 	
@@ -44,6 +44,7 @@ public class BoardController {
 		ArrayList<BoardVO>brdList=service.ctgListBoard(ctgNo);
 		model.addAttribute("brdTitle","");
 		model.addAttribute("brdList",brdList);
+		model.addAttribute("menuNumber",ctgNo);
 	return "/board/boardAllView";
 	}
 	@RequestMapping("/board/bestBoard")
@@ -51,6 +52,7 @@ public class BoardController {
 		ArrayList<BoardVO> brdList=service.bestBoard();
 		model.addAttribute("brdTitle","베스트게시판");
 		model.addAttribute("brdList",brdList);
+		model.addAttribute("menuNumber",200);
 		return"/board/boardAllView";
 	}
 	@RequestMapping("/board/boardInsert/{ctgNo}")
@@ -121,6 +123,7 @@ public class BoardController {
 			model.addAttribute("pageNum", pageNum);
 			model.addAttribute("brdList",brdList);
 			model.addAttribute("brdTitle","전체글보기");
+			model.addAttribute("menuNumber",100);
 			return"/board/boardAllView";
 		}
 		

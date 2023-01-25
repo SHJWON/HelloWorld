@@ -7,77 +7,106 @@
 <head>
 <meta charset="UTF-8">
 <title>주세요 방 회원가입</title>
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/signup.css'/>">
+<c:import url="/WEB-INF/views/head.jsp" />
+<link rel="stylesheet" type="text/css" href="<c:url value='/css/signup.css'/>">
+<script src="<c:url value='/js/idCheck.js'/>"></script>
+<script src="<c:url value='/js/signUp.js'/>"></script>
+
 </head>
 
 <body>
-	<img src="/image/logo.png" />
-	<div class="container">
-		<div class="wrapper">
-			<div class="form-container">
-				<form>
-					<b>회 원 가 입</b>
-					<p>양식에 맞추어 회원 정보를 입력해주세요.</p>
-					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="아이디" name="ID" id='id' required />
-						<button type="submit">중복확인</button> 
-						<label for="id"class="form__label">아이디</label>
-					</div>
-					
-					<div class="form__group field">
-						<input type="password" class="form__field" placeholder="비밃번호" name="password" id='password' required /> 
-							<label for="password" class="form__label">비밀번호</label>
-					</div>
+	<div id="wrap">
+		<!-- top -->
+		<c:import url="/WEB-INF/views/top.jsp" />
+		<div class="wrap">
+			<div id="signUp">
+				<form name="signUpForm" id="signUpForm" method="post"
+					action="<c:url value='/member/insert'/>">
+					<h1>회원 가입</h1>
+					<br>
+					<h4>아이디</h4>
+					<span class="input_area"><input type="text" maxlength="13" name="memId" id="memId"></span> 
+					<input type="hidden" name="checked_id" value="">
+					<button type="button" id="idCheck">중복확인</button>
+					<br>
+					<br>
 
-					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="성명" name="name" id='name' required /> 
-							<label for="name" class="form__label">성명</label>
-					</div>
+					<h4>비밀번호</h4>
+					<span class="input_area"><input type="password"
+						maxlength="25" name="memPwd" id="memPwd"
+						placeholder="영문자+숫자+특수문자 조합"></span> <br>
+					<br>
 
-					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="생년월일" name="birth" id='birth' required /> 
-							<label for="birth" class="form__label">생년월일</label>
-					</div>
+					<h4>비밀번호 확인</h4>
+					<span class="input_area"><input type="password"
+						maxlength="25" name="memPwd2" id="memPwd2"></span> <label
+						id="pwdResult"></label> <br>
+					<br>
 
-					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="휴대폰 번호" name="PhoneNumber" id='PhoneNumber' required /> 
-							<label for="PhoneNumber" class="form__label">휴대폰 번호</label>
+					<h4>이름</h4>
+					<span class="input_area"><input type="text" maxlength="10"
+						name="memName" id="memName"></span> <br>
+					<br>
+
+
+					<h4>닉네임</h4>
+					<span class="input_area"><input type="text" maxlength="20"
+						name="memNickName" id="memNickName"></span> <br>
+					<br>
+
+					<h4>생년월일</h4>
+					<span class="input_area"><input type="text" maxlength="9"
+						name="memBirth" id="memBirth"></span> <br>
+					<br>
+
+					<h4>연락처</h4>
+					<span class="input_area"><input type="tel" maxlength="11"
+						name="memHP" id="memHP" placeholder="ex) 01012345678"></span> <br>
+					<br>
+
+					<h4>이메일</h4>
+					<span class="input_area"><input type="email" name="memEmail"
+						id="memEmail"></span> <br>
+					<br>
+
+					<h4>우편번호</h4>
+					<span class="input_area"><input type="text"
+						name="memZipcode" class="postcodify_postcode" id="memZipcode"
+						readonly></span>
+					<button type="button" id="postcodify_search_button">검색</button>
+					<br>
+					<br>
+
+					<h4>도로명주소</h4>
+					<span class="input_area"><input type="text"
+						name="memAddress1" class="postcodify_address" id="memAddress1"
+						readonly></span> <br>
+					<br>
+
+					<h4>상세주소</h4>
+					<span class="input_area"><input type="text"
+						name="memAddress2" class="postcodify_details" id="memAddress2"></span>
+
+					<div class="btnArea">
+						<button type="button" id="joinBtn" onclick="signupCheck();">가입하기</button>
 					</div>
-					
-					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="닉네임" name="NickName" id='NickName' required /> 
-							<label for="NickName" class="form__label">닉네임</label>
-					</div>
-					
-					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="Email" name="email" id='Email' required /> 
-							<label for="Email" class="form__label">Email</label>
-					</div>
-					
-					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="Zipcode" name="Zipcode" id='Zipcode' required /> 
-							<label for="Zipcode" class="form__label">우편번호</label>
-					</div>
-					
-					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="상세주소" name="Address1" id='Address1' required /> 
-							<label for="Address1" class="form__label">상세주소</label>
-					</div>
-					<div class="form__group field">
-						<input type="text" class="form__field" placeholder="상세주소" name="Address2" id='Address2' required /> 
-							<label for="Address1" class="form__label">상세주소</label>
-					</div>
-					
-					
-					
-					
-					
-                  <button class="button">회원가입</button>
 				</form>
 			</div>
 		</div>
 	</div>
-</body>
+	<!-- 주소 API 스크립트 -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
 
+	<!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
+	<script>
+		$(function() {
+			$("#postcodify_search_button").postcodifyPopUp();
+		});
+	</script>
+</body>
+<footer>
+	<!-- bottom -->
+	<c:import url="/WEB-INF/views/footer.jsp" />
+</footer>
 </html>
