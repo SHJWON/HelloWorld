@@ -4,17 +4,34 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.jooBang.project.dao.IMapDAO">
-	  <resultMap id="mapResult" type="com.jooBang.project.model.MapVO">
-	  		<result property="roomNo"  column="roomNo"  />
-	  		<result property="roomWeekPrice"  column="roomWeekPrice"  />
-	  		<result property="lat"  column="lat"  />
-	  		<result property="lng"  column="lng"  />
-	  </resultMap>
-	  				<!-- 전체상품 조회 -->
-	  	<select id="listAllMap" resultMap="mapResult">
+		<resultMap id="roomResult" type="com.jooBang.project.model.RoomVO">
+  		<result property="roomNo" column="roomNo" />
+  		<result property="roomName" column="roomName" />
+  		<result property="roomDecription" column="roomDecription" />
+  		<result property="roomZipcode" column="roomZipcode" />
+  		<result property="roomAddress1" column="roomAddress1" />
+  		<result property="roomAddress2" column="roomAddress2" />
+  		<result property="roomRCount" column="roomRCount" />
+  		<result property="roomBCount" column="roomBCount" />
+  		<result property="roomLCount" column="roomLCount" />
+  		<result property="roomKCount" column="roomKCount" />
+  		<result property="basicOption" column="basicOption" />
+  		<result property="addtionalOption" column="addtionalOption" />
+  		<result property="roomBuilding" column="roomBuilding" />
+  		<result property="infoElevator" column="infoElevator" />
+  		<result property="infoParking" column="infoParking" />
+  		<result property="roomLeastPay" column="roomLeastPay" />
+  		<result property="roomDeposit" column="roomDeposit" />
+  		<result property="roomRent" column="roomRent" />
+  		<result property="roomAdministrationFee" column="roomAdministrationFee" />
+  		<result property="roomPayOption" column="roomPayOption" />
+  		<result property="roomDiscount" column="roomDiscount" />
+  		<result property="roomDiscountFee" column="roomDiscountFee" />
+  		<result property="roomImage" column="roomImage" />
+  		<result property="lat"  column="lat"  />
+	  	<result property="lng"  column="lng"  />
+  	</resultMap>
+	  	<select id="listAllMap" resultMap="roomResult">
 	  		SELECT * FROM room 
 	  	</select>
-	  	 <select id="roomInfo" parameterType="hashmap" resultMap="mapResult">
-               SELECT*FROM room
-		</select>
 	  	 	 </mapper>

@@ -12,7 +12,7 @@ public class BoardVO {
    private Date brdDate;
 	private String ctgNo;
 	private String ctgName;
-	
+	private String brdImage;
 	public int getBrdNo() {
 		return brdNo;
 	}
@@ -61,6 +61,15 @@ public class BoardVO {
 	public void setCtgName(String ctgName) {
 		this.ctgName = ctgName;
 	}
+	public String getBrdImage() {
+		return brdImage;
+	}
+	public void setBrdImage(String brdImage) {
+		this.brdImage = brdImage;
+	}
+	
+	
+
 	
 	
 	

@@ -2,16 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn"  uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<c:import url="/WEB-INF/views/head.jsp"/>
-				    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-		
-		<link rel="stylesheet" href="<c:url value='/css/board.css' />">
-		
+	    	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">		
+			<c:import url="/WEB-INF/views/head.jsp"/>		
+			<link rel="stylesheet" href="<c:url value='/css/board.css' />">		
 		<title>Insert title here</title>
 	</head>
 	<body>
@@ -41,7 +40,14 @@
 	    <span id="ViewCnt"><i class="fa fa-eye" aria-hidden="true"></i>${brd.brdViewCnt }</span> 
       </div>
 	   <hr>
-       <div class="detailContent">${brd.brdContent }</div>									
+	   <div class="detailImg">
+	   <c:forTokens items="${brd.brdImage}" delims=","  var="item">
+	      <c:if test = "${fn:contains(item, '.jpg')}">
+		<img src="<c:url value='/image/boardImg/${item } '/>">		
+	  </c:if>
+	  </c:forTokens>
+		</div>
+       <div class="detailContent">${brd.brdContent }</div>		
        	<hr>
        		<div class="commnetTitle">
        		 <h4>댓글</h4>
@@ -49,7 +55,7 @@
        		 		 <hr>
        		<div class="comment">
        		<c:forEach var="com" items="${comList }">
-       				<p>${com.comContent }  /<fmt:formatDate value="${brd.brdDate }" pattern="yyyy-MM-dd"/></p>    	
+       				<p>${com.comContent }  / <span id="comDate"><fmt:formatDate value="${brd.brdDate }" pattern="yyyy-MM-dd"/></span></p>    	
        				<hr>			
        		</c:forEach>
          </div>

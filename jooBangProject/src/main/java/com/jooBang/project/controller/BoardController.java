@@ -1,7 +1,12 @@
 package com.jooBang.project.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.jooBang.project.model.BoardVO;
 import com.jooBang.project.model.CommentVO;
@@ -24,8 +30,7 @@ public class BoardController {
 	@Autowired
 	private CommentService comService;
 
-
-	@RequestMapping("///")
+	@RequestMapping("/pay")
 	 public String payment() {	
 		 return "/payment/paymentView";
 
@@ -62,11 +67,42 @@ public class BoardController {
 		return"/board/boardInsert";
 	}
 	@RequestMapping("/board/insertBoard/{ctgNo}")
-	public String insertBoard(BoardVO brd,@PathVariable String ctgNo) { // 커맨드 객체를 통해 자동으로 VO에 저장
+	public String insertBoard(@RequestParam("uploadFileMulti") ArrayList<MultipartFile> files,
+			                  BoardVO brd,HttpServletRequest req,@PathVariable String ctgNo) throws IOException { // 커맨드 객체를 통해 자동으로 VO에 저장
+		
+		// 1. 파일 저장 경로 설정 : C:/springWorkspace/upload/
+				// 마지막에 / 있어야 함
+		String uploadPath = req.getSession().getServletContext().getRealPath("/").replace("webapp","resources");
+		String imgUploadPath = uploadPath + File.separator + "static/image/boardImg/";
+		
+		String brdImage ="";
+				
+				// 여러 개의 파일 이름을 저장한 리스트 변수 생성
+				ArrayList<String> orginalFileNameList  = new ArrayList<String>();
+				
+				for(MultipartFile file : files) {
+					// 2. 원본 파일 이름 저장
+					String originalFileName = file.getOriginalFilename();
+					//원본 파일 이름을 리스트에 저장
+					orginalFileNameList.add(originalFileName);
+					
+					// 3. 파일 이름이 중복되지 않도록 파일 이름 변경 
+					// 서버에 저장할 파일 이름 설정 : UUID 사용
+					UUID uuid = UUID.randomUUID();
+					String savedFileName = uuid.toString() + "_" + originalFileName;
+					
+					// 4. 파일 (객체) 생성
+					File sendFile = new File(imgUploadPath + savedFileName);
+					brdImage+=savedFileName;
+					// 5. 서버로 전송
+					file.transferTo(sendFile);
+				}
+		
 		// 서비스를 통해서 DB에 저장
+	    brd.setBrdImage(brdImage);				
 		brd.setCtgNo(ctgNo);
 		service.insertBoard(brd);
-		// DB 저장 후 전제 상품 조회 화면으로 포워딩  
+		// DB 저장 후 전제 조회 화면으로 포워딩  		
 		return "redirect:/board/boardCtgList/{ctgNo}"; 
 	}
 	@RequestMapping("/board/boardDetailView/{brdNo}")
@@ -93,7 +129,7 @@ public class BoardController {
 	@RequestMapping("/board/deleteBoard/{brdNo}")
 	public String deleteBoard(@PathVariable int brdNo,Model model) {
 		service.deleteBoard(brdNo);
-		return"redirect:/board/boardCtgList/{ctgNo}";
+		return"/";
 	}
 	@RequestMapping("/board/boardSearchForm")
 	public String boardSearchForm(){

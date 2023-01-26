@@ -5,8 +5,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">	
 		   <c:import url="/WEB-INF/views/head.jsp"/>
-		   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 		   	<link rel="stylesheet" href="<c:url value='/css/board.css' />">
 		<title>Insert title here</title>
 	</head>
@@ -17,7 +17,7 @@
 		<div id="wrap">
 			<h2>글 등록</h2>
 			<hr>
-			<form action="/board/insertBoard/${ctgNo}">
+			<form method="post"action="/board/insertBoard/${ctgNo}" enctype="multipart/form-data">
 			 <div class="form-group">
               <label for="exampleFormControlInput1">제목</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="brdTitle" placeholder="제목을 작성해주세요.">
@@ -33,10 +33,8 @@
           </div>
           <div class="input-group mb-3">
   			 <label class="input-group-text" for="inputGroupFile01">Upload</label>
- 			 <input type="file" class="form-control" id="inputGroupFile01" name="brdUpload">
+ 			 <input type="file" class="form-control" id="uploadFileMulti" name="uploadFileMulti" multiple="multiple" accept=".png, .jpg, .jpeg">
 		 </div>			
-	<h3>업로드한 이미지</h3>
-		<div id="imageBox"></div>
 		
         <button type="submit" class="btn btn-outline-danger">등록하기</button>
        <a href="<c:url value='/board/boardCtgList/${ctgNo }'/>"> <button type="button" class="btn btn-outline-danger">취소</button></a>
