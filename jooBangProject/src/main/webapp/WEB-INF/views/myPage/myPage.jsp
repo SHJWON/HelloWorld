@@ -29,29 +29,28 @@
 					      </div>
 					      </div>
 				         <ul id="ul">
-				 		 <li class="side-menu">내 정보 수정</li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/member/findidform'/>">아이디 변경</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/member/findPwdForm'/>">비밀번호 변경</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/member/myPageUpdate'/>">주소 변경</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/member/myPageUpdate'/>">사진변경</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/board/boardListAll'/>">관련메뉴</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm/${mem.memId }'/>">내 정보 수정</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/board/boardListAll'/>">내글관리</a></li><hr>
 				 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList'/>">이용내역</a></li><hr>
 				 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList'/>">신청현황</a></li><hr>
 				 		 <li class="side-menu"><a href="<c:url value='/board/bestBoard'/>">등록한 방관리</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/myPage/deleteMyPageForm/${mem.memId}'/>">회원탈퇴</a></li><hr>
 					     </ul>
 						 </form>
         
                        </div>
                         <div class="myinfo">
 							<table>
-                                <tr><td>회원아이디</td>
+                                <tr><td>아이디</td>
                                         <td colspan="2"><input type="text" name="memId" value="${mem.memId }" readonly></td></tr>
-                                <tr><td>회원명</td>
+                                <tr><td>성명</td>
                                         <td colspan="2"><input type="text" name="memName" value="${mem.memName }" readonly></td></tr>
-                                <tr><td>전화번호</td>
-                                        <td colspan="2"><input type="text" name="memHP" value="${mem.memHP }" readonly></td></tr>
+                                <tr><td>생년월일</td>
+                                        <td colspan="2"><input type="text" name="memEmail" value="${mem.memBirth}" readonly></td></tr>
                                 <tr><td>별명</td>
                                         <td colspan="2"><input type="text" name="memNickName" value="${mem.memNickName}" readonly></td></tr> 
+                                <tr><td>전화번호</td>
+                                        <td colspan="2"><input type="text" name="memHP" value="${mem.memHP }" readonly></td></tr>
                                 <tr><td>이메일</td>
                                         <td colspan="2"><input type="text" name="memEmail" value="${mem.memEmail}" readonly></td></tr>
                                 <tr><td id="zipcode">우편번호 </td>
@@ -60,12 +59,10 @@
                                     <td colspan="2"><input type="text" name="memAddress1" class="postcodify_address" id="memAddress1" value="${mem.memAddress1}" readonly></td></tr>
                                 <tr><td>상세주소</td>
                                     <td colspan="2"><input type="text" name="memAddress2" class="postcodify_details" id="memAddress2" value="${mem.memAddress2}" readonly></td></tr>
-                                
-                                	
+
                                 <tr><td colspan="3">
                                 
 								<a href="<c:url value='/myPage/updateMyPageForm/${mem.memId}'/>"><input id="button" type="button" value="회원정보수정" class="btn"></a>
-								<a href="<c:url value='/myPage/deleteMyPageForm/${mem.memId}'/>"><input id="button" type="button" value="회원탈퇴" class="btn"></a>
 								</td></tr>
                             </table>
                        </div>

@@ -1,14 +1,10 @@
 @charset "UTF-8";
 
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-* {
-	font-family: 'Nanum Gothic', sans-serif;
-}
 
 .wrap {
 	width: 700px;
-	background: rgb(248, 249, 250);
+	background: #f0f0f0;
 	margin: auto;
 	margin-top: 70px;
 	margin-bottom: 70px;

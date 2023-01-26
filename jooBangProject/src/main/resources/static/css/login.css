@@ -9,10 +9,7 @@
 * {
 	  font-family: 'NIXGONM-Vb';
 }
-* {
-	padding: 0;
-	/* margin: 0; */
-}
+
 input[type=password]{
         font-family:"굴림";
 }
