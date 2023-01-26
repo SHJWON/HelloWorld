@@ -66,10 +66,10 @@
             <div>
               <a href="/roominfo/${mainRoom.roomNo}">
                 <div>	
-                  <img class="roomImg" src="/image/registImg/${fn:split(mainRoom.roomImage, ',')[0]}" width="220" height="220" />
+                  <img class="roomImg" src="/image/registImg/${fn:split(mainRoom.roomImage, ',')[0]}" width="260" height="200" />
                 </div>
                 <h5>${fn:split(mainRoom.roomAddress1, ' ')[0]} ${fn:split(mainRoom.roomAddress1, ' ')[1]}</h5>
-                <h4>${mainRoom.roomName}</h4>
+                <h4><span id="line_limit">${mainRoom.roomName}</span></h4>
                 <h5>방 개수: ${mainRoom.roomBCount} |  화장실 개수: ${mainRoom.roomRCount}</h5>
                 <h5><fmt:formatNumber value="${mainRoom.roomRent}" pattern="#,###"/>￦ / 주</h5>
               </a> 
@@ -165,7 +165,7 @@
           <div class="center-outer">
             <div class="center-inner">
               <div class="bubbles">
-                <h1>New Room !</h1>
+                <h1>Recommend !</h1>
               </div>
             </div>
           </div>
@@ -268,7 +268,11 @@
       
             <ul id="main_communityUl">
             <c:forEach var="mainCommuniny" items="${bRecentView}">
-              <li id="list1"><img src="/image/protest.png"><span class="listText">${mainCommuniny.brdTitle}</span></li>
+              <li id="list1"><img src="/image/쭈방이.png" width="64" height="64"> <!-- userImg 등록 예정 -->
+               <a href="/board/boardDetailView/${mainCommuniny.brdNo}">
+               <span class="listText">${mainCommuniny.brdTitle}</span>
+               </a>
+               </li>
               </c:forEach>
             </ul>
           </div>
