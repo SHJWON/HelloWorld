@@ -252,6 +252,15 @@ a{
         grid-gap: 20px;
         margin-left: 100px;
     }
+    
+    #line_limit {
+      width:250px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      display:block;
+      justify-items: center;
+  }
 
 
 /********** hotClickLine **********/
@@ -569,14 +578,18 @@ img {
     left: 100px;
     top: 25px;
     font-size: 18px;
-    width: 575px;
+    width: 320px;
     font-family: 'NIXGON';
-    text-overflow: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
   }
   
   #list1{
   margin-bottom: 10px;
   position: relative;
+  width: 500px;
   }
   
   #list1:hover{

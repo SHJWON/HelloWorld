@@ -24,13 +24,13 @@ public class WishController {
 	
 	//찜 목록 View	
 	@RequestMapping("/wishList/wishLikeView")
-	public String wishLikeListAll (Model model) {
+	public String wishLikeList (Model model) {
 		return "/wishList/wishLikeView";
 	}
 	
 	//방 비교하기 View	
 	@RequestMapping("/wishList/wishCompareView")
-	public String wishCompareListAll (Model model) {
+	public String wishCompareList (Model model) {
 		return "/wishList/wishCompareView";
 	}
 	
