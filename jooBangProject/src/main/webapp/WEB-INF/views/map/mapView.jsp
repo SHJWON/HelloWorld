@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +19,6 @@
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=yaysmxugs9&submodules=geocoder"></script>
 	<script src="<c:url value='/js/MarkerClustering.js'/>" ></script>
 	<script src="https://kit.fontawesome.com/bb34e32cb3.js" crossorigin="anonymous"></script>
-	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 </head>
 <body>
@@ -72,8 +74,10 @@ function initMap() {
 		    
 		    /* 정보창 */
 			 var infoWindow = new naver.maps.InfoWindow({
-			     content: '<div class="content"style="width:400px;text-align:center;padding:10px;"><a href="<c:url value='/roominfo/${room.roomNo}'/>"><b>'+${room.roomNo}+'<img src="/image/registImg/${fn:split(room.roomImage, ',')[0]}">'+
-			     '<hr></b><br> </a></div>'
+			     content: '<div class="content"style="width:300px;text-align:center;padding:10px;"><a href="<c:url value='/roominfo/${room.roomNo}'/>"><b><img src="/image/registImg/${fn:split(room.roomImage, ',')[0]}"></a><hr>'
+			    +'${fn:split(room.roomAddress1, ' ')[0]}' + " " +'${fn:split(room.roomAddress1, ' ')[1]}'+ '</b><br><br>'
+			    +'방 개수:'+ ${room.roomBCount} +'화장실 개수:'+ ${room.roomRCount}+'<br><br><b>'
+			    +'<span id="roomRent"><fmt:formatNumber value="${room.roomRent}" pattern="#,###"/></sapn>￦ / 주'+'</b></div>'
 			 }); // 클릭했을 때 띄워줄 정보 HTML 작성                                                      
 			 map.setCursor('pointer');
 			 markers.push(marker); // 생성한 마커를 배열에 담는다.
@@ -134,8 +138,8 @@ $(document).ready(function(){
 	        anchor: N.Point(20, 20)
 	};
 	 var markerClustering = new MarkerClustering({
-         minClusterSize: 2,
-         maxZoom: 8,
+         minClusterSize: 1,
+         maxZoom: 10,
          map: map,
          markers: markers,
          disableClickZoom: false,

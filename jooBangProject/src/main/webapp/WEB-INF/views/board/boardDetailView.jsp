@@ -24,7 +24,7 @@
  		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${1}'/>">공지사항</a></li><hr>
  		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${2}'/>">자유게시판</a></li><hr>
  		  <li class="side-menu"><a href="<c:url value='/board/bestBoard'/>">베스트게시판</a></li><hr>
- 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${3}'/>">살림나눔장터</a></li><hr>
+ 		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${3}'/>">살림 나눔</a></li><hr>
  		  <li class="side-menu"><a href="<c:url value='/board/boardCtgList/${4}'/>">장터</a></li><hr>  	  
 	</ul>
 
