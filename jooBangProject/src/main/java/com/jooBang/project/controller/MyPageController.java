@@ -72,7 +72,11 @@ public class MyPageController {
 		return "redirect:/";
 	}
 	
-	
+	@RequestMapping("/myPage/WrittenList")
+	public String WritenList() {
+
+		return "/myPage/WrittenListForm";
+	}
 
 	
 }
