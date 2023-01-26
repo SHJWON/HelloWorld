@@ -45,4 +45,11 @@
 	<select id="detailRoom" parameterType="int" resultType="com.jooBang.project.model.RoomVO">
 		SELECT * FROM room WHERE roomNo = #{roomNo}
 	</select>
+	
+	<!-- 메인 방 최신 목록 -->
+	<select id="rRecentView" resultMap="roomResult">
+		SELECT * FROM room ORDER BY roomNo DESC	limit 8;
+	</select>
+	
+	
   </mapper>

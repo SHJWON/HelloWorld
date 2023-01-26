@@ -10,4 +10,5 @@ public interface IRegistDAO {
 	public RoomVO detailRoom(int roomNo);
 	public RoomVO updateRoom(RoomVO vo);
 	public void deleteRoom(String roomNo);
+	public ArrayList<RoomVO> rRecentView();
 }
