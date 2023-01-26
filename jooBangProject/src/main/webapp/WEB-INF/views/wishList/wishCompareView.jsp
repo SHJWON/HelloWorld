@@ -37,69 +37,11 @@
       <ul class="wCard"> <!--찜목록-->
 
         <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
+            <table border="2">
+            	
+            </table>
           </li>
 
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
           <li class="wishGridBox">
             <div>
               <img src="/image/logo.png" width="200" id="furniturImg1" />
@@ -110,8 +52,6 @@
           </div>
           </li>
           
-
-
     </ul>
       <div class="wPage"> <!--찜목록 페이징 -->
         <div class="pagePrd">

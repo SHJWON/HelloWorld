@@ -51,5 +51,11 @@
 		SELECT * FROM room ORDER BY roomNo DESC	limit 8;
 	</select>
 	
+	<!-- 찜목록 페이징 -->
+	<select id="listPage" parameterType="hashMap" resultType="com.jooBang.project.model.RoomVO">
+		select * from room order by roomNo DESC
+ 		limit #{displayPost}, #{postNum}
+	</select>
+	
 	
   </mapper>

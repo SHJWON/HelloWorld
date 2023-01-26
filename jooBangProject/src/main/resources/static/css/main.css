@@ -188,6 +188,10 @@ a{
     grid-area: recommend;
 }
 
+.roomImg{
+	box-shadow: 0px 0px 4px #000;
+}
+
 .center-outer { /*異붿쿇留ㅻЪ ���댄�*/
     display: table;
     width: 100%;
@@ -462,7 +466,7 @@ img {
     position: absolute;
     top: 3%;
     left: 50%;
-    background: #0af;
+    background: #bb2649;
     width: 500px;
     height: 500px;
     margin-left: -250px;
@@ -549,7 +553,8 @@ img {
   
   .main_commuityFilterList:hover{
     border-radius: 20px;
-    background-color: #ffD400;
+    background-color: #bb2649;
+    color: white;
     cursor: pointer;
   }
   
@@ -671,7 +676,7 @@ img {
     position: absolute;
     top: 3%;
     left: 50%;
-    background: #bc9e78;
+    background: #fc7575;
     width: 500px;
     height: 500px;
     margin-left: -250px;
@@ -753,7 +758,8 @@ img {
   
   .main_furnitureFilterList:hover{
     border-radius: 20px;
-    background-color: #908550;
+    background-color: #fc7575;
+    color: white;
     cursor: pointer;
   }
   

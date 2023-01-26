@@ -64,9 +64,9 @@
         <c:forEach var="mainRoom" items="${rRecentView}">
           <li>
             <div>
-              <a href="/roominfo/${mainroom.roomNo}">
+              <a href="/roominfo/${mainRoom.roomNo}">
                 <div>	
-                  <img src="/image/registImg/${fn:split(mainRoom.roomImage, ',')[0]}" width="220" height="220" />
+                  <img class="roomImg" src="/image/registImg/${fn:split(mainRoom.roomImage, ',')[0]}" width="220" height="220" />
                 </div>
                 <h5>${fn:split(mainRoom.roomAddress1, ' ')[0]} ${fn:split(mainRoom.roomAddress1, ' ')[1]}</h5>
                 <h4>${mainRoom.roomName}</h4>
