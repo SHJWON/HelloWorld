@@ -1,6 +1,8 @@
 @charset "UTF-8";
 #wrap{
 	padding:0 2rem 0 2rem;
+	margin-bottom:50px;
+	height:800px;
 }
 
 .table {
@@ -24,9 +26,11 @@ tbody{
    
 }
 a{
-    text-decoration: none;
-    color: #000000;
-    font-weight:bold;
+	font-weight:bold;
+	text-decoration:none;
+}
+label{
+	font-weight:bold;
 }
 #search{
 	float:right;
@@ -57,8 +61,8 @@ a{
     color: white;
     border:0px;
     border-radius:5px;
-    padding:5px 4px;
-    height:30px;
+    padding:6px 4px;
+    height:34px;
 
 }
 
@@ -82,7 +86,6 @@ a{
   text-decoration: none;
   padding: 10px;
   display: block;
-
   font-weight: bold;
 }
 
@@ -125,7 +128,7 @@ a{
 }
 #insertBtn{
 	margin-left:85%;
-	padding:8px 22px;
+	padding:8px 20px;
     margin-top:20px;
     margin-bottom:20px;
     border-radius:5px;
@@ -185,6 +188,7 @@ a{
      padding:15px 30px;
 	height:52px;
 	color:#888;
+	font-size:18px;
 }
 .detailContent{
 	background-color:white;
@@ -193,7 +197,17 @@ a{
 	color:#888;
 	border-bottom:1px soliid #e6e6e6;
 	margin-bottom:10px;
+	font-size:20px;
 }	
+.detailImg{
+	margin:30px 0;
+  text-align:center;	
+}
+.detailImg img{
+	width:80%;
+	height:400px;
+	
+}
 .detailfoot{
 	margin:20px 20px;
 	text-align:center;
@@ -223,7 +237,7 @@ a{
 }
 
 #boardSearchForm{
-	margin:10px 0px;
+	margin:23px 0px;
 	
 }
 .commnetTitle{
@@ -231,7 +245,7 @@ a{
    padding:10px;
 }
 .comment{
-	padding:10px 0px;
+	padding:10px 10px;
 }
 
 .commnet h4{
@@ -263,4 +277,8 @@ a{
 .commnetBtn:hover{
 	 background-color:#545454;
 	 color:white;
+}
+#comDate{
+	font-size:14px;
+	color:#545454;
 }

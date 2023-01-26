@@ -17,10 +17,29 @@
         <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
       <div class="reserveInfo">
-      <div class="infoName">이름<input type="text"></div>
-      <div class="infoTel">전화번호<input type="text"></div>
-      <div class="infoDate">예약날짜<input type="text"></div>      	 
+      <h2>예약 정보</h2>
+      <div class="reserveInfo2">
+      <div class="infoName">이름 <input type="text"></div>
+      <div class="infoTel">전화번호<input type="tel"></div>
+      <div class="infoEmail">이메일<input type="email"></div>     
+      <div class="infoDate">예약날짜<input type="text"></div>     
+      
+      </div> 	 
       </div>
+      <div class="payInfo">
+      <h2>결제 정보</h2> 
+      <hr>
+      sadasdasd
       </div>
+      
+      <div class="paysudan">
+      <h2>결제 방법</h2>
+      <hr>
+      asdasd
+      
+      </div>
+     <div class="paybutton"><button id="payBtn">결제하기</button></div>
+      </div>
+      
 	</body>
 </html>

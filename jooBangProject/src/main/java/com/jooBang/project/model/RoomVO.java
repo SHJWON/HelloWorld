@@ -24,7 +24,8 @@ public class RoomVO {
 	private int roomDiscount;
 	private int roomDiscountFee;
 	private String roomImage;
-	
+	private String lat;
+	private String lng;
 	public int getRoomNo() {
 		return roomNo;
 	}
@@ -163,4 +164,18 @@ public class RoomVO {
 	public void setRoomImage(String roomImage) {
 		this.roomImage = roomImage;
 	}
+	public String getLat() {
+		return lat;
+	}
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+	public String getLng() {
+		return lng;
+	}
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
+	
+	
 }

@@ -6,21 +6,18 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>전체</title>
+		<title>전체</title>		
+	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">		
 		<c:import url="/WEB-INF/views/head.jsp"/>
 			<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 			<script src="<c:url value='/js/board.js'/>"></script>
-		    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-		    <link rel="stylesheet" href="<c:url value='/css/board.css' />">
-
-	
+		    <link rel="stylesheet" href="<c:url value='/css/board.css' />">	
 </head>
 	
 	<body>
-	<div id="wrap">
-		<nav id="nav">
+	
         <c:import url="/WEB-INF/views/top.jsp"/>
-      </nav>
+     <div id="wrap">
       <input type="hidden" id="menuNumber" value="${menuNumber }">
     <ul id="ul">
  		 <li class="liside-menu"><a href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
@@ -82,5 +79,9 @@
 			</div>
 			</div>
 			</div>
+						<footer>
+        <c:import url="/WEB-INF/views/footer.jsp"/>
+      </footer>
+	
 	</body>
 </html>
