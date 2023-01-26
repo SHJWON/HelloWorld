@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -59,110 +61,21 @@
 
         <!-- 추천 매물 목록 -->
         <ul class="recommendRoom">
+        <c:forEach var="mainRoom" items="${rRecentView}">
           <li>
             <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
+              <a href="/roominfo/${mainroom.roomNo}">
+                <div>	
+                  <img src="/image/registImg/${fn:split(mainRoom.roomImage, ',')[0]}" width="220" height="220" />
                 </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
+                <h5>${fn:split(mainRoom.roomAddress1, ' ')[0]} ${fn:split(mainRoom.roomAddress1, ' ')[1]}</h5>
+                <h4>${mainRoom.roomName}</h4>
+                <h5>방 개수: ${mainRoom.roomBCount} |  화장실 개수: ${mainRoom.roomRCount}</h5>
+                <h5><fmt:formatNumber value="${mainRoom.roomRent}" pattern="#,###"/>￦ / 주</h5>
+              </a> 
             </div>
           </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
+          </c:forEach>
         </ul>
 
         <!-- 핫클릭 텍스트 멘트 -->

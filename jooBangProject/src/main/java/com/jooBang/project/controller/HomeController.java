@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jooBang.project.model.BoardVO;
 import com.jooBang.project.model.FurnitureVO;
+import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.service.BoardService;
 import com.jooBang.project.service.FurnitureService;
+import com.jooBang.project.service.RegistService;
 
 @Controller
 public class HomeController {
@@ -21,6 +23,10 @@ public class HomeController {
 //  커뮤니티 서비스
 	@Autowired
 	BoardService bService;
+	
+//  룸 서비스
+	@Autowired
+	RegistService rService;
 
 	@RequestMapping("/")
 	public String mainView(Model model) {
@@ -31,8 +37,14 @@ public class HomeController {
 		//커뮤니티 최신순 5개 불러오기
 		ArrayList<BoardVO> bRecentView = bService.bRecentView();
 		model.addAttribute("bRecentView", bRecentView);
+		
+		//최신 방목록 8개 불러오기
+		ArrayList<RoomVO> rRecentView = rService.rRecentView();
+		model.addAttribute("rRecentView", rRecentView);
+		
 		return "main";
 	}
+
 
 	@RequestMapping("/404")
 	public String error() {

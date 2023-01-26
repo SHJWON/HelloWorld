@@ -18,11 +18,11 @@
         <div class="quickmenu"> <!--가구-->
             <ul class="furnitrueSubMenu">
                  <li class="side-menu"><a href="<c:url value='/furniture/furnitureRentalView/${1}'/>">전체보기</a></li><hr>
-                 <li class="side-menu"><a href="<c:url value='/furniture/rentalWoodView/${2}'/>">가구</a></li><hr>
-                 <li class="side-menu"><a href="<c:url value='/furniture/rentalLifeView/${3}'/>">생활가전</a></li><hr>
-                 <li class="side-menu"><a href="<c:url value='/furniture/rentalKitchenView/${4}'/>">주방가전</a></li><hr>
-                 <li class="side-menu"><a href="<c:url value='/furniture/rentalEnvironmentView/${5}'/>">환경가전</a></li><hr>
-                 <li class="side-menu"><a href="<c:url value='/furniture/rentalHealthView/${6}'/>">헬스/뷰티</a></li><hr>  	  
+                 <li class="side-menu"><a href="<c:url value='/furniture/rentalWoodView'/>">가구</a></li><hr>
+                 <li class="side-menu"><a href="<c:url value='/furniture/rentalLifeView'/>">생활가전</a></li><hr>
+                 <li class="side-menu"><a href="<c:url value='/furniture/rentalKitchenView'/>">주방가전</a></li><hr>
+                 <li class="side-menu"><a href="<c:url value='/furniture/rentalEnvironmentView'/>">환경가전</a></li><hr>
+                 <li class="side-menu"><a href="<c:url value='/furniture/rentalHealthView'/>">헬스/뷰티</a></li><hr>  	  
             </ul>
          </div>
         </div>

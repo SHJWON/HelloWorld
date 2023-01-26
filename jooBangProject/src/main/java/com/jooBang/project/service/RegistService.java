@@ -42,5 +42,11 @@ public class RegistService implements IRegistDAO {
 		// TODO Auto-generated method stub
 
 	}
+	
+	@Override
+	public ArrayList<RoomVO> rRecentView() {
+		// TODO Auto-generated method stub
+		return dao.rRecentView();
+	}
 
 }
