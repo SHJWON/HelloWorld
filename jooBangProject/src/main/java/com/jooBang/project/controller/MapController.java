@@ -24,8 +24,8 @@ public class MapController {
 	
 	@RequestMapping("map/mapView")
 	 public String mapView(Model model) {
-		 ArrayList<MapVO> mapList=mapservice.listAllMap();
-		 model.addAttribute("mapList",mapList);
+		 ArrayList<MapVO> roomList=mapservice.listAllMap();
+		 model.addAttribute("roomList",roomList);
 		 return "map/mapView";
 
 }

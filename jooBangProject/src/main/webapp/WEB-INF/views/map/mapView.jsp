@@ -16,13 +16,15 @@
 	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=yaysmxugs9&submodules=geocoder"></script>
 	<script src="<c:url value='/js/MarkerClustering.js'/>" ></script>
 	<script src="https://kit.fontawesome.com/bb34e32cb3.js" crossorigin="anonymous"></script>
+	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 </head>
 <body>
-<div id="wrap">
-<nav>
+
+      <nav>
         <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
+      <div id="wrap">
 <div class="menu">
 <hr>
    <input type="text" id="address">
@@ -52,11 +54,11 @@ function initMap() {
 	
 			// 지역을 담은 배열의 길이만큼 for문으로 마커와 정보창을 채워주자 
 			
-             <c:forEach var="map" items="${mapList }">
+             <c:forEach var="room" items="${roomList }">
 		    var marker = new naver.maps.Marker({
 		        map: map,
 		        title:"동구", // 지역구 이름 
-		        position: new naver.maps.LatLng(${map.lat}, ${map.lng}), // 지역구의 위도 경도 넣기 
+		        position: new naver.maps.LatLng(${room.lat}, ${room.lng}), // 지역구의 위도 경도 넣기 
 		        icon: {
 		            url:'/image/mark.png', //50, 68 크기의 원본 이미지
 		            size: new naver.maps.Size(50, 50),
@@ -70,9 +72,9 @@ function initMap() {
 		    
 		    /* 정보창 */
 			 var infoWindow = new naver.maps.InfoWindow({
-			     content: '<div class="content"style="width:400px;text-align:center;padding:10px;"><b>'+${map.roomNo}+'<img src="/image/mark.png">'+
-			     '<hr>'+${map.roomWeekPrice}+'</b><br> - 네이버 지도 - </div>'
-			 }); // 클릭했을 때 띄워줄 정보 HTML 작성
+			     content: '<div class="content"style="width:400px;text-align:center;padding:10px;"><a href="<c:url value='/roominfo/${room.roomNo}'/>"><b>'+${room.roomNo}+'<img src="/image/registImg/${fn:split(room.roomImage, ',')[0]}">'+
+			     '<hr></b><br> </a></div>'
+			 }); // 클릭했을 때 띄워줄 정보 HTML 작성                                                      
 			 map.setCursor('pointer');
 			 markers.push(marker); // 생성한 마커를 배열에 담는다.
 			 infoWindows.push(infoWindow); // 생성한 정보창을 배열에 담는다.
