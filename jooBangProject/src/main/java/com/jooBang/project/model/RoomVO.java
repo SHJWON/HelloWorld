@@ -1,7 +1,7 @@
 package com.jooBang.project.model;
 
-public class roomVO {
-	private String roomNo;
+public class RoomVO {
+	private int roomNo;
 	private String roomName;
 	private String roomDecription;
 	private String roomZipcode;
@@ -25,10 +25,10 @@ public class roomVO {
 	private int roomDiscountFee;
 	private String roomImage;
 	
-	public String getRoomNo() {
+	public int getRoomNo() {
 		return roomNo;
 	}
-	public void setRoomNo(String roomNo) {
+	public void setRoomNo(int roomNo) {
 		this.roomNo = roomNo;
 	}
 	public String getRoomName() {

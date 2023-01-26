@@ -2,9 +2,7 @@ package com.jooBang.project.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.jooBang.project.model.roomVO;
+import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.service.RegistService;
 
 @Controller
@@ -30,24 +28,7 @@ public class RegistController {
 	
 	@RequestMapping("/regist")
 	public String regist(@RequestParam("uploadFileMulti") ArrayList<MultipartFile> files, 
-						 roomVO vo, HttpServletRequest req) throws IOException{
-
-		// roomNo 생성 - 랜덤 숫자
-		long timeNum = System.currentTimeMillis();
-		
-		// 날짜 시간 포맷 : HH(24시간제)
-		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHHmmss");
-		String strTime = fmt.format(new Date(timeNum));
-		
-		// 랜덤 숫자 4개 생성
-		String rNum = "";
-		for(int i=1; i<=4; i++)
-			rNum+= (int)(Math.random()*10);
-		
-		String roomNo =strTime + "-" + rNum;
-		// vo에 주문번호 저장
-		vo.setRoomNo(roomNo);
-		
+						 RoomVO vo, HttpServletRequest req) throws IOException{
 		
 		// roomImage - 여러개 파일 저장
 		String uploadPath = req.getSession().getServletContext().getRealPath("/").replace("webapp","resources");
@@ -78,9 +59,7 @@ public class RegistController {
 		}
 		
 		vo.setRoomImage(roomImage);
-		
 		service.insertRoom(vo);
-		
 		
 		
 		return "redirect:/registForm";

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.jooBang.project.dao.IRegistDAO;
-import com.jooBang.project.model.roomVO;
+import com.jooBang.project.model.RoomVO;
 
 @Service
 public class RegistService implements IRegistDAO {
@@ -16,24 +16,23 @@ public class RegistService implements IRegistDAO {
 	private IRegistDAO dao;
 	
 	@Override
-	public void insertRoom(roomVO vo) {
+	public void insertRoom(RoomVO vo) {
 		dao.insertRoom(vo);
 	}
 
 	@Override
-	public ArrayList<roomVO> listAllRoom() {
+	public ArrayList<RoomVO> listAllRoom() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public roomVO detailRoom(String roomNo) {
-		// TODO Auto-generated method stub
-		return null;
+	public RoomVO detailRoom(int roomNo) {
+		return dao.detailRoom(roomNo);
 	}
 
 	@Override
-	public roomVO updateRoom(roomVO vo) {
+	public RoomVO updateRoom(RoomVO vo) {
 		// TODO Auto-generated method stub
 		return null;
 	}

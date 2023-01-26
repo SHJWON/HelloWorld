@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.jooBang.project.dao.IRegistDAO">
-  	<resultMap id="roomResult" type="com.jooBang.project.model.roomVO">
+  	<resultMap id="roomResult" type="com.jooBang.project.model.RoomVO">
   		<result property="roomNo" column="roomNo" />
   		<result property="roomName" column="roomName" />
   		<result property="roomDecription" column="roomDecription" />
@@ -31,7 +31,7 @@
   	</resultMap>
   	
   	<!-- 룸 등록 -->
-	<insert id="insertRoom" parameterType="com.jooBang.project.model.roomVO">
+	<insert id="insertRoom" parameterType="com.jooBang.project.model.RoomVO">
 		INSERT INTO room (roomNo, roomName, roomDecription, roomZipcode, roomAddress1, roomAddress2,
 						  roomRCount, roomBCount, roomLCount, roomKCount, basicOption, addtionalOption,
 						  roomBuilding, infoElevator, infoParking, roomLeastPay, roomDeposit, roomRent,
@@ -41,4 +41,8 @@
 						  #{roomBuilding}, #{infoElevator}, #{infoParking}, #{roomLeastPay}, #{roomDeposit}, #{roomRent},
 						  #{roomAdministrationFee}, #{roomPayOption}, #{roomDiscount}, #{roomDiscountFee}, #{roomImage})
 	</insert>
+	
+	<select id="detailRoom" parameterType="int" resultType="com.jooBang.project.model.RoomVO">
+		SELECT * FROM room WHERE roomNo = #{roomNo}
+	</select>
   </mapper>
