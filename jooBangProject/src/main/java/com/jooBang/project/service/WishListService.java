@@ -17,9 +17,8 @@ public class WishListService implements IWishListService {
 	IWishListDAO dao;
 
 	@Override
-	public int count() {
-		// TODO Auto-generated method stub
-		return dao.count();
+	public int count(int roomNo) {
+		return dao.count(roomNo);
 	}
 	
 	@Override
@@ -30,4 +29,30 @@ public class WishListService implements IWishListService {
 			data.put("postNum", postNum);
 		return dao.listPage(displayPost, postNum);
 	}
+
+	@Override
+	public String wishList_check(HashMap<String, Object> map) {
+		String check = dao.wishList_check(map);
+		System.out.println(check);
+		String result="false";
+		
+		
+		if(check!=null) {
+			result="true";
+		}
+		
+		return result;
+	}
+
+	@Override
+	public void insert_wishList(HashMap<String, Object> map) {
+		dao.insert_wishList(map);
+	}
+
+	@Override
+	public void delete_wishList(HashMap<String, Object> map) {
+		dao.delete_wishList(map);
+	}
+	
+	
 }
