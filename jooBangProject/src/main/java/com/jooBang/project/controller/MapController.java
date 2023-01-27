@@ -40,7 +40,7 @@ public class MapController {
 	@RequestMapping("/roominfo/{roomNo}")
 	public String roominfo(@PathVariable int roomNo, Model model){
 		RoomVO vo = roomservice.detailRoom(roomNo);
-		int wish_count = wishservice.count(roomNo);
+		int wish_count = wishservice.wishcount(roomNo);
 		   
 		model.addAttribute("wish_count", wish_count);
 		model.addAttribute("room", vo);
@@ -60,7 +60,7 @@ public class MapController {
 	public int insert_wishList(@RequestParam HashMap<String, Object> param, Model model) {
 		wishservice.insert_wishList(param);
 		int roomNo = Integer.parseInt((String)param.get("roomNo"));
-		int wish_count = wishservice.count(roomNo);
+		int wish_count = wishservice.wishcount(roomNo);
 		
 		model.addAttribute("wish_count", wish_count);
 		
@@ -73,7 +73,7 @@ public class MapController {
 		wishservice.delete_wishList(param);
 		int roomNo = Integer.parseInt((String)param.get("roomNo"));
 		
-		int wish_count = wishservice.count(roomNo);
+		int wish_count = wishservice.wishcount(roomNo);
 		
 		model.addAttribute("wish_count", wish_count);
 		
