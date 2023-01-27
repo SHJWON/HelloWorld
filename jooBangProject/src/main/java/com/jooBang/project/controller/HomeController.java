@@ -13,6 +13,7 @@ import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.service.BoardService;
 import com.jooBang.project.service.FurnitureService;
 import com.jooBang.project.service.RegistService;
+import com.jooBang.project.service.WishListService;
 
 @Controller
 public class HomeController {
@@ -27,6 +28,10 @@ public class HomeController {
 //  룸 서비스
 	@Autowired
 	RegistService rService;
+	
+//  찜 서비스
+	@Autowired
+	WishListService wService;
 
 	@RequestMapping("/")
 	public String mainView(Model model) {
@@ -43,11 +48,11 @@ public class HomeController {
 		model.addAttribute("rRecentView", rRecentView);
 		
 		//hotClick 3개 불러오기
-//		ArrayList<RoomVO> hotView = rService.hotClickView();
-//		model.addAttribute("hotClickView", hotClickView);
+		ArrayList<RoomVO> hotView = wService.hotClickView();
+		model.addAttribute("hotView", hotView);
 		
 		//recommend 3개 불러오기
-     	ArrayList<RoomVO> recommendView = rService.recommendView();
+     	ArrayList<RoomVO> recommendView = wService.recommendView();
 		model.addAttribute("recommendView", recommendView);
 		
 		return "main";

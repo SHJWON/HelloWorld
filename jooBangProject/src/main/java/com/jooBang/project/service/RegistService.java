@@ -49,16 +49,6 @@ public class RegistService implements IRegistService {
 		return dao.rRecentView();
 	}
 
-	@Override
-	public ArrayList<RoomVO> hotClickView() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public ArrayList<RoomVO> recommendView() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

@@ -12,4 +12,6 @@ public interface IWishListService {
 	public String wishList_check(HashMap<String, Object> map);
 	public void insert_wishList(HashMap<String, Object> map);
 	public void delete_wishList(HashMap<String, Object> map);
+	public ArrayList<RoomVO> hotClickView();
+	public ArrayList<RoomVO> recommendView();
 }

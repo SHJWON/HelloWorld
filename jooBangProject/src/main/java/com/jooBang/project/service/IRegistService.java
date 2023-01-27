@@ -11,6 +11,4 @@ public interface IRegistService {
 	public RoomVO updateRoom(RoomVO vo);
 	public void deleteRoom(String roomNo);
 	public ArrayList<RoomVO> rRecentView();
-	public ArrayList<RoomVO> hotClickView();
-	public ArrayList<RoomVO> recommendView();
 }
