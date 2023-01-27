@@ -323,7 +323,6 @@
 					<div class="questionContainer">
 						<div class="buttonContainer">
 							<input type="file" id="uploadFileMulti" name="uploadFileMulti" multiple="multiple" accept=".png, .jpg, .jpeg">
-　　							<button type="button" id="uploadBtn">업로드</button>
 						</div>
 					</div>
 				</div>

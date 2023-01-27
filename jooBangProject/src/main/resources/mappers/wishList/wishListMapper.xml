@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.jooBang.project.dao.IWishListDAO">
+	
+	<select id="wishList_check" parameterType="hashmap" resultType="string">
+		SELECT roomNo FROM wishlist WHERE memId=#{memId} AND 
+										  roomNo=#{roomNo}
+	</select>
+	
+	<insert id="insert_wishList" parameterType="hashmap">
+		INSERT INTO wishlist(memId, roomNo)
+			   VALUES (#{memId},#{roomNo}) 
+	</insert>
+
+	<delete id="delete_wishList" parameterType="hashmap">
+		DELETE FROM wishlist WHERE memId=#{memId} AND 
+								   roomNo=#{roomNo}
+	</delete>
+		
+	<select id="count" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM wishlist WHERE roomNo=#{roomNo}
+	</select>
+  </mapper>

@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/* roomInfo.css */
+
+/* 이미지 */
+
+.section_slideContainer{
+	width:100%;
+	height: 440px;
+}
+
+.slideWrap {
+    display: flex;
+    justify-content: center;
+}
+
+.slideImgWrapper {
+    width: 440px;
+    height: 440px;
+}
+
+.slideImg {
+    width:100%;
+    height:100%;
+}
+
+/* 방정보 */
+.section_contentsContainer {
+    width:100%;
+}
+
+.section_contentsWrapper {
+    width:1200px;
+    margin:auto;
+    display: flex;
+}
+
+/* 방정보 - 가격정보 */
+
+.payInfoBoxWrapper{
+    margin-top: 60px;
+}
+
+.payInfoBox{
+    padding: 16px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.payInfoBox+.payInfoBox{
+    border-top: 1px solid rgb(245, 245, 245);
+}
+
+.payInfoBox .payTitle{
+    width: 160px;
+    font-weight: bold;
+}
+
+.payInfoBox .payContents{
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+.payInfoBox .payContents #depositInfoBox{
+    border-top: 1px solid rgb(245, 245, 245);
+    margin-top: 16px;
+    padding-top: 16px;
+}
+
+.payInfoBox .payContents #depositInfoBox p{
+    margin: 0 0 10px 0;
+    color:rgb(133, 133, 133);
+}
+
+/* 방정보1 */
+
+.roomInfo1Container {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+.roomInfo1Wrapper {
+    width:780px;
+}
+
+.roomInfo_bold{
+    font-weight: bold;
+}
+
+/* 방정보2 */
+
+.roomInfo2Wrapper {
+    width:340px;
+}

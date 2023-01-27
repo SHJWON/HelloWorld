@@ -10,10 +10,10 @@ import com.jooBang.project.dao.IRegistDAO;
 import com.jooBang.project.model.RoomVO;
 
 @Service
-public class RegistService implements IRegistDAO {
+public class RegistService implements IRegistService {
 	@Autowired
 	@Qualifier("IRegistDAO")
-	private IRegistDAO dao;
+	IRegistDAO dao;
 	
 	@Override
 	public void insertRoom(RoomVO vo) {
