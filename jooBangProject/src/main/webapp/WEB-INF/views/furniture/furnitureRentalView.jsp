@@ -44,7 +44,7 @@
              <c:forEach var="furniture" items="${prdList}">
    	         <li class="furnitureGridBox" value="${furniture.furnitureNo}" onclick="location.href='${furniture.furnitureMoveURL}'" >
                 <div id="FListBox">
-                  <img src="/image/furniture/${furniture.furnitureImg}" width="200" height="200" id="furniturImg1" name="furniturImg1" />
+                  <img src="/image/furniture/${furniture.furnitureImg}" width="260" height="200" id="furniturImg1" name="furniturImg1" />
 	              <h5>${furniture.furnitureCity}</h5>
 	              <h4 id="FTitleWidth">${furniture.furnitureTitle}</h4>
 	              <h4>${furniture.furnitureCompany}</h4>
