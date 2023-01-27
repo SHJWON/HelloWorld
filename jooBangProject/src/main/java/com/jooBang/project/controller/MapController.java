@@ -42,8 +42,10 @@ public class MapController {
 		RoomVO vo = roomservice.detailRoom(roomNo);
 		int wish_count = wishservice.wishcount(roomNo);
 		   
-		model.addAttribute("wish_count", wish_count);
-		model.addAttribute("room", vo);
+		roomservice.viewConut(roomNo); // 조회수 증가
+		
+		model.addAttribute("wish_count", wish_count); // 찜수 조회
+		model.addAttribute("room", vo); // room 정보 조회
 		   
 		return "map/roomInfo";
 	}

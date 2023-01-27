@@ -11,4 +11,5 @@ public interface IRegistDAO {
 	public RoomVO updateRoom(RoomVO vo);
 	public void deleteRoom(String roomNo);
 	public ArrayList<RoomVO> rRecentView();
+	public void viewConut(int roomNo); // 조회수 증가
 }

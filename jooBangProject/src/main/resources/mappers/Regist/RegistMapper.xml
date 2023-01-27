@@ -57,5 +57,8 @@
  		limit #{displayPost}, #{postNum}
 	</select>
 	
+	<update id="viewConut" parameterType="int">
+		UPDATE room SET roomViewCnt=roomViewCnt+1 WHERE roomNo=#{roomNo};
+	</update>
 	
   </mapper>
