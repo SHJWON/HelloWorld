@@ -17,8 +17,8 @@ public class WishListService implements IWishListService {
 	IWishListDAO dao;
 
 	@Override
-	public int count(int roomNo) {
-		return dao.count(roomNo);
+	public int wishcount(int roomNo) {
+		return dao.wishcount(roomNo);
 	}
 	
 	@Override
@@ -52,6 +52,12 @@ public class WishListService implements IWishListService {
 	@Override
 	public void delete_wishList(HashMap<String, Object> map) {
 		dao.delete_wishList(map);
+	}
+
+	@Override
+	public int count() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	
