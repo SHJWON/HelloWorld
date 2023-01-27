@@ -59,6 +59,18 @@ public class WishListService implements IWishListService {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override //핫클릭 방 목록보기
+	public ArrayList<RoomVO> hotClickView() {
+		// TODO Auto-generated method stub
+		return dao.hotClickView();
+	}
+
+	@Override //추천 방 목록보기
+	public ArrayList<RoomVO> recommendView() {
+		// TODO Auto-generated method stub
+		return dao.recommendView();
+	}
 	
 	
 }
