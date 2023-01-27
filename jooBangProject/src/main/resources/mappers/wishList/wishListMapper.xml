@@ -45,7 +45,7 @@
 								   roomNo=#{roomNo}
 	</delete>
 		
-	<select id="count" parameterType="int" resultType="int">
+	<select id="wishcount" parameterType="int" resultType="int">
 		SELECT COUNT(*) FROM wishlist WHERE roomNo=#{roomNo}
 	</select>
 	
