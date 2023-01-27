@@ -49,6 +49,9 @@ public class RegistService implements IRegistService {
 		return dao.rRecentView();
 	}
 
-
+	@Override
+	public void viewConut(int roomNo) {
+		dao.viewConut(roomNo);
+	}
 
 }

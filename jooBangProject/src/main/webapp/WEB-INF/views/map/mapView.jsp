@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <title>간단한 지도 표시하기</title>
+    <title>지도페이지</title>
     <script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
    	    <c:import url="/WEB-INF/views/head.jsp"/>
    	       	<link rel="stylesheet" type="text/css" href="<c:url value='/css/map.css' />"> 
