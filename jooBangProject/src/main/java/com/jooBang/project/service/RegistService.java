@@ -50,8 +50,13 @@ public class RegistService implements IRegistService {
 	}
 
 	@Override
-	public void viewConut(int roomNo) {
-		dao.viewConut(roomNo);
+	public void viewCount(int roomNo) {
+		dao.viewCount(roomNo);
+	}
+
+	@Override
+	public void wishCountroom(int roomNo) {
+		dao.wishCountroom(roomNo);
 	}
 
 }
