@@ -6,6 +6,7 @@
 <head>
  <meta charset="UTF-8">
  <c:import url="/WEB-INF/views/head.jsp"/>
+ <link rel="stylesheet" type="text/css" href="<c:url value='/css/wishList.css' />">
  <title>찜목록 및 비교하기</title>
 </head>
  <body>

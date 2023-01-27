@@ -56,7 +56,7 @@
 	
 	<!-- 메인 추천방 목록 -->
 	<select id="recommendView" resultMap="roomResult">
-		SELECT * FROM room ORDER BY roomNo DESC	limit 3;
+		SELECT * FROM room ORDER BY wishCount DESC	limit 3;
 	</select>
 	
   </mapper>

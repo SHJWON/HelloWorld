@@ -8,6 +8,7 @@
  <meta charset="UTF-8">
  <c:import url="/WEB-INF/views/head.jsp"/>
  <script src="js/furniture.js"></script>
+ <link rel="stylesheet" type="text/css" href="<c:url value='/css/furnitureRentalView.css' />">
  <title>가구 렌탈 페이지</title>
 </head>
  <body>
