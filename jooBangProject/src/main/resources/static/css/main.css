@@ -29,19 +29,19 @@ a.topScroll {
 
 a.mainChat {
     position: fixed;
-    left: 95%;
-    bottom: 150px;
+    left: 94.5%;
+    bottom: 130px;
     }
     
 
 a.topScroll img {
-    width: 55px;
+    width: 50px;
     height: 50px;
 }
 
 a.mainChat img {
-    width: 55px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 
 /********** Copy & SerchBar **********/
