@@ -17,7 +17,7 @@
         <c:import url="/WEB-INF/views/top.jsp"/>
 		
 		<a href="#" class="topScroll" style="display: inline;"><img src="/image/top.png"></a>
-		<a href="#" class="mainChat" style="display: inline;"><img src="/image/chatBot.png"></a>
+		<a href="#" class="mainChat" style="display: inline;"><img src="/image/chatbot.png"></a>
 
       <section class="mainContainer">
         <!-- img배경 및 카피문구 -->
@@ -175,7 +175,7 @@
               <img
                 class="card__image"
                 id="newRoomImg"
-                src="/image/newroom.png"
+                src="/image/recommendRoom.jpg"
                 alt=""
               />
             </div>
@@ -196,7 +196,7 @@
             </svg>
 
             <div class="card__content">
-              <h1 class="card__title">따끈따끈 새로운 방을 확인해보세요!</h1>
+              <h1 class="card__title">다른 분들이 많이 찜한 방이에요!</h1>
             </div>
           </div>
         </div>
