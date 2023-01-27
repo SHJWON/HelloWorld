@@ -42,12 +42,21 @@ public class HomeController {
 		ArrayList<RoomVO> rRecentView = rService.rRecentView();
 		model.addAttribute("rRecentView", rRecentView);
 		
+		//hotClick 3개 불러오기
+//		ArrayList<RoomVO> hotView = rService.hotClickView();
+//		model.addAttribute("hotClickView", hotClickView);
+		
+		//recommend 3개 불러오기
+//		ArrayList<RoomVO> recommendView = rService.recommendView();
+//		model.addAttribute("recommendView", recommendView);
+		
 		return "main";
 	}
 
+	
 
 	@RequestMapping("/404")
 	public String error() {
-		return "error";
+		return "404";
 	}
 }

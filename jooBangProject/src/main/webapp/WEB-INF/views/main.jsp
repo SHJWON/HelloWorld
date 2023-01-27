@@ -15,7 +15,9 @@
     <div id="wrap">
       
         <c:import url="/WEB-INF/views/top.jsp"/>
-
+		
+		<a href="#" class="topScroll" style="display: inline;"><img src="/image/top.png"></a>
+		<a href="#" class="mainChat" style="display: inline;"><img src="/image/chatBot.png"></a>
 
       <section class="mainContainer">
         <!-- img배경 및 카피문구 -->
@@ -63,7 +65,7 @@
         <ul class="recommendRoom">
         <c:forEach var="mainRoom" items="${rRecentView}">
           <li>
-            <div>
+            <div class="mainATeg">
               <a href="/roominfo/${mainRoom.roomNo}">
                 <div>	
                   <img class="roomImg" src="/image/registImg/${fn:split(mainRoom.roomImage, ',')[0]}" width="260" height="200" />
@@ -119,45 +121,21 @@
 
         <!-- 핫클릭 목록 -->
         <ul class="hotClickRoom">
+         <c:forEach var="mainHotClick" items="${hotView}">
           <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
+            <div class="mainATeg">
+              <a href="/roominfo/${mainHotClick.roomNo}">
+                <div>	
+                  <img class="roomImg" src="/image/registImg/${fn:split(mainHotClick.roomImage, ',')[0]}" width="260" height="200" />
                 </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
+                <h5>${fn:split(mainHotClick.roomAddress1, ' ')[0]} ${fn:split(mainHotClick.roomAddress1, ' ')[1]}</h5>
+                <h4><span id="line_limit">${mainHotClick.roomName}</span></h4>
+                <h5>방 개수: ${mainHotClick.roomBCount} |  화장실 개수: ${mainHotClick.roomRCount}</h5>
+                <h5><fmt:formatNumber value="${mainHotClick.roomRent}" pattern="#,###"/>￦ / 주</h5>
+              </a> 
             </div>
           </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
+         </c:forEach>
         </ul>
 
         <!-- 최신 방 텍스트 멘트 -->
@@ -171,47 +149,23 @@
           </div>
         </div>
 
-        <!-- 최신 방 목록  -->
+        <!-- 추천 방 목록  -->
         <ul class="newRoomList">
+          <c:forEach var="mainRecommend" items="${recommendView}">
           <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
+            <div class="mainATeg">
+              <a href="/roominfo/${mainRecommend.roomNo}">
+                <div>	
+                  <img class="roomImg" src="/image/registImg/${fn:split(mainRecommend.roomImage, ',')[0]}" width="260" height="200" />
                 </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
+                <h5>${fn:split(mainRecommend.roomAddress1, ' ')[0]} ${fn:split(mainRecommend.roomAddress1, ' ')[1]}</h5>
+                <h4><span id="line_limit">${mainRecommend.roomName}</span></h4>
+                <h5>방 개수: ${mainRecommend.roomBCount} |  화장실 개수: ${mainRecommend.roomRCount}</h5>
+                <h5><fmt:formatNumber value="${mainRecommend.roomRent}" pattern="#,###"/>￦ / 주</h5>
+              </a> 
             </div>
           </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="#">
-                <div>
-                  <img src="/image/logo.png" width="250" />
-                </div>
-                <p>지역</p>
-                <h4>방이름</h4>
-                <p>기본옵션</p>
-                <h4>방가격/주</h4>
-              </a>
-            </div>
-          </li>
+         </c:forEach>
         </ul>
 
         <!-- 최신 방 이미지 목록 -->
@@ -268,7 +222,7 @@
       
             <ul id="main_communityUl">
             <c:forEach var="mainCommuniny" items="${bRecentView}">
-              <li id="list1"><img src="/image/쭈방이.png" width="64" height="64"> <!-- userImg 등록 예정 -->
+              <li id="list1"><img src="/image/default_profile.png" width="64" height="64"> <!-- userImg 등록 예정 -->
                <a href="/board/boardDetailView/${mainCommuniny.brdNo}">
                <span class="listText">${mainCommuniny.brdTitle}</span>
                </a>
@@ -280,7 +234,7 @@
 
         <!-- 가구대여 카드 -->
         <div class="furnitureRental">
-            <div class='Fbox'>
+            <div class='Fbox'>	
                 <div class='wave -one'></div>
                 <div class='wave -two'></div>
                 <div class='wave -three'></div>
@@ -301,7 +255,7 @@
                 <div>
                   <a href="${mainFurniture.furnitureMoveURL}" class="furnitureGridBox" >
                     <div>
-                      <img src="/image/furniture/${mainFurniture.furnitureImg}" width="200" height="200" id="furniturImg1" class="mainCardImg" />
+                      <img src="/image/furniture/${mainFurniture.furnitureImg}" width="260" height="200" id="furniturImg1" class="mainCardImg" />
                     <h4>${mainFurniture.furnitureCity}</h4>
                     <h4>${mainFurniture.furnitureTitle}</h4>
                     <h5>${mainFurniture.furnitureCompany}</h5>
