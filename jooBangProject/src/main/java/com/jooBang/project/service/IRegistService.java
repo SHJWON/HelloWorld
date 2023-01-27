@@ -11,5 +11,6 @@ public interface IRegistService {
 	public RoomVO updateRoom(RoomVO vo);
 	public void deleteRoom(String roomNo);
 	public ArrayList<RoomVO> rRecentView();
-	public void viewConut(int roomNo);
+	public void viewCount(int roomNo);
+	public void wishCountroom(int roomNo);
 }

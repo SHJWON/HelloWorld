@@ -57,8 +57,13 @@
  		limit #{displayPost}, #{postNum}
 	</select>
 	
-	<update id="viewConut" parameterType="int">
+	<update id="viewCount" parameterType="int">
 		UPDATE room SET roomViewCnt=roomViewCnt+1 WHERE roomNo=#{roomNo};
 	</update>
+	
+	<update id="wishCountroom" parameterType="int">
+		UPDATE room SET wishCount=(SELECT COUNT(*) FROM wishlist WHERE roomNo=#{roomNo}) 
+												   WHERE roomNo=#{roomNo};
+	</update>	
 	
   </mapper>
