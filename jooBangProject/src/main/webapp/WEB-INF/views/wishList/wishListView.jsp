@@ -18,8 +18,8 @@
         <div class="quickmenu"> 
             <ul class="wishSubMenu">
                  <li class="side-menu"><a href="<c:url value='/wishList/wishListVeiw'/>">내가 본 방</a></li><hr>
-                 <li class="side-menu"><a href="<c:url value='/wishList/wishLikeVeiw'/>">찜한 방</a></li><hr>
-                 <li class="side-menu"><a href="<c:url value='/wishList/wishCompareVeiw'/>">방 비교하기</a></li><hr>
+                 <li class="side-menu"><a href="<c:url value='/404'/>">찜한 방</a></li><hr>
+                 <li class="side-menu"><a href="<c:url value='/404'/>">방 비교하기</a></li><hr>
             </ul>
          </div>
       </div>

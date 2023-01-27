@@ -12,6 +12,7 @@
     margin-top: 10px;
     position: relative;
     background: linear-gradient(50deg, #949494, #7b7b7b, #000000);
+    z-index: -1;
 }
 
 .fa-brands{
