@@ -47,8 +47,8 @@ public class HomeController {
 //		model.addAttribute("hotClickView", hotClickView);
 		
 		//recommend 3개 불러오기
-//		ArrayList<RoomVO> recommendView = rService.recommendView();
-//		model.addAttribute("recommendView", recommendView);
+     	ArrayList<RoomVO> recommendView = rService.recommendView();
+		model.addAttribute("recommendView", recommendView);
 		
 		return "main";
 	}
