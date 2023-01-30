@@ -10,6 +10,9 @@ $(document).ready(function () {
 	var id = $('#sid').val();
 	var roomNo = $('#roomNo').val();
 
+	var basicOption = $('#basicOption').val();
+
+
 	if (id == "") {
 		// 로그인하지 않은 상태에서 wishList_CheckBtn 클릭시
 		$('#wishList_CheckBtn').on('click', function () {

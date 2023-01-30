@@ -11,7 +11,7 @@
 <c:import url="/WEB-INF/views/head.jsp"/>
 <link rel="stylesheet" type="text/css" href="<c:url value='/css/roomInfo.css' />">
 <script src="<c:url value='/js/wishList.js' />"></script>	
-<title>방 등록하기</title>
+<title>${room.roomName}</title>
 </head>
 <body>
 	<div id="wrap">
@@ -34,8 +34,8 @@
 						<div class="roomInfo1Wrapper">
 							<h1>${room.roomName}</h1>
 							<div id="roomAddress">${room.roomAddress1}</div>
-							<div class="roomInfoDesciption">${room.roomDecription }</div>
-							
+							<div style="white-space:pre;" class="roomInfoDesciption">${room.roomDecription }</div>
+							<!-- 가격 정보 -->
 							<div class="InfoBoxCountainer" id="payInfo">
 								<div class="InfoBoxWrapper">
 									<div class="InfoTitel"><h2>가격 정보</h2></div>
@@ -76,6 +76,7 @@
 									</div>
 								</div>
 							</div>
+							<!-- 상세 정보 -->
 							<div class="InfoBoxCountainer" id="detailInfo">
 								<div class="InfoBoxWrapper">
 									<div class="InfoTitel">
@@ -108,10 +109,57 @@
 										</div>
 									</div>
 									<div class="InfoBox">
-										<div class="InfoTitle">관리비</div>
+										<div class="InfoTitle">엘레베이터</div>
 										<div class="InfoContents">
-											<fmt:formatNumber value="${room.roomAdministrationFee}"
-												pattern="#,###" />
+											<c:choose>
+												<c:when test="${room.infoElevator=='yes'}">있음</c:when>
+												<c:otherwise>
+													없음
+												</c:otherwise>
+											</c:choose>
+										</div>
+									</div>
+									<div class="InfoBox">
+										<div class="InfoTitle">주차</div>
+										<div class="InfoContents">
+											<c:choose>
+												<c:when test="${room.infoParking=='free_parking'}">무료주차</c:when>
+												<c:when test="${room.infoParking=='pay_parking'}">유료주차</c:when>
+												<c:otherwise>
+													없음
+												</c:otherwise>
+											</c:choose>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 옵션 정보 -->
+							<div class="InfoBoxCountainer" id="detailInfo">
+								<div class="InfoBoxWrapper">
+									<div class="InfoTitel">
+										<h2>기본 옵션</h2>
+									</div>
+									<div class="InfoBox">
+										<input type="hidden" id="basicOption" value="${room.basicOption }"> 
+										<div class="optionWrapper bed">
+											<div class="optionImg"><img src="<c:url value='/image/optionImg/bed.png' />"></div>
+											<div class="optionTitle">침대</div>
+										</div>
+										<div class="optionWrapper refrigerator">
+											<div class="optionImg"><img src="<c:url value='/image/optionImg/refrigerator.png' />"></div>
+											<div class="optionTitle">냉장고</div>
+										</div>
+										<div class="optionWrapper microwave">
+											<div class="optionImg"><img src="<c:url value='/image/optionImg/microwave.png' />"></div>
+											<div class="optionTitle">전자렌지</div>
+										</div>
+										<div class="optionWrapper air-conditiner">
+											<div class="optionImg"><img src="<c:url value='/image/optionImg/air-conditioner.png' />"></div>
+											<div class="optionTitle">에어컨</div>
+										</div>
+										<div class="optionWrapper washing-machine">
+											<div class="optionImg"><img src="<c:url value='/image/optionImg/washing-machine.png' />"></div>
+											<div class="optionTitle">세탁기</div>
 										</div>
 									</div>
 								</div>
