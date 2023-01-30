@@ -13,6 +13,7 @@ public class BoardVO {
 	private String ctgNo;
 	private String ctgName;
 	private String brdImage;
+	private String memId;
 	public int getBrdNo() {
 		return brdNo;
 	}
@@ -67,8 +68,12 @@ public class BoardVO {
 	public void setBrdImage(String brdImage) {
 		this.brdImage = brdImage;
 	}
-	
-	
+	public String getMemId() {
+		return memId;
+	}
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
 
 	
 	

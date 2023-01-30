@@ -35,11 +35,17 @@ $(document).ready(function(){
 	}
  
  });
- 
- 
- /*$('.side-menu').on('click','a',function(){
- alert($(this).parent().attr('class'));
- $('.side-menu').removeClass('on');
-$(this).parent().addClass('on');
-   
-});*/
+ $(document).ready(function(){
+ var sid = $('#sid').val();
+ var url=$('#url').val();
+  $('#insertBtn').on("click",function(){
+ if(sid ==""){
+   		alert("로그인 후 이용해주세요");
+	    location.href ="/member/login"
+	 }else{
+ location.href =url;
+ }
+ });
+
+
+ });

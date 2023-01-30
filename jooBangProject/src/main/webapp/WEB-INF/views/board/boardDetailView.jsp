@@ -67,8 +67,10 @@
 		</div>
 		</form>
 		<div class="detailfoot">
+		<c:if test="${sessionScope.sid==brd.brdWriter }">
          <a href="<c:url value ='/board/boardUpdate/${brdNo}'/>"><button class="detailBtn">수정</button></a>
          <a href="javascript:deleteCheck();"><button class="detailBtn"> 삭제 </button></a><br><br>
+         </c:if>
          </div>
 		<script>
 		function deleteCheck(){

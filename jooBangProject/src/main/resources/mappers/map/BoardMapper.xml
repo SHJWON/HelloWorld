@@ -12,7 +12,8 @@
 	  		<result property="brdDate"  column="brdDate"  />
 	  		<result property="brdImage"  column="brdImage"  />  		
 	  		<result property="ctgNo"  column="ctgNo"  />
-	  		<result property="ctgName"  column="ctgName"  />	  		
+	  		<result property="ctgName"  column="ctgName"  />	
+	 		<result property="memId"  column="memId"  />	  		  		
 	  </resultMap>	  	
 <select id="listAllBoard"  resultMap="brdResult">
 	  SELECT board.*, category.* FROM board JOIN category 
