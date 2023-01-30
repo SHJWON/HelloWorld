@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -68,7 +69,7 @@ public class BoardController {
 	}
 	@RequestMapping("/board/insertBoard/{ctgNo}")
 	public String insertBoard(@RequestParam("uploadFileMulti") ArrayList<MultipartFile> files,
-			                  BoardVO brd,HttpServletRequest req,@PathVariable String ctgNo) throws IOException { // 커맨드 객체를 통해 자동으로 VO에 저장
+			                  BoardVO brd,HttpServletRequest req,@PathVariable String ctgNo,HttpSession session) throws IOException { // 커맨드 객체를 통해 자동으로 VO에 저장
 		
 		// 1. 파일 저장 경로 설정 : C:/springWorkspace/upload/
 				// 마지막에 / 있어야 함
@@ -97,8 +98,11 @@ public class BoardController {
 					// 5. 서버로 전송
 					file.transferTo(sendFile);
 				}
-		
+		String brdWriter=(String)session.getAttribute("sid");
 		// 서비스를 통해서 DB에 저장
+		brd.setBrdWriter(brdWriter);
+		
+		System.out.print(brdWriter);
 	    brd.setBrdImage(brdImage);				
 		brd.setCtgNo(ctgNo);
 		service.insertBoard(brd);

@@ -15,17 +15,14 @@
         <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
 		<div id="wrap">
-			<h2>글 등록</h2>
+			<h2>글 등록</h2>${memId }
 			<hr>
 			<form method="post"action="/board/insertBoard/${ctgNo}" enctype="multipart/form-data">
 			 <div class="form-group">
               <label for="exampleFormControlInput1">제목</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="brdTitle" placeholder="제목을 작성해주세요.">
           </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">작성자</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="brdWriter" placeholder="이름을 적어주세요.">
-          </div>
+      
           <div class="form-group">
             <label for="exampleFormControlTextarea1">내용</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="brdContent" rows="10">

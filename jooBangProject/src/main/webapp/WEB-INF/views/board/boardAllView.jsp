@@ -12,13 +12,15 @@
 			<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 			<script src="<c:url value='/js/board.js'/>"></script>
 		    <link rel="stylesheet" href="<c:url value='/css/board.css' />">	
+	
 </head>
 	
 	<body>
-	
-        <c:import url="/WEB-INF/views/top.jsp"/>
+     <c:import url="/WEB-INF/views/top.jsp"/>
      <div id="wrap">
       <input type="hidden" id="menuNumber" value="${menuNumber }">
+      <input type="hidden" id="sid" name="memId" value="${sessionScope.sid}">   
+      <input type="hidden" id="url" value="/board/boardInsert/${ctgNo}">   
     <ul id="ul">
  		 <li class="liside-menu"><a href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
  		 <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${1}'/>">공지사항</a></li><hr>
@@ -40,10 +42,11 @@
            <a href="<c:url value='/board/boardSearchForm/'/>"> <button type="submit" id="boardsubmit"> <i class="fa fa-search"></i></button></a>
         </div>   
         <c:if test="${brdTitle eq ''}">               	
-		<a href="<c:url value='/board/boardInsert/${ctgNo}'/>"><button id="insertBtn">글작성</button></a>
+	<button id="insertBtn" >글작성</button>
 		</c:if>
-		<c:if test="${brdTitle ne ''}">               	
-		<a href="<c:url value='/board/boardInsert/${ctgNo}'/>"><button id="hiddenBtn">글작성</button></a>
+		<c:if test="${brdTitle ne ''}">            	
+		<button id="hiddenBtn" >글작성</button>
+	
 		</c:if>
 		
 			<table class="table table-striped table-hover">
@@ -82,6 +85,5 @@
 						<footer>
         <c:import url="/WEB-INF/views/footer.jsp"/>
       </footer>
-	
 	</body>
 </html>
