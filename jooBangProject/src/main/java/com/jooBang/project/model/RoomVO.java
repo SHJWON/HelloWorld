@@ -26,6 +26,17 @@ public class RoomVO {
 	private String roomImage;
 	private String lat;
 	private String lng;
+	private int roomViewCnt;
+	
+	
+	
+	
+	public int getRoomViewCnt() {
+		return roomViewCnt;
+	}
+	public void setRoomViewCnt(int roomViewCnt) {
+		this.roomViewCnt = roomViewCnt;
+	}
 	public int getRoomNo() {
 		return roomNo;
 	}

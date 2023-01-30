@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +21,9 @@
      <div class="wFilter"> <!--찜목록 서브 메뉴-->
         <div class="quickmenu"> 
             <ul class="wishSubMenu">
-                 <li class="side-menu"><a href="<c:url value='/wishList/wishListVeiw'/>">내가 본 방</a></li><hr>
-                 <li class="side-menu"><a href="<c:url value='/404'/>">찜한 방</a></li><hr>
-                 <li class="side-menu"><a href="<c:url value='/404'/>">방 비교하기</a></li><hr>
+                 <li class="side-menu"><a href="<c:url value='/wishList/wishListView'/>">내가 본 방</a></li><hr>
+                 <li class="side-menu"><a href="<c:url value='/wishList/wishLikeView'/>">찜한 방</a></li><hr>
+                 <li class="side-menu"><a href="<c:url value='/wishList/wishCompareView'/>">방 비교하기</a></li><hr>
             </ul>
          </div>
       </div>

@@ -28,6 +28,7 @@
   		<result property="roomDiscount" column="roomDiscount" />
   		<result property="roomDiscountFee" column="roomDiscountFee" />
   		<result property="roomImage" column="roomImage" />
+  		<result property="roomViewCnt" column="roomViewCnt"/>
   	</resultMap>
 	
 	<select id="wishList_check" parameterType="hashmap" resultType="string">
@@ -59,4 +60,13 @@
 		SELECT * FROM room ORDER BY wishCount DESC	limit 3;
 	</select>
 	
+	<!-- 찜목록 보기 -->
+	<select id="likeView" parameterType="String" resultType="com.jooBang.project.model.WishListVO">	
+		select wishlist.memId,wishlist.roomNo,roomImage,roomAddress1,roomName,roomRent,roomRCount,roomBCount from wishlist 
+		join room on (wishlist.roomNo=room.roomNo) where wishlist.memId=#{memId};
+	</select>
+	
+	
+	
+
   </mapper>

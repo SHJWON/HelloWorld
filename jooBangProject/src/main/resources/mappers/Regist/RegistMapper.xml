@@ -28,6 +28,7 @@
   		<result property="roomDiscount" column="roomDiscount" />
   		<result property="roomDiscountFee" column="roomDiscountFee" />
   		<result property="roomImage" column="roomImage" />
+  		<result property="roomViewCnt" column="roomViewCnt"/>
   	</resultMap>
   	
   	<!-- 룸 등록 -->

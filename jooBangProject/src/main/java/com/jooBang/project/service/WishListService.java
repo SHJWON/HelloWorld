@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.jooBang.project.dao.IWishListDAO;
 import com.jooBang.project.model.RoomVO;
+import com.jooBang.project.model.WishListVO;
 
 @Service
 public class WishListService implements IWishListService {
@@ -33,7 +34,6 @@ public class WishListService implements IWishListService {
 	@Override
 	public String wishList_check(HashMap<String, Object> map) {
 		String check = dao.wishList_check(map);
-		System.out.println(check);
 		String result="false";
 		
 		
@@ -71,6 +71,13 @@ public class WishListService implements IWishListService {
 		// TODO Auto-generated method stub
 		return dao.recommendView();
 	}
+
+	@Override
+	public ArrayList<WishListVO> likeView(String memId) {
+		// TODO Auto-generated method stub
+		return dao.likeView(memId);
+	}
+
 	
 	
 }
