@@ -33,7 +33,7 @@
 					
 		    <c:if test="${empty sessionScope.sid }">
 				<div class="signBtnBox" id="signUpBtn">
-					<a href="<c:url value='/member/signUp'/>" id="mainSignUp">회원가입</a>
+					<a href="<c:url value="/member/TOS"/>" id="mainSignUp">회원가입</a>
 				</div>
 		    </c:if>	
 					    

@@ -12,7 +12,6 @@
 	
 	<body> 
        <c:import url="/WEB-INF/views/top.jsp"/>
-   <form id="TOSForm" name="TOSForm">
     <table width=960px align=center>
      <tr>
       <td align=center>
@@ -243,7 +242,7 @@
 위치기반서비스 이용약관에 동의하시면, 위치를 활용한 광고 정보 수신 등을 포함하는 네이버 위치기반 서비스를 이용할 수 있습니다.
 
 제 1 조 (목적)
-이 약관은 네이버 주식회사 (이하 “회사”)가 제공하는 위치기반서비스와 관련하여 회사와 개인위치정보주체와의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
+이 약관은 주세요 방 주식회사 (이하 “회사”)가 제공하는 위치기반서비스와 관련하여 회사와 개인위치정보주체와의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
 
 제 2 조 (약관 외 준칙)
 이 약관에 명시되지 않은 사항은 위치정보의 보호 및 이용 등에 관한 법률, 개인정보보호법, 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 전기통신기본법, 전기통신사업법 등 관계법령과 회사의 이용약관 및 개인정보처리방침, 회사가 별도로 정한 지침 등에 의합니다.
@@ -325,10 +324,11 @@
 </table>
 <br><br>
   <div id="btn">
+		<a href="<c:url value="/member/signUp"/>" id="mainSignUp">
 		 <button type = "submit"  class="btn_order">회 원 가 입</button>
+		</a>
 		 <button type = "submit"  class="btn_cancel1">취 소 하 기</button>
   </div>
-  </form>
    <footer>
 				      <c:import url="/WEB-INF/views/footer.jsp"/>
 				     </footer>
