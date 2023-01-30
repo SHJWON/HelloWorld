@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 
-
+input[type=password]{
+        font-family:"굴림";
+}
 .wrap {
 	width: 700px;
 	background: #f0f0f0;
