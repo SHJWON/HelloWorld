@@ -2,6 +2,8 @@ package com.jooBang.project.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jooBang.project.model.RoomVO;
+import com.jooBang.project.model.WishListVO;
 import com.jooBang.project.service.WishListService;
 
 @Controller
@@ -24,7 +27,10 @@ public class WishController {
 	
 	//찜 목록 View	
 	@RequestMapping("/wishList/wishLikeView")
-	public String wishLikeList (Model model) {
+	public String wishLikeList (Model model, HttpSession session) {
+		String memId = (String)session.getAttribute("sid");		
+		ArrayList<WishListVO> likeList = service.likeView(memId);
+		model.addAttribute("likeList", likeList);
 		return "/wishList/wishLikeView";
 	}
 	

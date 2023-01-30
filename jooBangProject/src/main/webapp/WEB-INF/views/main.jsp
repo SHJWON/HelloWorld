@@ -132,6 +132,7 @@
                 <h4><span id="line_limit">${mainHotClick.roomName}</span></h4>
                 <h5>방 개수: ${mainHotClick.roomBCount} |  화장실 개수: ${mainHotClick.roomRCount}</h5>
                 <h5><fmt:formatNumber value="${mainHotClick.roomRent}" pattern="#,###"/>￦ / 주</h5>
+                <h5>조회 수: ${mainHotClick.roomViewCnt}</h5>
               </a> 
             </div>
           </li>

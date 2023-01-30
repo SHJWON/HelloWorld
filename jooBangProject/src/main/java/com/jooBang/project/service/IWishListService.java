@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.jooBang.project.model.RoomVO;
+import com.jooBang.project.model.WishListVO;
 
 public interface IWishListService {
 	public int count();
@@ -14,4 +15,5 @@ public interface IWishListService {
 	public void delete_wishList(HashMap<String, Object> map);
 	public ArrayList<RoomVO> hotClickView();
 	public ArrayList<RoomVO> recommendView();
+	public ArrayList<WishListVO> likeView(String memId);
 }
