@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.model.WishListVO;
@@ -19,9 +20,12 @@ public class WishController {
 	@Autowired
 	WishListService service;
 	
-	//내가 본 방 목록
+	//내가 본 방 View
 	@RequestMapping("/wishList/wishListView")
-	public String wishListAll (Model model) {
+	public String wishListAll (Model model, HttpSession session) {
+		String memId = (String)session.getAttribute("sid");		
+		ArrayList<WishListVO> recentList = service.recentList(memId);
+		model.addAttribute("recentList", recentList);
 		return "/wishList/wishListView";
 	}
 	

@@ -24,8 +24,7 @@ public class WishListService implements IWishListService {
 	
 	@Override
 	public ArrayList<RoomVO> listPage(int displayPost, int postNum) {
-		  HashMap<String, Integer> data = new HashMap<String, Integer>();
-			
+		  HashMap<String, Integer> data = new HashMap<String, Integer>();	
 			data.put("displayPost", displayPost);
 			data.put("postNum", postNum);
 		return dao.listPage(displayPost, postNum);
@@ -72,10 +71,33 @@ public class WishListService implements IWishListService {
 		return dao.recommendView();
 	}
 
+	//찜한방 보기
 	@Override
 	public ArrayList<WishListVO> likeView(String memId) {
 		// TODO Auto-generated method stub
 		return dao.likeView(memId);
+	}
+	
+	//최근 본방 저장
+	@Override
+	public void recentViewSave(String memId, int roomNo) {
+		HashMap<String, Object> map= new HashMap<String, Object>();
+		map.put("memId", memId);
+		map.put("roomNo", roomNo);
+		dao.recentViewSave(map);
+		
+	}
+
+	//최근 본방 목록
+	@Override
+	public ArrayList<WishListVO> recentList(String memId) {
+		// TODO Auto-generated method stub
+		return dao.recentList(memId);
+	}
+
+	@Override
+	public void recentViewDelete(WishListVO vo) {
+		dao.recentViewDelete(vo);
 	}
 
 	

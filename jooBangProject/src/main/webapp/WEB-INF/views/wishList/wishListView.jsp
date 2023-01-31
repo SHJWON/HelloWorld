@@ -39,83 +39,21 @@
           </div>
     </div>
       <ul class="wCard"> <!--찜목록-->
-
-        <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
+      <c:forEach var="recentView" items="${recentList}">
+         <li>
+            <div class="mainATeg">
+              <a href="/roominfo/${recentView.roomNo}">
+                <div>	
+                  <img class="roomImg" src="/image/registImg/${fn:split(recentView.roomImage, ',')[0]}" width="260" height="200" />
+                </div>
+                <h5>${fn:split(recentView.roomAddress1, ' ')[0]} ${fn:split(recentView.roomAddress1, ' ')[1]}</h5>
+                <h4><span id="line_limit">${recentView.roomName}</span></h4>
+                <h5>방 개수: ${recentView.roomBCount} |  화장실 개수: ${recentView.roomRCount}</h5>
+                <h5><fmt:formatNumber value="${recentView.roomRent}" pattern="#,###"/>￦ / 주</h5>
+              </a> 
+            </div>
           </li>
-
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          <li class="wishGridBox">
-            <div>
-              <img src="/image/logo.png" width="200" id="furniturImg1" />
-            <h5>지역</h5>
-            <h4>방이름</h4>
-            <h5>기본옵션</h5>
-            <h5>방가격 / 주</h5>
-          </div>
-          </li>
-          
-
-
+          </c:forEach>
     </ul>
       <div class="wPage"> <!--찜목록 페이징 -->
         <div class="pagePrd">
