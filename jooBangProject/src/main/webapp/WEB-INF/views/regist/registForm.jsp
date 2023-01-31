@@ -231,7 +231,7 @@
 							
 							<span class="additionalOption_title">추가할 옵션이 있나요?</span>
 							<div class="buttonWrapper">
-								<input type="checkbox" id="internet" name="addtionalOption" value="internet">
+								<input type="checkbox" id="internet" name="addtionalOption" value="인터넷">
 								<label for="internet"> 인터넷(Wi-Fi) </label>
 							</div>
 							<div class="buttonWrapper">
@@ -240,47 +240,47 @@
 							</div>
 							<div class="buttonWrapper">
 								<input type="checkbox" id="gas-range" name="addtionalOption"                                                        
-									value="gas-range"> 
+									value="가스레인지"> 
 								<label for="gas-range"> 가스레인지 </label>
 							</div>
 							<div class="buttonWrapper">
 								<input type="checkbox" id="induction" name="addtionalOption"
-									value="induction"> 
+									value="인덕션"> 
 									<label for="induction"> 인덕션 </label>
 							</div>
 							<div class="buttonWrapper">
 								<input type="checkbox" id="desk" name="addtionalOption"
-									value="desk"> 
+									value="책상"> 
 									<label for="desk"> 책상 </label>
 							</div>
 							<div class="buttonWrapper">
 								<input type="checkbox" id="shoe-closet" name="addtionalOption"
-									value="shoe-closet"> 
+									value="신발장"> 
 									<label for="shoe-closet"> 신발장 </label>
 							</div>
 							<div class="buttonWrapper">
 								<input type="checkbox" id="closet" name="addtionalOption"
-									value="closet"> 
+									value="옷장"> 
 									<label for="closet"> 옷장 </label>
 							</div>
 							<div class="buttonWrapper">
 								<input type="checkbox" id="dress-room" name="addtionalOption"
-									value="dress-room"> 
+									value="드레스룸"> 
 									<label for="dress-room"> 드레스룸 </label>
 							</div>
 							<div class="buttonWrapper">
 								<input type="checkbox" id="balcony" name="addtionalOption"
-									value="balcony"> 
+									value="베란다"> 
 									<label for="balcony"> 발코니/베란다 </label>
 							</div>
 							<div class="buttonWrapper">
 								<input type="checkbox" id="management-office" name="addtionalOption"
-									value="management-office"> 
+									value="관리실"> 
 									<label for="management-office"> 관리실 </label>
 							</div>
 							<div class="buttonWrapper">
 								<input type="checkbox" id="table" name="addtionalOption"
-									value="table"> 
+									value="식탁"> 
 									<label for="table"> 식탁 </label>
 							</div>
 						</div>

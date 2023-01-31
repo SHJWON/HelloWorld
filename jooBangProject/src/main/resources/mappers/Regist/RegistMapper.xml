@@ -29,6 +29,8 @@
   		<result property="roomDiscountFee" column="roomDiscountFee" />
   		<result property="roomImage" column="roomImage" />
   		<result property="roomViewCnt" column="roomViewCnt"/>
+  		<result property="lat" column="lat"/>
+  		<result property="lng" column="lng"/>
   	</resultMap>
   	
   	<!-- 룸 등록 -->
@@ -36,14 +38,14 @@
 		INSERT INTO room (roomNo, roomName, roomDecription, roomZipcode, roomAddress1, roomAddress2,
 						  roomRCount, roomBCount, roomLCount, roomKCount, basicOption, addtionalOption,
 						  roomBuilding, infoElevator, infoParking, roomLeastPay, roomDeposit, roomRent,
-						  roomAdministrationFee, roomPayOption, roomDiscount, roomDiscountFee, roomImage)
+						  roomAdministrationFee, roomPayOption, roomDiscount, roomDiscountFee, roomImage, lat, lng)
 		VALUES (#{roomNo}, #{roomName}, #{roomDecription}, #{roomZipcode}, #{roomAddress1}, #{roomAddress2},
 						  #{roomRCount}, #{roomBCount}, #{roomLCount}, #{roomKCount}, #{basicOption}, #{addtionalOption},
 						  #{roomBuilding}, #{infoElevator}, #{infoParking}, #{roomLeastPay}, #{roomDeposit}, #{roomRent},
-						  #{roomAdministrationFee}, #{roomPayOption}, #{roomDiscount}, #{roomDiscountFee}, #{roomImage})
+						  #{roomAdministrationFee}, #{roomPayOption}, #{roomDiscount}, #{roomDiscountFee}, #{roomImage}, #{lat}, #{lng})
 	</insert>
 	
-	<select id="detailRoom" parameterType="int" resultType="com.jooBang.project.model.RoomVO">
+	<select id="detailRoom" parameterType="int" resultMap="roomResult">
 		SELECT * FROM room WHERE roomNo = #{roomNo}
 	</select>
 	
