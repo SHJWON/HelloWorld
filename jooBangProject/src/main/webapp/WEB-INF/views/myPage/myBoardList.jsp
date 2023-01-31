@@ -12,22 +12,28 @@
 			<script src="<c:url value='/js/board.js'/>"></script>
 		    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 		    <link rel="stylesheet" href="<c:url value='/css/board.css' />">
+		    <link rel="stylesheet" href="<c:url value='/css/myPage.css' />">
 
 	
 </head>
 	
-	<body>
-	<div id="wrap">
-		<nav id="nav">
-        <c:import url="/WEB-INF/views/top.jsp"/>
+	 <div id="wrap">
+	  <nav id="nav">
+      <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
-      <input type="hidden" id="menuNumber" value="${menuNumber }">
+      
+                    <div class="category">
+						<hr>
+					      <div class="profileBox" id="profileBox">
+					      <div class="PhotoBox" id="PhotoBox">
+					      <img class="profile" src="/image/default_profile.png">
+					      </div>
+					      </div>
     <ul id="ul">
-				 		 <li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm/${mem.memId }'/>">내 정보 수정</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/board/boardListAll'/>">내글관리</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList'/>">이용내역</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList'/>">신청현황</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/board/bestBoard'/>">등록한 방관리</a></li><hr>
+				 		<li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm/${mem.memId }'/>">내 정보 수정</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/myPage/WrittenListForm/${mem.memId }'/>">내 글목록</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList'/>">내 예약</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/myPage/EnrollRoom/${mem.memId }'/>">내 방 목록</a></li><hr>
 				 		 <li class="side-menu"><a href="<c:url value='/myPage/deleteMyPageForm/${mem.memId}'/>">회원탈퇴</a></li><hr>
 					 </ul>
 
@@ -81,5 +87,9 @@
  </c:forEach>
 			</div>
 			</div>
+			</div>
+						<footer>
+        <c:import url="/WEB-INF/views/footer.jsp"/>
+      </footer>
 	</body>
 </html>

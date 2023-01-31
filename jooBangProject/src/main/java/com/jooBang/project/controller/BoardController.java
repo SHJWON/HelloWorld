@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -165,6 +166,18 @@ public class BoardController {
 			model.addAttribute("brdTitle","전체글보기");
 			model.addAttribute("menuNumber",100);
 			return"/board/boardAllView";
+		}
+		
+	   // 게시판에 쓴 글 목록
+		@RequestMapping("/myPage/myBoardList")
+		public String myBoardList(HttpSession session, Model model) {
+           String id = (String)session.getAttribute("sid");
+           
+           ArrayList<BoardVO> brdList=service.myBoard(id);
+           model.addAttribute("brdList",brdList);
+       
+			
+           return "/myPage/myBoardList";
 		}
 		
 }

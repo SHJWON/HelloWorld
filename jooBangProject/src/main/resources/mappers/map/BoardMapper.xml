@@ -61,5 +61,9 @@ WHERE board.ctgNo=#{ctgNo};
 	<select id="bRecentView" resultMap="brdResult">
 	SELECT * FROM board ORDER BY brdNo DESC	limit 5;
 	</select>
-
+      
+      <select id="myBoard" parameterType="String" resultMap="brdResult" >
+	  SELECT * FROM board WHERE brdWriter=#{brdWriter};
+      </select>
+      
 	  	</mapper>
