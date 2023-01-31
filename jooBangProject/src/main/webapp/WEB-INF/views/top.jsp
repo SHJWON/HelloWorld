@@ -46,7 +46,7 @@
 						
 			<c:if test="${not empty sessionScope.sid }">
 			    <div class="signBtnBox" id="signUpBtn">
-					<a href="<c:url value='/myPage/detailViewMyPage/${sessionScope.sid}'/>">마이 페이지</a>
+					<a href="<c:url value='/myPage/detailViewMyPage'/>">마이 페이지</a>
 				</div>
 		    </c:if>
 				

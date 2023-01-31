@@ -21,6 +21,7 @@ public interface IBoardDAO {
 	public int count();
 	public ArrayList<BoardVO>listPage(int displayPost, int postNum);
 	public ArrayList<BoardVO> bRecentView();
+	public ArrayList<BoardVO>myBoard(String brdWriter);
           
 		
 	

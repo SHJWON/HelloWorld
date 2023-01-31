@@ -82,6 +82,11 @@ public class BoardService implements IBoardService {
 	public ArrayList<BoardVO> bRecentView() {
 		return dao.bRecentView();
 	}
+	@Override
+	public ArrayList<BoardVO> myBoard(String brdWriter) {
+		
+		return dao.myBoard(brdWriter);
+	}
 	
 
 	

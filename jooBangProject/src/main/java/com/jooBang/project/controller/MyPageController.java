@@ -15,22 +15,23 @@ import com.jooBang.project.service.MyPageService;
 public class MyPageController {
 	@Autowired
 	private MyPageService service;
-	
 
 	/* 마이페이지 이동 */
-	@RequestMapping("/myPage/detailViewMyPage/{memId}")
-	public String detailViewMyPage(@PathVariable String memId, Model model) {
-
+	@RequestMapping("/myPage/detailViewMyPage")
+	public String detailViewMyPage( Model model,HttpSession session) {
+		String memId = (String)session.getAttribute("sid");
+		if (memId==null || memId=="") {
+			return "redirect:/member/login";
+		};
+		
 		MemberVO mem = service.detailViewMyPage(memId);
 		model.addAttribute("mem", mem);
-		
-		
 
 		return "myPage/myPage";
 	}
 
 	/* 회원정보 수정페이지 이동 */
-	@RequestMapping("/myPage/updateMyPageForm/{memId}")
+	@RequestMapping("/myPage/updateMyPageForm/")
 	public String updateMyPageForm(@PathVariable String memId, Model model) {
 
 		MemberVO mem = service.detailViewMyPage(memId);
@@ -40,7 +41,7 @@ public class MyPageController {
 	}
 
 	// 회원 정보 수정 : 수정된 데이터 DB에 저장
-	@RequestMapping("/myPage/updateMyPage")
+	@RequestMapping("/myPage/updateMyPage/{memId}")
 	public String updateMyPage(MemberVO mem, Model model) {
 		service.updateMyPage(mem);
 
@@ -61,22 +62,24 @@ public class MyPageController {
 	}
 
 	// 회원 탈퇴 페이지
-	@RequestMapping("/myPage/deleteMyPage")
+	@RequestMapping("/myPage/deleteMyPage/{memId}")
 	public String deleteMyPage(MemberVO mem, Model model, HttpSession session) {
-		
+
 		service.deleteMyPage(mem);
-		
+
 		session.invalidate();
 		// 수정된 데이터 저장 후 회원 조회 화면으로 포워딩
 
 		return "redirect:/";
 	}
-	
-	@RequestMapping("/myPage/WrittenList")
-	public String WritenList() {
 
-		return "/myPage/WrittenListForm";
+
+
+	// 올린 방목록
+	@RequestMapping("/myPage/EnrollRoom/{memId}")
+	public String EnrollRoom() {
+
+		return "/myPage/EnrollRoom";
 	}
 
-	
 }
