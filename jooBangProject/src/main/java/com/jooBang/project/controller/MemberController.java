@@ -13,11 +13,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jooBang.project.model.MemberVO;
 import com.jooBang.project.service.MemberService;
+import com.jooBang.project.service.WishListService;
 
 @Controller
 public class MemberController {
 	@Autowired
 	MemberService service;
+	
+	@Autowired
+	private WishListService wishservice;
 
 	// 비밀번호 암호화 한 경우의 로그인 처리 방식
 	@ResponseBody
@@ -30,7 +34,10 @@ public class MemberController {
 		if (result.equals("success")) {
 			// 로그인 성공하면 세션 변수 지정
 			session.setAttribute("sid", param.get("id"));
+			// 최근 본 방 테이블 초기화
+			wishservice.recentAllDelete();
 		}
+		
 		return result;
 	}
 

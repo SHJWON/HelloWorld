@@ -18,5 +18,6 @@ public interface IWishListService {
 	public ArrayList<WishListVO> recentList(String memId); // 최근 본방
 	public void recentViewSave(String memId, int roomNo); // 최근 본방 저장
 	public void recentViewDelete(WishListVO vo); //최근 본방 중복 삭제
+	public void recentAllDelete(); // 최근 본 방 데이터 초기화
 	public ArrayList<WishListVO> likeView(String memId); // 찜 목록
 }

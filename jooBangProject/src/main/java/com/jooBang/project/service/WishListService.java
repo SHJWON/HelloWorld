@@ -100,6 +100,11 @@ public class WishListService implements IWishListService {
 		dao.recentViewDelete(vo);
 	}
 
+	@Override
+	public void recentAllDelete() {
+		dao.recentAllDelete();
+	}
+
 	
 	
 }
