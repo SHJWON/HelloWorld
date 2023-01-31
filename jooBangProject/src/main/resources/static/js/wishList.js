@@ -11,6 +11,10 @@ $(document).ready(function () {
 	var roomNo = $('#roomNo').val();
 
 	var basicOption = $('#basicOption').val();
+	
+	basicOption.split(",").forEach(function(option){
+        $(".optionWrapper."+option).addClass("active");
+    })
 
 
 	if (id == "") {

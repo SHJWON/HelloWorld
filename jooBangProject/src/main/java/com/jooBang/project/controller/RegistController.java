@@ -3,6 +3,7 @@ package com.jooBang.project.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,12 +15,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.jooBang.project.model.RoomVO;
+import com.jooBang.project.service.GecodeService;
 import com.jooBang.project.service.RegistService;
 
 @Controller
 public class RegistController {
 	@Autowired
-	private RegistService service;
+	private RegistService registservice;
+	@Autowired
+	private GecodeService gecodeservice;
 	
 	@RequestMapping("/registForm")
 	public String registForm() {
@@ -59,7 +63,14 @@ public class RegistController {
 		}
 		
 		vo.setRoomImage(roomImage);
-		service.insertRoom(vo);
+		HashMap<String, String> map = gecodeservice.geocode(vo.getRoomAddress1());
+		
+		vo.setLat(map.get("y"));
+		vo.setLng(map.get("x"));
+		
+		System.out.println(map);
+		
+		registservice.insertRoom(vo);
 		
 		
 		return "redirect:/registForm";

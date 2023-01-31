@@ -33,12 +33,11 @@
 					<div class="roomInfo1Container">
 						<div class="roomInfo1Wrapper">
 							<h1>${room.roomName}</h1>
-							<div id="roomAddress">${room.roomAddress1}</div>
 							<div style="white-space:pre;" class="roomInfoDesciption">${room.roomDecription }</div>
 							<!-- 가격 정보 -->
 							<div class="InfoBoxCountainer" id="payInfo">
 								<div class="InfoBoxWrapper">
-									<div class="InfoTitel"><h2>가격 정보</h2></div>
+									<div class="InfoTitle"><h2>가격 정보</h2></div>
 									<div class="InfoBox">
 										<div class="InfoTitle">주세</div>
 										<div class="InfoContents">
@@ -79,7 +78,7 @@
 							<!-- 상세 정보 -->
 							<div class="InfoBoxCountainer" id="detailInfo">
 								<div class="InfoBoxWrapper">
-									<div class="InfoTitel">
+									<div class="InfoTitle">
 										<h2>상세 정보</h2>
 									</div>
 									<div class="InfoBox">
@@ -134,12 +133,12 @@
 								</div>
 							</div>
 							<!-- 옵션 정보 -->
-							<div class="InfoBoxCountainer" id="detailInfo">
+							<div class="InfoBoxCountainer" id="basicOptionBox">
 								<div class="InfoBoxWrapper">
-									<div class="InfoTitel">
+									<div class="InfoTitle">
 										<h2>기본 옵션</h2>
 									</div>
-									<div class="InfoBox">
+									<div class="InfoBox OptionBox" id="basicOptionBox">
 										<input type="hidden" id="basicOption" value="${room.basicOption }"> 
 										<div class="optionWrapper bed">
 											<div class="optionImg"><img src="<c:url value='/image/optionImg/bed.png' />"></div>
@@ -160,6 +159,38 @@
 										<div class="optionWrapper washing-machine">
 											<div class="optionImg"><img src="<c:url value='/image/optionImg/washing-machine.png' />"></div>
 											<div class="optionTitle">세탁기</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="InfoBoxCountainer" id="addtionalOptionBox">
+								<div class="InfoBoxWrapper">
+									<div class="InfoTitle">
+										<h2>추가 옵션</h2>
+									</div>
+									<div class="InfoBox OptionBox" id="addtionalOptionBox">
+										<input type="hidden" id="addtionalOption" value="${room.addtionalOption }"> 
+										<c:forTokens var="option" items="${room.addtionalOption }" delims=",">
+											<div class="optionWrapper">
+												<div class="optionImg">
+													<img src="<c:url value='/image/optionImg/${ option}.png'/>">
+												</div>
+												<div class="optionTitle">
+													${option }
+												</div>
+											</div>
+										</c:forTokens>
+									</div>
+								</div>
+							</div>
+							<div class="InfoBoxCountainer" id="address">
+								<div class="InfoBoxWrapper">
+									<div class="InfoTitle">
+										<h2>주소 정보</h2>
+									</div>
+									<div class="InfoBox">
+										<div id="roomAddress">${room.roomAddress1}</div>
+										<div id="roomAddressImgWrapper">
 										</div>
 									</div>
 								</div>
