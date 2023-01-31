@@ -61,9 +61,27 @@
 	</select>
 	
 	<!-- 찜목록 보기 -->
-	<select id="likeView" parameterType="String" resultType="com.jooBang.project.model.WishListVO">	
+	<select id="likeView" parameterType="string" resultType="com.jooBang.project.model.WishListVO">	
 		select wishlist.memId,wishlist.roomNo,roomImage,roomAddress1,roomName,roomRent,roomRCount,roomBCount from wishlist 
 		join room on (wishlist.roomNo=room.roomNo) where wishlist.memId=#{memId};
+	</select>
+	
+	<!-- 내가 본 방 저장하기 -->
+	<insert id="recentViewSave" parameterType="hashmap">
+			INSERT INTO recentViewSave(memId, roomNo)
+			   VALUES (#{memId},#{roomNo}) 
+	</insert>
+	
+	<!-- 내가 본 방 중복 제거  -->
+	<delete id="recentViewDelete" parameterType="com.jooBang.project.model.WishListVO">
+		DELETE FROM recentViewSave WHERE recentViewSave.memId= #{memId} and recentViewSave.roomNo= #{roomNo};
+	</delete>
+	
+	<!-- 내가 본 방 목록 -->
+	<select id="recentList" parameterType="string" resultType="com.jooBang.project.model.WishListVO">
+		select recentViewSave.memId,recentViewSave.roomNo,roomImage,roomAddress1,roomName,roomRent,roomRCount,roomBCount from recentViewSave 
+		join room on (recentViewSave.roomNo=room.roomNo) where recentViewSave.memId=#{memId} 
+		order by recentWishNo DESC limit 8;
 	</select>
 	
 	
