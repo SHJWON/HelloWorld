@@ -12,4 +12,5 @@ public interface IMemberService {
 	public String findId(String memName, String memEmail);
 	public String findPwd(String memName, String memEmail);
 	public void changePwd(MemberVO vo);
+	public String getName(String memId);
 }

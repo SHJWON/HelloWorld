@@ -30,7 +30,7 @@
  		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${4}'/>">장터</a></li><hr>  	  
 	</ul>
 
-        <div id="wrap">   	
+    
         <c:if test="${brdTitle eq ''}">
         <span id="ctgName">${brdList[0].ctgName } </span>      
         </c:if>
@@ -64,7 +64,10 @@
 
 			            <tr>         
 			            <td>${brd.brdNo }</td>
-			               <td class="title1" ><a href="<c:url value='/board/boardDetailView/${brd.brdNo}'/>" >${brd.brdTitle }</a></td>
+			               <td class="title1" ><a href="<c:url value='/board/boardDetailView/${brd.brdNo}'/>" >${brd.brdTitle }</a>
+			                <c:if test="${brd.comCnt ne 0}">
+						 	      <b><span style="color:#bb2649;">(${brd.comCnt})</span></b>
+						</c:if> </td>
 			               <td>${brd.brdWriter }</td>			                    		               
 			               <td><fmt:formatDate value="${brd.brdDate }" pattern="yyyy-MM-dd"/></td>
 			               <td>${brd.brdViewCnt }</td>	          		                    		               	               
@@ -81,7 +84,7 @@
  </c:forEach>
 			</div>
 			</div>
-			</div>
+			
 						<footer>
         <c:import url="/WEB-INF/views/footer.jsp"/>
       </footer>

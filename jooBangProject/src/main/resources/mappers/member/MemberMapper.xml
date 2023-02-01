@@ -45,4 +45,7 @@
 		SET memPwd=#{memPwd}
 		WHERE memId=#{memId}
 	</update>
+	<select id="getName" resultType="string" parameterType="string" >
+	select memNickName from member where memId=#{memId}
+	 </select>
 </mapper>

@@ -7,6 +7,7 @@ public class CommentVO {
 	private int brdNo;
 	private String comContent;
 	private Date comDate;
+	private String comWriter;
 	public int getComNo() {
 		return comNo;
 	}
@@ -30,6 +31,12 @@ public class CommentVO {
 	}
 	public void setComDate(Date comDate) {
 		this.comDate = comDate;
+	}
+	public String getComWriter() {
+		return comWriter;
+	}
+	public void setComWriter(String comWriter) {
+		this.comWriter = comWriter;
 	}
 	
 
