@@ -62,6 +62,7 @@ WHERE board.ctgNo=#{ctgNo};
 	SELECT * FROM board ORDER BY brdNo DESC	limit 5;
 	</select>
       
+      <!--내가 쓴 글 맵퍼  -->
       <select id="myBoard" parameterType="String" resultMap="brdResult" >
 	  SELECT * FROM board WHERE brdWriter=#{brdWriter};
       </select>

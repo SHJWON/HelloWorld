@@ -31,7 +31,7 @@ public class MyPageController {
 	}
 
 	/* 회원정보 수정페이지 이동 */
-	@RequestMapping("/myPage/updateMyPageForm/")
+	@RequestMapping("/myPage/updateMyPageForm/{memId}")
 	public String updateMyPageForm(@PathVariable String memId, Model model) {
 
 		MemberVO mem = service.detailViewMyPage(memId);
@@ -76,10 +76,10 @@ public class MyPageController {
 
 
 	// 올린 방목록
-	@RequestMapping("/myPage/EnrollRoom/{memId}")
-	public String EnrollRoom() {
+	@RequestMapping("/myPage/myReservationList")
+	public String myReservationList() {
 
-		return "/myPage/EnrollRoom";
+		return "/myPage/myReservationList";
 	}
 
 }

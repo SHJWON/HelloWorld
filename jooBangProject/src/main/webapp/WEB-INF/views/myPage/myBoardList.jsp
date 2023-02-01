@@ -30,12 +30,12 @@
 					      </div>
 					      </div>
     <ul id="ul">
-				 		<li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm/${mem.memId }'/>">내 정보 수정</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/myPage/WrittenListForm/${mem.memId }'/>">내 글목록</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm/${mem.memId }'/>">내 정보 수정</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/myPage/myBoardList'/>">내 글목록</a></li><hr>
 				 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList'/>">내 예약</a></li><hr>
 				 		 <li class="side-menu"><a href="<c:url value='/myPage/EnrollRoom/${mem.memId }'/>">내 방 목록</a></li><hr>
 				 		 <li class="side-menu"><a href="<c:url value='/myPage/deleteMyPageForm/${mem.memId}'/>">회원탈퇴</a></li><hr>
-					 </ul>
+					     </ul>
 
          	
         <c:if test="${brdTitle eq ''}">
