@@ -8,7 +8,6 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -172,11 +171,8 @@ public class BoardController {
 		@RequestMapping("/myPage/myBoardList")
 		public String myBoardList(HttpSession session, Model model) {
            String id = (String)session.getAttribute("sid");
-           
            ArrayList<BoardVO> brdList=service.myBoard(id);
            model.addAttribute("brdList",brdList);
-       
-			
            return "/myPage/myBoardList";
 		}
 		

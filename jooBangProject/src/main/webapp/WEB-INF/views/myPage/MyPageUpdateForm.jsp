@@ -28,14 +28,13 @@ pageEncoding="UTF-8"%>
 					  <img class="profile" src="/image/default_profile.png">
 					  </div>
 					  </div>
-					 <ul id="ul">
+					<ul id="ul">
 				 		 <li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm/${mem.memId }'/>">내 정보 수정</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/board/boardListAll'/>">내글관리</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList'/>">이용내역</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList'/>">신청현황</a></li><hr>
-				 		 <li class="side-menu"><a href="<c:url value='/board/bestBoard'/>">등록한 방관리</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/myPage/myBoardList'/>">내 글목록</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/board/boardCtgList'/>">내 예약</a></li><hr>
+				 		 <li class="side-menu"><a href="<c:url value='/myPage/EnrollRoom/${mem.memId }'/>">내 방 목록</a></li><hr>
 				 		 <li class="side-menu"><a href="<c:url value='/myPage/deleteMyPageForm/${mem.memId}'/>">회원탈퇴</a></li><hr>
-					 </ul>
+					     </ul>
 					 </form>
 	
 				   </div>

@@ -22,7 +22,8 @@
 		WHERE memName=#{memName}
 	</update>
 
-	<!-- 상품 정보 삭제 : 삭제할 상품번호 전달 받음 -->
+	<!-- 회원 정보 삭제 : 삭제할 회원 전달 받음 -->
+  	
   	<!-- 암호화 이후 -->
   	<select id="deleteMyPage" parameterType="string" resultType="string">
   		SELECT memPwd FROM member WHERE memName=#{memName} AND memId=#{memId}
@@ -35,5 +36,12 @@
 		DELETE FROM board where memId=#{result};
 		DELETE FROM member WHERE memId=#{result};
 	</delete>
+	
+	<!-- 예약목록 보기 -->
+	<select id="myReservation" parameterType="string" resultType="com.jooBang.project.model.VO">	
+		select wishlist.memId,wishlist.roomNo,roomImage,roomAddress1,roomName,roomRent,roomRCount,roomBCount from wishlist 
+		join room on (wishlist.roomNo=room.roomNo) where wishlist.memId=#{memId};
+	</select>
+	
 	
 </mapper>
