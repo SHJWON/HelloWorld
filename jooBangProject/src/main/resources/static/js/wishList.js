@@ -42,6 +42,7 @@ $(document).ready(function () {
 					success: function (wish_count) {
 						console.log("생성 성공");
 						$("#wish_count").text(wish_count);
+						$('.host_wishBtnImg').attr({ src: "/image/star_fill.svg" });
 					},
 					error: function () {
 						console.log("실패");
@@ -62,6 +63,7 @@ $(document).ready(function () {
 					success: function (wish_count) {
 						console.log("삭제 성공");
 						$("#wish_count").text(wish_count);
+						$('.host_wishBtnImg').attr({ src: "/image/star.svg" });
 					},
 					error: function () {
 						console.log("실패");
@@ -88,6 +90,7 @@ function checkWish(id, roomNo){
 		success: function (result) {
 			if (result == "true") {
 				$('#wishList_CheckBtn').prop('checked', true);
+				$('.host_wishBtnImg').attr({ src: "/image/star_fill.svg" });
 			} else{
 				console.log("예약하지 않음")
 			}
