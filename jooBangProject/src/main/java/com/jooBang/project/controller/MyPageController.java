@@ -31,9 +31,9 @@ public class MyPageController {
 	}
 
 	/* 회원정보 수정페이지 이동 */
-	@RequestMapping("/myPage/updateMyPageForm/{memId}")
-	public String updateMyPageForm(@PathVariable String memId, Model model) {
-
+	@RequestMapping("/myPage/updateMyPageForm")
+	public String updateMyPageForm( Model model,HttpSession session) {
+		String memId = (String)session.getAttribute("sid");
 		MemberVO mem = service.detailViewMyPage(memId);
 		model.addAttribute("mem", mem);
 
@@ -41,8 +41,10 @@ public class MyPageController {
 	}
 
 	// 회원 정보 수정 : 수정된 데이터 DB에 저장
-	@RequestMapping("/myPage/updateMyPage/{memId}")
-	public String updateMyPage(MemberVO mem, Model model) {
+	@RequestMapping("/myPage/updateMyPage")
+	public String updateMyPage(MemberVO mem, Model model,HttpSession session) {
+		
+		
 		service.updateMyPage(mem);
 
 		model.addAttribute("mem", mem);
