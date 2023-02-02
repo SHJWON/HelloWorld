@@ -10,9 +10,10 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-	   <div class="detailWrap">	
-			<hr>
-		<div class="detailTitle"><span id="title">${keyword}</span> </div><hr></div>
+		
+			
+		<div class="searchTitle"><span id="title">검색결과</span> </div>
+	
 	
 	
 	<table class="table table-striped table-hover">	
@@ -25,8 +26,7 @@
 						<th>조회수</th>
 					</tr>
 			</thead>			
-			<tbody>
-			
+			<tbody>		
 					<c:forEach var="brd" items="${brdList }">    
 			            <tr>         
 			            <td>${brd.brdNo }</td>
@@ -39,5 +39,8 @@
 			        
 			           </tbody>
 				</table><br><br>
+		
+				
+
 	</body>
 </html>

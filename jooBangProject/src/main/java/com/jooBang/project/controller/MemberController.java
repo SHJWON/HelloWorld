@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jooBang.project.model.MemberVO;
+import com.jooBang.project.model.WishListVO;
 import com.jooBang.project.service.MemberService;
 import com.jooBang.project.service.WishListService;
 
@@ -33,9 +34,13 @@ public class MemberController {
 		// 아이디와 비밀번호 일치하면 (로그인 성공하면) 서비스에서 success 반환
 		if (result.equals("success")) {
 			// 로그인 성공하면 세션 변수 지정
-			session.setAttribute("sid", param.get("id"));
+						String id=(String)param.get("id");
+						session.setAttribute("sid", id);
+						String nick=service.getName(id);
+						session.setAttribute("nick", nick);
 			// 최근 본 방 테이블 초기화
-			wishservice.recentAllDelete();
+			//wishservice.recentAllDelete();
+			
 		}
 		
 		return result;

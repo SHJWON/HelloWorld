@@ -11,34 +11,45 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-<nav id="nav">
-        <c:import url="/WEB-INF/views/top.jsp"/>
-      </nav>
-		<div id="wrap">
-			<h2>글 등록</h2>${memId }
+  <c:import url="/WEB-INF/views/top.jsp"/>
+     <div id="wrap">
+ 
+      <ul id="ul">
+ 		 <li class="liside-menu"><a href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
+ 		 <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${1}'/>">공지사항</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${2}'/>">자유게시판</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/bestBoard'/>">베스트게시판</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${3}'/>">살림 나눔</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${4}'/>">장터</a></li><hr>  	  
+	</ul>
+
+			<div class="insertView">
+			<h1>글 등록</h1>
+		
 			<hr>
+		
 			<form method="post"action="/board/insertBoard/${ctgNo}" enctype="multipart/form-data">
 			 <div class="form-group">
-              <label for="exampleFormControlInput1">제목</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="brdTitle" placeholder="제목을 작성해주세요.">
+              <label for="brdTitle">제목</label><br>
+            <input type="text" class="insertTitle" id="brdTitle" name="brdTitle" placeholder="제목을 작성해주세요.">
           </div>
       
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">내용</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="brdContent" rows="10">
+            <label for="brdContent">내용</label><br>
+            <textarea class="insertContent" id="brdContent" name="brdContent" rows="10">
 		</textarea>
           </div>
           <div class="input-group mb-3">
-  			 <label class="input-group-text" for="inputGroupFile01">Upload</label>
- 			 <input type="file" class="form-control" id="uploadFileMulti" name="uploadFileMulti" multiple="multiple" accept=".png, .jpg, .jpeg">
+  			 <label class="input-group-text" for="uploadFileMulti">Upload</label>
+ 			 <input type="file" class="insertFile" id="uploadFileMulti" name="uploadFileMulti" multiple="multiple" accept=".png, .jpg, .jpeg">
 		 </div>			
-		
-        <button type="submit" class="btn btn-outline-danger">등록하기</button>
-       <a href="<c:url value='/board/boardCtgList/${ctgNo }'/>"> <button type="button" class="btn btn-outline-danger">취소</button></a>
-			
+		<div class="insertFoot">
+        <button type="submit" class="detailBtn">등록하기</button>
+       <a href="<c:url value='/board/boardCtgList/${ctgNo }'/>"> <button type="button" class="detailBtn">취소</button></a>
+			</div>
 			</form>
 			<br><br>
-			
+			</div>
 		</div>
 	</body>
 </html>

@@ -16,20 +16,24 @@
 	  <nav id="nav">
         <c:import url="/WEB-INF/views/top.jsp"/>
       </nav>
+      <h1>확인 및 결제</h1>
       <div class="reserveInfo">
       <h2>예약 정보</h2>
       <div class="reserveInfo2">
-      <div class="infoName">이름 <input type="text"></div>
-      <div class="infoTel">전화번호<input type="tel"></div>
-      <div class="infoEmail">이메일<input type="email"></div>     
-      <div class="infoDate">예약날짜<input type="text"></div>     
+        <div class="infoName"><span id="bold">이름</span> <input type="text" value="${memVo.memName }"></div>
+      <div class="infoTel"><span id="bold">전화번호</span><input type="tel" value="${memVo.memHP }"></div>
+      <div class="infoEmail"><span id="bold">이메일</span><input type="email" value="${memVo.memEmail }"></div>     
+  
       
       </div> 	 
       </div>
       <div class="payInfo">
       <h2>결제 정보</h2> 
-      <hr>
-      sadasdasd
+      <div class="roomInfo">aaa</div>
+     
+      <div class="roomPrice">aaaa</div>
+      <div class="roomPrice2">aaaa</div>
+      
       </div>
       
       <div class="paysudan">

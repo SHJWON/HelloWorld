@@ -10,7 +10,7 @@
 </select>
 <!-- 댓글 작성 -->
 <insert id="commentInsert" parameterType="com.jooBang.project.model.CommentVO">
-	insert into comment(brdNo,comContent )
-		value(#{brdNo}, #{comContent} )
+	insert into comment(brdNo,comContent,comWriter)
+		value(#{brdNo}, #{comContent},#{comWriter} )
 </insert>
    </mapper>

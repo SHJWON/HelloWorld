@@ -20,6 +20,7 @@ public interface IBoardService {
 	public ArrayList<BoardVO>listPage(int displayPost, int postNum);
 	public ArrayList<BoardVO> bRecentView();
 	public ArrayList<BoardVO>myBoard(String brdWriter);
+	public void comCount(int brdNo);
 
 
 	

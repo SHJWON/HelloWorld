@@ -87,6 +87,11 @@ public class BoardService implements IBoardService {
 		
 		return dao.myBoard(brdWriter);
 	}
+	@Override
+	public void comCount(int brdNo) {
+		dao.comCount(brdNo);
+		
+	}
 	
 
 	

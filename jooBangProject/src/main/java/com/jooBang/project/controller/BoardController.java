@@ -98,7 +98,7 @@ public class BoardController {
 					// 5. 서버로 전송
 					file.transferTo(sendFile);
 				}
-		String brdWriter=(String)session.getAttribute("sid");
+		String brdWriter=(String)session.getAttribute("nick");
 		// 서비스를 통해서 DB에 저장
 		brd.setBrdWriter(brdWriter);
 		
@@ -111,8 +111,10 @@ public class BoardController {
 	}
 	@RequestMapping("/board/boardDetailView/{brdNo}")
 	public String boardDetailView(@PathVariable int brdNo ,Model model) { 
+		service.comCount(brdNo);
 		service.viewConut(brdNo);
 		BoardVO brd=service.detailViewBoard(brdNo);		
+		brd.getCtgNo();
 		model.addAttribute("brd",brd);
 		ArrayList<CommentVO>comList=comService.commentList(brdNo);
 		model.addAttribute("comList",comList);
@@ -131,9 +133,13 @@ public class BoardController {
 		return "redirect:/board/boardDetailView/{brdNo}";
 	}
 	@RequestMapping("/board/deleteBoard/{brdNo}")
-	public String deleteBoard(@PathVariable int brdNo,Model model) {
+	public String deleteBoard(@PathVariable int brdNo,Model model) {	
+       BoardVO brd = service.detailViewBoard(brdNo);
+		
+		String ctgNo = brd.getCtgNo();
 		service.deleteBoard(brdNo);
-		return"/";
+		
+		return "/board/boardCtgList/"+ctgNo;
 	}
 	@RequestMapping("/board/boardSearchForm")
 	public String boardSearchForm(){
@@ -147,8 +153,8 @@ public class BoardController {
 	   }
 	   @RequestMapping("/board/boardListAll/{num}")
 		public String boardListAll(Model model,@PathVariable int num) {
-			 int count = service.count();
-			  
+		   int count = service.count();
+			 
 			 // 한 페이지에 출력할 게시물 갯수
 			 int postNum = 10;
 			  
@@ -157,7 +163,6 @@ public class BoardController {
 			  
 			 // 출력할 게시물
 			 int displayPost = (num - 1) * postNum;
-			    
 			ArrayList<BoardVO>brdList=null;
 			brdList=service.listPage(displayPost, postNum);
 			model.addAttribute("pageNum", pageNum);
@@ -166,8 +171,7 @@ public class BoardController {
 			model.addAttribute("menuNumber",100);
 			return"/board/boardAllView";
 		}
-		
-	   // 게시판에 쓴 글 목록
+  // 게시판에 쓴 글 목록
 		@RequestMapping("/myPage/myBoardList")
 		public String myBoardList(HttpSession session, Model model) {
            String id = (String)session.getAttribute("sid");
@@ -175,5 +179,6 @@ public class BoardController {
            model.addAttribute("brdList",brdList);
            return "/myPage/myBoardList";
 		}
+		
 		
 }
