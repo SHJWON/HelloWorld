@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jooBang.project.model.MapVO;
+import com.jooBang.project.model.MemberVO;
 import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.model.WishListVO;
 import com.jooBang.project.service.MapService;
+import com.jooBang.project.service.MemberService;
 import com.jooBang.project.service.RegistService;
 import com.jooBang.project.service.WishListService;
 
@@ -30,6 +32,8 @@ public class MapController {
 	private RegistService roomservice;
 	@Autowired
 	private WishListService wishservice;
+	@Autowired
+	private MemberService memservice;
 	
 	@RequestMapping("map/mapView")
 	 public String mapView(Model model) {
