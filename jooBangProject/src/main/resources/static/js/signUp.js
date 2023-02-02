@@ -1,7 +1,16 @@
 /**
  * signup.js
  */
-
+$(document).ready(function(){
+$('#memPwd2').keyup(function (e) {
+    let check_pwd = $(this).val();
+    let pwd = $('#memPwd').val();
+        // 글자수 세기
+        if ( check_pwd != pwd ) {
+            $('.pwdcheck2').text('일치하지 않음');
+        }
+    });
+});
 function signupCheck() {
 	var memId = document.getElementById("memId");
 	var memPwd = document.getElementById("memPwd");
@@ -34,13 +43,14 @@ function signupCheck() {
 	var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
 
 	if (!pwdCheck.test(memPwd.value)) {
-		alert("비밀번호는 영문자+숫자+특수문자 조합으로 8~25자리 사용해야 합니다.");
+		document.getElementById("pwdcheck1").innerHTML = '비밀번호는 영문자+숫자+특수문자 조합으로 8~25자리 사용해야 합니다.'; 
 		memPwd.focus();
 		return false;
 	};
 
 	if (memPwd2.value !== memPwd.value) {
-		alert("비밀번호가 일치하지 않습니다.")
+		document.getElementById("pwdcheck2").innerHTML = '다시쓰셈'; 
+		
 		memPwd2.focus();
 		return false;
 	};

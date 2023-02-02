@@ -24,7 +24,7 @@
 					<h1>회원 가입</h1>
 					<br>
 					<h4>아이디</h4>
-					<span class="input_area"><input type="text" maxlength="13" name="memId" id="memId"></span> 
+					<span class="input_area"><input type="text" maxlength="13" name="memId" id="memId" placeholder="아이디를 입력해 주세요"></span> 
 					<input type="hidden" name="checked_id" value="">
 					<button type="button" id="idCheck">중복확인</button>
 					<br>
@@ -34,12 +34,14 @@
 					<span class="input_area"><input type="password"
 						maxlength="25" name="memPwd" id="memPwd"
 						placeholder="영문자+숫자+특수문자 조합"></span> <br>
+						<div id=pwdcheck1></div>
 					<br>
 
 					<h4>비밀번호 확인</h4>
 					<span class="input_area"><input type="password"
 						maxlength="25" name="memPwd2" id="memPwd2"></span> <label
 						id="pwdResult"></label> <br>
+						<div id=pwdcheck2></div>
 					<br>
 
 					<h4>이름</h4>
