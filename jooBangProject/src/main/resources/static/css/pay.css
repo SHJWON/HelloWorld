@@ -91,16 +91,40 @@ h1{
 	}	
 .paybutton{
 	float:right;
-margin:50px;  
+margin:30px;  
 width:25%;
 	}
-	.roomInfo{
+.roomInfo{
+	 margin:10px 0px;
+	 padding:20px 0px;
+}
+.roomPrice{
 	border-top:1px solid #bb2649;
-	}
-	.roomPrice{
-	border-top:1px solid #bb2649;
-	}
-	.roomPrice2{
-	border-top:1px solid #bb2649;
-	}
+	padding:25px 0px;
+    margin:20px 0px;
 	
+}
+.roomPrice2{
+	border-top:1px solid #bb2649;
+	margin:20px 0px;
+	padding:25px 0px;
+	font-size:25px;
+}
+.roomName{
+	text-align:top;
+	float:right;
+	width:60%;
+	height:100px;
+
+}
+
+.payInfo img{
+	object-fit: cover;
+	width:30%;
+	height:100px;
+	border-radius:12px;
+	
+}
+#roomPrice{
+	float:right;
+}

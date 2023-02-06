@@ -59,7 +59,7 @@ public class BoardService implements IBoardService {
 	@Override
 	public ArrayList<BoardVO> boardSearch(HashMap<String, Object> map) {
 		return dao.boardSearch(map);
-	}
+	} 
 	@Override
 	public void deleteBoard(int brdNo) {
 	  dao.deleteBoard(brdNo);

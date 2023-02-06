@@ -5,7 +5,7 @@
  $(document).ready(function(){
  	$('#boardSearchForm').on('submit', function(){ 	
  		event.preventDefault(); 		
- 		
+ 	    
  		//폼에 입력한 값들을 쿼리 스트링 방식의 데이터로 변환 : serialize() 사용
  		//type=prdName&keyword=노트북 형식으로 만들어서 전송
  		var formData = $(this).serialize();
