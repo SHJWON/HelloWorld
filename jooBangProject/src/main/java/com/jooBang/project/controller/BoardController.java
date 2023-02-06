@@ -150,7 +150,7 @@ public class BoardController {
 		   ArrayList<BoardVO> brdList=service.boardSearch(param);
 		   model.addAttribute("brdList",brdList);
 	      return "board/boardSearchView";
-	   }
+	   }  
 	   @RequestMapping("/board/boardListAll/{num}")
 		public String boardListAll(Model model,@PathVariable int num) {
 		   int count = service.count();

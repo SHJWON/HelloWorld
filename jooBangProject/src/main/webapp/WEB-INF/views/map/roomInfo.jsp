@@ -288,7 +288,7 @@
 										         id="date"
 										         value="2023-02-01">
 									</div>
-									<button class="reservation_SubmitBtn" type="button">예약하기</button>
+									<a href="<c:url value='/payment/pay/${roomNo}'/>"><button class="reservation_SubmitBtn" type="button">예약하기</button></a>
 								</div>
 								<div class="host_info">
 									<div class="hostName">호스트 이름</div>
