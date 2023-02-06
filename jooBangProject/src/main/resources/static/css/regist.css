@@ -1,7 +1,8 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:wght@300&display=swap');
 
-*{
+*:not(nav){
+	
 	font:inherit;
 	margin:0;
 	padding:0;
@@ -70,6 +71,7 @@ section{
     align-items: center;
     min-width: 100%;
 }
+
 
 form{
 	width:100%;
