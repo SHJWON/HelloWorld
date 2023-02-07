@@ -105,10 +105,7 @@ public class WishListService implements IWishListService {
 		dao.recentAllDelete();
 	}
 
-	@Override
-	public ArrayList<RoomVO> myRoom(String memId) {
-		return dao.myRoom(memId);
-	}
+
 
 	
 	

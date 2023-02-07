@@ -1,5 +1,7 @@
 package com.jooBang.project.service;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.jooBang.project.dao.IMyPageDAO;
 import com.jooBang.project.model.MemberVO;
+import com.jooBang.project.model.RoomVO;
 
 @Service
 public class MyPageService implements IMyPageService {
@@ -44,5 +47,17 @@ public class MyPageService implements IMyPageService {
 		}
 
 	}
+	@Override
+	public ArrayList<RoomVO> myRoom(String memId) {
+		return dao.myRoom(memId);
+	}
+
+	@Override
+	public void deleteRoom(int roomNo) {
+		dao.deleteRoom(roomNo);
+		
+	}
+
+	
 
 }

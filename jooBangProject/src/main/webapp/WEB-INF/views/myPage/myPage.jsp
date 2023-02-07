@@ -15,19 +15,14 @@
 	
 	<body>
       <div id="wrap">
-	  <nav id="nav">
-      <c:import url="/WEB-INF/views/top.jsp"/>
-      </nav>
-      
-                    <div class="category">
+      <c:import url="/WEB-INF/views/top.jsp"/>         
 					<form id="myPageForm" class="myPageForm" method="post" action="<c:url value='/myPage/updateMyPage'/>">
 						<h1>마이 페이지</h1>
 						<hr>
-					      <div class="profileBox" id="profileBox">
-					      <div class="PhotoBox" id="PhotoBox">
+					    <div class="myInfo">
+					   <div class="PhotoBox" >
 					      <img class="profile" src="/image/default_profile.png">
-					      </div>
-					      </div>
+					      </div>	  
 				         <ul id="ul">
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm'/>">내 정보 수정</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myBoardList'/>">내 글목록</a></li><hr>
@@ -35,6 +30,7 @@
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myRoom'/>">내 방 목록</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/deleteMyPageForm/${mem.memId}'/>">회원탈퇴</a></li><hr>
 					     </ul>
+			</div>
 						 </form>
         
                        </div>

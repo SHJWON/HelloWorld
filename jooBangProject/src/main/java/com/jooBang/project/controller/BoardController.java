@@ -174,7 +174,7 @@ public class BoardController {
   // 게시판에 쓴 글 목록
 		@RequestMapping("/myPage/myBoardList")
 		public String myBoardList(HttpSession session, Model model) {
-           String id = (String)session.getAttribute("sid");
+           String id = (String)session.getAttribute("nick");
            ArrayList<BoardVO> brdList=service.myBoard(id);
            model.addAttribute("brdList",brdList);
            return "/myPage/myBoardList";
