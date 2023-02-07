@@ -11,6 +11,7 @@
 		<link rel="stylesheet"  type="text/css" href="/css/chatbot.css">
 	</head>
 	<body>
+	<div class="chatbot_modar">
 		<div class="chatbotContainer">
 			<div class="chatHeader">
 				<span>빵챗</span>
@@ -24,6 +25,7 @@
 				<input type="text" id="message" name="message" size="30" placeholder="메시지를 입력하세요">
 				<input type="submit" value="전송">	
 			</form>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-		</div>
+		</div>	
+	</div>
 	</body>
 </html>
