@@ -89,7 +89,9 @@
 		order by recentWishNo DESC limit 8;
 	</select>
 	
-
+   <select id="myRoom" parameterType="string" resultType="com.jooBang.project.model.RoomVO">
+		SELECT * FROM room WHERE memId = #{memId}
+	</select>
 	
 	
 	

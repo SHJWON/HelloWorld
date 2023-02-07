@@ -2,6 +2,7 @@ package com.jooBang.project.service;
 
 import java.util.ArrayList;
 
+import com.jooBang.project.model.MapVO;
 import com.jooBang.project.model.RoomVO;
 
 public interface IRegistService {
@@ -13,4 +14,5 @@ public interface IRegistService {
 	public ArrayList<RoomVO> rRecentView();
 	public void viewCount(int roomNo);
 	public void wishCountroom(int roomNo);
+
 }
