@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-.title {
-	text-align: left;
-	width: 60%;
-}
 
 #search {
 	float: right;
@@ -41,7 +37,7 @@
 
 #ul {
 	list-style-type: none;
-	padding: 90px;
+	padding: 120px 80px;
 	width: 300px;
 	height: 50%;
 	position:absolute;
@@ -165,7 +161,7 @@
 
 -----------------------------------
 
-.Aa{
+.myInfo{
 	margin-bottom:100px;
 }
 .PhotoBox {
@@ -175,7 +171,7 @@
 	overflow: hidden;
 	margin-left: 11%;
 	float:left;
-	margin-bottom:100px;
+	
 }
 
 .profile {
@@ -185,18 +181,50 @@
 }
 
 .myinfo {
-	width: 1142px;
-	height: 724px;
-	margin-top: -533px;
-	margin-left: 500px;
+	width:58%;
+	margin-left:30%;
+	height:800px;
 	background-color: #e5e5e5;
+	margin-bottom:50px;
 }
 
 table {
 	width: 1142px;
 	height: 745px;
+	
 }
+thead{
+    text-align: center;
+    height:100px;
+    
+}
+tbody{
+    text-align: center;
+    
+}
+.table th{
+	border-top:1px solid #bb2649;
+	border-bottom:1px solid #bb2649;
+}
+.table td{
+	
+	border-bottom:1px solid #bb2649;
+}
+.title1{
+    text-align:left;
+    width:60%;
+    
 
+}
+.table{
+	width:58%;
+	margin-left:30%;
+
+}
+a{
+	font-weight:bold;
+	text-decoration:none;
+}
 h1 {
 	text-align: right;
 	margin-right: 15px;
@@ -207,17 +235,50 @@ td {
 }
 
 .myRoom{
-	width:60%;
-	margin-left:28%;
-	margin-right:12%;
-	height:500px;
-	
-	
-}
+	width:58%;
+	margin-left:30%;
+
+	margin-bottom:50px;
+		
+}	
 .myRoomTitle{
 	font-family:Rix;
 	font-size:35px;
 	font-weight:lighter;
 	color:#bb2649;
 	text-align:center;
+}
+.mainATeg{
+	width:260px;
+	float:left;
+	margin:50px 45px;
+}
+.mainATeg img{
+	object-fit: cover;
+	margin-top:30px;
+}
+.myRoom li{
+	list-style:none;
+}
+#deleteCartBtn{
+	width:60px;
+	height:40px;
+	border-radius:12px;
+    font-weight:bold;
+    color:#bb2649;
+    background-color:white;
+    border-color: #bb2649;
+	float:right;
+	margin-right:50px;
+}
+
+  input[type="checkbox"]{
+
+width: 20px; 
+height: 20px; 
+cursor: pointer;  
+border-radius:12px;
+}
+footer{
+	clear:both;
 }

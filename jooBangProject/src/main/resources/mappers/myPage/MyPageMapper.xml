@@ -36,5 +36,10 @@
 		DELETE FROM board where memId=#{result};
 		DELETE FROM member WHERE memId=#{result};
 	</delete>
-	
+	  <select id="myRoom" parameterType="string" resultType="com.jooBang.project.model.RoomVO">
+		SELECT * FROM room WHERE memId = #{memId}
+	</select>
+	<delete id="deleteRoom" parameterType="int">
+	DELETE FROM room WHERE roomNo = #{roomNo}
+	</delete>
 </mapper>

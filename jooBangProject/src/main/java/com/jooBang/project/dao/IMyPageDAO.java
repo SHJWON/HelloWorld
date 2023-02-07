@@ -1,6 +1,9 @@
 package com.jooBang.project.dao;
 
+import java.util.ArrayList;
+
 import com.jooBang.project.model.MemberVO;
+import com.jooBang.project.model.RoomVO;
 
 public interface IMyPageDAO {
 
@@ -11,5 +14,7 @@ public interface IMyPageDAO {
 	public String deleteMyPage(MemberVO mem); // 회원 탈퇴
 	
 	public void realDelete1(String result);
+	public ArrayList<RoomVO>myRoom(String memId);
+	public void deleteRoom(int roomNo); 
 	
 }

@@ -9,18 +9,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jooBang.project.model.MemberVO;
-import com.jooBang.project.model.WishListVO;
+import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.service.MyPageService;
-import com.jooBang.project.service.WishListService;
+
 
 @Controller
 public class MyPageController {
 	@Autowired
 	private MyPageService service;
-	@Autowired
-	private WishListService Wservice;
 
 	/* 마이페이지 이동 */
 	@RequestMapping("/myPage/detailViewMyPage")
@@ -81,5 +81,29 @@ public class MyPageController {
 		return "redirect:/";
 	}
 
-	
+	// 내 방 목록
+	@RequestMapping("/myPage/myRoom")
+	public String myRoom(Model model, HttpSession session) {
+			String memId = (String)session.getAttribute("sid");		
+			ArrayList<RoomVO> roomList = service.myRoom(memId);
+	 	    model.addAttribute("roomList", roomList);
+	 return "/myPage/myRoom";
+}
+				
+@ResponseBody
+	@RequestMapping("/myPage/deleteRoom")
+		public int deleteRoom(@RequestParam("chbox[]") ArrayList<Integer> chkArr) {
+			int result = 0; 
+					
+		// 배열에서 cartNo 추출해서 해당되는 상품 삭제
+		if(chkArr != null) {
+		for(int roomNo : chkArr) {
+		service.deleteRoom(roomNo);
+}
+				
+		result = 1; // 성공
+	}
+					
+		return result;
+	}
 }
