@@ -2,15 +2,18 @@
  * signup.js
  */
 $(document).ready(function(){
-$('#memPwd2').keyup(function (e) {
-    let check_pwd = $(this).val();
-    let pwd = $('#memPwd').val();
-        // 글자수 세기
-        if ( check_pwd != pwd ) {
-            $('.pwdcheck2').text('일치하지 않음');
-        }
+    $('#memPwd2').keyup(function (e) {
+        let check_pwd = $(this).val();
+        let pwd = $('#memPwd').val();
+            // 
+            if ( check_pwd != pwd ) {
+                $('#pwdcheck2').text('일치하지 않음');
+            } else{
+                $('#pwdcheck2').text('');
+            }
     });
 });
+
 function signupCheck() {
 	var memId = document.getElementById("memId");
 	var memPwd = document.getElementById("memPwd");

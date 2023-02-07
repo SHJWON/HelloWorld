@@ -1,32 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>이용약관</title>
-	<link rel="stylesheet" type="text/css" href="<c:url value='/css/TOS.css'/>">
-	<c:import url="/WEB-INF/views/head.jsp"/>
-	</head>
-	
-	<body> 
-       <c:import url="/WEB-INF/views/top.jsp"/>
-    <table width=960px align=center>
-     <tr>
-      <td align=center>
-          <!--이용약관 테이블 시작-->
-          <table width=810px>
-            <tr>
-              <td>
-                <div>
-                 <font color="#ff2649" size=4>01</font> <font size=3>주세요 방 이용약관 동의</font>
-                </div>
-             </td>
-           </tr>
-           <tr>
-             <td align=center>
-               <textarea name="tos" rows=15 cols=100>
+<head>
+<meta charset="UTF-8">
+<title>이용약관</title>
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/TOS.css'/>">
+<c:import url="/WEB-INF/views/head.jsp" />
+<script src="/js/TOS.js"></script>
+</head>
+
+<body>
+	<c:import url="/WEB-INF/views/top.jsp" />
+
+	<article id="content" class="cols-d">
+		<div id="Tosbox">
+			<h1>이용약관</h1>
+			<form id="TOSform" class="f" action="<c:url value='/member/signUp'/>">
+				<h4 class="scheme-g">주세요 방 이용약관 동의</h4>
+				<textarea>
 여러분을 환영합니다.
 주세요방 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 주세요방 서비스의 이용과 관련하여 주세요방 서비스를 제공하는 주세요방 주식회사(이하 ‘주세요방’)와 이를 이용하는 주세요방 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 주세요방 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
 
@@ -145,24 +139,12 @@
 공지 일자: 2018년 3월 30일
 적용 일자: 2018년 5월 1일
 주세요방 서비스와 관련하여 궁금하신 사항이 있으시면 고객센터(대표번호: 1588 – 3820/ 평일 09:00~18:00)로 문의 주시기 바랍니다.
-                </textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" id="chk1" required >이용약관에 동의합니다.<br><br><br><br>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div>
-                 <font color="#ff2649" size=4>02</font> <font size=3>개인정보 수집 및 이용 동의</font>
-                </div>
-             </td>
-           </tr>
-           <tr>
-             <td align=center>
-               <textarea name="tos" rows=15 cols=100>
+            </textarea>
+				<p>
+					<input type="checkbox" id="check_1" name="" /> 위의 약관에 동의 합니다.<br />
+				</p>
+				<h4 class="scheme-g">개인정보 수집 및 이용 동의</h4>
+				<textarea>
 개인정보보호법에 따라 주세요방에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
 
 1. 수집하는 개인정보
@@ -219,26 +201,13 @@
 
 4. 개인정보 수집 및 이용 동의를 거부할 권리
 이용자는 개인정보의 수집 및 이용 동의를 거부할 권리가 있습니다. 회원가입 시 수집하는 최소한의 개인정보, 즉, 필수 항목에 대한 수집 및 이용 동의를 거부하실 경우, 회원가입이 어려울 수 있습니다.
-
-
-                </textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" id="chk2" required >이용약관에 동의합니다.<br><br><br><br>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div>
-                 <font color="#ff2649" size=4>03</font> <font size=3>위치기반서비스 이용약관 동의</font>
-                </div>
-             </td>
-           </tr>
-           <tr>
-             <td align=center>
-               <textarea name="tos" rows=15 cols=100>
+            
+            </textarea>
+				<p>
+					<input type="checkbox" id="check_2" name="" /> 위의 약관에 동의 합니다.<br />
+				</p>
+				<h4 class="scheme-g">위치기반서비스 이용약관 동의</h4>
+				<textarea>
 위치기반서비스 이용약관에 동의하시면, 위치를 활용한 광고 정보 수신 등을 포함하는 네이버 위치기반 서비스를 이용할 수 있습니다.
 
 제 1 조 (목적)
@@ -310,27 +279,34 @@
 부칙
 제1조 시행일
 2022년 4월 27일부터 시행되던 종전의 약관은 본 약관으로 대체하며, 본 약관은 2022년 5월 18일부터 적용됩니다.
-                </textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" id="chk3" required >개인정보 수집 및 이용에 대한 안내에 동의합니다.
-              </td>
-            </tr>
-          </table>
-      </td>
-    </tr>
-</table>
-<br><br>
-  <div id="btn">
-		<a href="<c:url value="/member/signUp"/>" id="mainSignUp">
-		 <button type = "submit"  class="btn_order">회 원 가 입</button>
-		</a>
-		 <button type = "submit"  class="btn_cancel1">취 소 하 기</button>
-  </div>
-   <footer>
-				      <c:import url="/WEB-INF/views/footer.jsp"/>
-				     </footer>
-  </body>
+
+            </textarea>
+
+				<p>
+					<input type="checkbox" id="check_3" name="" /> 위의 약관에 동의 합니다.<br />
+				</p>
+
+
+				<div id="BtnBox">
+					<input type="button" id="nextBtn" class="button_big"
+						style="padding: 0 10px 10px 10px; height: 24px;" value="회원가입" /> <a
+						href="<c:url value="/"/>" id="back"> <input type="button"
+						id="nextBtn" class="button_big"
+						style="padding: 0 10px 10px 10px; height: 24px;" value="취소하기" />
+					</a>
+				</div>
+
+			</form>
+		</div>
+	</article>
+
+
+
+	<footer>
+		<c:import url="/WEB-INF/views/footer.jsp" />
+	</footer>
+</body>
 </html>
+
+
+
