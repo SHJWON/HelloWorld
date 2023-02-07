@@ -38,11 +38,11 @@
 		INSERT INTO room (roomNo, roomName, roomDecription, roomZipcode, roomAddress1, roomAddress2,
 						  roomRCount, roomBCount, roomLCount, roomKCount, basicOption, addtionalOption,
 						  roomBuilding, infoElevator, infoParking, roomLeastPay, roomDeposit, roomRent,
-						  roomAdministrationFee, roomPayOption, roomDiscount, roomDiscountFee, roomImage, lat, lng)
+						  roomAdministrationFee, roomPayOption, roomDiscount, roomDiscountFee, roomImage, lat, lng, memId)
 		VALUES (#{roomNo}, #{roomName}, #{roomDecription}, #{roomZipcode}, #{roomAddress1}, #{roomAddress2},
 						  #{roomRCount}, #{roomBCount}, #{roomLCount}, #{roomKCount}, #{basicOption}, #{addtionalOption},
 						  #{roomBuilding}, #{infoElevator}, #{infoParking}, #{roomLeastPay}, #{roomDeposit}, #{roomRent},
-						  #{roomAdministrationFee}, #{roomPayOption}, #{roomDiscount}, #{roomDiscountFee}, #{roomImage}, #{lat}, #{lng})
+						  #{roomAdministrationFee}, #{roomPayOption}, #{roomDiscount}, #{roomDiscountFee}, #{roomImage}, #{lat}, #{lng}, #{memId})
 	</insert>
 	
 	<select id="detailRoom" parameterType="int" resultMap="roomResult">

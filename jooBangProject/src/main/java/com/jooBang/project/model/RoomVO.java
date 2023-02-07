@@ -27,6 +27,7 @@ public class RoomVO {
 	private String lat;
 	private String lng;
 	private int roomViewCnt;
+	private String memId;
 	
 	
 	
@@ -186,6 +187,12 @@ public class RoomVO {
 	}
 	public void setLng(String lng) {
 		this.lng = lng;
+	}
+	public String getMemId() {
+		return memId;
+	}
+	public void setMemId(String memId) {
+		this.memId = memId;
 	}
 	
 	
