@@ -3,6 +3,7 @@ package com.jooBang.project.service;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.jooBang.project.model.BoardVO;
 import com.jooBang.project.model.MapVO;
 
 public interface IMapService {

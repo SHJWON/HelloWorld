@@ -20,5 +20,6 @@ public interface IWishListDAO {
 	public void recentViewDelete(WishListVO vo); //최근 본방 중복 삭제
 	public void recentAllDelete(); // 최근 본 방 데이터 초기화
 	public ArrayList<WishListVO> likeView(String memId); // 찜 목록
+	public ArrayList<RoomVO>myRoom(String memId);
 	
 }

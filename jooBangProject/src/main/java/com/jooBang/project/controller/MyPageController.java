@@ -1,5 +1,7 @@
 package com.jooBang.project.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +11,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jooBang.project.model.MemberVO;
+import com.jooBang.project.model.WishListVO;
 import com.jooBang.project.service.MyPageService;
+import com.jooBang.project.service.WishListService;
 
 @Controller
 public class MyPageController {
 	@Autowired
 	private MyPageService service;
+	@Autowired
+	private WishListService Wservice;
 
 	/* 마이페이지 이동 */
 	@RequestMapping("/myPage/detailViewMyPage")
@@ -75,13 +81,5 @@ public class MyPageController {
 		return "redirect:/";
 	}
 
-
-
-	// 올린 방목록
-	@RequestMapping("/myPage/myReservationList")
-	public String myReservationList() {
-
-		return "/myPage/myReservationList";
-	}
-
+	
 }

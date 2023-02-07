@@ -13,4 +13,5 @@ public interface IRegistDAO {
 	public ArrayList<RoomVO> rRecentView();
 	public void viewCount(int roomNo); // 조회수 증가
 	public void wishCountroom(int roomNo); // 위시리스트 등록수 넘기기
+
 }
