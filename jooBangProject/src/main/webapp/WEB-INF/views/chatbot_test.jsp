@@ -2,7 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<div class="modal-container active">
+<div class="chatbot_btn">
+	<img src="<c:url value='/image/chatbot.png'/>">
+</div>
+
+
+<div class="modal-container">
 	<div class="chatbot_modal">
 		<div class="chatbotContainer">
 			<div class="chatHeader">

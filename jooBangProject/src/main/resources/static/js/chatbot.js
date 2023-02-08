@@ -8,6 +8,10 @@ $(document).ready(function(){
 	$('#btnClose').on('click', function(){
 		$('.modal-container').removeClass('active');
 	});
+	
+	$('.chatbot_btn').on('click',function(){
+		$('.modal-container').addClass('active');
+	});
 
  	$('#chatbotForm').on('submit', function(){
 		event.preventDefault();
