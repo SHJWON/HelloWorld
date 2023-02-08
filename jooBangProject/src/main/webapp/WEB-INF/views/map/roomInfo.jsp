@@ -11,15 +11,13 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1.0, user-scalable=no">
 <c:import url="/WEB-INF/views/head.jsp" />
+<c:import url="/WEB-INF/views/chatbot_head.jsp" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/css/roomInfo.css' />">
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/chatbot.css' />">
 <script type="text/javascript"
 	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=yaysmxugs9"></script>
 <script src="<c:url value='/js/wishList.js' />"></script>
 <script src='//unpkg.com/emojionearea/dist/emojionearea.min.js'></script>
-<script src="<c:url value='/js/chatbot.js' />"></script>
 <title>${room.roomName}</title>
 </head>
 <body>
@@ -314,11 +312,11 @@
 					</div>
 				</div>
 			</div>
+			<c:import url="/WEB-INF/views/chatbot_test.jsp"/>
 		</section>
 		<footer>
 			<c:import url="/WEB-INF/views/footer.jsp" />
 		</footer>
 	</div>
-	<c:import url="/WEB-INF/views/chatbot_test.jsp"/>
 </body>
 </html>

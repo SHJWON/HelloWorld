@@ -37,7 +37,6 @@
 
 .roomInfo1Wrapper {
     width:780px;
-    margin-bottom:100px;
 }
 
 .roomInfo_bold{
@@ -156,7 +155,7 @@
 .roomInfo2Wrapper {
     width:360px;
     position: sticky;
-    top: 40px;
+    top: 178px;
 }
 
 .roomInfo2Wrapper .wishWrapper{
