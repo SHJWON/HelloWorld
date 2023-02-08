@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ChatbotService {
 	
-	  public static String main(String voiceMessage) {
+	  public String main(String voiceMessage) {
 			String apiURL = "https://6gcqyweeis.apigw.ntruss.com/custom/v1/9255/4a852af14e00120b714b28d8440fa06adeadcf14e32811bd2d335bee3e8c5800";
 			String secretKey = "d0RXT0h1bGFURmxuVUhzRUllbGd2SWt5UXlQVnN3SUI=";
 			
@@ -61,6 +61,8 @@ public class ChatbotService {
 	                String decodedString;
 	                while ((decodedString = in.readLine()) != null) {
 	                    chatbotMessage = decodedString;
+	                    
+	                    chatbotMessage = jsontoString(chatbotMessage);
 	                }
 	                //chatbotMessage = decodedString;
 	                in.close();
@@ -142,5 +144,14 @@ public class ChatbotService {
 
 	        return requestBody;
 
+	    }
+	   
+	    public static String jsontoString(String jsonResultStr) {
+	    	String result="";
+	    	
+	    	JSONArray bubbleArray = new JSONObject(jsonResultStr).getJSONArray("bubbles");
+	    	result = bubbleArray.getJSONObject(0).getJSONObject("data").getString("description");
+	    	
+	    	return result;
 	    }
 }

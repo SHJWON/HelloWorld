@@ -1,19 +1,83 @@
 @charset "UTF-8";
 
-#chatbotContainer { margin:0 auto; width: 500px; 	height: 800px; } 
+.chatbotContainer {
+	position: relative;
+	margin: 0 auto;
+	width: 435px;
+	background: #ffffff;
+	border-radius: 10px;
+	overflow: hidden;
+}
 
-#chatHeader {padding: 10px 15px; border-bottom: 1px solid #95a6b4;}
-#btnClose {border: none; background: none; float: right;}
- 
-#chatBox {height: 600px; width: 500px; overflow-y:scroll; padding:10px 15px; background:#9bbbd4;} 	
+.chatHeader {
+	height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
 
-#message {width: 440px;}
+#btnClose {
+	border: none;
+	background: none;
+	float: right;
+}
 
-#btnSubmit {float: right; background:#eeeeee; height: 28px; padding-right:0;}
+#chatBox {
+	height: 600px;
+	width: 400px;
+	overflow: scroll;
+	padding: 10px 15px;
+	background: #ffffff;
+	border-radius: 10px;
+	overflow-x:hidden;
+	margin-right: 0px;
+}
 
-.msgBox  span {padding:3px 5px; word-break:break-all; display:block; 
-							 max-width:300px; margin-bottom: 10px; border-radius: 10px;}
-							 
+#chatBox::-webkit-scrollbar {
+    width: 10px;  /* 스크롤바의 너비 */
+}
+
+#chatBox::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: #bb2649; /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+#chatBox::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, .0);  /*스크롤바 뒷 배경 색상*/
+}
+
+/* 채팅박스 스크롤바 조절 */
+
+#message {
+	width: 380px;
+}
+
+#chatbotForm{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+	padding: 0px 15px;
+}
+
+#btnSubmit {
+	float: right;
+	background: #eeeeee;
+	height: 28px;
+	padding-right: 0;
+}
+
+.msgBox  span {
+	padding: 3px 5px;
+	word-break: break-all;
+	display: block;
+	max-width: 300px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
 /* 
 	word-break : 단어 분리 결정하여 줄 바꿈 처리
 		- 줄바꿈 할 때 단어 기준인지, 글자 기준인지 정하는 속성
@@ -21,13 +85,39 @@
 		break-all : 글자 기준으로 줄바꿈
 		keep-all : 단어 기준으로 줄바꿈
  */
+.msgBox.send  span {
+	background: #ff9b9b;
+	float: right;
+}
 
-.msgBox.send  span {background:#fef01b; float:right; }
+.msgBox #in {
+	width: 480px;
+	background: #ffffff;
+}
 
-.msgBox #in {width:480px; background:#9bbbd4;}
-.msgBox.receive  span {background:#ffffff; float:left; }
+.msgBox.receive  span {
+	background: #ffffff;
+	float: left;
+}
 
 /*
 <link rel="stylesheet"  type="text/css" href="/css/chatbot.css">
 */
 
+/* modal */
+.modal-container {
+	display: none;
+}
+
+.modal-container.active {
+	z-index: 4000;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, .5);
+}
