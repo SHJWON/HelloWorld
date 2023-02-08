@@ -59,12 +59,14 @@ public class MapController {
 		model.addAttribute("wish_count", wish_count); // 찜수 조회
 		model.addAttribute("room", roomVO); // room 정보 조회
 		
-		//최근 본 방 중복 데이터 제거
-		wishservice.recentViewDelete(vo);
-		
-		//최근 본 방 저장
-		wishservice.recentViewSave(memId, roomNo);
-		model.addAttribute("roomNo", roomNo);
+		if(memId!=null) {			
+			//최근 본 방 중복 데이터 제거
+			wishservice.recentViewDelete(vo);
+			
+			//최근 본 방 저장
+			wishservice.recentViewSave(memId, roomNo);
+			model.addAttribute("roomNo", roomNo);
+		}
 		   
 		return "map/roomInfo";
 	}

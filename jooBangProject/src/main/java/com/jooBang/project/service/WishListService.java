@@ -105,6 +105,11 @@ public class WishListService implements IWishListService {
 		dao.recentAllDelete();
 	}
 
-	
+	@Override
+	public ArrayList<WishListVO> roomSearch(String keyword) {
+		// TODO Auto-generated method stub
+		return dao.roomSearch(keyword);
+	}
+
 	
 }

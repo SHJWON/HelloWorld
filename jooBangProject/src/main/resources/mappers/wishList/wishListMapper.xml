@@ -89,9 +89,14 @@
 		order by recentWishNo DESC limit 8;
 	</select>
 	
-
-	
-	
+ 
+		<!-- 메인 검색 결과 보기  -->
+  <select id="roomSearch" parameterType="string" resultType="com.jooBang.project.model.WishListVO">
+  		SELECT * FROM room WHERE
+  		roomAddress1 Like CONCAT('%', #{keyword}, '%') 
+  		OR roomName Like CONCAT('%', #{keyword}, '%') 
+  		OR roomDecription Like CONCAT('%', #{keyword}, '%')
+  </select>
 	
 	
 

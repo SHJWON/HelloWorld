@@ -13,10 +13,13 @@
 <c:import url="/WEB-INF/views/head.jsp" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/css/roomInfo.css' />">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/css/chatbot.css' />">
 <script type="text/javascript"
 	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=yaysmxugs9"></script>
 <script src="<c:url value='/js/wishList.js' />"></script>
 <script src='//unpkg.com/emojionearea/dist/emojionearea.min.js'></script>
+<script src="<c:url value='/js/chatbot.js' />"></script>
 <title>${room.roomName}</title>
 </head>
 <body>
@@ -316,5 +319,6 @@
 			<c:import url="/WEB-INF/views/footer.jsp" />
 		</footer>
 	</div>
+	<c:import url="/WEB-INF/views/chatbot_test.jsp"/>
 </body>
 </html>

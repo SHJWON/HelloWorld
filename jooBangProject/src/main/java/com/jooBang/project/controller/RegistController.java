@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,11 +33,13 @@ public class RegistController {
 	
 	@RequestMapping("/regist")
 	public String regist(@RequestParam("uploadFileMulti") ArrayList<MultipartFile> files, 
-						 RoomVO vo, HttpServletRequest req) throws IOException{
+						 RoomVO vo, HttpServletRequest req, HttpSession session) throws IOException{
 		
 		// roomImage - 여러개 파일 저장
 		String uploadPath = req.getSession().getServletContext().getRealPath("/").replace("webapp","resources");
 		String imgUploadPath = uploadPath + File.separator + "static/image/registImg/";
+	
+		String memId = (String)session.getAttribute("sid");
 		
 		String roomImage ="";
 		
@@ -67,8 +70,8 @@ public class RegistController {
 		
 		vo.setLat(map.get("y"));
 		vo.setLng(map.get("x"));
-		
-		System.out.println(map);
+
+		vo.setMemId(memId);
 		
 		registservice.insertRoom(vo);
 		
