@@ -36,18 +36,19 @@
 
         <!-- 검색 박스 -->
         <div class="mainItem searchBox">
-          <div class="container">
+          <form class="container">
             <br />
             <input
               id="searchBar"
+              name="searchBar"
               class="searchbar"
               type="text"
               placeholder="지역·단지명을 검색해보세요.."
             />
             <a id="btnSearch" class="btn-search"
-              ><i class="fa fa-search"></i
+              ><i class="fa fa-search"id="magnifier" name="magnifier"></i
             ></a>
-          </div>
+          </form>
         </div>
 
         <!-- 추천 매물 멘트 -->
