@@ -11,7 +11,7 @@
 .footerLine{
     margin-top: 10px;
     position: relative;
-    background: linear-gradient(50deg, #949494, #7b7b7b, #000000);
+    background: #c9c9c9;
     z-index: -1;
 }
 
@@ -74,15 +74,15 @@
 
 #helloWorld{
     margin-left: 311px;
-    color: rgb(186, 186, 186);
+    color: rgb(126 126 126);
 }
 
 #burning{
     margin-left: 13px;
-    color: rgb(186, 186, 186);
+    color: rgb(126 126 126);
 }
 
 #produce{
     margin-right: 5px;
-    color: rgb(186, 186, 186);
+    color: rgb(126 126 126);
 }

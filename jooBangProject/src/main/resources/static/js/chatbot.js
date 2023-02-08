@@ -5,6 +5,10 @@
 $(document).ready(function(){
 	callAjax();
 
+	$('#btnClose').on('click', function(){
+		$('.modal-container').removeClass('active');
+	});
+
  	$('#chatbotForm').on('submit', function(){
 		event.preventDefault();
  		//폼이 submit 되지 않도록 기본 기능 중단
@@ -30,7 +34,7 @@ function callAjax() {
  		// 서버에 전송하고 결과 받아서 처리
  		$.ajax({
  			type:"post",
- 			url:"chatbot",
+ 			url:"/chatbot",
  			data: {"message": $('#message').val()},
  			success:function(result){
  				// 챗봇 창에 받은 메시지 추가
