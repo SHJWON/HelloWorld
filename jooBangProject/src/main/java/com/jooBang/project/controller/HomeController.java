@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jooBang.project.model.BoardVO;
 import com.jooBang.project.model.FurnitureVO;
 import com.jooBang.project.model.RoomVO;
+import com.jooBang.project.model.WishListVO;
 import com.jooBang.project.service.BoardService;
 import com.jooBang.project.service.FurnitureService;
 import com.jooBang.project.service.RegistService;
@@ -64,4 +66,15 @@ public class HomeController {
 	public String error() {
 		return "404";
 	}
+	
+	
+	// 메인 서칭 컨트롤러
+	@RequestMapping("/main")
+	public String cardListSearch(@RequestParam String keyword,
+													   Model model){
+	// 서비스로 전송해서 DB 검색 결과 받아옴
+	ArrayList<WishListVO> searchRoom = wService.roomSearch(keyword);
+	model.addAttribute("searchRoom", searchRoom);
+	return "map/mapView";
+		}
 }
