@@ -70,3 +70,10 @@
     font-size: 20px;
     font-weight: bold;
 }
+#papagoBtn{
+	cursor:pointer;
+	border:0;
+	font-size: 18px;
+    font-weight: bold;
+	background-color:transparent;
+}

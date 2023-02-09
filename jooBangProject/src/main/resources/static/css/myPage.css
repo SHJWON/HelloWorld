@@ -237,7 +237,7 @@ td {
 .myRoom{
 	width:58%;
 	margin-left:30%;
-
+    height:700px;
 	margin-bottom:50px;
 		
 }	
@@ -270,10 +270,15 @@ td {
     border-color: #bb2649;
 	float:right;
 	margin-right:50px;
+	cursor:pointer;
 }
+#deleteCartBtn:hover{
+   background-color:#bb2649;
+   color:white;
+  }
+	 
 
-  input[type="checkbox"]{
-
+ input[type="checkbox"]{
 width: 20px; 
 height: 20px; 
 cursor: pointer;  

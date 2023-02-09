@@ -31,7 +31,7 @@
      var checked=$('.chkDelete').is(':checked');
      
      if(checked){//하나라도 선택한 경우
-     var answer=confirm("선택된 상품을 삭제하시겠습니가?");
+     var answer=confirm("선택된 방을 삭제하시겠습니가?");
      if(answer){
       //체크된 체크박스의 cartNo를 배열에 추가
       var checkArr=new Array();
