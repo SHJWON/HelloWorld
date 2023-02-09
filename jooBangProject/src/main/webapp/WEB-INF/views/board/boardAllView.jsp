@@ -11,6 +11,8 @@
 		<c:import url="/WEB-INF/views/head.jsp"/>
 			<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 			<script src="<c:url value='/js/board.js'/>"></script>
+			<script src="<c:url value='/js/papago.js'/>"></script>
+			
 		    <link rel="stylesheet" href="<c:url value='/css/board.css' />">	
 	
 </head>
@@ -84,7 +86,6 @@
  </c:forEach>
 			</div>
 			</div>
-			
 						<footer>
         <c:import url="/WEB-INF/views/footer.jsp"/>
       </footer>

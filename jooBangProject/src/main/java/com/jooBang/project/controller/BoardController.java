@@ -12,15 +12,18 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.jooBang.project.model.BoardVO;
 import com.jooBang.project.model.CommentVO;
 import com.jooBang.project.service.BoardService;
 import com.jooBang.project.service.CommentService;
+import com.jooBang.project.service.PapagoService;
 
 
 
@@ -30,6 +33,8 @@ public class BoardController {
 	private BoardService service;
 	@Autowired
 	private CommentService comService;
+	@Autowired
+	private PapagoService PService;
 
 	@RequestMapping("/pay")
 	 public String payment() {	
@@ -179,6 +184,12 @@ public class BoardController {
            model.addAttribute("brdList",brdList);
            return "/myPage/myBoardList";
 		}
+		@ResponseBody
+		@RequestMapping("/myPage/test")
+		public String test(@RequestParam("test") String test,Model model ) {
+			String html=test;
+			String result=PService.translateToEngHtml(html);
 		
-		
+			return result;
+		}
 }
