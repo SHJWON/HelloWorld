@@ -39,7 +39,7 @@ public class MemberController {
 						String nick=service.getName(id);
 						session.setAttribute("nick", nick);
 			// 최근 본 방 테이블 초기화
-			//wishservice.recentAllDelete();
+			wishservice.recentAllDelete();
 			
 		}
 		
