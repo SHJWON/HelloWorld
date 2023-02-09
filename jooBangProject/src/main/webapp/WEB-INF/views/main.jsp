@@ -10,6 +10,7 @@
 		<meta charset="UTF-8">
 		<c:import url="/WEB-INF/views/head.jsp"/>
 		<c:import url="/WEB-INF/views/chatbot_head.jsp" />
+		<script src="/js/mainSearch.js"></script>
 		<title>주세요 방 Main</title>
 	</head>
 	  <body>
@@ -37,20 +38,20 @@
 	
 	        <!-- 검색 박스 -->
 	        <div class="mainItem searchBox">
-	          <form class="container">
-	            <br />
-	            <input
-	              id="searchBar"
-	              name="searchBar"
-	              class="searchbar"
-	              type="text"
-	              placeholder="지역·단지명을 검색해보세요.."
-	            />
-	            <a id="btnSearch" class="btn-search"
-	              ><i class="fa fa-search"id="magnifier" name="magnifier"></i
-	            ></a>
-	          </form>
-	        </div>
+          <form class="container" method="post" action="/map/mapView">
+            <br />
+            <input
+              id="searchBar"
+              name="searchBar"
+              class="searchbar"
+              type="text"
+              placeholder="지역·단지명을 검색해보세요.."
+            />
+            <a id="btnSearch" class="btn-search"
+              ><i class="fa fa-search"id="magnifier" name="magnifier"></i
+            ></a>
+          </form>
+        </div>
 	
 	        <!-- 추천 매물 멘트 -->
 	        <div class="mainItem recommend">
