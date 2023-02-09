@@ -67,14 +67,5 @@ public class HomeController {
 		return "404";
 	}
 	
-	
-	// 메인 서칭 컨트롤러
-	@RequestMapping("/main")
-	public String cardListSearch(@RequestParam String keyword,
-													   Model model){
-	// 서비스로 전송해서 DB 검색 결과 받아옴
-	ArrayList<WishListVO> searchRoom = wService.roomSearch(keyword);
-	model.addAttribute("searchRoom", searchRoom);
-	return "map/mapView";
-		}
+
 }

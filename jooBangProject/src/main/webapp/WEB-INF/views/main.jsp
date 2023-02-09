@@ -9,6 +9,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<c:import url="/WEB-INF/views/head.jsp"/>
+		<script src="/js/mainSearch.js"></script>
 		<title>주세요 방 Main</title>
 	</head>
 	  <body>
@@ -36,7 +37,7 @@
 
         <!-- 검색 박스 -->
         <div class="mainItem searchBox">
-          <form class="container">
+          <form class="container" method="post" action="/map/mapView">
             <br />
             <input
               id="searchBar"

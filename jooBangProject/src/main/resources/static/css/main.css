@@ -180,9 +180,8 @@ a.mainChat img {
   }
   
   .searchbar:focus {
-      width: 500px;
+      width: 310px;
       font-family: "Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
-      font-size: 22px;
       font-weight: bold;
       transition: 0.3s;
       border-bottom: #bb2649 solid 2px;
@@ -212,6 +211,7 @@ a.mainChat img {
 
 .roomImg{
 	box-shadow: 0px 0px 4px #000;
+	object-fit: cover;
 }
 
 .center-outer { /*異붿쿇留ㅻЪ ���댄�*/

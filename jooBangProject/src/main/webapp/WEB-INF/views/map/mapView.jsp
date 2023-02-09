@@ -29,7 +29,10 @@
       <div id="wrap">
 <div class="menu">
 <hr>
-   <input type="text" id="address">
+<% 
+String address= request.getParameter("searchBar");
+%>
+   <input type="text" id="address" value="<%= address %>">
    <button type="submit" id="mapsubmit"><i class="fa fa-search"></i></button>
   <hr>
 <div id="roominfo">
@@ -112,6 +115,13 @@ function initMap() {
 		
 $(document).ready(function(){
 	initMap();	
+	
+	if($("#address").val()!= "null"){
+		searchAddressToCoordinate($('#address').val());
+	} else{
+		$("#address").val("");
+	}
+	
 	var htmlMarker1 = {
 	        content: '<div class="htmlMarker"style="cursor:pointer;width:60px;height:60px;line-height:62px;font-size:15px;color:white;text-align:center;font-weight:bold;background:url(/image/ping.png);background-size:contain;"></div>',
 	        size: N.Size(40, 40),
