@@ -289,7 +289,18 @@
 										         id="date"
 										         value="2023-02-01">
 									</div>
-									<a href="<c:url value='/payment/pay/${roomNo}'/>"><button class="reservation_SubmitBtn" type="button">예약하기</button></a>
+									<c:if test="${empty sessionScope.sid }">
+										<button class="reservation_SubmitBtn" type="button">예약하기</button>
+										
+										<script>
+											$(".reservation_SubmitBtn").click(function(){
+												alert("로그인이 필요한 기능입니다.");
+											});
+										</script>
+									</c:if>
+									<c:if test="${not empty sessionScope.sid }">
+										<a href="<c:url value='/payment/pay/${roomNo}'/>"><button class="reservation_SubmitBtn" type="button">예약하기</button></a>
+									</c:if>
 								</div>
 								<div class="host_info">
 									<div class="hostName">호스트 이름</div>
