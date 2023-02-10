@@ -25,7 +25,7 @@
 		    </c:if>
             <li class="subMenu" id="subMenuCommunity"><a href="<c:url value='/board/boardListAll/${1}'/>">커뮤니티</a></li>
             <li class="subMenu" id="subMenuRental"><a href="<c:url value='/furniture/furnitureRentalView/${1}'/>">가구대여</a></li>
-            <li class="subMenu"> <a><input type="button" id="papagoBtn"value="번역"></a></li>
+            <li class="subMenu"><a><button id="papagoBtn"><img src="/image/translate.png"></button></a></li> 
           </ul>
         </div>
 
