@@ -76,4 +76,9 @@
 	font-size: 18px;
     font-weight: bold;
 	background-color:transparent;
+	float:right;
+}
+#papagoBtn img{
+	width:25px;
+	height:25px;
 }
