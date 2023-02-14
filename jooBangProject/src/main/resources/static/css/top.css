@@ -70,13 +70,13 @@
     font-size: 20px;
     font-weight: bold;
 }
-#papagoBtn{
+ #papagoBtn{
 	cursor:pointer;
 	border:0;
 	font-size: 18px;
     font-weight: bold;
 	background-color:transparent;
-	float:right;
+	
 }
 #papagoBtn img{
 	width:25px;

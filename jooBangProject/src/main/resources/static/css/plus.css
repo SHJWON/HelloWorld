@@ -1,0 +1,23 @@
+.floating {
+	margin:50px;
+width:10%;
+margin-left:85%;
+margin-right:5%;
+position: fixed; 
+float:right;
+text-align:center;
+width:70px;
+
+ }
+ #papagoBtn{
+	cursor:pointer;
+	border:0;
+	font-size: 18px;
+    font-weight: bold;
+	background-color:transparent;
+	
+}
+#papagoBtn img{
+	width:50px;
+	height:50px;
+}

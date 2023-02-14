@@ -14,6 +14,11 @@ public class PapagoController {
 	@Autowired
 	private PapagoService PService;
 	
+	@RequestMapping("/plus")
+	public String koa( ) {
+		
+		return "/plus";
+	}
 	@ResponseBody
 	@RequestMapping("/papago/en")
 	public String en(@RequestParam("test") String test,Model model ) {
