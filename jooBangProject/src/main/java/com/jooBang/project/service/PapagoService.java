@@ -16,8 +16,8 @@ public class PapagoService {
 	    public String translateToEngHtml(String name) {
 			//papago translation API 여기에 복사
 			String result="";		
-        	 String clientId = "lf6un2enzh";//애플리케이션 클라이언트 아이디값";
-		        String clientSecret = "dRpvvMREg6bJhhUNcUI6v9SWqdiH0lU71u50ivLE";//애플리케이션 클라이언트 시크릿값";
+        	 String clientId = "6z767qo9p6";//애플리케이션 클라이언트 아이디값";
+		        String clientSecret = "IFif1Akk8J4Wmviv5U0Fnx0vffyeHvxfJ9r9IPBx";//애플리케이션 클라이언트 시크릿값";
 		        try {
 		       	 String html = URLEncoder.encode(name, "UTF-8");
 		            String apiURL = "https://naveropenapi.apigw.ntruss.com/web-trans/v1/translate";

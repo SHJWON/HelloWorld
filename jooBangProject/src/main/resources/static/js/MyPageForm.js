@@ -26,7 +26,7 @@
  		}); // ajax 종료 	
  	});// submit 종료
  	//[삭제]버튼 클릭했을 떄 장바구니에서 선택된 상품 삭제
-    $('#deleteCartBtn').on('click', function(){
+    $('#deleteRoomBtn').on('click', function(){
      //선택 여부 확인 : 하나라도 선택하면 true, 아무것도 선택하지 않으면false
      var checked=$('.chkDelete').is(':checked');
      
