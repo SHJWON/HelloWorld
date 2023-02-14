@@ -30,7 +30,6 @@ public class ChatbotService {
 	            URL url = new URL(apiURL);
 
 	            String message = getReqMessage(voiceMessage);
-	            System.out.println("##" + message);
 
 	            String encodeBase64String = makeSignature(message, secretKey);
 
@@ -49,11 +48,8 @@ public class ChatbotService {
 
 	            BufferedReader br;
 	            
-	            System.out.println("responseCode : "+responseCode);
-	            System.out.println("con.getResponseMessage : " + con.getResponseMessage());
 
 	            if(responseCode==200) { // Normal call
-	                System.out.println(con.getResponseMessage());
 
 	                BufferedReader in = new BufferedReader(
 	                        new InputStreamReader(
@@ -111,8 +107,6 @@ public class ChatbotService {
 	            JSONObject obj = new JSONObject();
 
 	            long timestamp = new Date().getTime();
-
-	            System.out.println("##"+timestamp);
 
 	            obj.put("version", "v2");
 	            obj.put("userId", "U47b00b58c90f8e47428af8b7bddc1231heo2");

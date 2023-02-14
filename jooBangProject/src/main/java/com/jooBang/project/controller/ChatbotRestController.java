@@ -14,7 +14,6 @@ public class ChatbotRestController {
 	
 	@RequestMapping("/chatbot")
 	public String chatbot(@RequestParam("message") String message ) {
-		System.out.println("연락");
 		return service.main(message);
 	}
 }
