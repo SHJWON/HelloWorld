@@ -16,7 +16,7 @@
 		<div class="findbox">
 			<div id="findId">
 				<form id="findIdForm" name="findIdForm" method="post" action="/member/findPwd">
-					<h1>비밀번호 변경</h1>
+					<h1>비밀번호 찾기</h1>
 						
 					<h4>이름</h4>
 					<span class="input_area"><input type="text" maxlength="15" id="findPwdName" name="findPwdName" 

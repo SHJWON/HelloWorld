@@ -21,9 +21,6 @@
 					<form name="changePwd" id="changePwd" method="post"  action="<c:url value='/member/changePwd'/>">
 						<h1>비밀번호 변경</h1>
 						
-						<h4>* 아이디</h4>
-						<span class="input_area"><input type="text" maxlength="13" name="memId" id="memId"></span>
-						<br><br>
 						<h4>* 변경할 비밀번호</h4>
 						<span class="input_area"><input type="password" maxlength="25" name="memPwd" id="memPwd" 
 						placeholder="영문자+숫자+특수문자 조합"></span>

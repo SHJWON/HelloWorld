@@ -8,18 +8,22 @@
 	<!-- 로그인 체크 : id/pwd 여러 개를 파라미터로 받아올 때는 hashmap 사용해야 함 -->
 
 	<!-- 암호화 이후 -->
-	<select id="loginCheck" parameterType="string" resultType="string">
+	<select id="loginCheck" parameterType="string"
+		resultType="string">
 		SELECT memPwd FROM member WHERE memId=#{id}
 	</select>
 
 	<!-- 회원 등록 -->
-	<insert id="insertMember" parameterType="com.jooBang.project.model.MemberVO">
-		insert into member(memId, memPwd, memName, memHP, memNickName,memBirth, memEmail, memZipcode, memAddress1, memAddress2)
+	<insert id="insertMember"
+		parameterType="com.jooBang.project.model.MemberVO">
+		insert into member(memId, memPwd, memName, memHP,
+		memNickName,memBirth, memEmail, memZipcode, memAddress1, memAddress2)
 		values(#{memId},#{memPwd},#{memName},#{memHP},#{memNickName},#{memBirth},#{memEmail},#{memZipcode},#{memAddress1},#{memAddress2})
 	</insert>
 
 	<!-- 아이디 중복 확인 -->
-	<select id="memIdCheck" parameterType="string" resultType="string">
+	<select id="memIdCheck" parameterType="string"
+		resultType="string">
 		select memId from member where memId = #{memId}
 	</select>
 
@@ -30,7 +34,7 @@
 		FROM member
 		WHERE memName=#{memName} AND memEmail=#{memEmail}
 	</select>
-
+	
 	<!-- 비밀번호 변경 전 memName 가져오기 -->
 	<select id="findPwd" parameterType="hashmap" resultType="string">
 		SELECT
@@ -40,12 +44,14 @@
 	</select>
 
 	<!-- 비밀번호 변경하기 -->
-	<update id="changePwd" parameterType="com.jooBang.project.model.MemberVO">
+	<update id="changePwd"
+		parameterType="com.jooBang.project.model.MemberVO">
 		UPDATE member
 		SET memPwd=#{memPwd}
 		WHERE memId=#{memId}
 	</update>
-	<select id="getName" resultType="string" parameterType="string" >
-	select memNickName from member where memId=#{memId}
-	 </select>
+
+	<select id="getName" resultType="string" parameterType="string">
+		select memNickName from member where memId=#{memId}
+	</select>
 </mapper>

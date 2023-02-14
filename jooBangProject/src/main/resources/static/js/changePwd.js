@@ -2,15 +2,11 @@
  * signup.js
  */
 function signupCheck() {
-	var memId = document.getElementById("memId");
+	
 	var memPwd = document.getElementById("memPwd");
 	var memPwd2 = document.getElementById("memPwd2");
 
-	if (memId.value == "") {
-		alert("아이디를 입력하세요.")
-		memId.focus();
-		return false;
-	};
+
 
 	if (memPwd.value == "") {
 		alert("비밀번호를 입력하세요.")

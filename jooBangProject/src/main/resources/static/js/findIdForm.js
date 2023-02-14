@@ -2,7 +2,7 @@
  * findIdForm.js
  */
  
- $(document).ready(function() {
+$(document).ready(function() {
  	$('#findIdForm').on('submit', function() {
  		// 폼이 submit 되지 않도록 기본 기능 중단
  		event.preventDefault();
@@ -19,7 +19,7 @@
  			dataType:"text",
  			success:function(result) {
  				if (result != "fail") {
- 					alert("ID : " + result);
+ 					alert("회원님의 ID는" + result+" 입니다.");
  					location.href="/member/searchAfterLoginForm?memId=" + result;
  				} else {
  					alert("ID 찾기를 실패했습니다 이름과 이메일을 확인해주세요");
@@ -35,4 +35,39 @@
  		}); // ajax 종료
  	}); // submit 종료
  }); 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
