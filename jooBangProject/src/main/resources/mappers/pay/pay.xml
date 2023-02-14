@@ -9,4 +9,9 @@
   	SELECT memId, memName, memHP,memEmail FROM member WHERE memId=#{memId} 
   	</select>
    
+   	<!-- 주문서 입력 -->
+   	<insert id="insertReservation" parameterType="com.jooBang.project.model.ReservationVO">
+   		INSERT INTO reservation (roomNo,tenentId,rsvCheckIn,rsvPeriod,rsvName,rsvHP,rsvEmail,rsvPay)
+   			   VALUE (#{roomNo},#{tenentId},#{rsvCheckIn},#{rsvPeriod},#{rsvName},#{rsvHP},#{rsvEmail},#{rsvPay})
+	</insert>
    </mapper>

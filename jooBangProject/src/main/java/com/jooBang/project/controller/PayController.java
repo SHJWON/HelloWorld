@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jooBang.project.model.MemberVO;
+import com.jooBang.project.model.ReservationVO;
 import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.service.PayService;
 import com.jooBang.project.service.RegistService;
@@ -28,5 +29,15 @@ public class PayController {
 		model.addAttribute("memVo",memVo);
 	    model.addAttribute("roomVo",roomVO);
 		return"/payment/paymentView";
+	}
+	
+	@RequestMapping("/payment/pay/payresult")
+	public String payresult(ReservationVO vo, HttpSession session) {
+		String memId = (String)session.getAttribute("sid");
+		vo.setTenentId(memId);
+		
+		service.insertReservation(vo);
+		
+		return "redirect:/";
 	}
 }

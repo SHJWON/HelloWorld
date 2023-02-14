@@ -46,7 +46,6 @@
 								<div class="InfoBoxWrapper">
 									<div class="InfoTitle">
 										<h2>가격 정보</h2>
-
 									</div>
 									<div class="InfoBox">
 										<div class="Info_least">최소 예약기간 : ${room.roomLeastPay }주
@@ -277,30 +276,47 @@
 										<span class="InfoTitle Sub">거실 ${room.roomLCount } |</span>
 										<span class="InfoTitle Sub">부엌 ${room.roomKCount }</span>
 									</div>
-									<div class="reservation_Btn start_date">
-									<p class="reservation_title">체크인</p>
-										<input type="date"
-										         id="date"
-										         value="2023-02-01">
+									<div>
+										<form method="post" action="<c:url value='/payment/pay/${roomNo}' />">
+											<div class="reservation_Btn start_date">
+											<p class="reservation_title">체크인</p>
+												<input type="date"
+												         name="reservation_date">
+											</div>
+											<div class="reservation_Btn period">
+												<p class="reservation_title">예약기간</p>
+												<select id="reservation_period" name="reservation_period">
+													<option value="1">1주</option>
+													<option value="2">2주</option>
+													<option value="3">3주</option>
+													<option value="4">4주</option>
+													<option value="5">5주</option>
+													<option value="6">6주</option>
+													<option value="7">7주</option>
+													<option value="8">8주</option>
+													<option value="direct">직접 입력</option>
+												</select>
+											</div>
+												
+											<div id="selboxDirect">
+												<div id="selboxWarning">주단위로만 입력이 가능합니다.</div>
+												<input type="text" name="selboxDirect"/> 주
+											</div>
+											
+											<c:if test="${empty sessionScope.sid }">
+												<button class="reservation_SubmitBtn" type="button">예약하기</button>
+												
+												<script>
+													$(".reservation_SubmitBtn").click(function(){
+														alert("로그인이 필요한 기능입니다.");
+													});
+												</script>
+											</c:if>
+											<c:if test="${not empty sessionScope.sid }">
+												<button class="reservation_SubmitBtn" type="submit">예약하기</button>
+											</c:if>
+										</form>
 									</div>
-									<div class="reservation_Btn finish_date">
-										<p class="reservation_title">체크아웃</p>
-										<input type="date"
-										         id="date"
-										         value="2023-02-01">
-									</div>
-									<c:if test="${empty sessionScope.sid }">
-										<button class="reservation_SubmitBtn" type="button">예약하기</button>
-										
-										<script>
-											$(".reservation_SubmitBtn").click(function(){
-												alert("로그인이 필요한 기능입니다.");
-											});
-										</script>
-									</c:if>
-									<c:if test="${not empty sessionScope.sid }">
-										<a href="<c:url value='/payment/pay/${roomNo}'/>"><button class="reservation_SubmitBtn" type="button">예약하기</button></a>
-									</c:if>
 								</div>
 								<div class="host_info">
 									<div class="hostName">호스트 이름</div>
