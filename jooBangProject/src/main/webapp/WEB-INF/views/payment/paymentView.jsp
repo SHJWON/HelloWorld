@@ -48,27 +48,68 @@
 	<div id="wrap">
 		<c:import url="/WEB-INF/views/top.jsp" />
 		<section>
+			<form method="post" action="/payment/pay/payresult">
 			<div class="InfoBoxContainer">
 				<div class="InfoTitle">
-					<img src="<c:url value='/image/arrow_drop_down.svg'/>">
+					<a href="javascript:history.back();"><img src="<c:url value='/image/arrow_drop_down.svg'/>"></a>
 					<h1>확인 및 결제</h1>
 				</div>
 				<div class="InfoBoxWrapper">
 					<div class="InfoBox1">
 						<div class="reserveInfo">
-							<h2>예약 정보</h2>
-							<div class="reserveInfo2">
-								<div class="infoName">
-									<span id="bold">이름</span> <input type="text"
-										value="${memVo.memName }">
+							<div class="reserveInfoWrapper">
+								<h2>회원 정보</h2>
+								<div class="reserveInfo2">
+									<div class="infoDetail">
+										<div class="infoDetialbold">이름</div>
+										<div >${memVo.memName }</div>
+									</div>
+									<div class="infoDetail">
+										<div class="infoDetialbold">전화번호</div>
+										<div >${memVo.memHP }</div>
+									</div>
+									<div class="infoDetail">
+										<div class="infoDetialbold">이메일</div>
+										<div >${memVo.memEmail }</div>
+									</div>
 								</div>
-								<div class="infoTel">
-									<span id="bold">전화번호</span><input type="tel"
-										value="${memVo.memHP }">
+							</div>
+							<div class="reserveInfoWrapper editable">
+								<h2>예약자 정보</h2>
+								<p>호스트에게 표시되는 정보입니다.</p>
+								<div class="reserveInfo2">
+									<div class="infoDetail">
+										<div class="infoDetialbold">이름</div>
+										<input type="text" name="rsvName" value="${memVo.memName }">
+									</div>
+									<div class="infoDetail">
+										<div class="infoDetialbold">전화번호</div>
+										<input type="text" name="rsvHP" value="${memVo.memHP }">
+									</div>
+									<div class="infoDetail">
+										<div class="infoDetialbold">이메일</div>
+										<input type="text" name="rsvEmail" value="${memVo.memEmail }">
+									</div>
 								</div>
-								<div class="infoEmail">
-									<span id="bold">이메일</span><input type="email"
-										value="${memVo.memEmail }">
+							</div>
+							<div class="reserveInfoWrapper">
+								<h2>예약 정보</h2>
+								<div class="reserveInfo2">
+									<div class="infoDetail">
+										<div class="infoDetialbold">날짜</div>
+										<input type="text" name="rsvCheckIn" value="<%=request.getParameter("reservation_date")  %>" readonly>
+									</div>
+									<div class="infoDetail">
+										<div class="infoDetialbold">예약주간</div>
+										<c:if test="${param.reservation_period ne 'direct' }">
+											<c:set var="period" value="${param.reservation_period }"/>
+											<input type="text" name="rsvPeriod" value="${period}"> 주
+										</c:if>
+										<c:if test="${param.reservation_period eq 'direct' }">
+											<c:set var="period" value="${param.selboxDirect }"/> 
+											<input type="text" name="rsvPeriod" value="${period}"> 주
+										</c:if>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -83,6 +124,7 @@
 						<div class="payInfo">
 			
 							<div class="roomInfo">
+								<input type="hidden" name="roomNo" value="${roomVo.roomNo }">
 								<img src="/image/registImg/${fn:split(roomVo.roomImage, ',')[0]}">
 								<div class="roomName">
 									${roomVo.roomAddress1}<br> <b>${roomVo.roomName }</b>
@@ -92,27 +134,44 @@
 								<h4>
 									<b>요금 세부정보</b>
 								</h4>
+								
 								주세 &nbsp;
 								<fmt:formatNumber value="${roomVo.roomRent }" pattern="#,###" />
-								원 *<br> 보증금 &nbsp;
+								원 * ${period}주<br>  
+
+								할인금액 &nbsp;
+								<c:if test="${period>=roomVo.roomDiscount}">
+									${roomVo.roomDiscountFee }%
+									<div style="font-weight: bold">
+										할인 적용 금액 &nbsp;
+										<c:set var="Reservationfee" value="${(roomVo.roomRent*period)*(1-(roomVo.roomDiscountFee/100))}"/>
+										<fmt:formatNumber value="${(roomVo.roomRent*period)*(1-(roomVo.roomDiscountFee/100))}" pattern="#,###" /> 원
+									</div>
+								</c:if> 
+								<c:if test="${period<roomVo.roomDiscount}">
+									<c:set var="Reservationfee" value="${(roomVo.roomRent*period) }"/>
+									없음
+								</c:if> <br>
+								
+								보증금 &nbsp;
 								<fmt:formatNumber value="${roomVo.roomDeposit }" pattern="#,###" />
-								원 <b><span id="roomPrice"><fmt:formatNumber
-											value="${roomVo.roomRent+roomVo.roomDeposit }" pattern="#,###" />원</span></b>
+								원 <br>
 							</div>
 							<div class="roomPrice2">
-								<b>총 금액 <span id="roomPrice"><fmt:formatNumber
-											value="${roomVo.roomRent+roomVo.roomDeposit }" pattern="#,###" />원</span></b>
-			
+								<b>총 금액 <span id="roomPrice"><input type="hidden" name="rsvPay" value='${Reservationfee+roomVo.roomDeposit }'>
+								<fmt:formatNumber
+											value="${Reservationfee+roomVo.roomDeposit }" pattern="#,###" />원</span></b>
 							</div>
-						</div>
-						<div class="paybutton">
-							<button id="payBtn" onclick="requestPay()">결제하기</button>
+							<div class="paybutton">
+								<!-- <button id="payBtn" onclick="requestPay()">결제하기</button> -->
+								<button id="payBtn" type="submit">결제하기</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			</form>
 		</section>
 	</div>
-
 </body>
 </html>

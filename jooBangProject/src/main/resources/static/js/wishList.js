@@ -5,12 +5,26 @@
  // wishList_CheckBtn 누를 시 ajax를 통해서 controller로 db 정보 전달
  
 $(document).ready(function () {
+	 
+	$("input[type=date]").val(new Date().toISOString().substring(0, 10));
+		
+	$("#selboxDirect").hide();
 
+	$("#reservation_period").change(function() {
+        //직접입력을 누를 때 나타남
+		if($("#reservation_period").val() == "direct") {
+			$("#selboxDirect").show();
+		}  else {
+			$("#selboxDirect").hide();
+		}
+	});
+	
 	// id와 pw값 변수에 저장
 	var id = $('#sid').val();
 	var roomNo = $('#roomNo').val();
 
 	var basicOption = $('#basicOption').val();
+	
 	
 	basicOption.split(",").forEach(function(option){
         $(".optionWrapper."+option).addClass("active");

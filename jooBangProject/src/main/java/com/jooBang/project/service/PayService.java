@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.jooBang.project.dao.IPayDAO;
 import com.jooBang.project.model.MemberVO;
+import com.jooBang.project.model.ReservationVO;
 
 @Service
 public class PayService implements IPayService {
@@ -18,6 +19,12 @@ public class PayService implements IPayService {
 	public MemberVO getMemberInfo(String memId) {
 	
 	return dao.getMemberInfo(memId);
+	}
+
+
+	@Override
+	public void insertReservation(ReservationVO vo) {
+		dao.insertReservation(vo);
 	}
 
 }
