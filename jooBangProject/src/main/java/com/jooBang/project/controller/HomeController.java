@@ -1,5 +1,6 @@
 package com.jooBang.project.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.model.WishListVO;
 import com.jooBang.project.service.BoardService;
 import com.jooBang.project.service.FurnitureService;
+import com.jooBang.project.service.GreenEyeService;
 import com.jooBang.project.service.RegistService;
 import com.jooBang.project.service.WishListService;
 
@@ -34,6 +36,11 @@ public class HomeController {
 //  찜 서비스
 	@Autowired
 	WishListService wService;
+
+//	유해이미지 차단 서비스	
+	@Autowired
+	GreenEyeService gService;
+	
 
 	@RequestMapping("/")
 	public String mainView(Model model) {
@@ -57,6 +64,13 @@ public class HomeController {
      	ArrayList<RoomVO> recommendView = wService.recommendView();
 		model.addAttribute("recommendView", recommendView);
 		
+		try {
+			gService.PornPrevention(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return "main";
 	}
 
@@ -77,4 +91,6 @@ public class HomeController {
 	model.addAttribute("searchRoom", searchRoom);
 	return "map/mapView";
 		}
+	
+	
 }
