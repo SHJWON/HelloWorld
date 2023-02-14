@@ -1,42 +1,32 @@
 /**
- * 
+ * papago.js
  */
-  
-  $(document).ready(function(){
+
+
+ $(document).ready(function(){
   	$('#papagoBtn').on('click', function(){
   	   event.preventDefault();
-  	   var test=$('html').html();
+  	   var test=$('section').html();
   	   var map=$('#subMenuMap').text();
-       console.log(test);
+       console.log(map);
+      
    if(map=="지도"){
       $.ajax({
  			type:"post",
  			url:"/papago/en",
  			data: {"test":test},
  			success:function(result){	
- 				$('html').html(result); 
- 															
+ 				$('section').html(result); 
+ 				$('#subMenuMap').text("Map");										
  			},
  			
  			error:function(){
  				alert("실패");
  			}
  		}); // ajax 종료 
- }else if(map!="지도"){
-   $.ajax({
- 			type:"post",
- 			url:"/papago/ko",
- 			data: {"test":test},
- 			success:function(result){	
- 				$('html').html(result); 
- 															
- 			},
- 			
- 			error:function(){
- 				alert("실패");
- 			}
- 		}); // ajax 종료 
-  }
+ }else{
+      location.reload();
+      }
   		});
   });
  

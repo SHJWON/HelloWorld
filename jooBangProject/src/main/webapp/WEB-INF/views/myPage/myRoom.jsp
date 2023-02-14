@@ -38,11 +38,14 @@
 			</div>
 					   
 			 <div class="myRoom">
-		    <h2 class="myRoomTitle">내 방 목록   <input type="button" id="deleteCartBtn" value="삭제"></h2>
+		    <h2 class="myRoomTitle">내 방 목록   <input type="button" id="deleteRoomBtn" value="삭제"></h2>
 		     <c:forEach var="room" items="${roomList}">
-         <li>
+         <li>    
             <div class="mainATeg">
+            <label class="check_btn">
            <input type="checkbox" class="chkDelete" data-roomNo="${room.roomNo }">
+           <span class="icon"></span>
+           </label>
               <a href="/roominfo/${room.roomNo}">
                   <img class="roomImg" src="/image/registImg/${fn:split(room.roomImage, ',')[0]}" width="260" height="200" />
               
