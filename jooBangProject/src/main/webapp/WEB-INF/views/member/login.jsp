@@ -9,6 +9,9 @@
         <title>로그인</title>
         <link rel="stylesheet" type="text/css" href="<c:url value='/css/login.css'/>">
         <script src="<c:url value='/js/login.js'/>"></script>
+        <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+        <script src="<c:url value='/js/nlogin.js'/>"></script>
+        
     </head>
 		<body>
 			<div id="wrap">
@@ -28,15 +31,15 @@
 						</span>
 						<ul>
 							<li><a href="<c:url value="/member/findIdForm"/>">아이디 찾기</a></li>
-							<li><a href="<c:url value="/member/findPwdForm"/>">비밀번호 변경</a></li>
+							<li><a href="<c:url value="/member/findPwdForm"/>">비밀번호 찾기</a></li>
 							<li><a href="<c:url value="/member/TOS"/>">회원가입</a></li>
 							</ul>
-						    <div id="sociallogin">
+						    <%-- <div id="sociallogin">
 				            <p id="social"> </p>
-				            <img id="nlogin" src="<c:url value='/image/naver.png'/>">
+				            <a id="naverIdLogin_loginButton" href="javascript:void(0)"><img id="nlogin" src="<c:url value='/image/naver.png'/>" ></a>
 				            <img id="klogin" src="<c:url value='/image/kakao.png'/>">
 				            <img id="glogin" src="<c:url value='/image/google.png'/>">
-				            </div>
+				            </div> --%>
 							<button type="submit">로그인</button>
 						
 						</form>

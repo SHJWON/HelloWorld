@@ -61,8 +61,8 @@
 					<br>
 
 					<h4>연락처</h4>
-					<span class="input_area"><input type="tel" maxlength="11"
-						name="memHP" id="memHP" placeholder="ex) 01012345678"></span> <br>
+		            	<span class="input_area"><input type="text" maxlength="11"
+						name="memHP" id="memHP" placeholder="ex)01012345678"></span><br>
 					<br>
 
 					<h4>이메일</h4>
