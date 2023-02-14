@@ -237,9 +237,8 @@ td {
 .myRoom{
 	width:58%;
 	margin-left:30%;
-    height:700px;
-	margin-bottom:50px;
-		
+	margin-bottom:50px;		
+	height:800px;
 }	
 .myRoomTitle{
 	font-family:Rix;
@@ -260,7 +259,7 @@ td {
 .myRoom li{
 	list-style:none;
 }
-#deleteCartBtn{
+#deleteRoomBtn{
 	width:60px;
 	height:40px;
 	border-radius:12px;
@@ -269,21 +268,40 @@ td {
     background-color:white;
     border-color: #bb2649;
 	float:right;
-	margin-right:50px;
+	margin-right:100px;
 	cursor:pointer;
 }
-#deleteCartBtn:hover{
+#deleteRoomBtn:hover{
    background-color:#bb2649;
    color:white;
   }
-	 
-
- input[type="checkbox"]{
-width: 20px; 
-height: 20px; 
-cursor: pointer;  
-border-radius:12px;
-}
 footer{
 	clear:both;
+}	 
+.check_btn input{
+	display:none;
 }
+
+.check_btn span{
+	display:inline-block;
+	vertical-align:middle;
+	cursor:pointer;
+	}
+.check_btn .icon{	
+	width:17px;
+	height:17px;
+	border:2px solid #bb2649;
+	border-radius:3px;
+}
+.check_btn .icon::after{	
+	width:5px;
+	height:11px;
+	opactiy:0;
+}
+.check_btn input:checked ~.icon{	
+	background-color:#bb2649;
+}	
+
+	
+	
+
