@@ -54,3 +54,9 @@ function callAjax() {
  			}
  		}); // ajax 종료 
  	}
+ 	
+ 	$('#plusBtn').on('click', function(){
+		$('.chatbot_btn').addClass('active');
+	});
+	
+  

@@ -2,9 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <div class="chatbot_btn">
+    <button id="papagoBtn"><img src="/image/translate.png"></button>
 	<img src="<c:url value='/image/chatbot.png'/>">
-</div>
+	</div>
+	<div id="plus">
+	<button id="plusBtn">+</button>	
+	</div>
+
 
 
 <div class="modal-container">
@@ -25,3 +31,4 @@
 		</div>
 	</div>
 </div>
+ <script src="<c:url value='/js/aaa.js'/>"></script>
