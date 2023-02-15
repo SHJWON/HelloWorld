@@ -10,6 +10,7 @@ import org.springframework.context.annotation.PropertySources;
 @SpringBootApplication
 @PropertySources({
 @PropertySource(value="file:c:/springWorkspace/configure.properties", ignoreResourceNotFound=true),
+@PropertySource(value="file:/Users/ddukco/springWorkspace/configure.properties", ignoreResourceNotFound=true),
 @PropertySource(value="file:/usr/local/project/properties/configure.properties", ignoreResourceNotFound=true)
 })
 @ComponentScan(basePackages= {"com.jooBang.project"})
