@@ -64,6 +64,8 @@ public class HomeController {
      	ArrayList<RoomVO> recommendView = wService.recommendView();
 		model.addAttribute("recommendView", recommendView);
 		
+		
+		//그린아이 AI 
 		try {
 			gService.PornPrevention(null);
 		} catch (IOException e) {

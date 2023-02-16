@@ -78,8 +78,8 @@
 	</delete>
 	
 		<!-- 내가 본 방 데이터 초기화  -->
-	<delete id="recentAllDelete">
-		DELETE FROM recentViewSave;
+	<delete id="recentAllDelete" parameterType="hashmap">
+		DELETE FROM recentViewSave(memId, roomNo) VALUES (#{memId},#{roomNo}) ;
 	</delete>
 	
 	<!-- 내가 본 방 목록 -->

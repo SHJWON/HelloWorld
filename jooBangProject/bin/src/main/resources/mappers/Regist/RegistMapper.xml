@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.jooBang.project.dao.IRegistDAO">
+  	<resultMap id="roomResult" type="com.jooBang.project.model.RoomVO">
+  		<result property="roomNo" column="roomNo" />
+  		<result property="roomName" column="roomName" />
+  		<result property="roomDecription" column="roomDecription" />
+  		<result property="roomZipcode" column="roomZipcode" />
+  		<result property="roomAddress1" column="roomAddress1" />
+  		<result property="roomAddress2" column="roomAddress2" />
+  		<result property="roomRCount" column="roomRCount" />
+  		<result property="roomBCount" column="roomBCount" />
+  		<result property="roomLCount" column="roomLCount" />
+  		<result property="roomKCount" column="roomKCount" />
+  		<result property="basicOption" column="basicOption" />
+  		<result property="addtionalOption" column="addtionalOption" />
+  		<result property="roomBuilding" column="roomBuilding" />
+  		<result property="infoElevator" column="infoElevator" />
+  		<result property="infoParking" column="infoParking" />
+  		<result property="roomLeastPay" column="roomLeastPay" />
+  		<result property="roomDeposit" column="roomDeposit" />
+  		<result property="roomRent" column="roomRent" />
+  		<result property="roomAdministrationFee" column="roomAdministrationFee" />
+  		<result property="roomPayOption" column="roomPayOption" />
+  		<result property="roomDiscount" column="roomDiscount" />
+  		<result property="roomDiscountFee" column="roomDiscountFee" />
+  		<result property="roomImage" column="roomImage" />
+  		<result property="roomViewCnt" column="roomViewCnt"/>
+  		<result property="lat" column="lat"/>
+  		<result property="lng" column="lng"/>
+  	</resultMap>
+  	
+  	<!-- 룸 등록 -->
+	<insert id="insertRoom" parameterType="com.jooBang.project.model.RoomVO">
+		INSERT INTO room (roomNo, roomName, roomDecription, roomZipcode, roomAddress1, roomAddress2,
+						  roomRCount, roomBCount, roomLCount, roomKCount, basicOption, addtionalOption,
+						  roomBuilding, infoElevator, infoParking, roomLeastPay, roomDeposit, roomRent,
+						  roomAdministrationFee, roomPayOption, roomDiscount, roomDiscountFee, roomImage, lat, lng, memId)
+		VALUES (#{roomNo}, #{roomName}, #{roomDecription}, #{roomZipcode}, #{roomAddress1}, #{roomAddress2},
+						  #{roomRCount}, #{roomBCount}, #{roomLCount}, #{roomKCount}, #{basicOption}, #{addtionalOption},
+						  #{roomBuilding}, #{infoElevator}, #{infoParking}, #{roomLeastPay}, #{roomDeposit}, #{roomRent},
+						  #{roomAdministrationFee}, #{roomPayOption}, #{roomDiscount}, #{roomDiscountFee}, #{roomImage}, #{lat}, #{lng}, #{memId})
+	</insert>
+	
+	<select id="detailRoom" parameterType="int" resultMap="roomResult">
+		SELECT * FROM room WHERE roomNo = #{roomNo}
+	</select>
+	
+	<!-- 메인 방 최신 목록 -->
+	<select id="rRecentView" resultMap="roomResult">
+		SELECT * FROM room ORDER BY roomNo DESC	limit 8;
+	</select>
+	
+	<!-- 찜목록 페이징 -->
+	<select id="listPage" parameterType="hashMap" resultType="com.jooBang.project.model.RoomVO">
+		select * from room order by roomNo DESC
+ 		limit #{displayPost}, #{postNum}
+	</select>
+	
+	<update id="viewCount" parameterType="int">
+		UPDATE room SET roomViewCnt=roomViewCnt+1 WHERE roomNo=#{roomNo};
+	</update>
+	
+	<update id="wishCountroom" parameterType="int">
+		UPDATE room SET wishCount=(SELECT COUNT(*) FROM wishlist WHERE roomNo=#{roomNo}) 
+												   WHERE roomNo=#{roomNo};
+	</update>	
+	
+  </mapper>

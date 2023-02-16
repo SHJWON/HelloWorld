@@ -218,9 +218,9 @@
 	          
 	            <div class="main_commumityMenu">
 	              <ul class="main_commuityFilter">
-	                <li class="main_commuityFilterList">전체</li>
-	                <li class="main_commuityFilterList">공지사항</li>
-	                <li class="main_commuityFilterList">베스트</li>
+	                <li class="main_commuityFilterList" id="mComTotal" name="mComTotal">전체</li>
+	                <li class="main_commuityFilterList" id="mComAn" name="mComAn">공지사항</li>
+	                <li class="main_commuityFilterList" id="mComBest" name="mComBest">베스트</li>
 	              </ul>
 	            </div>
 	      

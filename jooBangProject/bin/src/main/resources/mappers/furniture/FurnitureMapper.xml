@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.jooBang.project.dao.IFurnitureDAO">
+	<resultMap id="furnitureResult"
+		type="com.jooBang.project.model.FurnitureVO">
+		<result property="furnitureNo" column="furnitureNo" />
+		<result property="furnitureTitle" column="furnitureTitle" />
+		<result property="furniturePrdCtg" column="furniturePrdCtg" />
+		<result property="furnitureTell" column="furnitureTell" />
+		<result property="furnitureCity" column="furnitureCity" />
+		<result property="furniturePrice" column="furniturePrice" />
+		<result property="furnitureCompany" column="furnitureCompany" />
+		<result property="makeCompany" column="makeCompany" />
+		<result property="furnitureMoveURL" column="furnitureMoveURL" />
+		<result property="furnitureImg" column="furnitureImg" />
+	</resultMap>
+
+	<!-- 전체보기 -->
+	<select id="listAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental ORDER BY furnitureNo DESC	limit 15;
+	</select> 
+	
+	<!-- 가구 -->
+	<select id="woodAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental where furniturePrdCtg = "가구" ORDER BY furnitureNo DESC limit 15;
+	</select> 
+	
+	<!-- 생활가전 -->
+	<select id="lifeAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental where furniturePrdCtg = "생활" ORDER BY furnitureNo DESC limit 15;	
+	</select>
+	
+	<!-- 주방가전 -->
+	<select id="kitchenAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental where furniturePrdCtg = "주방" ORDER BY furnitureNo DESC limit 15;	
+	</select>
+	
+	<!-- 환경가전 -->
+	<select id="environmentAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental where furniturePrdCtg = "환경" ORDER BY furnitureNo DESC limit 15;	
+	</select>
+	
+	<!-- 헬스/뷰티 -->
+	<select id="healthAllFurniture"  resultMap="furnitureResult">
+		SELECT * FROM furnitureRental where furniturePrdCtg = "헬스" ORDER BY furnitureNo DESC limit 15;	
+	</select>
+	
+	  <select id="count" resultType="int">
+	  select count(furnitureNo) from furnitureRental
+	  </select>
+	
+	<!-- 페이징 -->
+	<select id="listPage" parameterType="hashMap" resultType="com.jooBang.project.model.FurnitureVO">
+		select * from furnitureRental order by furnitureNo DESC
+ 		limit #{displayPost}, #{postNum}
+	</select>
+	
+	<!-- 메인 가구카드 -->
+	<select id="fRecentView" resultMap="furnitureResult">
+		SELECT * FROM furnitureRental ORDER BY furnitureNo DESC	limit 3;
+	</select>
+	  	</mapper>
