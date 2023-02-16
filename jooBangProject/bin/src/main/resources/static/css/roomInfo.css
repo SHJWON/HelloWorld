@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+/* roomInfo.css */
+
+/* 이미지 */
+
+.section_slideContainer{
+	width:100%;
+	height: 440px;
+	margin-bottom: 20px;
+}
+
+.slideWrap {
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    margin: auto;
+}
+
+.slideImgWrapper {
+    width: 440px;
+    height: 440px;
+}
+
+.slideImg {
+    width:100%;
+    height:100%;
+}
+
+/* 방정보1 */
+
+.roomInfo1Container {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    heigth:100%    
+}
+
+.roomInfo1Wrapper {
+    width:780px;
+}
+
+.roomInfo_bold{
+    font-weight: bold;
+}
+
+	/* 방정보 */
+	.section_contentsContainer {
+	    width:100%;
+	}
+	
+	.section_contentsWrapper {
+	    width:1200px;
+	    margin:auto;
+	    display: flex;
+	}
+	
+	.InfoBoxCountainer{
+	    margin-top: 100px;
+	}
+	
+	.InfoBox{
+	    padding: 16px 0;
+	    display: flex;
+	    flex-direction: row;
+	}
+	
+	.roomInfoDesciption{
+	    background: #ededed;
+	    padding: 30px;
+	    font-family: none;
+	    line-height: 1.6;
+	}
+	
+
+	/* 옵션 정보 */
+	.Info_least{
+		color: #fa4871;
+		font-weight: bold;
+	}
+
+	.OptionBox{
+		gap: 30px;
+		margin-left: 10px;
+	}
+	
+	.optionWrapper{
+		display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	
+	#basicOptionBox .optionWrapper{
+		display: flex;
+	    opacity: 20%;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	
+	#basicOptionBox .optionWrapper.active{
+		opacity: 100%;
+	}
+	
+	.optionWrapper .optionImg{
+	    margin-bottom: 13px;
+		width:70px;
+		height:70px;
+	}
+	
+	.optionWrapper .optionTitle{
+		font-size: 12px;
+	}
+	
+	.InfoBox+.InfoBox{
+	    border-top: 1px solid rgb(245, 245, 245);
+	}
+	
+	.InfoBox .InfoTitle{
+	    width: 160px;
+	    font-weight: bold;
+	}
+	
+	.InfoBox .InfoContents{
+	    -webkit-box-flex: 1;
+	    flex-grow: 1;
+	}
+	
+	.InfoBox .InfoContents #depositInfoBox{
+	    border-top: 1px solid rgb(245, 245, 245);
+	    margin-top: 16px;
+	    padding-top: 16px;
+	}
+	
+	.InfoBox .InfoContents #depositInfoBox p{
+	    margin: 0 0 10px 0;
+	    color:rgb(133, 133, 133);
+	}
+	
+	.InfoBox .InfoContents .InfoTitle.Sub+.Sub {
+	    margin-left: 30px;
+	}
+	
+	/* 주소 정보 */
+	#address .InfoBox  {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	#roomAddress {
+		margin-bottom: 20px;
+		display: flex;
+	}
+
+/* 방정보2 */
+
+.roomInfo2Wrapper {
+    width:360px;
+    position: sticky;
+    top: 178px;
+}
+
+.roomInfo2Wrapper .wishWrapper{
+	width:100%;
+	border-radius: 10px;
+	margin-top: 20px;
+	box-shadow: 0px 0px 3px #c9c9c9;
+	padding: 30px;
+    box-sizing: border-box;
+}
+
+.roomInfo2Wrapper .wishWrapper .rentfee span{
+	font-weight: bold;
+	font-size: 1.5em;
+    margin-right: 5px;
+}
+
+.roomInfo2Wrapper .wishWrapper div+div{
+	margin-top:10px;
+}
+
+.roomInfo2Wrapper .wishWrapper .roomInfo2_address,.roomInfo2_room{
+	display: flex;
+	align-items: center;
+}
+
+.roomInfo2Wrapper .wishWrapper .roomInfo2_room span+span{
+	margin-left:5px;
+}
+
+
+.roomInfo2Wrapper .wishWrapper .room_info div img{
+	width:15px;
+	margin-right:10px;
+	opacity: 50%;
+}
+
+.roomInfo2Wrapper .wishWrapper .host_info{
+	padding-top: 10px;
+	border-top: 1px solid #f1f1f1;
+}
+
+.reservation_title{
+	margin:0;
+	font-size: 12px;
+	margin-bottom:5px;
+}
+
+#selboxWarning{
+	font-size: 12px;
+	margin-bottom:5px;
+	color: red;
+}
+
+.reservation_SubmitBtn{
+	margin-top:5px;
+	height:40px;
+	width:100%;
+}
+
+/* wish버튼 */
+
+#wishList_CheckBtn{
+	display:none;	
+}
+
+.host_wishBtn{
+	display: flex;
+	align-items: flex-end;
+}
+
+/*  */
+.host_infoBtnWrapper{
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+}
+
+.host_infoBtnWrapper .host_contectBtn{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 211px;
+    border-radius: 10px;
+    background: #bb2749;
+    color: white;
+}
+
+.host_infoBtnWrapper #wishList_CheckBtnLabel{
+	width: 80px;
+	border: 1px solid #f1f1f1;
+	border-radius: 10px;
+	box-sizing: border-box;
+	padding-left: 12px;
+    padding-top: 4px;
+}
+
+.host_wishBtn .host_wishBtnImg{
+	width: 37px;
+}
+
+.host_wishBtn #wish_count{
+	font-size: 18px;
+    line-height: 1.55;
+    margin-left: -3px;
+}

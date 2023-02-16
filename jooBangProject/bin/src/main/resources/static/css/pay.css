@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+
+a{
+    text-decoration: none;
+    color: #000000;
+    font-weight:bold;
+}
+hr{
+	border-color:#bb2649;
+}
+h1{
+	margin-left:50px;
+	font-size: 1.8rem;
+}
+
+section{
+	display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.InfoBoxContainer{
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width:1200px;
+    margin: auto;
+}
+
+.InfoBoxWrapper{
+	display: flex;
+    justify-content: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+/* InfoTitle */
+
+.InfoTitle{
+	display: flex;
+	align-items: center;
+}
+
+.InfoTitle img{
+    transform: rotate(90deg);
+    width: 35px;
+}
+
+.InfoBox1 {
+	margin-right: 10px;
+	width: 780px;
+}
+
+.InfoBox2 {
+	width: 360px;
+}
+
+
+/* reserveInfo */
+
+.reserveInfo{
+	padding: 40px 20px;
+    border: 1px solid #bb2649;
+    border-radius: 10px;
+    margin-bottom: 10px;
+	
+}
+
+.reserveInfo .reserveInfoWrapper+.reserveInfoWrapper{
+	margin-top:10px;	
+}
+
+.reserveInfo h2{
+	margin:0 0 10px 0;
+}
+
+.reserveInfo2{
+	border:1px solid #bb2649;
+	padding:20px;
+	border-radius:12px;
+	
+}
+
+.infoDetail{
+	display: flex;
+}
+
+.infoDetail input{
+	outline: transparent;
+    border: 0;
+    cursor: auto;
+    font-size: 16px;
+}
+
+.editable .infoDetail input{
+	background: #f5f5f5;
+    border: 1px solid #bb2649;
+}
+
+.infoDetail+.infoDetail{
+	margin-top : 20px;
+}
+
+
+.infoDetialbold{
+	font-weight:bold;
+	font-size:18px;
+	width:90px;
+}
+
+
+.payInfo{
+	FONT-VARIANT: JIS04;
+    border: 1px solid #bb2649;
+    padding: 20px;
+    border-radius: 10px;
+	
+}
+.paysudan{
+	padding: 50px;
+    border: 1px solid #bb2649;
+    border-radius: 10px;
+	
+}
+#payBtn{
+   	height: 62px;
+    width: 100%;
+    background-color: #bb2649;
+    color: white;
+    border-radius: 10px;
+    border: 0;
+    font-size: 1.8em;
+	}	
+	
+	
+.roomInfo{
+	 margin:10px 0px;
+	 padding:20px 0px;
+}
+.roomPrice{
+	border-top:1px solid #bb2649;
+	padding:25px 0px;
+    margin:20px 0px;
+	
+}
+.roomPrice2{
+	border-top:1px solid #bb2649;
+	margin:20px 0px;
+	padding:25px 0px;
+	font-size:25px;
+}
+.roomName{
+	text-align:top;
+	float:right;
+	width:60%;
+	height:100px;
+
+}
+
+.payInfo img{
+	object-fit: cover;
+	width:30%;
+	height:100px;
+	border-radius:12px;
+	
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jooBang.project.dao.IMyPageDAO">
+
+	<!--마이페이지 맵퍼 -->
+
+	<select id="detailViewMyPage" parameterType="string"
+		resultType="com.jooBang.project.model.MemberVO">
+		SELECT * FROM member WHERE memId = #{memId}
+	</select>
+
+	<!-- 회원 정보 수정 : 기본키인 memId는 수정하지 않음 -->
+	<update id="updateMyPage"
+		parameterType="com.jooBang.project.model.MemberVO">
+		UPDATE member
+		SET memName=#{memName}, memHP=#{memHP}, memEmail=#{memEmail}, memBirth=#{memBirth}, memNickName=#{memNickName},
+		memZipcode=#{memZipcode},
+		memAddress1=#{memAddress1},memAddress2=#{memAddress2}
+		WHERE memName=#{memName}
+	</update>
+
+	<!-- 회원 정보 삭제 : 삭제할 회원 전달 받음 -->
+  	
+  	<!-- 암호화 이후 -->
+  	<select id="deleteMyPage" parameterType="string" resultType="string">
+  		SELECT memPwd FROM member WHERE memName=#{memName} AND memId=#{memId}
+  	</select>
+	
+	<delete id="realDelete1" parameterType="string">
+		DELETE FROM match_game WHERE memId=#{result};
+		DELETE FROM point_all WHERE memId=#{result};
+		DELETE FROM point_change WHERE memId=#{result};
+		DELETE FROM board where memId=#{result};
+		DELETE FROM member WHERE memId=#{result};
+	</delete>
+	  <select id="myRoom" parameterType="string" resultType="com.jooBang.project.model.RoomVO">
+		SELECT * FROM room WHERE memId = #{memId}
+	</select>
+	<delete id="deleteRoom" parameterType="int">
+	DELETE FROM room WHERE roomNo = #{roomNo}
+	</delete>
+</mapper>

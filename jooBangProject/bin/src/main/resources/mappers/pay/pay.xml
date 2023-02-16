@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+   <mapper namespace="com.jooBang.project.dao.IPayDAO"> 
+   	<!-- 주문서에 출력할 회원 정보 반환 -->
+  	<select id="getMemberInfo"  parameterType="string" resultType="com.jooBang.project.model.MemberVO">
+  	SELECT memId, memName, memHP,memEmail FROM member WHERE memId=#{memId} 
+  	</select>
+   
+   	<!-- 주문서 입력 -->
+   	<insert id="insertReservation" parameterType="com.jooBang.project.model.ReservationVO">
+   		INSERT INTO reservation (roomNo,tenentId,rsvCheckIn,rsvPeriod,rsvName,rsvHP,rsvEmail,rsvPay)
+   			   VALUE (#{roomNo},#{tenentId},#{rsvCheckIn},#{rsvPeriod},#{rsvName},#{rsvHP},#{rsvEmail},#{rsvPay})
+	</insert>
+   </mapper>

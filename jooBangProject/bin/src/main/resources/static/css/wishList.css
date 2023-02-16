@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+/* wish.css */
+
+.wishContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas: 
+        'Wfil . WTitle . .'
+        'Wfil Wprd Wprd Wprd Wadd'
+        'Wfil WPage WPage WPage .';
+}
+
+/* wishPage 서브메뉴 */
+
+.wFilter{
+    grid-area: Wfil;
+}
+
+.wishSubMenu {
+    text-align: center;
+    padding: 20px 10px 0px 10px;
+    width: 300px;
+    position: fixed;
+}
+
+.side-menu a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .side-menu a:hover {
+    background: #bb2649;
+    color: white;
+    opacity:0.7;
+  }
+  
+  .side-menu a.home {
+    background : #333;
+    color: #fff;
+  }
+
+/* wishPage 목록 제목 */
+
+.wTitle{
+    grid-area: WTitle;
+}
+
+.wishTitle{
+    font-family: Rix;
+    font-size: 35px;
+    color: #bb2649;
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: "Binggrae";
+    src: url("./fonts/Binggrae.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Binggrae Melona";
+    src: url("./fonts/BinggraeMelona.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Rix";
+    src: url("./fonts/RixYeoljeongdo_Pro\ Regular.otf") format("woff");
+  }
+
+/* wishPage 목록 */
+
+.wCard{
+    margin: 0px;
+    padding: 0px;
+    grid-area: Wprd;
+    height: 775px;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+/* wishPage 페이징*/
+
+.wPage{
+    grid-area: WPage;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.page{
+	width:65%;
+	margin-left:25%;
+	margin-right:10%;
+	text-align:center;
+	}
+	
+.pageBtn{
+		margin: 0px 10px;
+		padding:5px 10px;
+		border-radius:5px;
+	    font-weight:bold;
+	    color:#bb2649;
+	    background-color:white;
+	    border-color: #bb2649;
+	    transition:0.5s;
+}
+
+.pageBtn:hover{
+	background-color:#bb2649;
+	color:white;
+	cursor: pointer;
+}

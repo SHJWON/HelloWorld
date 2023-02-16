@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.jooBang.project.dao.IWishListDAO">
+  	<resultMap id="roomResult" type="com.jooBang.project.model.RoomVO">
+  		<result property="roomNo" column="roomNo" />
+  		<result property="roomName" column="roomName" />
+  		<result property="roomDecription" column="roomDecription" />
+  		<result property="roomZipcode" column="roomZipcode" />
+  		<result property="roomAddress1" column="roomAddress1" />
+  		<result property="roomAddress2" column="roomAddress2" />
+  		<result property="roomRCount" column="roomRCount" />
+  		<result property="roomBCount" column="roomBCount" />
+  		<result property="roomLCount" column="roomLCount" />
+  		<result property="roomKCount" column="roomKCount" />
+  		<result property="basicOption" column="basicOption" />
+  		<result property="addtionalOption" column="addtionalOption" />
+  		<result property="roomBuilding" column="roomBuilding" />
+  		<result property="infoElevator" column="infoElevator" />
+  		<result property="infoParking" column="infoParking" />
+  		<result property="roomLeastPay" column="roomLeastPay" />
+  		<result property="roomDeposit" column="roomDeposit" />
+  		<result property="roomRent" column="roomRent" />
+  		<result property="roomAdministrationFee" column="roomAdministrationFee" />
+  		<result property="roomPayOption" column="roomPayOption" />
+  		<result property="roomDiscount" column="roomDiscount" />
+  		<result property="roomDiscountFee" column="roomDiscountFee" />
+  		<result property="roomImage" column="roomImage" />
+  		<result property="roomViewCnt" column="roomViewCnt"/>
+  	</resultMap>
+	
+	<select id="wishList_check" parameterType="hashmap" resultType="string">
+		SELECT roomNo FROM wishlist WHERE memId=#{memId} AND 
+										  roomNo=#{roomNo}
+	</select>
+	
+	<insert id="insert_wishList" parameterType="hashmap">
+		INSERT INTO wishlist(memId, roomNo)
+			   VALUES (#{memId},#{roomNo}) 
+	</insert>
+
+	<delete id="delete_wishList" parameterType="hashmap">
+		DELETE FROM wishlist WHERE memId=#{memId} AND 
+								   roomNo=#{roomNo}
+	</delete>
+		
+	<select id="wishcount" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM wishlist WHERE roomNo=#{roomNo}
+	</select>
+	
+	<!-- 메인 핫클릭 목록 -->
+	<select id="hotClickView" resultMap="roomResult">
+		SELECT * FROM room ORDER BY roomViewCnt DESC limit 3;
+	</select>
+	
+	<!-- 메인 추천방 목록 -->
+	<select id="recommendView" resultMap="roomResult">
+		SELECT * FROM room ORDER BY wishCount DESC	limit 3;
+	</select>
+	
+	<!-- 찜목록 보기 -->
+	<select id="likeView" parameterType="string" resultType="com.jooBang.project.model.WishListVO">	
+		select wishlist.memId,wishlist.roomNo,roomImage,roomAddress1,roomName,roomRent,roomRCount,roomBCount from wishlist 
+		join room on (wishlist.roomNo=room.roomNo) where wishlist.memId=#{memId};
+	</select>
+	
+	<!-- 내가 본 방 저장하기 -->
+	<insert id="recentViewSave" parameterType="hashmap">
+			INSERT INTO recentViewSave(memId, roomNo)
+			   VALUES (#{memId},#{roomNo}) 
+	</insert>
+	
+	<!-- 내가 본 방 중복 제거  -->
+	<delete id="recentViewDelete" parameterType="com.jooBang.project.model.WishListVO">
+		DELETE FROM recentViewSave WHERE recentViewSave.memId= #{memId} and recentViewSave.roomNo= #{roomNo};
+	</delete>
+	
+		<!-- 내가 본 방 데이터 초기화  -->
+	<delete id="recentAllDelete">
+		DELETE FROM recentViewSave;
+	</delete>
+	
+	<!-- 내가 본 방 목록 -->
+	<select id="recentList" parameterType="string" resultType="com.jooBang.project.model.WishListVO">
+		select recentViewSave.memId,recentViewSave.roomNo,roomImage,roomAddress1,roomName,roomRent,roomRCount,roomBCount from recentViewSave 
+		join room on (recentViewSave.roomNo=room.roomNo) where recentViewSave.memId=#{memId} 
+		order by recentWishNo DESC limit 8;
+	</select>
+	
+ 
+		<!-- 메인 검색 결과 보기  -->
+  <select id="roomSearch" parameterType="string" resultType="com.jooBang.project.model.WishListVO">
+  		SELECT * FROM room WHERE
+  		roomAddress1 Like CONCAT('%', #{keyword}, '%') 
+  		OR roomName Like CONCAT('%', #{keyword}, '%') 
+  		OR roomDecription Like CONCAT('%', #{keyword}, '%')
+  </select>
+	
+	
+
+  </mapper>

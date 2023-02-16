@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/* chatbot버튼 css */
+
+.chatbot_btn{
+	position: sticky;
+    right: 0;
+    width: fit-content;
+    margin-left: auto;
+    bottom: 25px;
+    z-index: 10000;
+}
+
+.chatbot_btn img{
+	width: 80px;
+    margin-right: 20px;
+}
+
+.chatbotContainer {
+	position: fixed;
+	bottom: 20px;
+    right: 20px;
+	width: 435px;
+	background: #ffffff;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0px 0px 3px #c9c9c9;
+	z-index: 100000;
+}
+
+.chatHeader {
+	height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+#btnClose {
+	border: none;
+	background: none;
+	float: right;
+}
+
+#chatBox {
+	height: 600px;
+	width: 400px;
+	overflow: scroll;
+	padding: 10px 15px;
+	background: #ffffff;
+	border-radius: 10px;
+	overflow-x:hidden;
+	margin-right: 0px;
+}
+
+#chatBox::-webkit-scrollbar {
+    width: 10px;  /* 스크롤바의 너비 */
+}
+
+#chatBox::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: #bb2649; /* 스크롤바의 색상 */
+    border-radius: 10px;
+}
+
+#chatBox::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, .0);  /*스크롤바 뒷 배경 색상*/
+}
+
+/* 채팅박스 스크롤바 조절 */
+
+#message {
+	width: 380px;
+}
+
+#chatbotForm{
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+	padding: 0px 15px;
+}
+
+#btnSubmit {
+	float: right;
+	background: #eeeeee;
+	height: 28px;
+	padding-right: 0;
+}
+
+.msgBox  span {
+	padding: 3px 5px;
+	word-break: break-all;
+	display: block;
+	max-width: 300px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+/* 
+	word-break : 단어 분리 결정하여 줄 바꿈 처리
+		- 줄바꿈 할 때 단어 기준인지, 글자 기준인지 정하는 속성
+		normal : 한중일 문자는 글자 기준, 한중일 이외의 문자는 단어 기준으로 줄바꿈
+		break-all : 글자 기준으로 줄바꿈
+		keep-all : 단어 기준으로 줄바꿈
+ */
+.msgBox.send  span {
+	background: #ff9b9b;
+	float: right;
+}
+
+.msgBox #in {
+	width: 480px;
+	background: #ffffff;
+}
+
+.msgBox.receive  span {
+	background: #ffffff;
+	float: left;
+}
+
+/*
+<link rel="stylesheet"  type="text/css" href="/css/chatbot.css">
+*/
+
+/* modal */
+.modal-container:not(.active){
+	display: none;
+}

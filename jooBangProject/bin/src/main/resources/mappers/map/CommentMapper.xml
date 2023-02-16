@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   <mapper namespace="com.jooBang.project.dao.ICommentDAO">
+  
+   <!-- 댓글 조회 -->
+<select id="commentList" parameterType="int" resultType="com.jooBang.project.model.CommentVO">
+	select * from comment where brdNo = #{brdNo}		
+</select>
+<!-- 댓글 작성 -->
+<insert id="commentInsert" parameterType="com.jooBang.project.model.CommentVO">
+	insert into comment(brdNo,comContent,comWriter)
+		value(#{brdNo}, #{comContent},#{comWriter} )
+</insert>
+   </mapper>
