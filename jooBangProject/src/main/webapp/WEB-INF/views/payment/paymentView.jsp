@@ -158,9 +158,10 @@
 								원 <br>
 							</div>
 							<div class="roomPrice2">
-								<b>총 금액 <span id="roomPrice"><input type="hidden" name="rsvPay" value='${Reservationfee+roomVo.roomDeposit }'>
+							<fmt:parseNumber value="${Reservationfee+roomVo.roomDeposit}" integerOnly="true"  type="number" var="rsvPay" />
+								<b>총 금액 <span id="roomPrice"><input type="hidden" name="rsvPay" value='${rsvPay }'>
 								<fmt:formatNumber
-											value="${Reservationfee+roomVo.roomDeposit }" pattern="#,###" />원</span></b>
+											value="${rsvPay }" pattern="#,###" />원</span></b>
 							</div>
 							<div class="paybutton">
 								<!-- <button id="payBtn" onclick="requestPay()">결제하기</button> -->
