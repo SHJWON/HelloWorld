@@ -3,6 +3,7 @@ package com.jooBang.project.dao;
 import java.util.ArrayList;
 
 import com.jooBang.project.model.MemberVO;
+import com.jooBang.project.model.ReservationVO;
 import com.jooBang.project.model.RoomVO;
 
 public interface IMyPageDAO {
@@ -16,5 +17,6 @@ public interface IMyPageDAO {
 	public void realDelete1(String result);
 	public ArrayList<RoomVO>myRoom(String memId);
 	public void deleteRoom(int roomNo); 
+	public ArrayList<ReservationVO>myReservation(String memId);
 	
 }

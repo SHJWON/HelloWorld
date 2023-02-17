@@ -14,7 +14,9 @@ public class ReservationVO {
 	private String rsvDate;
 	private int rsvPay;
 	private String rsvState;
-	
+	private String roomImage;
+	private String roomAddress1;
+	private String roomName;
 	public int getRsvNo() {
 		return rsvNo;
 	}
@@ -81,4 +83,25 @@ public class ReservationVO {
 	public void setRsvState(String rsvState) {
 		this.rsvState = rsvState;
 	}
+	public String getRoomImage() {
+		return roomImage;
+	}
+	public void setRoomImage(String roomImage) {
+		this.roomImage = roomImage;
+	}
+	public String getRoomAddress1() {
+		return roomAddress1;
+	}
+	public void setRoomAddress1(String roomAddress1) {
+		this.roomAddress1 = roomAddress1;
+	}
+	public String getRoomName() {
+		return roomName;
+	}
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
+	}
+	
+	
+	
 }

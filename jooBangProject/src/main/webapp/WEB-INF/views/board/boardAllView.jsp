@@ -7,12 +7,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>전체</title>		
-	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">		
-		<c:import url="/WEB-INF/views/head.jsp"/>
+	        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">		
+		    <c:import url="/WEB-INF/views/head.jsp"/>
+			<c:import url="/WEB-INF/views/chatbot_head.jsp" />
 			<script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 			<script src="<c:url value='/js/board.js'/>"></script>
-			<script src="<c:url value='/js/papago.js'/>"></script>
-			
+			<script src="<c:url value='/js/papago.js'/>"></script>			
 		    <link rel="stylesheet" href="<c:url value='/css/board.css' />">	
 	
 </head>
@@ -86,6 +86,7 @@
  </c:forEach>
 			</div>
 			</div>
+			  <c:import url="/WEB-INF/views/chatbot_test.jsp"/>
 						<footer>
         <c:import url="/WEB-INF/views/footer.jsp"/>
       </footer>
