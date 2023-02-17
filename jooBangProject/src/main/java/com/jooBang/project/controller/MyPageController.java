@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jooBang.project.model.MemberVO;
+import com.jooBang.project.model.ReservationVO;
 import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.service.MyPageService;
+
+
 
 
 @Controller
@@ -22,6 +25,7 @@ public class MyPageController {
 	@Autowired
 	private MyPageService service;
 
+	
 	/* 마이페이지 이동 */
 	@RequestMapping("/myPage/detailViewMyPage")
 	public String detailViewMyPage( Model model,HttpSession session) {
@@ -89,6 +93,13 @@ public class MyPageController {
 	 	    model.addAttribute("roomList", roomList);
 	 return "/myPage/myRoom";
 }
+	@RequestMapping("/myPage/myReservation")
+	public String myReservation(Model model, HttpSession session) {	
+			String memId = (String)session.getAttribute("sid");	
+			ArrayList<ReservationVO> reservationList = service.myReservation(memId);
+	 	    model.addAttribute("reservationList", reservationList);	 	 	    
+	 return "/myPage/myReservation";
+}
 				
 @ResponseBody
 	@RequestMapping("/myPage/deleteRoom")
@@ -106,4 +117,6 @@ public class MyPageController {
 					
 		return result;
 	}
+
+
 }

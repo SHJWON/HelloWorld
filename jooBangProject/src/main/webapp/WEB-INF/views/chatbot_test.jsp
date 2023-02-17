@@ -3,9 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<div class="chatbot_btn">
+<div class="plusMenu">
     <button id="papagoBtn"><img src="/image/translate.png"></button>
+    <div class="chatbot_btn">
 	<img src="<c:url value='/image/chatbot.png'/>">
+	</div>
 	</div>
 	<div id="plus">
 	<button id="plusBtn">+</button>	

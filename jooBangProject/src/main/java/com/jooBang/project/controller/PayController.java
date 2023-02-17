@@ -40,4 +40,13 @@ public class PayController {
 		
 		return "redirect:/";
 	}
+	@RequestMapping("/myPage/myReservationDetail/{roomNo}")
+	public String myReservationDetail(HttpSession session,@PathVariable int roomNo,Model model) {
+		String memId= (String)session.getAttribute("sid");
+		RoomVO roomVO = roomservice.detailRoom(roomNo);
+		MemberVO memVo = service.getMemberInfo(memId);
+		model.addAttribute("memVo",memVo);
+	    model.addAttribute("roomVo",roomVO);
+		return"/myPage/myReservationDetail";
+	}
 }

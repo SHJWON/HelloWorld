@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.jooBang.project.dao.IMyPageDAO;
 import com.jooBang.project.model.MemberVO;
+import com.jooBang.project.model.ReservationVO;
 import com.jooBang.project.model.RoomVO;
 
 @Service
@@ -58,6 +59,12 @@ public class MyPageService implements IMyPageService {
 		
 	}
 
+	@Override
+	public ArrayList<ReservationVO> myReservation(String memId) {
+		return dao.myReservation(memId);
+	}
+
+	
 	
 
 }

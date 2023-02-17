@@ -42,4 +42,9 @@
 	<delete id="deleteRoom" parameterType="int">
 	DELETE FROM room WHERE roomNo = #{roomNo}
 	</delete>
+	<select id="myReservation" parameterType="string" resultType="com.jooBang.project.model.ReservationVO">
+	    SELECT reservation.*,room.* FROM reservation JOIN room ON(reservation.roomNo=room.roomNo) where tenentId=#{memId}
+	</select>
+	 
+
 </mapper>
