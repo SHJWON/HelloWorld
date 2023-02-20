@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+/* wish.css */
+
+
+/* wishPage 서브메뉴 */
+
+
+.wishSubMenu {
+    text-align: center;
+    padding: 20px 10px 0px 10px;
+    width: 300px;
+    position: fixed;
+}
+
+.side-menu a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .side-menu a:hover {
+    background: #bb2649;
+    color: white;
+    opacity:0.7;
+  }
+  
+  .side-menu a.home {
+    background : #333;
+    color: #fff;
+  }
+
+/* wishPage 목록 제목 */
+
+
+.wishTitle{
+    font-family: Rix;
+    font-size: 35px;
+    color: #bb2649;
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: "Binggrae";
+    src: url("./fonts/Binggrae.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Binggrae Melona";
+    src: url("./fonts/BinggraeMelona.woff") format("woff");
+  }
+
+  @font-face {
+    font-family: "Rix";
+    src: url("./fonts/RixYeoljeongdo_Pro\ Regular.otf") format("woff");
+  }
+
+
+
+/* wishPage 페이징*/
+
+
+
+.page{
+	width:65%;
+	margin-left:25%;
+	margin-right:10%;
+	text-align:center;
+	}
+	
+.pageBtn{
+		margin: 0px 10px;
+		padding:5px 10px;
+		border-radius:5px;
+	    font-weight:bold;
+	    color:#bb2649;
+	    background-color:white;
+	    border-color: #bb2649;
+	    transition:0.5s;
+}
+
+.pageBtn:hover{
+	background-color:#bb2649;
+	color:white;
+	cursor: pointer;
+}
