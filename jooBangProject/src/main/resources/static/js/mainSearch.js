@@ -3,10 +3,10 @@
  */
 
 $(document).ready(function () {
-  $("form input").keydown(function (e) {
-  	event.preventDefault(); 
-    if (e.keyCode == 13) {
-      $("form").submit();
-    }
-  }); // submit 종료
+  $(
+    $("#magnifier").on("click", function (e) {
+      event.preventDefault();
+      $(".container").submit();
+    })
+  ); // submit 종료
 });
