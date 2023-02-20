@@ -3,10 +3,10 @@
  */
 
 $(document).ready(function () {
-  $("form input").keydown(function (e) {
+  $(".mainItem searchBox form").keydown(function (e) {
   	event.preventDefault(); 
-    if (e.keyCode == 13) {
-      $("form").submit();
+    if ($("#searchBar").is("focus") && e.keyCode == 13) {
+      $(".mainItem searchBox form").submit();
     }
   }); // submit 종료
 });
