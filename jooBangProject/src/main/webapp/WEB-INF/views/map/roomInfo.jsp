@@ -36,22 +36,24 @@
 								</div>
 							</c:forTokens>
 						</div>
-					</div>
-					<div class="slide_button left">
-						<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
-							viewBox="0 0 33 33" style="flex: 0 0 auto;">
-						<path fill="#FFF" fill-rule="nonzero"
-								d="M11.646 7.646c.174-.173.443-.192.638-.057l.07.057 8.838 8.84-8.838 8.838c-.196.195-.512.195-.708 0-.173-.173-.192-.443-.057-.638l.057-.069 8.132-8.132-8.132-8.131c-.173-.174-.192-.443-.057-.638l.057-.07z"
-								transform="translate(-1472.000000, -524.000000) translate(1456.000000, 508.000000) translate(16.346194, 16.485281)"></path>
-					</svg>
-					</div>
-					<div class="slide_button right">
-						<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
-							viewBox="0 0 33 33" style="flex: 0 0 auto;">
-						<path fill="#FFF" fill-rule="nonzero"
-								d="M11.646 7.646c.174-.173.443-.192.638-.057l.07.057 8.838 8.84-8.838 8.838c-.196.195-.512.195-.708 0-.173-.173-.192-.443-.057-.638l.057-.069 8.132-8.132-8.132-8.131c-.173-.174-.192-.443-.057-.638l.057-.07z"
-								transform="translate(-1472.000000, -524.000000) translate(1456.000000, 508.000000) translate(16.346194, 16.485281)"></path>
-					</svg>
+						<div class="slidebuttonWrapper">
+							<div class="slide_button left">
+								<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
+									viewBox="0 0 33 33" style="flex: 0 0 auto;">
+								<path fill="#FFF" fill-rule="nonzero"
+										d="M11.646 7.646c.174-.173.443-.192.638-.057l.07.057 8.838 8.84-8.838 8.838c-.196.195-.512.195-.708 0-.173-.173-.192-.443-.057-.638l.057-.069 8.132-8.132-8.132-8.131c-.173-.174-.192-.443-.057-.638l.057-.07z"
+										transform="translate(-1472.000000, -524.000000) translate(1456.000000, 508.000000) translate(16.346194, 16.485281)"></path>
+							</svg>
+							</div>
+							<div class="slide_button right">
+								<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
+									viewBox="0 0 33 33" style="flex: 0 0 auto;">
+								<path fill="#FFF" fill-rule="nonzero"
+										d="M11.646 7.646c.174-.173.443-.192.638-.057l.07.057 8.838 8.84-8.838 8.838c-.196.195-.512.195-.708 0-.173-.173-.192-.443-.057-.638l.057-.069 8.132-8.132-8.132-8.131c-.173-.174-.192-.443-.057-.638l.057-.07z"
+										transform="translate(-1472.000000, -524.000000) translate(1456.000000, 508.000000) translate(16.346194, 16.485281)"></path>
+							</svg>
+							</div>					
+						</div>
 					</div>
 				</div>
 				<div class="section_contentsContainer">

@@ -478,8 +478,21 @@
 			</div>
 			<div class="footnav_Container">
 				<div class="footnav_Wrapper">
-					<button type="button" id="prevBtn">이전</button>
-					<button type="button" id="nextBtn">다음</button>
+					<div class="progress_bar_Wrapper">
+						<div class="progress_Container">
+							<div class="progress_bar"></div>
+						</div>
+						<div class="progress_Container">
+							<div class="progress_bar"></div>
+						</div>
+						<div class="progress_Container">
+							<div class="progress_bar"></div>
+						</div>
+					</div>
+					<div class="button_Wrapper">
+						<button type="button" id="prevBtn">이전</button>
+						<button type="button" id="nextBtn">다음</button>
+					</div>
 				</div>
 			</div>
 		</form>

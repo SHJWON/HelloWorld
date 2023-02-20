@@ -19,6 +19,14 @@ $(document).ready(function () {
 		}
 	});
 	
+	$(".slide_button.right").on('click', function(){
+		$('.slideImgContainer').css('left',-140);
+	});
+	
+	$(".slide_button.left").on('click', function(){
+		$('.slideImgContainer').css('left',0);
+	});
+	
 	// id와 pw값 변수에 저장
 	var id = $('#sid').val();
 	var roomNo = $('#roomNo').val();
