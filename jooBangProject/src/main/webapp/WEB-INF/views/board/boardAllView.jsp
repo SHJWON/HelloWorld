@@ -44,11 +44,10 @@
            <a href="<c:url value='/board/boardSearchForm/'/>"> <button type="submit" id="boardsubmit"> <i class="fa fa-search"></i></button></a>
         </div>   
         <c:if test="${brdTitle eq ''}">               	
-	<button id="insertBtn" >글작성</button>
+	      <button id="insertBtn" >글작성</button>
 		</c:if>
 		<c:if test="${brdTitle ne ''}">            	
-		<button id="hiddenBtn" >글작성</button>
-	
+		   <button id="hiddenBtn" >글작성</button>
 		</c:if>
 		
 			<table class="table table-striped table-hover">

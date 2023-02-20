@@ -64,6 +64,11 @@ public class MyPageService implements IMyPageService {
 		return dao.myReservation(memId);
 	}
 
+	@Override
+	public ReservationVO detailReservation(int rsvNo) {
+		return dao.detailReservation(rsvNo);
+	}
+
 	
 	
 

@@ -13,15 +13,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jooBang.project.model.MemberVO;
+import com.jooBang.project.model.ReservationVO;
 import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.service.MyPageService;
+import com.jooBang.project.service.PayService;
+import com.jooBang.project.service.RegistService;
 
 
 @Controller
 public class MyPageController {
 	@Autowired
 	private MyPageService service;
-
+	@Autowired
+	private PayService payservice;
+	@Autowired
+	private RegistService roomservice;
 	/* 마이페이지 이동 */
 	@RequestMapping("/myPage/detailViewMyPage")
 	public String detailViewMyPage( Model model,HttpSession session) {
@@ -89,6 +95,13 @@ public class MyPageController {
 	 	    model.addAttribute("roomList", roomList);
 	 return "/myPage/myRoom";
 }
+	@RequestMapping("/myPage/myReservation")
+	public String myReservation(Model model, HttpSession session) {
+			String memId = (String)session.getAttribute("sid");		
+			ArrayList<ReservationVO> reservationList = service.myReservation(memId);
+	 	    model.addAttribute("reservationList", reservationList);
+	 return "/myPage/myReservation";
+}
 				
 @ResponseBody
 	@RequestMapping("/myPage/deleteRoom")
@@ -106,4 +119,16 @@ public class MyPageController {
 					
 		return result;
 	}
+@RequestMapping("/myPage/myReservationDetail/{rsvNo}")
+public String myReservationDetail(HttpSession session,@PathVariable int rsvNo,Model model) {
+	String memId= (String)session.getAttribute("sid");
+	ReservationVO rsvVo = service.detailReservation(rsvNo);
+	int roomNo=rsvVo.getRoomNo();
+	RoomVO roomVO = roomservice.detailRoom(roomNo);
+	MemberVO memVo = payservice.getMemberInfo(memId);
+	model.addAttribute("memVo",memVo);
+    model.addAttribute("roomVo",roomVO);
+    model.addAttribute("rsvVo",rsvVo);
+	return"/myPage/myReservationDetail";
+}
 }
