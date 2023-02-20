@@ -97,6 +97,11 @@ public class BoardService implements IBoardService {
 		// TODO Auto-generated method stub
 		return dao.mainComAnView();
 	}
+	@Override
+	public ArrayList<BoardVO> mainComBestView() {
+		// TODO Auto-generated method stub
+		return dao.mainComBestView();
+	}
 
 	
 
