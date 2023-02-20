@@ -48,8 +48,19 @@
     height: 100%;
 }
 
+.slidebuttonWrapper{
+	display: flex;
+    position: absolute;
+    height: 100%;
+    min-width: 1200px;
+    top: 0;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
 .slide_button {
-	position: absolute;
     top: 50%;
     background-color: rgb(34, 34, 34);
     height: 64px;
@@ -57,7 +68,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(-50%);
     transition: opacity 0.25s linear 0s;
 }
 
@@ -67,7 +77,7 @@
 
 .slide_button.left{
     left: 352px;
-    transform: rotateZ(180deg) translateY(50%);
+    transform: rotateZ(180deg);
 }
 
 /* 방정보1 */

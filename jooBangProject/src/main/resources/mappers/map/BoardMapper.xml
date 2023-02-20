@@ -54,7 +54,7 @@ WHERE board.ctgNo=#{ctgNo} order by brdNo DESC limit 10;
   SELECT * FROM board WHERE brdTitle Like CONCAT('%',#{keyword},'%')
   </select>
   <select id="count" resultType="int">
- select count(brdNo) from board
+ select count(brdNo) from board 
  </select>
  <select id="listPage" parameterType="hashMap" resultType="com.jooBang.project.model.BoardVO">
  select * from board order by brdNo DESC

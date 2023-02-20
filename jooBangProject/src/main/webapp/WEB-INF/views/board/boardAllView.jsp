@@ -25,11 +25,11 @@
       <input type="hidden" id="url" value="/board/boardInsert/${ctgNo}">   
     <ul id="ul">
  		 <li class="liside-menu"><a href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
- 		 <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${1}'/>">공지사항</a></li><hr>
- 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${2}'/>">자유게시판</a></li><hr>
- 		  <li class="liside-menu"><a href="<c:url value='/board/bestBoard'/>">베스트게시판</a></li><hr>
- 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${3}'/>">살림 나눔</a></li><hr>
- 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${4}'/>">장터</a></li><hr>  	  
+ 		 <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${1}/${1}'/>">공지사항</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${2}/${1}'/>">자유게시판</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/bestBoard/${1}'/>">베스트게시판</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${3}/${1}'/>">살림 나눔</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${4}/${1}'/>">장터</a></li><hr>  	  
 	</ul>
 
     
@@ -80,7 +80,17 @@
 			<div class="page">
 			 <c:forEach begin="1" end="${pageNum}" var="num">
     <span>
-     <a href="/board/boardListAll/${num}"><button id="pageBtn">${num }</button></a>
+    <c:choose>
+      <c:when test="${brdTitle=='전체글보기'}"> 
+        <a href="/board/boardListAll/${num}"><button id="pageBtn">${num }</button></a>
+      </c:when>
+        <c:when test="${brdTitle=='베스트게시판'}"> 
+         <a href="/board/bestBoardl/${num}"><button id="pageBtn">${num }</button></a>
+        </c:when>
+        <c:otherwise>
+         <a href="/board/boardCtgList/${ctgNo}/${num}"><button id="pageBtn">${num }</button></a>
+        </c:otherwise>
+        </c:choose>
   </span>
  </c:forEach>
 			</div>

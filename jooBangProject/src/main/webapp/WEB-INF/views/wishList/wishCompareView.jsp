@@ -13,7 +13,7 @@
 	src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 	<script src="/js/chart.js"></script>
 <link rel="stylesheet" type="text/css"
-	href="<c:url value='/css/chart.css' />">
+	href="<c:url value='/css/wishList.css' />">
 <title>찜목록 및 비교하기</title>
 </head>
 <body>
@@ -45,19 +45,36 @@
 			<div class="center-outer">
 				<div class="center-inner">
 					<div class="bubbles">
-						<h2 class="wishTitle">내가 본 방</h2>
+						<h2 class="wishTitle">방 비교하기</h2>
 					</div>
 				</div>
 			</div>
 		</div>
-
+ <ul class="wCard"> <!--찜목록-->
+	   <c:forEach var="likeView" items="${likeList}">
+         <li>
+            <div class="mainATeg">
+              <a href="/roominfo/${likeView.roomNo}">
+                <div>	
+                  <img class="roomImg" src="/image/registImg/${fn:split(likeView.roomImage, ',')[0]}" width="260" height="200" />
+                </div>
+                <h5>${fn:split(likeView.roomAddress1, ' ')[0]} ${fn:split(likeView.roomAddress1, ' ')[1]}</h5>
+                <h4><span id="line_limit">${likeView.roomName}</span></h4>
+                <h5>방 개수: ${likeView.roomBCount} |  화장실 개수: ${likeView.roomRCount}</h5>
+                <h5><fmt:formatNumber value="${likeView.roomRent}" pattern="#,###"/>￦ / 주</h5>
+              </a> 
+            </div>
+          </li>
+          </c:forEach>
+    </ul>
 		<div id="myChartBox">
-			<canvas id="myChart" width="400" height="400"></canvas>
+			<canvas id="myChart" width="700" height="400"></canvas>
 			<c:forEach var="wish" items="${likeList }" >
 			<input class="roomName" type="hidden" value="${wish.roomName }">
 			<input class="roomRent" type="hidden" value="${wish.roomRent }">
 			</c:forEach>
 		</div>
+		
 		
 </body>
 

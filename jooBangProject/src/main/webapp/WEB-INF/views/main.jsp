@@ -13,6 +13,7 @@
 		<script src="/js/mainSearch.js"></script>
 		<script src="/js/mainCommunity.js"></script>
 		<script src="/js/mainFurniture.js"></script>
+		<script src="/js/stt.js"></script>
 		<title>주세요 방 Main</title>
 	</head>
 	  <body>
@@ -53,6 +54,13 @@
               ><i class="fa fa-search"id="magnifier" name="magnifier"></i
             ></a>
           </form>
+          
+            음성 메시지 : <button id="recordBtn">녹음</button>
+			 	   <button id="stopBtn">정지</button>		 				  
+		  <div>
+		  	<audio id="audio" preload="auto" controls></audio>
+		  </div>
+		  
         </div>
 	
 	        <!-- 추천 매물 멘트 -->
