@@ -25,6 +25,9 @@ $(document).ready(function(){
 	    $(".room__Box")[indexNo+1].classList.replace('hidden','show');
 	    
 	    indexNo+=1;
+
+		ProgressBar_Move(indexNo);
+	    
 	})
 	 
 	  $('#prevBtn').on('click',function(){
@@ -37,6 +40,8 @@ $(document).ready(function(){
 	     $(".room__Box")[indexNo-1].classList.replace('hidden','show');
 	
 	    indexNo-=1;
+
+		ProgressBar_Move(indexNo);
 	 })
 	
 	
@@ -167,4 +172,28 @@ $(document).ready(function(){
 
 });
  
+
+ function ProgressBar_Move(indexNo){
+ 		console.log(indexNo);
  
+ 		// 방정보 진행바 이동
+		if(indexNo>=0 & indexNo<=4){
+			console.log("1번");
+			$(".progress_Container:first-child .progress_bar").css("transition","transform 600ms linear");
+			$(".progress_Container:first-child .progress_bar").css("transform","translateX("+indexNo*25+"%)");
+		}
+
+		// 방소개 진행바 이동		
+		if(indexNo>=5 & indexNo<=9){
+			console.log("2번");
+			$(".progress_Container:nth-child(2) .progress_bar").css("transition","transform 600ms linear");
+			$(".progress_Container:nth-child(2) .progress_bar").css("transform","translateX("+(indexNo%5)*25+"%)");
+		}
+
+		// 요금안내 진행바 이동
+		if(indexNo>=10 & indexNo<=14){
+			console.log("3번");
+			$(".progress_Container:last-child .progress_bar").css("transition","transform 600ms linear");
+			$(".progress_Container:last-child .progress_bar").css("transform","translateX("+(indexNo%5)*25+"%)");
+		}
+ }
