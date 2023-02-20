@@ -16,6 +16,7 @@ public interface IMyPageService {
 	public ArrayList<RoomVO>myRoom(String memId);
 	public void deleteRoom(int roomNo);  
 	public ArrayList<ReservationVO>myReservation(String memId);
+	public ReservationVO detailReservation(int rsvNo);
 	
 
 }

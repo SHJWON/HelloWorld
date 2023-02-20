@@ -12,33 +12,8 @@
 <!-- jQuery -->
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<!-- iamport.payment.js -->
-<script type="text/javascript"
-	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-<script>    
-	   var IMP = window.IMP; 
-        IMP.init("imp02360371"); 
-        function requestPay() {
-            IMP.request_pay({
-                pg : 'kakaopay',
-                pay_method :'card',
-                merchant_uid: "57008833-3123322", 
-                name : '${roomVo.roomName }',
-                amount : ${roomVo.roomRent+roomVo.roomDeposit },
-                buyer_email : 'Iamport@chai.finance',
-                buyer_name : '포트원 기술지원팀',
-                buyer_tel : '010-1234-5678',
-                buyer_addr : '서울특별시 강남구 삼성동',
-                buyer_postcode : '123-456'
-            }, function (rsp) { // callback
-                if (rsp.success) {
-                    console.log(rsp);
-                } else {
-                    console.log(rsp);
-                }
-            });
-        }
-    </script>
+
+
 <c:import url="/WEB-INF/views/head.jsp" />
 <script src="<c:url value='/js/jquery-3.6.1.min.js'/>"></script>
 <link rel="stylesheet" href="<c:url value='/css/pay.css ' />">
@@ -97,17 +72,17 @@
 								<div class="reserveInfo2">
 									<div class="infoDetail">
 										<div class="infoDetialbold">날짜</div>
-										<input type="text" name="rsvCheckIn" value="<%=request.getParameter("reservation_date")  %>" readonly>
+										<input type="text" name="rsvCheckIn" value="${rsvVo.rsvCheckIn }" readonly> 
 									</div>
 									<div class="infoDetail">
 										<div class="infoDetialbold">예약주간</div>
 										<c:if test="${param.reservation_period ne 'direct' }">
 											<c:set var="period" value="${param.reservation_period }"/>
-											<input type="text" name="rsvPeriod" value="${period}"> 주
+											<input type="text" name="rsvPeriod" value="${rsvVo.rsvPeriod}"> 주
 										</c:if>
 										<c:if test="${param.reservation_period eq 'direct' }">
 											<c:set var="period" value="${param.selboxDirect }"/> 
-											<input type="text" name="rsvPeriod" value="${period}"> 주
+											<input type="text" name="rsvPeriod" value="${rsvVo.rsvPeriod}"> 주
 										</c:if>
 									</div>
 								</div>
@@ -132,19 +107,19 @@
 								
 								주세 &nbsp;
 								<fmt:formatNumber value="${roomVo.roomRent }" pattern="#,###" />
-								원 * ${period}주<br>  
+								원 * ${rsvVo.rsvPeriod}주<br>  
 
 								할인금액 &nbsp;
-								<c:if test="${period>=roomVo.roomDiscount}">
+								<c:if test="${rsvVo.rsvPeriod>=roomVo.roomDiscount}">
 									${roomVo.roomDiscountFee }%
 									<div style="font-weight: bold">
 										할인 적용 금액 &nbsp;
-										<c:set var="Reservationfee" value="${(roomVo.roomRent*period)*(1-(roomVo.roomDiscountFee/100))}"/>
-										<fmt:formatNumber value="${(roomVo.roomRent*period)*(1-(roomVo.roomDiscountFee/100))}" pattern="#,###" /> 원
+										<c:set var="Reservationfee" value="${(roomVo.roomRent*rsvVo.rsvPeriod)*(1-(roomVo.roomDiscountFee/100))}"/>
+										<fmt:formatNumber value="${(roomVo.roomRent*rsvVo.rsvPeriod)*(1-(roomVo.roomDiscountFee/100))}" pattern="#,###" /> 원
 									</div>
 								</c:if> 
-								<c:if test="${period<roomVo.roomDiscount}">
-									<c:set var="Reservationfee" value="${(roomVo.roomRent*period) }"/>
+								<c:if test="${rsvVo.rsvPeriod<roomVo.roomDiscount}">
+									<c:set var="Reservationfee" value="${(roomVo.roomRent*rsvVo.rsvPeriod) }"/>
 									없음
 								</c:if> <br>
 								
@@ -163,9 +138,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			</form>
+					</form>
 		</section>
-	</div>
+			</div>
+		
+	
 </body>
 </html>

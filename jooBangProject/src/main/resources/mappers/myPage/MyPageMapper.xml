@@ -45,6 +45,8 @@
 	<select id="myReservation" parameterType="string" resultType="com.jooBang.project.model.ReservationVO">
 	    SELECT reservation.*,room.* FROM reservation JOIN room ON(reservation.roomNo=room.roomNo) where tenentId=#{memId}
 	</select>
-	 
+	 <select id="detailReservation" parameterType="int" resultType="com.jooBang.project.model.ReservationVO">
+	   SELECT * FROM reservation WHERE rsvNo=#{rsvNo}
+	 </select> 
 
 </mapper>
