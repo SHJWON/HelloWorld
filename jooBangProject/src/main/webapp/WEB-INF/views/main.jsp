@@ -20,7 +20,7 @@
       
         <c:import url="/WEB-INF/views/top.jsp"/>
 		
-		<a href="#" class="topScroll" style="display: inline;"><img src="/image/top.png"></a>
+		<a href="#" class="topScroll" style="display: inline;"><i class="fa-duotone fa-arrow-up-to-line"></i></a>
 
       <section>
       	<div class="mainContainer">
