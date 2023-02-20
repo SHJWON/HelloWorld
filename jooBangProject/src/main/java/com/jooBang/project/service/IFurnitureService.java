@@ -14,4 +14,6 @@ public interface IFurnitureService {
 	public int count();
 	public ArrayList<FurnitureVO>listPage(int displayPost, int postNum);
 	public ArrayList<FurnitureVO> fRecentView();
+	public ArrayList<FurnitureVO> mainFurWood();
+	public ArrayList<FurnitureVO> mainFurApplianeces();
 }

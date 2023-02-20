@@ -70,6 +70,18 @@ public class FurnitureService implements IFurnitureService {
 		return dao.fRecentView();
 	}
 
+	@Override
+	public ArrayList<FurnitureVO> mainFurWood() {
+		// TODO Auto-generated method stub
+		return dao.mainFurWood();
+	}
+
+	@Override
+	public ArrayList<FurnitureVO> mainFurApplianeces() {
+		// TODO Auto-generated method stub
+		return dao.mainFurApplianeces();
+	}
+
 
 
 	

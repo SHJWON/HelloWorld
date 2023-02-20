@@ -12,6 +12,7 @@
 		<c:import url="/WEB-INF/views/chatbot_head.jsp" />
 		<script src="/js/mainSearch.js"></script>
 		<script src="/js/mainCommunity.js"></script>
+		<script src="/js/mainFurniture.js"></script>
 		<title>주세요 방 Main</title>
 	</head>
 	  <body>
@@ -219,9 +220,9 @@
 	          
 	            <div class="main_commumityMenu">
 	              <ul class="main_commuityFilter">
-	                <li class="main_commuityFilterList" id="mComTotal" name="mComTotal" value="전체">전체</li>
-	                <li class="main_commuityFilterList" id="mComAn" name="mComAn" value="공지">공지사항</li>
-	                <li class="main_commuityFilterList" id="mComBest" name="mComBest" value="베스트">베스트</li>
+	                <li class="main_commuityFilterList" id="mComTotal" name="mComTotal" value="1">전체</li>
+	                <li class="main_commuityFilterList" id="mComAn" name="mComAn" value="2">공지사항</li>
+	                <li class="main_commuityFilterList" id="mComBest" name="mComBest" value="3">베스트</li>
 	              </ul>
 	            </div>
 	      
@@ -248,9 +249,9 @@
 	      
 	              <div class="main_furnitureMenu">
 	                <ul class="main_commuityFilter">
-	                  <li class="main_furnitureFilterList">전체</li>
-	                  <li class="main_furnitureFilterList">가구</li>
-	                  <li class="main_furnitureFilterList">가전</li>
+	                  <li class="main_furnitureFilterList" value="1">전체</li>
+	                  <li class="main_furnitureFilterList" value="2">가구</li>
+	                  <li class="main_furnitureFilterList" value="3">가전</li>
 	                </ul>
 	              </div>
 	      
