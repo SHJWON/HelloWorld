@@ -48,17 +48,29 @@ public class BoardController {
 		return"/board/boardAllView";
 	}
 	
-	@RequestMapping("/board/boardCtgList/{ctgNo}") // /board/boardAllView
-	public String boardCtgList(@PathVariable String ctgNo,Model model) {
+	@RequestMapping("/board/boardCtgList/{ctgNo}/{num}") // /board/boardAllView
+	public String boardCtgList(@PathVariable String ctgNo,@PathVariable int num,Model model) {
+		  int count = service.count();	
+			 int postNum = 10; 	
+			 int pageNum = (int)Math.ceil((double)count/postNum); 	
+			 int displayPost = (num - 1) * postNum;
 		ArrayList<BoardVO>brdList=service.ctgListBoard(ctgNo);
+		service.listPage(displayPost, postNum);
+		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("brdTitle","");
 		model.addAttribute("brdList",brdList);
 		model.addAttribute("menuNumber",ctgNo);
 	return "/board/boardAllView";
 	}
-	@RequestMapping("/board/bestBoard")
-	public String bestBoard(Model model) {
+	@RequestMapping("/board/bestBoard/{num}")
+	public String bestBoard(Model model,@PathVariable int num) {
+		int count = service.count();	
+		 int postNum = 10; 	
+		 int pageNum = (int)Math.ceil((double)count/postNum); 	
+		 int displayPost = (num - 1) * postNum;
 		ArrayList<BoardVO> brdList=service.bestBoard();
+		service.listPage(displayPost, postNum);
+		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("brdTitle","베스트게시판");
 		model.addAttribute("brdList",brdList);
 		model.addAttribute("menuNumber",200);
