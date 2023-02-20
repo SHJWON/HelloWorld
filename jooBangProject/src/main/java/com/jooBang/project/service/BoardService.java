@@ -92,7 +92,11 @@ public class BoardService implements IBoardService {
 		dao.comCount(brdNo);
 		
 	}
-	
+	@Override
+	public ArrayList<BoardVO> mainComAnView() {
+		// TODO Auto-generated method stub
+		return dao.mainComAnView();
+	}
 
 	
 

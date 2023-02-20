@@ -23,7 +23,7 @@ public interface IBoardDAO {
 	public ArrayList<BoardVO> bRecentView();
 	public ArrayList<BoardVO>myBoard(String brdWriter);//내가 쓴 글
 	public void comCount(int brdNo);     
-		
+	public ArrayList<BoardVO> mainComAnView();
 	
 	
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jooBang.project.model.BoardVO;
 import com.jooBang.project.model.FurnitureVO;
@@ -86,13 +87,21 @@ public class HomeController {
 	
 	// 메인 서칭 컨트롤러
 	@RequestMapping("/main")
-	public String cardListSearch(@RequestParam String keyword,
+	public String mainRoomSearch(@RequestParam String keyword,
 													   Model model){
 	// 서비스로 전송해서 DB 검색 결과 받아옴
 	ArrayList<WishListVO> searchRoom = wService.roomSearch(keyword);
 	model.addAttribute("searchRoom", searchRoom);
 	return "map/mapView";
 		}
+	
+	// 메인 커뮤니티 카드 필터링
+	@ResponseBody
+	@RequestMapping("/mainComAn")
+	public ArrayList<BoardVO> mainComAnFilter(Model model) {
+		ArrayList<BoardVO> mainComAnView = bService.mainComAnView();
+		return mainComAnView;
+	}
 	
 	
 }
