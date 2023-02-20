@@ -95,13 +95,22 @@ public class HomeController {
 	return "map/mapView";
 		}
 	
-	// 메인 커뮤니티 카드 필터링
+	// 메인 커뮤니티 카드 공지사항
 	@ResponseBody
 	@RequestMapping("/mainComAn")
 	public ArrayList<BoardVO> mainComAnFilter(Model model) {
 		ArrayList<BoardVO> mainComAnView = bService.mainComAnView();
+		System.out.println("나는 소혜민");
 		return mainComAnView;
 	}
+	
+	// 메인 커뮤니티 카드 베스트게시글
+		@ResponseBody
+		@RequestMapping("/mainComBest")
+		public ArrayList<BoardVO> mainComBestFilter(Model model) {
+			ArrayList<BoardVO> mainComBestView = bService.mainComBestView();
+			return mainComBestView;
+		}
 	
 	
 }

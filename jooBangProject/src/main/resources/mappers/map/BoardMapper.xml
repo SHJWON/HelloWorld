@@ -27,7 +27,7 @@ ON (board.ctgNo=category.ctgNo) order by brdNo DESC limit 10;
  <select id="ctgListBoard" parameterType="string" resultMap="brdResult">
   SELECT board.*, category.* FROM board JOIN category 
 ON (board.ctgNo=category.ctgNo)
-WHERE board.ctgNo=#{ctgNo} order by brdNo DESC limit 10;;
+WHERE board.ctgNo=#{ctgNo} order by brdNo DESC limit 10;
   	</select>
   	 <insert id="insertBoard" parameterType="com.jooBang.project.model.BoardVO">
   		INSERT INTO board (brdTitle, brdWriter,brdContent,ctgNo,brdImage)
@@ -71,7 +71,14 @@ WHERE board.ctgNo=#{ctgNo} order by brdNo DESC limit 10;;
 	 SELECT board.* FROM board 
 	where (board.ctgNo=1) order by brdNo DESC limit 5;
 	</select>
-      
+	
+	<!-- 메인 커뮤니티 카드 베스트 게시글 5개 -->
+	<select id="mainComBestView" resultMap="brdResult">
+	 SELECT board.* FROM board
+	 where board.brdViewCnt >20  order by brdViewCnt DESC limit 5;
+	</select>
+	
+
       <!--내가 쓴 글 맵퍼  -->
       <select id="myBoard" parameterType="String" resultMap="brdResult" >
 	  SELECT * FROM board WHERE brdWriter=#{brdWriter};

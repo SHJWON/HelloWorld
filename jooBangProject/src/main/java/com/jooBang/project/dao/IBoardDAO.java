@@ -24,6 +24,7 @@ public interface IBoardDAO {
 	public ArrayList<BoardVO>myBoard(String brdWriter);//내가 쓴 글
 	public void comCount(int brdNo);     
 	public ArrayList<BoardVO> mainComAnView();
+	public ArrayList<BoardVO> mainComBestView();//메인 커뮤니티 베스트 게시글
 	
 	
 

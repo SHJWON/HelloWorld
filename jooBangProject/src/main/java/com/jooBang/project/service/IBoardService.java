@@ -21,7 +21,8 @@ public interface IBoardService {
 	public ArrayList<BoardVO> bRecentView();
 	public ArrayList<BoardVO>myBoard(String brdWriter);
 	public void comCount(int brdNo);
-	public ArrayList<BoardVO> mainComAnView();
+	public ArrayList<BoardVO> mainComAnView(); //메인 커뮤니티 공지사항
+	public ArrayList<BoardVO> mainComBestView();//메인 커뮤니티 베스트 게시글
 
 	
 
