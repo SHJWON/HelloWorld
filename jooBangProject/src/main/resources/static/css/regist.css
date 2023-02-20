@@ -647,20 +647,27 @@ section .room__Box.hidden{
 	
 	.progress_bar_Wrapper{
 		display: flex;
+		margin-bottom: 8px;
 	}
 	
 	.progress_bar_Wrapper .progress_Container{
 		height: 6px;
 		margin-right: 6px;
 		background-color: #dbdbdb;
-		flex-grow: 1
+		flex-grow: 1;
+		overflow: hidden;
+	}
+	
+	.progress_bar_Wrapper .progress_Container:last-child{
+		margin-right: 0px;
 	}
 	
 	.progress_Container .progress_bar{
-		margin-right: 6px;
 		background-color: black;
 		width:100%;
 		height: 100%;
+		left:-100%;
+		position: relative;
 	}
 	
 	.footnav_Wrapper .button_Wrapper{
