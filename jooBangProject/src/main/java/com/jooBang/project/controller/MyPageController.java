@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jooBang.project.model.MemberVO;
-import com.jooBang.project.model.ReservationVO;
 import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.service.MyPageService;
-
-
 
 
 @Controller
@@ -25,7 +22,6 @@ public class MyPageController {
 	@Autowired
 	private MyPageService service;
 
-	
 	/* 마이페이지 이동 */
 	@RequestMapping("/myPage/detailViewMyPage")
 	public String detailViewMyPage( Model model,HttpSession session) {
@@ -64,9 +60,9 @@ public class MyPageController {
 	}
 
 	/* 회원 탈퇴 페이지 이동 */
-	@RequestMapping("/myPage/deleteMyPageForm/{memId}")
-	public String deleteMyPageForm(@PathVariable String memId, Model model) {
-
+	@RequestMapping("/myPage/deleteMyPageForm")
+	public String deleteMyPageForm(Model model,HttpSession session) {
+		String memId = (String)session.getAttribute("sid");
 		MemberVO mem = service.detailViewMyPage(memId);
 		model.addAttribute("mem", mem);
 
@@ -74,9 +70,9 @@ public class MyPageController {
 	}
 
 	// 회원 탈퇴 페이지
-	@RequestMapping("/myPage/deleteMyPage/{memId}")
+	@RequestMapping("/myPage/deleteMyPage")
 	public String deleteMyPage(MemberVO mem, Model model, HttpSession session) {
-
+		String memId = (String)session.getAttribute("sid");
 		service.deleteMyPage(mem);
 
 		session.invalidate();
@@ -92,13 +88,6 @@ public class MyPageController {
 			ArrayList<RoomVO> roomList = service.myRoom(memId);
 	 	    model.addAttribute("roomList", roomList);
 	 return "/myPage/myRoom";
-}
-	@RequestMapping("/myPage/myReservation")
-	public String myReservation(Model model, HttpSession session) {	
-			String memId = (String)session.getAttribute("sid");	
-			ArrayList<ReservationVO> reservationList = service.myReservation(memId);
-	 	    model.addAttribute("reservationList", reservationList);	 	 	    
-	 return "/myPage/myReservation";
 }
 				
 @ResponseBody
@@ -117,6 +106,4 @@ public class MyPageController {
 					
 		return result;
 	}
-
-
 }

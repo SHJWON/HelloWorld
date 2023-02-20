@@ -39,7 +39,10 @@ public class WishController {
 	
 	//방 비교하기 View	
 	@RequestMapping("/wishList/wishCompareView")
-	public String wishCompareList (Model model) {
+	public String wishCompareList (Model model,HttpSession session) {
+		String memId = (String)session.getAttribute("sid");		
+		ArrayList<WishListVO> likeList = service.likeView(memId);
+		model.addAttribute("likeList", likeList);
 		return "/wishList/wishCompareView";
 	}
 	
