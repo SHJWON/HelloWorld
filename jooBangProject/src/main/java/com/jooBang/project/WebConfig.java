@@ -10,5 +10,8 @@ public class WebConfig implements WebMvcConfigurer {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/images/**")
 		.addResourceLocations("file:////Users/ddukco/springWorkspace/images/"); // 각자 외부경로 적용 필!
+		registry.addResourceHandler("/audio/**")
+		.addResourceLocations("file:///C:/springWorkspace/upload/");
+		
 	}
 }

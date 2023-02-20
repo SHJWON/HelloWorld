@@ -8,8 +8,8 @@
     grid-auto-rows: minmax(100px, auto);
     grid-template-areas: 
         'Wfil . WTitle . .'
-        'Wfil Wprd Wprd Wprd Wadd'
         'Wfil WChart WChart WChart .'
+        'Wfil Wprd Wprd Wprd Wadd'
         'Wfil WPage WPage WPage .';
 }
 
