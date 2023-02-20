@@ -9,6 +9,7 @@
     grid-template-areas: 
         'Wfil . WTitle . .'
         'Wfil Wprd Wprd Wprd Wadd'
+        'Wfil WChart WChart WChart .'
         'Wfil WPage WPage WPage .';
 }
 
@@ -118,3 +119,15 @@
 	color:white;
 	cursor: pointer;
 }
+
+#myChartBox{
+	grid-area: WChart;
+}
+#myChart{
+	border-radius:5px;
+	border-color:#ff2649;
+}
+
+
+
+
