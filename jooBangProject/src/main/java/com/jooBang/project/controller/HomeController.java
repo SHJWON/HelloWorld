@@ -95,12 +95,19 @@ public class HomeController {
 	return "map/mapView";
 		}
 	
+	// 메인 커뮤니티 카드 전체보기
+		@ResponseBody
+		@RequestMapping("/mainComTotal")
+		public ArrayList<BoardVO> mainComFilter(Model model) {
+			ArrayList<BoardVO> bRecentView = bService.bRecentView();
+			return bRecentView;
+		}
+	
 	// 메인 커뮤니티 카드 공지사항
 	@ResponseBody
 	@RequestMapping("/mainComAn")
 	public ArrayList<BoardVO> mainComAnFilter(Model model) {
 		ArrayList<BoardVO> mainComAnView = bService.mainComAnView();
-		System.out.println("나는 소혜민");
 		return mainComAnView;
 	}
 	
@@ -111,6 +118,31 @@ public class HomeController {
 			ArrayList<BoardVO> mainComBestView = bService.mainComBestView();
 			return mainComBestView;
 		}
+		
+	
+		// 메인 가구렌탈 카드 전체보기
+			@ResponseBody
+			@RequestMapping("/mainFurTotal")
+			public ArrayList<FurnitureVO> mainFurTotal(Model model) {
+				ArrayList<FurnitureVO> fRecentView = fService.fRecentView();
+				return fRecentView;
+			}
+		
+			// 메인 가구렌탈 가구 필터
+			@ResponseBody
+			@RequestMapping("/mainFurWood")
+			public ArrayList<FurnitureVO> mainFurWood(Model model) {
+				ArrayList<FurnitureVO> mainFurWood = fService.mainFurWood();
+				return mainFurWood;
+			}
+			
+			// 메인 가구렌탈 가전 필터
+				@ResponseBody
+				@RequestMapping("/mainFurApplianeces")
+				public ArrayList<FurnitureVO> mainFurApplianeces(Model model) {
+					ArrayList<FurnitureVO> mainFurApplianeces = fService.mainFurApplianeces();
+					return mainFurApplianeces;
+				}
 	
 	
 }

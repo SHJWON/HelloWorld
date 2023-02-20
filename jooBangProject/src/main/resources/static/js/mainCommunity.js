@@ -4,17 +4,15 @@ $(document).ready(function () {
   $(".main_commuityFilterList").on("click", function () {
     event.preventDefault();
 
-    const comURL = "";
+    let comURL = "";
 
-    if ($(this).val() == "전체") {
+    if ($(this).val() == "1") {
       comURL = "/mainComTotal";
-    } else if ($(this).val() == "공지") {
+    } else if ($(this).val() == "2") {
       comURL = "/mainComAn";
-    } else if ($(this).val() == "베스트") {
+    } else if ($(this).val() == "3") {
       comURL = "/mainComBest";
     }
-	
-	console.log($(this).val());
 	
     $.ajax({
       type: "post",

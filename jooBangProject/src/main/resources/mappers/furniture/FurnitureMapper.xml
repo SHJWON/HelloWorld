@@ -61,4 +61,17 @@
 	<select id="fRecentView" resultMap="furnitureResult">
 		SELECT * FROM furnitureRental ORDER BY furnitureNo DESC	limit 3;
 	</select>
-	  	</mapper>
+	
+	<!-- 메인 가구카드 가구 3개 -->
+	<select id="mainFurWood" resultMap="furnitureResult">
+	 SELECT * FROM furnitureRental 
+	where (furnitureRental.furniturePrdCtg="가구") order by furnitureNo DESC limit 3;
+	</select>
+	
+	<!-- 메인 가구카드 가전 3개 -->
+	<select id="mainFurApplianeces" resultMap="furnitureResult">
+	 SELECT * FROM furnitureRental 
+	 where not (furnitureRental.furniturePrdCtg="가구")  order by furnitureNo DESC limit 3;
+	</select>
+	
+	</mapper>
