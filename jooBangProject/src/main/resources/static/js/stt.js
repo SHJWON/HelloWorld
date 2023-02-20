@@ -107,6 +107,7 @@
  			}
  		}); // ajax 종료 	
   	}
+  	});
  
  
 /* $(document).ready(function() {
