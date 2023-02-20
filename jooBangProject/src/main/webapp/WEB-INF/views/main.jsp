@@ -11,6 +11,7 @@
 		<c:import url="/WEB-INF/views/head.jsp"/>
 		<c:import url="/WEB-INF/views/chatbot_head.jsp" />
 		<script src="/js/mainSearch.js"></script>
+		<script src="/js/mainCommunity.js"></script>
 		<title>주세요 방 Main</title>
 	</head>
 	  <body>
@@ -224,7 +225,7 @@
 	              </ul>
 	            </div>
 	      
-	            <ul id="main_communityUl">
+	            <ul id="main_communityUl" action="/mainCom">
 	            <c:forEach var="mainCommuniny" items="${bRecentView}">
 	              <li id="list1"><img src="/image/default_profile.png" width="64" height="64"> <!-- userImg 등록 예정 -->
 	               <a href="/board/boardDetailView/${mainCommuniny.brdNo}">

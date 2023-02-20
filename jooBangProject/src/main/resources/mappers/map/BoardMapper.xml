@@ -61,9 +61,15 @@ WHERE board.ctgNo=#{ctgNo} order by brdNo DESC limit 10;;
   limit #{displayPost}, #{postNum}
 </select>
 
-<!-- 메인 커뮤니티 카드 최신순 5개 -->
+	<!-- 메인 커뮤니티 카드 최신순 5개 -->
 	<select id="bRecentView" resultMap="brdResult">
 	SELECT * FROM board ORDER BY brdNo DESC	limit 5;
+	</select>
+	
+	<!-- 메인 커뮤니티 카드 공지사항 5개 -->
+	<select id="mainComAnView" resultMap="brdResult">
+	 SELECT board.* FROM board 
+	where (board.ctgNo=1) order by brdNo DESC limit 5;
 	</select>
       
       <!--내가 쓴 글 맵퍼  -->
