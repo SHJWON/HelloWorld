@@ -312,9 +312,8 @@
 	            <h4 class="introText">커뮤니티로 솔직한 정보 공유!</h4>
 	        </div>
       	</div>
-        <c:import url="/WEB-INF/views/chatbot_test.jsp"/>
       </section>
-
+      <c:import url="/WEB-INF/views/chatbot_test.jsp"/>
       <footer>
         <c:import url="/WEB-INF/views/footer.jsp"/>
       </footer>

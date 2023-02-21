@@ -113,12 +113,13 @@ label{
   opacity:0.7;
 }
 .on{
-  background: #bb2649;
+  background-color:#bb2649;
   color: white;
-  
 }
-
-
+.btnOn{
+  background-color:#bb2649;
+  color: white;
+}
 #listBtn{
 	margin-left:86%;
 	padding:8px 20px;

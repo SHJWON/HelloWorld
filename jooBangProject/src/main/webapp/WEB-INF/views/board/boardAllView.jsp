@@ -23,6 +23,7 @@
       <input type="hidden" id="menuNumber" value="${menuNumber }">
       <input type="hidden" id="sid" name="memId" value="${sessionScope.sid}">   
       <input type="hidden" id="url" value="/board/boardInsert/${ctgNo}">   
+      <input type="hidden" id="pageNum" value="${num}">     
     <ul id="ul">
  		 <li class="liside-menu"><a href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
  		 <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${1}/${1}'/>">공지사항</a></li><hr>
@@ -32,7 +33,6 @@
  		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${4}/${1}'/>">장터</a></li><hr>  	  
 	</ul>
 
-    
         <c:if test="${brdTitle eq ''}">
         <span id="ctgName">${brdList[0].ctgName } </span>      
         </c:if>
