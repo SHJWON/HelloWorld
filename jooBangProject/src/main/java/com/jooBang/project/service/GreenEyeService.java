@@ -7,12 +7,15 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
+import org.json.JSONObject;
 import org.springframework.stereotype.Service;
+
+import com.jooBang.project.model.GreenEyeVO;
 
 @Service
 public class GreenEyeService {
 
-	public String PornPrevention(String pornImg) throws IOException {
+	public GreenEyeVO PornPrevention(String pornImg) throws IOException {
 		URL url = new URL("https://clovagreeneye.apigw.ntruss.com/custom/v1/46/ed1c7ee8c4f5857752c56eb351a5ba5e6bb7692b097e21968301ca77137df95d/predict");
 		HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
 		httpConn.setRequestMethod("POST");
@@ -37,7 +40,32 @@ public class GreenEyeService {
 		Scanner s = new Scanner(responseStream).useDelimiter("\\A");
 		String response = s.hasNext() ? s.next() : "";
 		System.out.println(response);
-		return response;
+		
+		return jsonToVo(response);
+	}
+	
+	public GreenEyeVO jsonToVo(String jsonResultStr){
+		GreenEyeVO greenEyevo = new GreenEyeVO();
+		
+		
+		double adult = new JSONObject(jsonResultStr).getJSONArray("images").getJSONObject(0).getJSONObject("result")
+				.getJSONObject("adult").getDouble("confidence");
+		greenEyevo.setAdult(adult);
+		
+		double normal = new JSONObject(jsonResultStr).getJSONArray("images").getJSONObject(0).getJSONObject("result")
+				.getJSONObject("normal").getDouble("confidence");
+		greenEyevo.setAdult(normal);
+		
+		double porn = new JSONObject(jsonResultStr).getJSONArray("images").getJSONObject(0).getJSONObject("result")
+				.getJSONObject("porn").getDouble("confidence");
+		greenEyevo.setAdult(porn);
+		
+		double sexy = new JSONObject(jsonResultStr).getJSONArray("images").getJSONObject(0).getJSONObject("result")
+				.getJSONObject("sexy").getDouble("confidence");
+		greenEyevo.setAdult(sexy);
+		
+		
+		return greenEyevo;
 	}
 }
 

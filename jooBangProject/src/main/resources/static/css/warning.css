@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+ @font-face {
+    font-family: "Rix";
+    src: url("/fonts/RixYeoljeongdo_Pro\ Regular.otf") format("woff");
+  }
+
+* {
+	font-family: 'Rix';
+}
+
+body {
+	margin: 0;
+}
+
+.warning_Container {
+	height: 100vh;
+}
+
+.warning_Wrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: column; justify-content : center;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+#warning_Title {
+	font-size: 40px;
+}
+
+#warningImg {
+	width: 350px;
+	margin: 20px 0;
+}
+
+#warning_Content {
+	text-align: center;
+	line-height: 1.4;
+}
+
+#warning_Button{
+	border: 5px solid #bb2749;
+    color: #bb2749;
+    border-radius: 25px;
+    background: #ffffff;
+    width: 80%;
+    margin-top: 20px;
+    height: 69px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#warning_Button:hover{
+	background: #c0c0c0;
+}
