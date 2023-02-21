@@ -20,11 +20,11 @@
  
       <ul id="ul">
  		 <li class="liside-menu"><a href="<c:url value='/board/boardListAll/${1}'/>">전체글보기</a></li><hr>
- 		 <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${1}'/>">공지사항</a></li><hr>
- 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${2}'/>">자유게시판</a></li><hr>
- 		  <li class="liside-menu"><a href="<c:url value='/board/bestBoard'/>">베스트게시판</a></li><hr>
- 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${3}'/>">살림 나눔</a></li><hr>
- 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${4}'/>">장터</a></li><hr>  	  
+ 		 <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${1}/${1}'/>">공지사항</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${2}/${1}'/>">자유게시판</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/bestBoard/${1}'/>">베스트게시판</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${3}/${1}'/>">살림 나눔</a></li><hr>
+ 		  <li class="liside-menu"><a href="<c:url value='/board/boardCtgList/${4}/${1}'/>">장터</a></li><hr>  	  
 	</ul>
 
 	
