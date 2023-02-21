@@ -90,14 +90,11 @@
  			contentType:false,
  			data: formData,
  			success:function(result){
- 				
+ 			/*alert(result);*/
  				// <input> 태그의 값을 받은 텍스트로 설정
  				$('#searchBar').val(result);
- 				
- 				// 챗봇에게 전달
- 				callAjax(); 			
  							  
- 				$('#searchBar').val('');
+ 			
  			},
  			error:function(){
  				alert("실패");
