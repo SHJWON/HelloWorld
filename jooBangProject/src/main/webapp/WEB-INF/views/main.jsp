@@ -53,10 +53,11 @@
             <a id="btnSearch" class="btn-search"
               ><i class="fa fa-search"id="magnifier" name="magnifier"></i
             ></a>
-          </form>
-          
-            음성 메시지 : <button id="recordBtn">녹음</button>
-			 	   <button id="stopBtn">정지</button>		 				  
+               <button type="button" id="recordBtn" class="recordBtn"><i class="fa-solid fa-microphone"><br><span id="record">녹음</span></i></button>
+               <button type="button" id="stopBtn" class="recordBtn"><i class="fa-solid fa-microphone-slash"><br><span id="stop">정지</span></i></button>			
+          </form> 		
+            
+			 		  
 		  <div>
 		  	<audio id="audio" preload="auto" controls></audio>
 		  </div>
