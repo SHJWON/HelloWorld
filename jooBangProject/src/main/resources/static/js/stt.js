@@ -2,10 +2,6 @@
  * stt.js
  */
   $(document).ready(function(){
- 
- 	// 웰컴 메시지ㅣ 받기 위해 message 입력 받기 전에
- 	// 빈 값으로 서버에 전송하고 결과 받음 	
- 	callAjax(); // 빈 값의 message가 서버로 전송
  	
  	// 처음 시작시 <audio> 안 보이게
  	$('#audio').hide();
@@ -16,8 +12,8 @@
  	// (1) 음성 녹음
   	//////////////////////////////////////////////////////////////////////////
   	const recordBtn = document.getElementById("recordBtn");
+  	const record = document.getElementById("record");
   	const stopBtn = document.getElementById("stopBtn");
-  	
   	if(navigator.mediaDevices) {
   		var constraints = {
   			audio:true
@@ -32,8 +28,8 @@
   				// [녹음] 버튼 눌렀을 때
   				recordBtn.onclick = () => {
   					mediaRecorder.start(); // 녹음 시작
-  					recordBtn.style.background = "red"; // [녹음] 버튼 배경색
-  					recordBtn.style.color = "black";
+  					record.style.background = "red"; // [녹음] 버튼 배경색
+  					record.style.color = "red";
   				}
   				
   				// [정지] 버튼 눌렀을 때

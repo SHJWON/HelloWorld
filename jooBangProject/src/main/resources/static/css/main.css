@@ -202,7 +202,32 @@ a.mainChat img {
 .fa-search{
     margin-bottom: 100px;
 }
-
+.recordBtn{
+	  cursor: pointer;
+      color: black;
+      text-decoration: none !important;
+      font-family: "Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;
+      font-size: 1.5em;
+      padding-top: 15px;
+      margin-right: 40px;
+      border:none;
+      background-color:transparent;
+}
+.fa-microphone{
+	margin-bottom: 70px;
+}
+.fa-microphone-slash{
+	margin-bottom: 70px;
+}
+#record{
+	font-size:15px;
+}
+#stop{
+	font-size:15px;
+}
+.recordBtn:hover{
+	opacity:0.5;
+}
 /********** recommendLine **********/
 
 

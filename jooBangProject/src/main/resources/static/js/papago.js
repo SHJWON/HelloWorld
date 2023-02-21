@@ -6,7 +6,7 @@
  $(document).ready(function(){
   	$('#papagoBtn').on('click', function(){
   	   event.preventDefault();
-  	   var test=$('section').html();
+  	   var test=$('body').html();
   	   var map=$('#subMenuMap').text();
        console.log(map);
       
@@ -16,7 +16,7 @@
  			url:"/papago/en",
  			data: {"test":test},
  			success:function(result){	
- 				$('section').html(result); 
+ 				$('body').html(result); 
  				$('#subMenuMap').text("Map");										
  			},
  			
