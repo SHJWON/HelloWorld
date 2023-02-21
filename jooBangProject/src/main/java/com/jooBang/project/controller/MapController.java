@@ -1,5 +1,6 @@
 package com.jooBang.project.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -17,6 +18,7 @@ import com.jooBang.project.model.MapVO;
 import com.jooBang.project.model.MemberVO;
 import com.jooBang.project.model.RoomVO;
 import com.jooBang.project.model.WishListVO;
+import com.jooBang.project.service.GreenEyeService;
 import com.jooBang.project.service.MapService;
 import com.jooBang.project.service.MemberService;
 import com.jooBang.project.service.RegistService;
@@ -34,6 +36,11 @@ public class MapController {
 	private WishListService wishservice;
 	@Autowired
 	private MemberService memservice;
+
+//	유해이미지 차단 서비스	
+	@Autowired
+	GreenEyeService gService;
+	
 	
 	@RequestMapping("map/mapView")
 	 public String mapView(Model model) {
@@ -52,14 +59,14 @@ public class MapController {
 		WishListVO vo = new WishListVO();
 		vo.setMemId(memId);
 		vo.setRoomNo(roomNo);
-		   
+		
 		roomservice.viewCount(roomNo); // 조회수 증가
 		roomservice.wishCountroom(roomNo); // 조회수 증가
 		
 		model.addAttribute("wish_count", wish_count); // 찜수 조회
 		model.addAttribute("room", roomVO); // room 정보 조회
 		
-		if(memId!=null) {			
+		if(memId!=null) {
 			//최근 본 방 중복 데이터 제거
 			wishservice.recentViewDelete(vo);
 			
@@ -67,7 +74,23 @@ public class MapController {
 			wishservice.recentViewSave(memId, roomNo);
 			model.addAttribute("roomNo", roomNo);
 		}
-		   
+		
+		String images[] = roomVO.getRoomImage().split(",");
+		
+		for(String image:images) {
+			String imageUrl = "http://115.85.181.60:8080/image/registImg/"+image;
+			//그린아이 AI 
+			try {
+				System.out.println(imageUrl);
+				gService.PornPrevention(imageUrl);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
 		return "map/roomInfo";
 	}
 	
