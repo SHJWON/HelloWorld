@@ -76,18 +76,22 @@ public class MapController {
 		}
 		
 		String images[] = roomVO.getRoomImage().split(",");
+		String result="";
+		
 		
 		for(String image:images) {
 			String imageUrl = "http://115.85.181.60:8080/image/registImg/"+image;
 			//그린아이 AI 
 			try {
 				System.out.println(imageUrl);
-				gService.PornPrevention(imageUrl);
+				result+=(gService.PornPrevention(imageUrl)+",");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		
+		model.addAttribute("result", result);
 		
 		
 		
