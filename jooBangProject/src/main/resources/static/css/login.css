@@ -40,7 +40,7 @@ body {
 	width: 780px;
 	height: 550px;
 	margin: 0 auto;
-	margin-top: 117px;
+	margin-top: 42px;
 	margin-bottom: 128px;
 }
 
@@ -74,7 +74,7 @@ body {
 .loginbox ul {
 	width: 100%;
 	text-align: right;
-	margin-bottom: 60px;
+	margin-bottom: 18px;
 }
 
 .loginbox li {
