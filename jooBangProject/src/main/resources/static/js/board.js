@@ -18,23 +18,25 @@ $(document).ready(function(){
 		 break;
 		case "2":
 		  $('.liside-menu a').eq(2).addClass('on');
-		 berak;
+	     break;
 		case "3":
 		  $('.liside-menu a').eq(4).addClass('on');
-		 berak;
+		 break;
 		case "4":
 		  $('.liside-menu a').eq(5).addClass('on');
-		 berak;
+		 break;
 		case "100":
 		  $('.liside-menu a ').eq(0).addClass('on');
-		 berak;
+		 break;
 		case "200":
           $('.liside-menu a').eq(3).addClass('on');
-		 berak;
+		 break;
 
 	}
  
  });
+ 
+
  $(document).ready(function(){
  var sid = $('#sid').val();
  var url=$('#url').val();
@@ -46,6 +48,14 @@ $(document).ready(function(){
  location.href =url;
  }
  });
+});
 
-
- });
+ $(document).ready(function(){
+    var page=$('#pageNum').val();
+	var pageBtn=$('#pageBtn').val();
+	if(page==1){
+	   $('#pageBtn').addClass('btnOn'); 
+	}
+ });  
+ 
+ 
