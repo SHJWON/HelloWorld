@@ -50,12 +50,11 @@ public class BoardController {
 	
 	@RequestMapping("/board/boardCtgList/{ctgNo}/{num}") // /board/boardAllView
 	public String boardCtgList(@PathVariable String ctgNo,@PathVariable int num,Model model) {
-		  int count = service.count();	
+		  int count = service.countCtg(ctgNo);	
 			 int postNum = 10; 	
 			 int pageNum = (int)Math.ceil((double)count/postNum); 	
 			 int displayPost = (num - 1) * postNum;
-		ArrayList<BoardVO>brdList=service.ctgListBoard(ctgNo);
-		service.listPage(displayPost, postNum);
+		ArrayList<BoardVO>brdList=service.listPageCtg(displayPost, postNum,ctgNo);		
 		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("brdTitle","");
 		model.addAttribute("brdList",brdList);
@@ -64,12 +63,11 @@ public class BoardController {
 	}
 	@RequestMapping("/board/bestBoard/{num}")
 	public String bestBoard(Model model,@PathVariable int num) {
-		int count = service.count();	
-		 int postNum = 10; 	
+		 int count = service.countBest();	
+		 int postNum = 10; 			
 		 int pageNum = (int)Math.ceil((double)count/postNum); 	
 		 int displayPost = (num - 1) * postNum;
-		ArrayList<BoardVO> brdList=service.bestBoard();
-		service.listPage(displayPost, postNum);
+		ArrayList<BoardVO> brdList=service.listPageBest(displayPost, postNum);
 		model.addAttribute("pageNum", pageNum);
 		model.addAttribute("brdTitle","베스트게시판");
 		model.addAttribute("brdList",brdList);
@@ -168,19 +166,15 @@ public class BoardController {
 	   }  
 	   @RequestMapping("/board/boardListAll/{num}")
 		public String boardListAll(Model model,@PathVariable int num) {
-		   int count = service.count();
-			 
+		   int count = service.count();				 
 			 // 한 페이지에 출력할 게시물 갯수
 			 int postNum = 10;
-			  
-			 // 하단 페이징 번호 ([ 게시물 총 갯수 ÷ 한 페이지에 출력할 갯수 ]의 올림)
-			 int pageNum = (int)Math.ceil((double)count/postNum);
-			  
+			 int pageNum = (int)Math.ceil((double)count/postNum); 		  
 			 // 출력할 게시물
 			 int displayPost = (num - 1) * postNum;
 			ArrayList<BoardVO>brdList=null;
 			brdList=service.listPage(displayPost, postNum);
-			model.addAttribute("pageNum", pageNum);
+			model.addAttribute("pageNum",pageNum);
 			model.addAttribute("brdList",brdList);
 			model.addAttribute("brdTitle","전체글보기");
 			model.addAttribute("menuNumber",100);

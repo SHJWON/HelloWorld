@@ -17,7 +17,11 @@ public interface IBoardService {
 	public void deleteBoard(int brdNo);
 	public ArrayList<BoardVO>boardSearch(HashMap<String,Object>map);
 	public int count();
+	public int countCtg(String ctgNo);
+	public int countBest();
 	public ArrayList<BoardVO>listPage(int displayPost, int postNum);
+	public ArrayList<BoardVO>listPageCtg(int displayPost, int postNum,String ctgNo);
+	public ArrayList<BoardVO>listPageBest(int displayPost, int postNum);
 	public ArrayList<BoardVO> bRecentView();
 	public ArrayList<BoardVO>myBoard(String brdWriter);
 	public void comCount(int brdNo);
