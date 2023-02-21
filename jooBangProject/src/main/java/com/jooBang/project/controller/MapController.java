@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.jooBang.project.model.GreenEyeVO;
 import com.jooBang.project.model.MapVO;
 import com.jooBang.project.model.MemberVO;
 import com.jooBang.project.model.RoomVO;
@@ -22,6 +23,7 @@ import com.jooBang.project.service.GreenEyeService;
 import com.jooBang.project.service.MapService;
 import com.jooBang.project.service.MemberService;
 import com.jooBang.project.service.RegistService;
+import com.jooBang.project.service.WarningService;
 import com.jooBang.project.service.WishListService;
 
 
@@ -36,6 +38,8 @@ public class MapController {
 	private WishListService wishservice;
 	@Autowired
 	private MemberService memservice;
+	@Autowired
+	private WarningService Wservice;
 
 //	유해이미지 차단 서비스	
 	@Autowired
@@ -76,24 +80,25 @@ public class MapController {
 		}
 		
 		String images[] = roomVO.getRoomImage().split(",");
-		String result="";
-		
+		GreenEyeVO geVO = new GreenEyeVO();
 		
 		for(String image:images) {
 			String imageUrl = "http://115.85.181.60:8080/image/registImg/"+image;
 			//그린아이 AI 
 			try {
-				System.out.println(imageUrl);
-				result+=(gService.PornPrevention(imageUrl)+",");
+				geVO = gService.PornPrevention(imageUrl);
+				double adult= geVO.getAdult()*100;
+				double sexy = geVO.getSexy()*100;
+				double porn = geVO.getPorn()*100;
+				if(adult>=75||sexy>=75||porn>=75) {
+					Wservice.insertWarning("/roominfo/"+roomNo);
+					return "/warning";
+				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
-		model.addAttribute("result", result);
-		
-		
 		
 		return "map/roomInfo";
 	}
