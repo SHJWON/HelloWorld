@@ -26,7 +26,6 @@
 					  <div class="PhotoBox" id="PhotoBox">
 					  <img class="profile" src="/image/default_profile.png">
 					  </div>
-					  </div>
 				  <ul id="ul">
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm'/>">내 정보 수정</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myBoardList'/>">내 글목록</a></li><hr>
@@ -35,6 +34,7 @@
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/deleteMyPageForm'/>">회원탈퇴</a></li><hr>
 					     </ul>
 					 </form>
+					  </div>
 	
 				   </div>
 				
