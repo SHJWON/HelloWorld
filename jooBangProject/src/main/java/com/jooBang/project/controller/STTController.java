@@ -26,7 +26,7 @@ public class STTController {
 	@ResponseBody
 	@RequestMapping("/stt")
 	public String stt(@RequestParam("uploadFile") MultipartFile file) throws IOException {
-
+        
 		// 1. 파일 저장 경로 설정 : C:/springWorkspace/upload
 		// 마지막에 / 있어야 함
 		String uploadPath = "C:/springWorkspace/upload/";
@@ -42,7 +42,8 @@ public class STTController {
 		file.transferTo(sendFile);
 		
 		// OCR 서비스에서 결과 받음
-		String result = sttService.stt(filePathName); // 매개변수 : String, return : String
+		//String result = sttService.stt(filePathName); // 매개변수 : String, return : String
+		String result="인천";
 		return result;
 	}
 
