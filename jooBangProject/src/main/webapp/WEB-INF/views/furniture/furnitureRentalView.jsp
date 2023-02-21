@@ -2,12 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
  <meta charset="UTF-8">
  <c:import url="/WEB-INF/views/head.jsp"/>
- <script src="js/furniture.js"></script>
  <link rel="stylesheet" type="text/css" href="<c:url value='/css/furnitureRentalView.css' />">
  <title>가구 렌탈 페이지</title>
 </head>
@@ -49,7 +50,7 @@
 	              <h5>${furniture.furnitureCity}</h5>
 	              <h4 id="FTitleWidth">${furniture.furnitureTitle}</h4>
 	              <h4>${furniture.furnitureCompany}</h4>
-	              <h5>${furniture.furniturePrice} / 월</h5>
+	              <h5><fmt:formatNumber value="${furniture.furniturePrice}" pattern="#,###"/>￦ / 월</h5>
 	              <h5>${furniture.furnitureTell}</h5>
 	             </div>
               </li>

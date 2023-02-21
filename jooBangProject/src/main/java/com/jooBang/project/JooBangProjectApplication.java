@@ -9,16 +9,28 @@ import org.springframework.context.annotation.PropertySources;
 
 @SpringBootApplication
 @PropertySources({
-@PropertySource(value="file:c:/springWorkspace/configure.properties", ignoreResourceNotFound=true),
-@PropertySource(value="file:/Users/ddukco/springWorkspace/configure.properties", ignoreResourceNotFound=true),
-@PropertySource(value="file:/usr/local/project/properties/configure.properties", ignoreResourceNotFound=true)
-})
-@ComponentScan(basePackages= {"com.jooBang.project"})
-@MapperScan(basePackages= {"com.jooBang.project"})
+		@PropertySource(value = "file:c:/springWorkspace/configure.properties", ignoreResourceNotFound = true),
+		@PropertySource(value = "file:/Users/ddukco/springWorkspace/configure.properties", ignoreResourceNotFound = true),
+		@PropertySource(value = "file:/usr/local/project/properties/configure.properties", ignoreResourceNotFound = true) })
+@ComponentScan(basePackages = { "com.jooBang.project" })
+@MapperScan(basePackages = { "com.jooBang.project" })
 public class JooBangProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JooBangProjectApplication.class, args);
 	}
+
+//	@Bean
+//	public ServletWebServerFactory serveltContainer() {
+//		TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
+//		tomcat.addAdditionalTomcatConnectors(createStandardConnector());
+//		return tomcat;
+//	}
+//
+//	private Connector createStandardConnector() {
+//		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+//		connector.setPort(8080);
+//		return connector;
+//	}
 
 }
