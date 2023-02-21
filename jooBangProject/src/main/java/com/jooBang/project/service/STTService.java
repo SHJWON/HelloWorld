@@ -15,8 +15,8 @@ import org.springframework.stereotype.Service;
 public class STTService {
 	public String stt(String filePathName) {
 		    String result = "";
-	        String clientId = "ky2h1qetn6";             // Application Client ID";
-	        String clientSecret = "dwjfTmSSODJlzOMUnN16ZkRS3cnuKopDQXHwRMAR";     // Application Client Secret";
+	        String clientId = "yaysmxugs9";             // Application Client ID";
+	        String clientSecret = "OTcFSxgfmdPIYBS3fvkduNP6qtIp7ecdOd7rsgB4";     // Application Client Secret";
 
 	        try {
 	            String imgFile = filePathName;
