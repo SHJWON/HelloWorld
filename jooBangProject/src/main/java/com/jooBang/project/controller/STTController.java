@@ -43,7 +43,6 @@ public class STTController {
 		
 		// OCR 서비스에서 결과 받음
 		String result = sttService.stt(filePathName); // 매개변수 : String, return : String
-
 		return result;
 	}
 
