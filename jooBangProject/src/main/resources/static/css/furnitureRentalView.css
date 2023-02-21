@@ -11,6 +11,8 @@
         'Ffil . PG PG .';
 }
 
+
+
 .center-outer { /*타이틀*/
     display: table;
     width: 100%;
@@ -127,6 +129,8 @@
     'PV PV PV PV PV'
     '. . . . .';
     position: relative;
+    text-align: center;
+    
 }
 
 #furniturePrdTitle{
