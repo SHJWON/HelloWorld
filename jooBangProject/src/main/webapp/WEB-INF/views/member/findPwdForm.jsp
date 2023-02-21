@@ -19,14 +19,26 @@
 					<h1>비밀번호 찾기</h1>
 						
 					<h4>이름</h4>
-					<span class="input_area"><input type="text" maxlength="15" id="findPwdName" name="findPwdName" 
-					placeholder="이름을 입력해 주세요." required></span>
-						
+
+					<input type="text" maxlength="15" id="memName" name="memName"
+						placeholder="이름을 입력해 주세요." required>
+
+
 					<h4>이메일</h4>
-					<span class="input_area"><input type="text" maxlength="30" id="findPwdEmail" name="findPwdEmail" 
-					placeholder="이메일을 입력해 주세요." required></span>
-					<button type="submit">변경</button>
-					<button type="button" onClick="history.back()">취소</button>
+
+					<input type="text" maxlength="30" id="memEmail" name="memEmail"
+						placeholder="이메일을 입력해 주세요." required>
+					<button type="button" id="authBtn" class="btn" value="인증번호받기">인증번호받기</button>
+					
+					
+					<h4>인증번호 입력</h4>
+					<input type="text" id="emailCheck" name="emailCheck" class="textBox" placeholder="인증번호를 적어주세요.">
+					<button type="button" id="checkBtn" class="btn" value="확인">확인</button>
+					<button type="submit" value="찾기" class="btn" id="findBtn">찾기</button>
+
+
+					<!-- <button type="submit">찾기</button>
+					<button type="button" onClick="history.back()">취소</button> -->
 				</form>
 			</div>
 		</div>
