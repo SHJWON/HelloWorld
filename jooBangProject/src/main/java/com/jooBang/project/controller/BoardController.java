@@ -114,13 +114,12 @@ public class BoardController {
 		String brdWriter=(String)session.getAttribute("nick");
 		// 서비스를 통해서 DB에 저장
 		brd.setBrdWriter(brdWriter);
-		
 		System.out.print(brdWriter);
 	    brd.setBrdImage(brdImage);				
 		brd.setCtgNo(ctgNo);
 		service.insertBoard(brd);
 		// DB 저장 후 전제 조회 화면으로 포워딩  		
-		return "redirect:/board/boardCtgList/{ctgNo}"; 
+		return "redirect:/board/boardCtgList/{ctgNo}/"+1; 
 	}
 	@RequestMapping("/board/boardDetailView/{brdNo}")
 	public String boardDetailView(@PathVariable int brdNo ,Model model) { 
