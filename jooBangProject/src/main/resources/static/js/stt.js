@@ -90,7 +90,7 @@
  			contentType:false,
  			data: formData,
  			success:function(result){
- 			alert(result);
+ 			//alert(result);
  				// <input> 태그의 값을 받은 텍스트로 설정
  				$('#searchBar').val(result);
  							  
