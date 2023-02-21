@@ -70,14 +70,36 @@ public class BoardService implements IBoardService {
 		return dao.count();
 	}
 	@Override
-	public ArrayList<BoardVO>listPage(int displayPost, int postNum){
+	public int countCtg(String ctgNo) {
+		return dao.countCtg(ctgNo);
+	}
+	@Override
+	public int countBest() {
+		return dao.countBest();
+	}
+	@Override
+	public ArrayList<BoardVO> listPage(int displayPost, int postNum) {
+	  HashMap<String, Integer> data = new HashMap<String, Integer>();
+		data.put("displayPost", displayPost);
+		data.put("postNum", postNum);
+	return dao.listPage(displayPost, postNum);
+	}
+	
+	@Override
+	public ArrayList<BoardVO>listPageCtg(int displayPost, int postNum, String ctgNo){
 		  HashMap<String, Integer> data = new HashMap<String, Integer>();
 			
 			data.put("displayPost", displayPost);
 			data.put("postNum", postNum);
-		return dao.listPage(displayPost, postNum);
+		return dao.listPageCtg(displayPost, postNum,ctgNo);
 	}
-	
+	@Override
+	public ArrayList<BoardVO> listPageBest(int displayPost, int postNum) {
+		 HashMap<String, Integer> data = new HashMap<String, Integer>();
+			data.put("displayPost", displayPost);
+			data.put("postNum", postNum);
+		return dao.listPageBest(displayPost, postNum);
+	}
 	@Override
 	public ArrayList<BoardVO> bRecentView() {
 		return dao.bRecentView();
@@ -102,6 +124,9 @@ public class BoardService implements IBoardService {
 		// TODO Auto-generated method stub
 		return dao.mainComBestView();
 	}
+	
+	
+	
 
 	
 
