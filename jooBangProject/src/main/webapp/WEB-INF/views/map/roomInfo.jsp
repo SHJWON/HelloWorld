@@ -25,6 +25,8 @@
 		<c:import url="/WEB-INF/views/top.jsp" />
 		<input type="hidden" id="sid" name="memId" value="${sessionScope.sid}">
 		<input type="hidden" id="roomNo" name="roomNo" value="${room.roomNo}">
+		<input type="hidden" id="result" name="result" value="${result}">
+		<script type="text/javascript">console.log($('#result'))</script>
 		<section>
 			<div class="secrtion_wrapper">
 				<div class="section_slideContainer">
