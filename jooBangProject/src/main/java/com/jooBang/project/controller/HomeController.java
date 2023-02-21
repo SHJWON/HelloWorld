@@ -38,10 +38,6 @@ public class HomeController {
 	@Autowired
 	WishListService wService;
 
-//	유해이미지 차단 서비스	
-	@Autowired
-	GreenEyeService gService;
-	
 
 	@RequestMapping("/")
 	public String mainView(Model model) {
@@ -66,13 +62,7 @@ public class HomeController {
 		model.addAttribute("recommendView", recommendView);
 		
 		
-		//그린아이 AI 
-		try {
-			gService.PornPrevention(null);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 		
 		return "main";
 	}

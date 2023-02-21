@@ -27,7 +27,7 @@ public class GreenEyeService {
 				+ "\"requestId\":\"xxx\","
 				+ "\"timestamp\":0,"
 				+ "\"images\":[{\"name\":\"demo\","
-				+ "\"url\":\"https://ichef.bbci.co.uk/news/640/cpsprodpb/E172/production/_126241775_getty_cats.png\"}]}");
+				+ "\"url\":\""+pornImg+"\"}]}");
 		writer.flush();
 		writer.close();
 		httpConn.getOutputStream().close();

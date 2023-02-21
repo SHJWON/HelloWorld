@@ -58,11 +58,10 @@ public class ChatbotService {
 	                while ((decodedString = in.readLine()) != null) {
 	                    chatbotMessage = decodedString;
 	                    
-	                    chatbotMessage = jsontoString(chatbotMessage);
 	                }
 	                //chatbotMessage = decodedString;
 	                in.close();
-
+	                
 	            } else {  // Error occurred
 	                chatbotMessage = con.getResponseMessage();
 	            }
@@ -128,7 +127,12 @@ public class ChatbotService {
 	            bubbles_array.put(bubbles_obj);
 
 	            obj.put("bubbles", bubbles_array);
-	            obj.put("event", "send");
+	            
+				if(voiceMessage == "") {
+					obj.put("event", "open");				
+				} else {
+					obj.put("event", "send");				
+				}
 
 	            requestBody = obj.toString();
 

@@ -80,12 +80,11 @@
 }
 
 .msgBox  span {
-	padding: 3px 5px;
-	word-break: break-all;
-	display: block;
-	max-width: 300px;
-	margin-bottom: 10px;
-	border-radius: 10px;
+	padding: 5px 10px;
+    word-break: break-all;
+    display: block;
+    max-width: 300px;
+    border-radius: 15px;
 }
 
 /* 
@@ -95,19 +94,33 @@
 		break-all : 글자 기준으로 줄바꿈
 		keep-all : 단어 기준으로 줄바꿈
  */
+
+.msgBox.send{
+    justify-content: flex-end;
+}
+
 .msgBox.send  span {
 	background: #ff9b9b;
-	float: right;
 }
 
 .msgBox #in {
 	width: 480px;
 	background: #ffffff;
+    flex-basis: fit-content;
 }
 
-.msgBox.receive  span {
-	background: #ffffff;
-	float: left;
+.msgBox{
+	display: flex;
+}
+
+.msgBox.receive .msgImg img{
+	width: 50px;
+}
+
+.msgBox.receive .msgBoxWrapper{
+	margin-top: 5px;
+	display: flex;
+	flex-direction: column;
 }
 
 /*
