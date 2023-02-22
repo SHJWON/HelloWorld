@@ -36,8 +36,8 @@ public class RegistController {
 						 RoomVO vo, HttpServletRequest req, HttpSession session) throws IOException{
 		
 		// roomImage - 여러개 파일 저장
-		String uploadPath = "file:////usr/local/project/product_images/image/";
-		String imgUploadPath = uploadPath + "registImg/";
+		String uploadPath = req.getSession().getServletContext().getRealPath("/").replace("webapp","resources");
+		String imgUploadPath = uploadPath + File.separator + "static/image/registImg/";
 	
 		String memId = (String)session.getAttribute("sid");
 		
