@@ -13,49 +13,44 @@
 		
 	</head>
 	<body>
-		 <div id="wrap">
-  <nav id="nav">
-  <c:import url="/WEB-INF/views/top.jsp"/>
-  </nav>
-  
-				<div class="category">
-				<form id="myPageForm" class="myPageForm" method="post" action="<c:url value='/myPage/updateMyPage'/>">
-					<h1>마이 페이지</h1>
-					<hr>
-					  <div class="profileBox" id="profileBox">
-					  <div class="PhotoBox" id="PhotoBox">
-					  <img class="profile" src="/image/default_profile.png">
-					  </div>
-				  <ul id="ul">
+	  <div id="wrap">
+      <c:import url="/WEB-INF/views/top.jsp"/>         
+					<form id="myPageForm" class="myPageForm" method="post" action="<c:url value='/myPage/updateMyPage'/>">
+						<h1>마이 페이지</h1>
+						<hr>
+					    <div class="myInfo">
+					   <div class="PhotoBox" >
+					      <img class="profile" src="/image/default_profile.png">
+					      </div>	  
+				         <ul id="ul">
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm'/>">내 정보 수정</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myBoardList'/>">내 글목록</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myReservation'/>">내 예약</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myRoom'/>">내 방 목록</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/deleteMyPageForm'/>">회원탈퇴</a></li><hr>
 					     </ul>
-					 </form>
-					  </div>
-	
-				   </div>
+			</div>
+						 </form>
+        
+                       </div>
 				
-				<div id="mypage">
+				<div id="myinfo">
 					<form id="myPageForm" class="myPageForm" method="post" action="<c:url value='/myPage/deleteMyPage'/>">
 						
-						<table>
+						<table class="infoTable">
 							<tr><td>회원명</td>
 									<td><input type="text" name="memName" value="${mem.memName}" readonly></td></tr>	
 							<tr><td>회원아이디</td>
 									<td><input type="text" name="memId" value="${mem.memId}" readonly></td></tr>
 							<tr><td>비밀번호</td>
-									<td><input type="password" name="memPwd" required></td></tr>								
-							<tr><td colspan="2">
+									<td><input type="password" name="memPwd" required></td></tr>	
+							</table>														
 								<input id="button" type="submit" value="탈퇴 확인">
-							    <input id="button" type="reset" value="취소"></td></tr>
-						</table>
+							    <input id="button" type="reset" value="취소">
+					
 					</form>
 				</div>
-			</div>
-		
+			
 	
 	</body>
 	<footer>
