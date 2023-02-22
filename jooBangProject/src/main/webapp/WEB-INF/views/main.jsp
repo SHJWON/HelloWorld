@@ -82,7 +82,7 @@
 	            <div class="mainATeg">
 	              <a href="/roominfo/${mainRoom.roomNo}">
 	                <div>	
-	                  <img class="roomImg" src="/image/registImg/${fn:split(mainRoom.roomImage, ',')[0]}" width="260" height="200" />
+	                  <img class="roomImg" src="/images/registImg/${fn:split(mainRoom.roomImage, ',')[0]}" width="260" height="200" />
 	                </div>
 	                <h5>${fn:split(mainRoom.roomAddress1, ' ')[0]} ${fn:split(mainRoom.roomAddress1, ' ')[1]}</h5>
 	                <h4><span id="line_limit">${mainRoom.roomName}</span></h4>
