@@ -47,7 +47,7 @@
            <span class="icon"></span>
            </label>
               <a href="/roominfo/${room.roomNo}">
-                  <img class="roomImg" src="/images/registImg/${fn:split(room.roomImage, ',')[0]}" width="260" height="200" />
+                  <img class="roomImg" src="/image/registImg/${fn:split(room.roomImage, ',')[0]}" width="260" height="200" />
               
                 <h5>${fn:split(room.roomAddress1, ' ')[0]} ${fn:split(room.roomAddress1, ' ')[1]}</h5>
                 <h4><span id="line_limit">${room.roomName}</span></h4>

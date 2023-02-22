@@ -95,7 +95,7 @@
 			
 							<div class="roomInfo">
 								<input type="hidden" name="roomNo" value="${roomVo.roomNo }">
-								<img src="/images/registImg/${fn:split(roomVo.roomImage, ',')[0]}">
+								<img src="/image/registImg/${fn:split(roomVo.roomImage, ',')[0]}">
 								<div class="roomName">
 									${roomVo.roomAddress1}<br> <b>${roomVo.roomName }</b>
 								</div>
