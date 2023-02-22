@@ -29,7 +29,7 @@
   				recordBtn.onclick = () => {
   					mediaRecorder.start(); // 녹음 시작
   					record.style.background = "red"; // [녹음] 버튼 배경색
-  					record.style.color = "red";
+  					
   				}
   				
   				// [정지] 버튼 눌렀을 때

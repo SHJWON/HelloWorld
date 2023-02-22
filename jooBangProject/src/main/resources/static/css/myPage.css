@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-
+img.roomImg {
+    margin:40px 10px 20px 0;
+}
 #search {
 	float: right;
 	margin-top: 10px;
