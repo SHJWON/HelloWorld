@@ -184,13 +184,13 @@
 	width:58%;
 	margin-left:30%;
 	height:800px;
-	background-color: #e5e5e5;
+	background-color:white;
 	margin-bottom:50px;
 }
 
 table {
 	width: 1142px;
-	height: 745px;
+	height: 745px;	
 	
 }
 thead{
@@ -203,12 +203,12 @@ tbody{
     
 }
 .table th{
-	border-top:1px solid #bb2649;
-	border-bottom:1px solid #bb2649;
+	border:none;
+	background-color:#f9f9f9;
+	border-bottom:2px solid #bb2649;
 }
 .table td{
-	
-	border-bottom:1px solid #bb2649;
+	border-bottom:2px solid #bb2649;
 }
 .title1{
     text-align:left;
@@ -219,15 +219,78 @@ tbody{
 .table{
 	width:58%;
 	margin-left:30%;
-
+}
+.infoTable td{
+	font-weight:bold;
+	border-bottom:2px solid #bb2649;	
+	border-radius:5px;
+}   
+.infoTable input{
+	border:1px solid gray;
+	border-radius:5px;
+	width:70%;
+	height:30px;
+	font-weight:bold;
+}
+ .infoButton {
+ 	margin-top:50px;
+	text-align:right;
+	margin-right:80px;
+}
+#infoBtn{
+	width:20%;
+	height:40px;
+	border:2px solid #bb2649;
+	background-color:#bb2649;
+	border-radius:8px;
+	color:white;
+	font-weight:bold;
+	cursor:pointer;
+}
+#infoBtn:hover{
+	opacity:0.6;
+}
+#postcodify_search_button{
+	float:right;
+	border:1px solid #bb2649;
+	background-color:#bb2649;
+	color:white;
+	border-radius:5px;
+	font-weight:bold;
+	width:10%;
+	height:30px;
+	cursor:pointer;
+}
+#postcodify_search_button:hover{
+	opacity:0.7;
+}
+.infoUPate{
+	text-align:center;
+	margin-top:30px;
+}
+.infobutton{
+	border:1px solid #bb2649;
+	background-color:#bb2649;
+	color:white;
+	border-radius:5px;
+	font-weight:bold;
+	width:20%;
+	height:50px;
+	cursor:pointer;
+	margin:10px 20px;
+}
+.infobutton:hover{
+	opacity:0.7;
 }
 a{
 	font-weight:bold;
 	text-decoration:none;
 }
 h1 {
-	text-align: right;
-	margin-right: 15px;
+	
+	margin-left:30%;
+	width:10%;
+	margin-right:60%;
 }
 
 td {
@@ -307,7 +370,7 @@ footer{
 	margin-bottom:50px;		
 	height:800px;
 }
-.myReservation h1{
+.myReservation h2{
     font-family:Rix;
 	font-size:35px;
 	font-weight:lighter;
