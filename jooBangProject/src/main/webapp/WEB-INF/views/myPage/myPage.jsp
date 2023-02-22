@@ -35,7 +35,7 @@
         
                        </div>
                         <div class="myinfo">
-							<table>
+							<table class="infoTable">
                                 <tr><td>아이디</td>
                                         <td colspan="2"><input type="text" name="memId" value="${mem.memId }" readonly></td></tr>
                                 <tr><td>성명</td>
@@ -55,13 +55,13 @@
                                 <tr><td>상세주소</td>
                                     <td colspan="2"><input type="text" name="memAddress2" class="postcodify_details" id="memAddress2" value="${mem.memAddress2}" readonly></td></tr>
 
-                                <tr><td colspan="3">
-                                
-								<a href="<c:url value='/myPage/updateMyPageForm'/>"><input id="button" type="button" value="회원정보수정" class="btn"></a>
-								</td></tr>
-                            </table>
+                               </table>
+                               <div class="infoButton">
+								<a href="<c:url value='/myPage/updateMyPageForm/${mem.memId}'/>"><input id="infoBtn" type="button" value="회원정보수정" class="btn"></a>
+								</div>
+                           
                        </div>
-			     	  </div>
+			     	 
 				 	 
 				 	 <footer>
 				      <c:import url="/WEB-INF/views/footer.jsp"/>

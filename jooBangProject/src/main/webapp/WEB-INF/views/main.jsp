@@ -109,7 +109,7 @@
 	        <div class="mainItem hotClickBox">
 	          <div class="card">
 	            <div class="card__image-container">
-	              <img class="card__image" src="/image/hot click.png" alt="" />
+	              <img class="card__image" src="/images/hot click.png" alt="" />
 	            </div>
 	
 	            <svg class="card__svg" viewBox="0 0 800 500">
@@ -140,7 +140,7 @@
 	            <div class="mainATeg">
 	              <a href="/roominfo/${mainHotClick.roomNo}">
 	                <div>	
-	                  <img class="roomImg" src="/image/registImg/${fn:split(mainHotClick.roomImage, ',')[0]}" width="260" height="200" />
+	                  <img class="roomImg" src="/images/registImg/${fn:split(mainHotClick.roomImage, ',')[0]}" width="260" height="200" />
 	                </div>
 	                <h5>${fn:split(mainHotClick.roomAddress1, ' ')[0]} ${fn:split(mainHotClick.roomAddress1, ' ')[1]}</h5>
 	                <h4><span id="line_limit">${mainHotClick.roomName}</span></h4>
@@ -171,7 +171,7 @@
 	            <div class="mainATeg">
 	              <a href="/roominfo/${mainRecommend.roomNo}">
 	                <div>	
-	                  <img class="roomImg" src="/image/registImg/${fn:split(mainRecommend.roomImage, ',')[0]}" width="260" height="200" />
+	                  <img class="roomImg" src="/images/registImg/${fn:split(mainRecommend.roomImage, ',')[0]}" width="260" height="200" />
 	                </div>
 	                <h5>${fn:split(mainRecommend.roomAddress1, ' ')[0]} ${fn:split(mainRecommend.roomAddress1, ' ')[1]}</h5>
 	                <h4><span id="line_limit">${mainRecommend.roomName}</span></h4>
@@ -190,7 +190,7 @@
 	              <img
 	                class="card__image"
 	                id="newRoomImg"
-	                src="/image/recommendRoom.jpg"
+	                src="/images/recommendRoom.jpg"
 	                alt=""
 	              />
 	            </div>
@@ -237,7 +237,7 @@
 	      
 	            <ul id="main_communityUl" action="/mainCom">
 	            <c:forEach var="mainCommuniny" items="${bRecentView}">
-	              <li id="list1"><img src="/image/default_profile.png" width="64" height="64"> <!-- userImg 등록 예정 -->
+	              <li id="list1"><img src="/images/default_profile.png" width="64" height="64"> <!-- userImg 등록 예정 -->
 	               <a href="/board/boardDetailView/${mainCommuniny.brdNo}">
 	               <span class="listText">${mainCommuniny.brdTitle}</span>
 	               </a>
@@ -270,7 +270,7 @@
 	                <div>
 	                  <a href="${mainFurniture.furnitureMoveURL}" class="furnitureGridBox" >
 	                    <div>
-	                      <img src="/image/furniture/${mainFurniture.furnitureImg}" width="260" height="200" id="furniturImg1" class="mainCardImg" />
+	                      <img src="/images/furniture/${mainFurniture.furnitureImg}" width="260" height="200" id="furniturImg1" class="mainCardImg" />
 	                    <h4>${mainFurniture.furnitureCity}</h4>
 	                    <h4>${mainFurniture.furnitureTitle}</h4>
 	                    <h5>${mainFurniture.furnitureCompany}</h5>
@@ -296,19 +296,19 @@
 	
 	        <!-- 이유 이미지 1 -->
 	        <div class="introduce1">
-	            <img src="/image/saving.png">
+	            <img src="/images/saving.png">
 	            <h4 class="introText">무·저보증으로 목돈이 없어도!</h4>
 	        </div>
 	
 	        <!-- 이유 이미지 2 -->
 	        <div class="introduce2">
-	            <img src="/image/lightning-bolt-.png">
+	            <img src="/images/lightning-bolt-.png">
 	            <h4 class="introText">당장 집이 필요하다면 빠르게!</h4>
 	        </div>
 	
 	        <!-- 이유 이미지 3 -->
 	        <div class="introduce3">
-	            <img src="/image/group-chat.png">
+	            <img src="/images/group-chat.png">
 	            <h4 class="introText">커뮤니티로 솔직한 정보 공유!</h4>
 	        </div>
       	</div>
