@@ -56,9 +56,9 @@ $(document).ready(function(){
 		modal.removeClass('active');
 	});
 	
-	
+	$("#postcodify_search_button").postcodifyPopUp();
 	// 주소 검색
-	
+	/*$("#postcodify_search_button").postcodifyPopUp();
 	$('.Button_AddressSearchBtn').on('click',function(){
  		new daum.Postcode({
  			// 팝ㅇ버 창에서 검색 결과 클릭했을 때
@@ -82,7 +82,7 @@ $(document).ready(function(){
  				address2.focus();
  			}
  		}).open();
- 	});
+ 	}); */
 	
 	// 글자수 표기
 	$('.title_box').keyup(function (e) {

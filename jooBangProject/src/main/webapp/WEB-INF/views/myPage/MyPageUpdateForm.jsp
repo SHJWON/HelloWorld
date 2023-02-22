@@ -40,7 +40,7 @@ pageEncoding="UTF-8"%>
 				   </div>
 				<form id="myPageForm" class="myPageForm" method="post" action="<c:url value='/myPage/updateMyPage'/>">
 					<div class="myinfo">
-						<table>
+						<table class="infoTable">
 							<tr><td>아이디</td>
 									<td colspan="2"><input type="text" name="memId" value="${mem.memId }" readonly></td></tr>
 							<tr><td>성명</td>
@@ -54,16 +54,19 @@ pageEncoding="UTF-8"%>
 							<tr><td>이메일 *</td>
 									<td colspan="2"><input type="text" name="memEmail" value="${mem.memEmail}" ></td></tr>
 							<tr><td id="zipcode">우편번호 *</td>
-									<td><input type="text" name="memZipcode" class="postcodify_postcode" id="memZipcode" value="${mem.memZipcode}" readonly></td>
-								<td><button type="button" id="postcodify_search_button">검색</button></td></tr>
+									<td colspan="2"><input type="text" name="memZipcode" class="postcodify_postcode" id="memZipcode" value="${mem.memZipcode}" readonly>
+									<button type="button" id="postcodify_search_button">검색</button>
+									</td>
+								</tr>
 							<tr><td>도로명주소</td>
 								<td colspan="2"><input type="text" name="memAddress1" class="postcodify_address" id="memAddress1" value="${mem.memAddress1}" readonly></td></tr>
 							<tr><td>상세주소 *</td>
 								<td colspan="2"><input type="text" name="memAddress2" class="postcodify_details" id="memAddress2" value="${mem.memAddress2}"></td></tr>
-							<tr><td colspan="3">
-							<input id="button" type="submit" value="수정">
-							<input id="button" type="reset" value="취소"></td></tr>
-						</table>
+							</table>
+						<div class="infoUPate">
+							<input class="infobutton" type="submit" value="수정">
+							<input class="infobutton" type="reset" value="취소">
+					  </div>
 				      </div>
 					</form>
 			</div>

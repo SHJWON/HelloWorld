@@ -38,14 +38,14 @@
 			</div>
 					  
 			 <div class="myReservation">
-			 <h1>예약 내역</h1>		 		
+			 <h2>예약 내역</h2>		 		
 		     <c:forEach var="rsv" items="${reservationList}">	    
 		      <div class="reservation">
 		     <div class="rsvDate"> ${fn:split(rsv.rsvDate,' ')[0] }</div>
 		    
 		     <div class="rsvDetail">
 		     <a href="<c:url value='/myPage/myReservationDetail/${rsv.rsvNo}'/>"><button id="rsvDetailBtn">상세보기</button></a></div>
-             <div class="roomImg"><img src="/image/registImg/${fn:split(rsv.roomImage, ',')[0]}" width="180" height="140" /></div>
+             <div class="roomImg"><img src="/images/registImg/${fn:split(rsv.roomImage, ',')[0]}" width="180" height="140" /></div>
               <div class="rsvAddress">${fn:split(rsv.roomAddress1, ' ')[0]} ${fn:split(rsv.roomAddress1, ' ')[1]}</div>
               <div class="roomName">${rsv.roomName }</div>
               <div class="rsvPeriod">${rsv.rsvPeriod } 주 
