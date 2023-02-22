@@ -57,7 +57,7 @@
 
                                 <tr><td colspan="3">
                                 
-								<a href="<c:url value='/myPage/updateMyPageForm/${mem.memId}'/>"><input id="button" type="button" value="회원정보수정" class="btn"></a>
+								<a href="<c:url value='/myPage/updateMyPageForm'/>"><input id="button" type="button" value="회원정보수정" class="btn"></a>
 								</td></tr>
                             </table>
                        </div>
