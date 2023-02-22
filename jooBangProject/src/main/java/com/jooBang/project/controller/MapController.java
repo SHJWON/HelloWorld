@@ -79,7 +79,7 @@ public class MapController {
 			model.addAttribute("roomNo", roomNo);
 		}
 		
-		String images[] = roomVO.getRoomImage().split(",");
+	/*	String images[] = roomVO.getRoomImage().split(",");
 		GreenEyeVO geVO = new GreenEyeVO();
 		
 		for(String image:images) {
@@ -99,6 +99,7 @@ public class MapController {
 				e.printStackTrace();
 			}
 		}
+	 */
 		
 		return "map/roomInfo";
 	}

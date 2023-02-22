@@ -34,7 +34,7 @@
 						<div class="slideImgContainer">
 							<c:forTokens items="${room.roomImage}" delims="," var="item">
 								<div class="slideImgWrapper">
-									<img class="slideImg" src="/images/registImg/${item}"><br />
+									<img class="slideImg" src="/image/registImg/${item}"><br />
 								</div>
 							</c:forTokens>
 						</div>
