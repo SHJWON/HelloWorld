@@ -44,7 +44,7 @@
 	   <div class="detailImg">
 	   <c:forTokens items="${brd.brdImage}" delims=","  var="item">
 	      <c:if test = "${fn:contains(item, '.jpg')}">
-		<img src="<c:url value='/images/boardImg/${item } '/>">		
+		<img src="<c:url value='/image/boardImg/${item } '/>">		
 	  </c:if>
 	  </c:forTokens>
 		</div>

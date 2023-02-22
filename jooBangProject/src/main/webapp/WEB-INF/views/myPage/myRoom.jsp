@@ -29,7 +29,7 @@
 					      <img class="profile" src="/image/default_profile.png">
 					      </div>	  
 				         <ul id="ul">
-					 		 <li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm'/>">내 정보 수정</a></li><hr>
+					 		<li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm/${mem.memId}'/>">내 정보 수정</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myBoardList'/>">내 글목록</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myReservation'/>">내 예약</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myRoom'/>">내 방 목록</a></li><hr>
@@ -47,7 +47,7 @@
            <span class="icon"></span>
            </label>
               <a href="/roominfo/${room.roomNo}">
-                  <img class="roomImg" src="/images/registImg/${fn:split(room.roomImage, ',')[0]}" width="260" height="200" />
+                  <img class="roomImg" src="/image/registImg/${fn:split(room.roomImage, ',')[0]}" width="260" height="200" />
               
                 <h5>${fn:split(room.roomAddress1, ' ')[0]} ${fn:split(room.roomAddress1, ' ')[1]}</h5>
                 <h4><span id="line_limit">${room.roomName}</span></h4>

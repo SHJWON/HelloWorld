@@ -24,7 +24,7 @@
 					      <img class="profile" src="/image/default_profile.png">
 					      </div>	  
 				         <ul id="ul">
-					 		 <li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm'/>">내 정보 수정</a></li><hr>
+					 		 <li class="side-menu"><a href="<c:url value='/myPage/updateMyPageForm/${mem.memId}'/>">내 정보 수정</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myBoardList'/>">내 글목록</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myReservation'/>">내 예약</a></li><hr>
 					 		 <li class="side-menu"><a href="<c:url value='/myPage/myRoom'/>">내 방 목록</a></li><hr>
@@ -55,9 +55,10 @@
                                 <tr><td>상세주소</td>
                                     <td colspan="2"><input type="text" name="memAddress2" class="postcodify_details" id="memAddress2" value="${mem.memAddress2}" readonly></td></tr>
 
-                               </table>
-                               <div class="infoButton">
-								<a href="<c:url value='/myPage/updateMyPageForm/${mem.memId}'/>"><input id="infoBtn" type="button" value="회원정보수정" class="btn"></a>
+                             
+                                </table>
+                                <div class="infoButton">
+								<a href="<c:url value='/myPage/updateMyPageForm/${mem.memId}'/>"><input id="infoBtn" type="button" value="회원정보수정" class="infoBtn"></a>
 								</div>
                            
                        </div>
