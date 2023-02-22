@@ -140,7 +140,7 @@
 	            <div class="mainATeg">
 	              <a href="/roominfo/${mainHotClick.roomNo}">
 	                <div>	
-	                  <img class="roomImg" src="/image/registImg/${fn:split(mainHotClick.roomImage, ',')[0]}" width="260" height="200" />
+	                  <img class="roomImg" src="/images/registImg/${fn:split(mainHotClick.roomImage, ',')[0]}" width="260" height="200" />
 	                </div>
 	                <h5>${fn:split(mainHotClick.roomAddress1, ' ')[0]} ${fn:split(mainHotClick.roomAddress1, ' ')[1]}</h5>
 	                <h4><span id="line_limit">${mainHotClick.roomName}</span></h4>
@@ -171,7 +171,7 @@
 	            <div class="mainATeg">
 	              <a href="/roominfo/${mainRecommend.roomNo}">
 	                <div>	
-	                  <img class="roomImg" src="/image/registImg/${fn:split(mainRecommend.roomImage, ',')[0]}" width="260" height="200" />
+	                  <img class="roomImg" src="/images/registImg/${fn:split(mainRecommend.roomImage, ',')[0]}" width="260" height="200" />
 	                </div>
 	                <h5>${fn:split(mainRecommend.roomAddress1, ' ')[0]} ${fn:split(mainRecommend.roomAddress1, ' ')[1]}</h5>
 	                <h4><span id="line_limit">${mainRecommend.roomName}</span></h4>
