@@ -117,7 +117,7 @@ public class MemberController {
 	// 아이디 찾기위해 이름 이메일 입력 확인
 	@ResponseBody
 	@RequestMapping("/member/findId")
-	public String findId(@RequestParam("memName") String memName, @RequestParam("memName") String memEmail,
+	public String findId(@RequestParam("memName") String memName, @RequestParam("memEmail") String memEmail,
 			Model model) {
 
 		String result = service.findId(memName, memEmail);
