@@ -43,7 +43,7 @@ public class MyPageController {
 	}
 
 	/* 회원정보 수정페이지 이동 */
-	@RequestMapping("/myPage/updateMyPageForm/{memId}")
+	@RequestMapping("/myPage/updateMyPageForm")
 	public String updateMyPageForm( Model model,HttpSession session) {
 		String memId = (String)session.getAttribute("sid");
 		MemberVO mem = service.detailViewMyPage(memId);
